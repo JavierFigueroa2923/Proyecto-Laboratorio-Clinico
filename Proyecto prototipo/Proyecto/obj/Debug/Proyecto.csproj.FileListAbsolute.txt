@@ -1,0 +1,246 @@
+c:\users\gabriela\documents\visual studio 2013\Projects\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\bin\Debug\Oracle.DataAccess.dll
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.cliente.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.empleado.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.proveedor.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.correo.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.correoproveedor.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.correo_empleado.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_empleado.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_proveedor.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Form2.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\bin\Debug\Oracle.DataAccess.dll
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.cliente.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.correo.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.correoproveedor.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.correo_empleado.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.empleado.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Form1.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Form2.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.orden_impresion.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.proveedor.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_empleado.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_proveedor.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.presupuesto.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.presupuesto.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.inicio.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_cliente.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.inicio.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_cliente.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.ubicacion.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_clientes.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Menu_reportes.resources
+C:\Users\godof_000\Documents\Visual Studio 2012\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Reporte_empleado.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Menu_reportes.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_clientes.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.Reporte_empleado.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.ubicacion.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.login.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_materiales.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_proveedores.resources
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.ordenimpresion.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_proveedores.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\bin\Debug\Oracle.DataAccess.dll
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_cliente.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_proveedores.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.cliente.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.correo.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.correoproveedor.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.correo_empleado.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.empleado.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.Form1.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.Form2.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.inicio.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.login.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.Menu_reportes.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.ordenimpresion.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.presupuesto.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.proveedor.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_clientes.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.Reporte_empleado.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_materiales.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_proveedores.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_cliente.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_empleado.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_proveedor.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.ubicacion.resources
+C:\Users\godof_000\Documents\Septimo Ciclo\Diseno de Base de Datos\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
+C:\Users\GABRIELA\Documents\Visual Studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_empleadocs.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_cliente2.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.material.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_materiales.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_hoja_presupuesto.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.especificaciones.resources
+C:\Users\GABRIELA\documents\visual studio 2013\Projects\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_factura.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_cliente2.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_empleadocs.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_materiales.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_proveedores.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.cliente.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.correo.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.correoproveedor.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.correo_empleado.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.empleado.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.Form2.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.inicio.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.login.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.material.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.Menu_reportes.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.ordenimpresion.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.presupuesto.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.proveedor.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_clientes.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.Reporte_empleado.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_factura.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_hoja_presupuesto.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_materiales.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_proveedores.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_cliente.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_empleado.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_proveedor.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.especificaciones.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.ubicacion.resources
+C:\Users\Pamela Coronado\Desktop\PROYECTO COPIA\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_cliente2.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_empleadocs.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_materiales.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_proveedores.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.cliente.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.correo.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.correoproveedor.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.correo_empleado.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.empleado.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.Form2.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.inicio.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.login.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.material.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.Menu_reportes.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.ordenimpresion.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.presupuesto.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.proveedor.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_clientes.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.Reporte_empleado.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_factura.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_hoja_presupuesto.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_materiales.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_proveedores.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_cliente.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_empleado.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_proveedor.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.especificaciones.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.ubicacion.resources
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\bin\Debug\MySql.Data.dll
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\bin\Debug\Oracle.DataAccess.dll
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\beto\Downloads\FINAL\Nueva carpeta\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\bin\Debug\MySql.Data.dll
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\bin\Debug\Oracle.DataAccess.dll
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_cliente2.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_empleadocs.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_materiales.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_proveedores.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.cliente.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.correo.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.correoproveedor.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.correo_empleado.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.empleado.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.Form2.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.inicio.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.login.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.material.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.Menu_reportes.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.ordenimpresion.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.presupuesto.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.proveedor.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_clientes.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.Reporte_empleado.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_factura.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_hoja_presupuesto.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_materiales.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_proveedores.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_cliente.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_empleado.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_proveedor.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.especificaciones.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.ubicacion.resources
+C:\Users\beto\Desktop\revision2\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
+C:\Users\beto\Desktop\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_cliente2.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_empleadocs.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_materiales.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.actualizar_proveedores.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.cliente.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.correo.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.correoproveedor.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.correo_empleado.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.empleado.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.Form2.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.inicio.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.login.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.material.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.Menu_reportes.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.ordenimpresion.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.presupuesto.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.proveedor.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_clientes.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.Reporte_empleado.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_factura.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_hoja_presupuesto.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_materiales.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.reporte_proveedores.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_cliente.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_empleado.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.telefono_proveedor.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.especificaciones.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.ubicacion.resources
+C:\Users\beto\Desktop\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
+C:\Users\beto\Desktop\diseño\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\beto\Desktop\diseño\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\beto\Desktop\diseño\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
