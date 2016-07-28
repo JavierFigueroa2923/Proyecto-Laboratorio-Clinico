@@ -22,8 +22,8 @@ Partial Class Form3
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Dim Lst As System.Windows.Forms.ListBox
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form3))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
@@ -42,7 +42,7 @@ Partial Class Form3
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txt_expediente = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -54,14 +54,22 @@ Partial Class Form3
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Lbl_expedientes = New System.Windows.Forms.Label()
+        Me.pic_logo = New System.Windows.Forms.PictureBox()
+        Me.Lbl_titulo = New System.Windows.Forms.Label()
         Lst = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'Lst
+        '
+        Lst.FormattingEnabled = True
+        Lst.Location = New System.Drawing.Point(21, 293)
+        Lst.Name = "Lst"
+        Lst.Size = New System.Drawing.Size(75, 17)
+        Lst.TabIndex = 38
         '
         'Panel1
         '
@@ -84,7 +92,7 @@ Partial Class Form3
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.TextBox6)
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.TextBox5)
+        Me.Panel1.Controls.Add(Me.txt_expediente)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.TextBox4)
         Me.Panel1.Controls.Add(Me.TextBox3)
@@ -96,9 +104,9 @@ Partial Class Form3
         Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Lbl_expedientes)
+        Me.Panel1.Controls.Add(Me.pic_logo)
+        Me.Panel1.Controls.Add(Me.Lbl_titulo)
         Me.Panel1.Location = New System.Drawing.Point(91, 23)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(792, 490)
@@ -164,14 +172,6 @@ Partial Class Form3
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(454, 20)
         Me.TextBox10.TabIndex = 39
-        '
-        'Lst
-        '
-        Lst.FormattingEnabled = True
-        Lst.Location = New System.Drawing.Point(21, 293)
-        Lst.Name = "Lst"
-        Lst.Size = New System.Drawing.Size(75, 17)
-        Lst.TabIndex = 38
         '
         'Label14
         '
@@ -262,12 +262,12 @@ Partial Class Form3
         Me.Label11.TabIndex = 28
         Me.Label11.Text = "dd/mm/yy"
         '
-        'TextBox5
+        'txt_expediente
         '
-        Me.TextBox5.Location = New System.Drawing.Point(21, 186)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox5.TabIndex = 22
+        Me.txt_expediente.Location = New System.Drawing.Point(21, 186)
+        Me.txt_expediente.Name = "txt_expediente"
+        Me.txt_expediente.Size = New System.Drawing.Size(75, 20)
+        Me.txt_expediente.TabIndex = 22
         '
         'Label8
         '
@@ -365,34 +365,34 @@ Partial Class Form3
         Me.TextBox1.Size = New System.Drawing.Size(454, 20)
         Me.TextBox1.TabIndex = 7
         '
-        'Label1
+        'Lbl_expedientes
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.Label1.Location = New System.Drawing.Point(18, 165)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 18)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Expediente:"
+        Me.Lbl_expedientes.AutoSize = True
+        Me.Lbl_expedientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.Lbl_expedientes.Location = New System.Drawing.Point(18, 165)
+        Me.Lbl_expedientes.Name = "Lbl_expedientes"
+        Me.Lbl_expedientes.Size = New System.Drawing.Size(84, 18)
+        Me.Lbl_expedientes.TabIndex = 6
+        Me.Lbl_expedientes.Text = "Expediente:"
         '
-        'PictureBox1
+        'pic_logo
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(345, 51)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 100)
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
+        Me.pic_logo.Image = CType(resources.GetObject("pic_logo.Image"), System.Drawing.Image)
+        Me.pic_logo.Location = New System.Drawing.Point(345, 51)
+        Me.pic_logo.Name = "pic_logo"
+        Me.pic_logo.Size = New System.Drawing.Size(100, 100)
+        Me.pic_logo.TabIndex = 5
+        Me.pic_logo.TabStop = False
         '
-        'Label2
+        'Lbl_titulo
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.0!)
-        Me.Label2.Location = New System.Drawing.Point(270, 16)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(254, 32)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Datos del Paciente"
+        Me.Lbl_titulo.AutoSize = True
+        Me.Lbl_titulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.0!)
+        Me.Lbl_titulo.Location = New System.Drawing.Point(270, 16)
+        Me.Lbl_titulo.Name = "Lbl_titulo"
+        Me.Lbl_titulo.Size = New System.Drawing.Size(254, 32)
+        Me.Lbl_titulo.TabIndex = 1
+        Me.Lbl_titulo.Text = "Datos del Paciente"
         '
         'Form3
         '
@@ -405,7 +405,7 @@ Partial Class Form3
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -428,7 +428,7 @@ Partial Class Form3
     Friend WithEvents Label9 As Label
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txt_expediente As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents TextBox3 As TextBox
@@ -440,7 +440,7 @@ Partial Class Form3
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents Lbl_expedientes As Label
+    Friend WithEvents pic_logo As PictureBox
+    Friend WithEvents Lbl_titulo As Label
 End Class

@@ -11,3 +11,6 @@ C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsAp
 C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
 C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

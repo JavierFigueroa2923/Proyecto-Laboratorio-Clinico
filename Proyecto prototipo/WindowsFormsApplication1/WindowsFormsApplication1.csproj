@@ -53,6 +53,42 @@
     <Compile Include="Cotizaciones.Designer.cs">
       <DependentUpon>Cotizaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenido.Designer.cs">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos paciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datos paciente.Designer.cs">
+      <DependentUpon>Datos paciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datos empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Datos empleado.Designer.cs">
+      <DependentUpon>Datos empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="´Menu empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="´Menu empleado.Designer.cs">
+      <DependentUpon>´Menu empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu administrador.Designer.cs">
+      <DependentUpon>Menu administrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporte pagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +117,24 @@
     </Compile>
     <EmbeddedResource Include="Cotizaciones.resx">
       <DependentUpon>Cotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenido.resx">
+      <DependentUpon>Bienvenido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datos paciente.resx">
+      <DependentUpon>Datos paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Datos empleado.resx">
+      <DependentUpon>Datos empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu administrador.resx">
+      <DependentUpon>Menu administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="´Menu empleado.resx">
+      <DependentUpon>´Menu empleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte pagos.resx">
       <DependentUpon>Reporte pagos.cs</DependentUpon>
