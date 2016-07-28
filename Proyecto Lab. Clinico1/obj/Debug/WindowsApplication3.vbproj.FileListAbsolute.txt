@@ -1,2 +1,0 @@
-c:\users\pamela coronado\documents\visual studio 2015\Projects\WindowsApplication3\WindowsApplication3\bin\Debug\WindowsApplication3.exe.config
-C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto Lab. Clinico1\bin\Debug\WindowsApplication3.exe.config

@@ -14,3 +14,6 @@ C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsAp
 C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
