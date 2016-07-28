@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Bienvenido : Form
+    public partial class Bienvenida : Form
     {
-        public Bienvenido()
+        public Bienvenida()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

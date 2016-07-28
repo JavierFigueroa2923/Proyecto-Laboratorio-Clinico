@@ -407,8 +407,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 571);
             this.Controls.Add(this.Pnl_datos_paciente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Datos_del_paciente";
-            this.Text = "Form4";
+            this.Text = "Información del Paciente";
             this.Pnl_datos_paciente.ResumeLayout(false);
             this.Pnl_datos_paciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_almacenar)).EndInit();

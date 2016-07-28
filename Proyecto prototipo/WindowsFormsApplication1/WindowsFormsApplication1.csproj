@@ -53,17 +53,17 @@
     <Compile Include="Cotizaciones.Designer.cs">
       <DependentUpon>Cotizaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida.Designer.cs">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Bienvenido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bienvenido.Designer.cs">
-      <DependentUpon>Bienvenido.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos paciente.cs">
       <SubType>Form</SubType>
@@ -118,8 +118,8 @@
     <EmbeddedResource Include="Cotizaciones.resx">
       <DependentUpon>Cotizaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bienvenido.resx">
-      <DependentUpon>Bienvenido.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Datos paciente.resx">
       <DependentUpon>Datos paciente.cs</DependentUpon>
@@ -133,8 +133,8 @@
     <EmbeddedResource Include="´Menu empleado.resx">
       <DependentUpon>´Menu empleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Bienvenida.resx">
+      <DependentUpon>Bienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte pagos.resx">
       <DependentUpon>Reporte pagos.cs</DependentUpon>
