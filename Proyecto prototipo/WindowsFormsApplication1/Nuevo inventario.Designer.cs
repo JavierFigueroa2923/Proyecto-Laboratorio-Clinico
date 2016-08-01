@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Nuevo_inventario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
             this.txt_detalle = new System.Windows.Forms.TextBox();
             this.txt_cantDisponible = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.Lbl_idSuminstro = new System.Windows.Forms.Label();
             this.Lbl_CantDisponible = new System.Windows.Forms.Label();
             this.Lbl_detalle = new System.Windows.Forms.Label();
             this.Lbl_inventario_suministro = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,14 +55,27 @@
             this.panel1.Controls.Add(this.Lbl_CantDisponible);
             this.panel1.Controls.Add(this.Lbl_detalle);
             this.panel1.Controls.Add(this.Lbl_inventario_suministro);
-            this.panel1.Location = new System.Drawing.Point(12, 24);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 416);
+            this.panel1.Size = new System.Drawing.Size(695, 425);
             this.panel1.TabIndex = 1;
+            // 
+            // btn_save
+            // 
+            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
+            this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_save.Location = new System.Drawing.Point(547, 335);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(56, 54);
+            this.btn_save.TabIndex = 12;
+            this.btn_save.UseVisualStyleBackColor = true;
             // 
             // txt_detalle
             // 
+            this.txt_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_detalle.Location = new System.Drawing.Point(183, 287);
             this.txt_detalle.Name = "txt_detalle";
             this.txt_detalle.Size = new System.Drawing.Size(442, 20);
@@ -70,13 +83,27 @@
             // 
             // txt_cantDisponible
             // 
+            this.txt_cantDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_cantDisponible.Location = new System.Drawing.Point(183, 248);
             this.txt_cantDisponible.Name = "txt_cantDisponible";
             this.txt_cantDisponible.Size = new System.Drawing.Size(442, 20);
             this.txt_cantDisponible.TabIndex = 10;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(288, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 117);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // txt_codigo
             // 
+            this.txt_codigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_codigo.Location = new System.Drawing.Point(183, 222);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(165, 20);
@@ -84,6 +111,7 @@
             // 
             // Lbl_idSuminstro
             // 
+            this.Lbl_idSuminstro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_idSuminstro.AutoSize = true;
             this.Lbl_idSuminstro.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_idSuminstro.Location = new System.Drawing.Point(16, 221);
@@ -94,6 +122,7 @@
             // 
             // Lbl_CantDisponible
             // 
+            this.Lbl_CantDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_CantDisponible.AutoSize = true;
             this.Lbl_CantDisponible.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_CantDisponible.Location = new System.Drawing.Point(16, 247);
@@ -104,6 +133,7 @@
             // 
             // Lbl_detalle
             // 
+            this.Lbl_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_detalle.AutoSize = true;
             this.Lbl_detalle.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_detalle.Location = new System.Drawing.Point(16, 286);
@@ -114,6 +144,8 @@
             // 
             // Lbl_inventario_suministro
             // 
+            this.Lbl_inventario_suministro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_inventario_suministro.AutoSize = true;
             this.Lbl_inventario_suministro.Font = new System.Drawing.Font("Century Gothic", 21F);
             this.Lbl_inventario_suministro.Location = new System.Drawing.Point(177, 155);
@@ -122,33 +154,14 @@
             this.Lbl_inventario_suministro.TabIndex = 0;
             this.Lbl_inventario_suministro.Text = "Inventario de Suministros";
             // 
-            // btn_save
-            // 
-            this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
-            this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_save.Location = new System.Drawing.Point(547, 335);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(56, 54);
-            this.btn_save.TabIndex = 12;
-            this.btn_save.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(288, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 117);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // frm_Nuevo_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 463);
+            this.ClientSize = new System.Drawing.Size(695, 425);
             this.Controls.Add(this.panel1);
             this.Name = "frm_Nuevo_inventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo_inventario";
             this.Load += new System.EventHandler(this.Nuevo_inventario_Load);
             this.panel1.ResumeLayout(false);

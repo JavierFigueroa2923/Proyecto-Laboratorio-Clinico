@@ -90,6 +90,7 @@
             // 
             // lbl_paciente
             // 
+            this.lbl_paciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_paciente.AutoSize = true;
             this.lbl_paciente.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lbl_paciente.Font = new System.Drawing.Font("Century Gothic", 11.25F);
@@ -102,6 +103,7 @@
             // 
             // btn_imprimir
             // 
+            this.btn_imprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_imprimir.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.printer_icon;
             this.btn_imprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_imprimir.Location = new System.Drawing.Point(622, 455);
@@ -158,6 +160,7 @@
             // 
             // Lbl_nit
             // 
+            this.Lbl_nit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_nit.AutoSize = true;
             this.Lbl_nit.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Lbl_nit.Location = new System.Drawing.Point(4, 260);
@@ -169,6 +172,7 @@
             // 
             // Lbl_telefono
             // 
+            this.Lbl_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_telefono.AutoSize = true;
             this.Lbl_telefono.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Lbl_telefono.Location = new System.Drawing.Point(4, 300);
@@ -180,6 +184,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label7.Location = new System.Drawing.Point(4, 340);
@@ -191,6 +196,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(133, 260);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
@@ -199,6 +205,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Location = new System.Drawing.Point(133, 300);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox3.Name = "textBox3";
@@ -207,6 +214,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Location = new System.Drawing.Point(182, 336);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox4.Name = "textBox4";
@@ -215,6 +223,7 @@
             // 
             // Lbl_direccion
             // 
+            this.Lbl_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_direccion.AutoSize = true;
             this.Lbl_direccion.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Lbl_direccion.Location = new System.Drawing.Point(4, 380);
@@ -226,6 +235,7 @@
             // 
             // Lbl_referencia
             // 
+            this.Lbl_referencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_referencia.AutoSize = true;
             this.Lbl_referencia.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Lbl_referencia.Location = new System.Drawing.Point(4, 420);
@@ -237,6 +247,7 @@
             // 
             // Lbl_descuento
             // 
+            this.Lbl_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_descuento.AutoSize = true;
             this.Lbl_descuento.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Lbl_descuento.Location = new System.Drawing.Point(-4, 489);
@@ -248,6 +259,7 @@
             // 
             // Lbl_tipo_precio
             // 
+            this.Lbl_tipo_precio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_tipo_precio.AutoSize = true;
             this.Lbl_tipo_precio.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Lbl_tipo_precio.Location = new System.Drawing.Point(266, 489);
@@ -259,6 +271,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox5.Location = new System.Drawing.Point(133, 377);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox5.Name = "textBox5";
@@ -267,6 +280,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox6.Location = new System.Drawing.Point(133, 420);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox6.Name = "textBox6";
@@ -275,6 +289,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox7.Location = new System.Drawing.Point(133, 483);
             this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox7.Name = "textBox7";
@@ -283,6 +298,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(382, 481);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -332,6 +348,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cotizacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cotizaciones";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

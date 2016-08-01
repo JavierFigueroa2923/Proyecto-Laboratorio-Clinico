@@ -39,6 +39,7 @@
             // 
             // btn_imprimir
             // 
+            this.btn_imprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_imprimir.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.printer_icon;
             this.btn_imprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_imprimir.Location = new System.Drawing.Point(587, 97);
@@ -88,6 +89,9 @@
             // 
             // reporte_
             // 
+            this.reporte_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reporte_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reporte_.Location = new System.Drawing.Point(18, 148);
             this.reporte_.Name = "reporte_";
@@ -106,6 +110,7 @@
             this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.reporte_);
             this.Name = "Reporte_de_suministros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte_de_suministros";
             ((System.ComponentModel.ISupportInitialize)(this.reporte_)).EndInit();
             this.ResumeLayout(false);

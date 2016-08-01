@@ -43,6 +43,7 @@
             // 
             // cbo_id_inv
             // 
+            this.cbo_id_inv.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_id_inv.FormattingEnabled = true;
             this.cbo_id_inv.Location = new System.Drawing.Point(84, 198);
             this.cbo_id_inv.Name = "cbo_id_inv";
@@ -51,6 +52,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Save_icon;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Location = new System.Drawing.Point(506, 326);
@@ -61,6 +63,7 @@
             // 
             // Lbl_id_inventario
             // 
+            this.Lbl_id_inventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_id_inventario.AutoSize = true;
             this.Lbl_id_inventario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_id_inventario.Location = new System.Drawing.Point(79, 175);
@@ -71,6 +74,7 @@
             // 
             // Lbl_descripcion
             // 
+            this.Lbl_descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_descripcion.AutoSize = true;
             this.Lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_descripcion.Location = new System.Drawing.Point(80, 262);
@@ -81,6 +85,7 @@
             // 
             // txt_direccion
             // 
+            this.txt_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_direccion.Location = new System.Drawing.Point(83, 284);
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(454, 20);
@@ -88,6 +93,7 @@
             // 
             // Lbl_cant
             // 
+            this.Lbl_cant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_cant.AutoSize = true;
             this.Lbl_cant.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_cant.Location = new System.Drawing.Point(80, 219);
@@ -98,6 +104,7 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_nombre.Location = new System.Drawing.Point(83, 240);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(454, 20);
@@ -105,6 +112,7 @@
             // 
             // PictureBox1
             // 
+            this.PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
             this.PictureBox1.Location = new System.Drawing.Point(292, 60);
             this.PictureBox1.Name = "PictureBox1";
@@ -114,6 +122,7 @@
             // 
             // Lbl_titulo
             // 
+            this.Lbl_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_titulo.Location = new System.Drawing.Point(203, 23);
@@ -137,6 +146,7 @@
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Lbl_titulo);
             this.Name = "frm_act_inventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar inventario";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);

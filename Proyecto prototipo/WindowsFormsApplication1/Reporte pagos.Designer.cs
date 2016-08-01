@@ -39,6 +39,8 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.button1.Location = new System.Drawing.Point(329, 115);
             this.button1.Name = "button1";
@@ -49,6 +51,8 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,6 +65,9 @@
             // 
             // reporte_
             // 
+            this.reporte_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reporte_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reporte_.Location = new System.Drawing.Point(12, 166);
             this.reporte_.Name = "reporte_";
@@ -69,6 +76,8 @@
             // 
             // Lbl_paciente
             // 
+            this.Lbl_paciente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_paciente.AutoSize = true;
             this.Lbl_paciente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_paciente.Location = new System.Drawing.Point(22, 115);
@@ -79,6 +88,8 @@
             // 
             // txt_nombre_paciente
             // 
+            this.txt_nombre_paciente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_nombre_paciente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre_paciente.Location = new System.Drawing.Point(100, 115);
             this.txt_nombre_paciente.Name = "txt_nombre_paciente";
@@ -88,6 +99,8 @@
             // 
             // btn_imprimir
             // 
+            this.btn_imprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_imprimir.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.printer_icon;
             this.btn_imprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_imprimir.Location = new System.Drawing.Point(581, 115);
@@ -108,6 +121,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reporte_);
             this.Name = "Reporte_pagos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de pagos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporte_)).EndInit();

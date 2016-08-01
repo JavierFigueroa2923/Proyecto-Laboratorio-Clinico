@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_aseg));
             this.pnl_aseguradora = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_dsc = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
             this.lbl_aseguradora = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnl_aseguradora.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_logo)).BeginInit();
             this.SuspendLayout();
@@ -61,16 +61,29 @@
             this.pnl_aseguradora.Controls.Add(this.txt_nombre);
             this.pnl_aseguradora.Controls.Add(this.Pic_logo);
             this.pnl_aseguradora.Controls.Add(this.lbl_aseguradora);
-            this.pnl_aseguradora.Location = new System.Drawing.Point(41, 25);
+            this.pnl_aseguradora.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_aseguradora.Location = new System.Drawing.Point(0, 0);
             this.pnl_aseguradora.Name = "pnl_aseguradora";
-            this.pnl_aseguradora.Size = new System.Drawing.Size(707, 480);
+            this.pnl_aseguradora.Size = new System.Drawing.Size(800, 540);
             this.pnl_aseguradora.TabIndex = 15;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(140, 224);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(547, 21);
+            this.comboBox1.TabIndex = 52;
             // 
             // btn_save
             // 
+            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Save_icon;
             this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_save.Location = new System.Drawing.Point(452, 382);
+            this.btn_save.Location = new System.Drawing.Point(545, 442);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(57, 53);
             this.btn_save.TabIndex = 51;
@@ -78,6 +91,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label1.Location = new System.Drawing.Point(152, 357);
@@ -88,13 +104,19 @@
             // 
             // txt_dsc
             // 
+            this.txt_dsc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_dsc.Location = new System.Drawing.Point(179, 357);
             this.txt_dsc.Name = "txt_dsc";
-            this.txt_dsc.Size = new System.Drawing.Size(108, 20);
+            this.txt_dsc.Size = new System.Drawing.Size(201, 20);
             this.txt_dsc.TabIndex = 47;
             // 
             // lbl_descuento
             // 
+            this.lbl_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_descuento.AutoSize = true;
             this.lbl_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbl_descuento.Location = new System.Drawing.Point(137, 336);
@@ -105,13 +127,19 @@
             // 
             // txt_email
             // 
+            this.txt_email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_email.Location = new System.Drawing.Point(140, 269);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(454, 20);
+            this.txt_email.Size = new System.Drawing.Size(547, 20);
             this.txt_email.TabIndex = 31;
             // 
             // Lbl_num_aseg
             // 
+            this.Lbl_num_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_num_aseg.AutoSize = true;
             this.Lbl_num_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Lbl_num_aseg.Location = new System.Drawing.Point(137, 248);
@@ -122,6 +150,9 @@
             // 
             // Lbl_id_aseg
             // 
+            this.Lbl_id_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_id_aseg.AutoSize = true;
             this.Lbl_id_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Lbl_id_aseg.Location = new System.Drawing.Point(137, 204);
@@ -132,6 +163,9 @@
             // 
             // Lbl_nombre
             // 
+            this.Lbl_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.Lbl_nombre.Location = new System.Drawing.Point(137, 292);
@@ -142,15 +176,19 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_nombre.Location = new System.Drawing.Point(140, 313);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(454, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(547, 20);
             this.txt_nombre.TabIndex = 7;
             // 
             // Pic_logo
             // 
+            this.Pic_logo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("Pic_logo.Image")));
-            this.Pic_logo.Location = new System.Drawing.Point(310, 60);
+            this.Pic_logo.Location = new System.Drawing.Point(357, 60);
             this.Pic_logo.Name = "Pic_logo";
             this.Pic_logo.Size = new System.Drawing.Size(100, 100);
             this.Pic_logo.TabIndex = 5;
@@ -158,21 +196,14 @@
             // 
             // lbl_aseguradora
             // 
+            this.lbl_aseguradora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_aseguradora.AutoSize = true;
             this.lbl_aseguradora.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_aseguradora.Location = new System.Drawing.Point(230, 14);
+            this.lbl_aseguradora.Location = new System.Drawing.Point(277, 14);
             this.lbl_aseguradora.Name = "lbl_aseguradora";
             this.lbl_aseguradora.Size = new System.Drawing.Size(292, 34);
             this.lbl_aseguradora.TabIndex = 1;
             this.lbl_aseguradora.Text = "Nueva Aseguradora";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(140, 224);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(454, 21);
-            this.comboBox1.TabIndex = 52;
             // 
             // frm_act_aseg
             // 
@@ -181,6 +212,7 @@
             this.ClientSize = new System.Drawing.Size(800, 540);
             this.Controls.Add(this.pnl_aseguradora);
             this.Name = "frm_act_aseg";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Aseguradora";
             this.pnl_aseguradora.ResumeLayout(false);
             this.pnl_aseguradora.PerformLayout();

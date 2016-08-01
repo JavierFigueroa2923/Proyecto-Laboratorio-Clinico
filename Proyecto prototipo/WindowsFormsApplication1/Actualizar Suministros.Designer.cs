@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_sum));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbo_id_inventario = new System.Windows.Forms.ComboBox();
             this.cbo_id_laboratorio = new System.Windows.Forms.ComboBox();
             this.lbl_inventario = new System.Windows.Forms.Label();
             this.lbl_laboratorio = new System.Windows.Forms.Label();
+            this.btn_save = new System.Windows.Forms.Button();
             this.txt_detalle = new System.Windows.Forms.TextBox();
             this.txt_cantDisponible = new System.Windows.Forms.TextBox();
             this.txt_costo = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_idSuminstro = new System.Windows.Forms.Label();
             this.Lbl_CantDisponible = new System.Windows.Forms.Label();
             this.Lbl_detalle = new System.Windows.Forms.Label();
             this.Lbl_costo = new System.Windows.Forms.Label();
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.Lbl_inventario_suministro = new System.Windows.Forms.Label();
-            this.btn_save = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -71,14 +71,25 @@
             this.panel1.Controls.Add(this.Lbl_costo);
             this.panel1.Controls.Add(this.Lbl_nombre);
             this.panel1.Controls.Add(this.Lbl_inventario_suministro);
-            this.panel1.Location = new System.Drawing.Point(12, 30);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 494);
+            this.panel1.Size = new System.Drawing.Size(760, 554);
             this.panel1.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(229, 208);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 17;
             // 
             // cbo_id_inventario
             // 
+            this.cbo_id_inventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_id_inventario.FormattingEnabled = true;
             this.cbo_id_inventario.Location = new System.Drawing.Point(228, 421);
             this.cbo_id_inventario.Name = "cbo_id_inventario";
@@ -87,6 +98,7 @@
             // 
             // cbo_id_laboratorio
             // 
+            this.cbo_id_laboratorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_id_laboratorio.FormattingEnabled = true;
             this.cbo_id_laboratorio.Location = new System.Drawing.Point(228, 391);
             this.cbo_id_laboratorio.Name = "cbo_id_laboratorio";
@@ -95,6 +107,7 @@
             // 
             // lbl_inventario
             // 
+            this.lbl_inventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_inventario.AutoSize = true;
             this.lbl_inventario.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.lbl_inventario.Location = new System.Drawing.Point(62, 425);
@@ -105,6 +118,7 @@
             // 
             // lbl_laboratorio
             // 
+            this.lbl_laboratorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_laboratorio.AutoSize = true;
             this.lbl_laboratorio.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.lbl_laboratorio.Location = new System.Drawing.Point(62, 395);
@@ -113,8 +127,20 @@
             this.lbl_laboratorio.TabIndex = 13;
             this.lbl_laboratorio.Text = "Laboratorio";
             // 
+            // btn_save
+            // 
+            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
+            this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_save.Location = new System.Drawing.Point(664, 425);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(56, 54);
+            this.btn_save.TabIndex = 12;
+            this.btn_save.UseVisualStyleBackColor = true;
+            // 
             // txt_detalle
             // 
+            this.txt_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_detalle.Location = new System.Drawing.Point(229, 315);
             this.txt_detalle.Name = "txt_detalle";
             this.txt_detalle.Size = new System.Drawing.Size(442, 20);
@@ -122,6 +148,7 @@
             // 
             // txt_cantDisponible
             // 
+            this.txt_cantDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_cantDisponible.Location = new System.Drawing.Point(229, 357);
             this.txt_cantDisponible.Name = "txt_cantDisponible";
             this.txt_cantDisponible.Size = new System.Drawing.Size(442, 20);
@@ -129,6 +156,7 @@
             // 
             // txt_costo
             // 
+            this.txt_costo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_costo.Location = new System.Drawing.Point(229, 279);
             this.txt_costo.Name = "txt_costo";
             this.txt_costo.Size = new System.Drawing.Size(442, 20);
@@ -136,13 +164,26 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_nombre.Location = new System.Drawing.Point(229, 244);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(442, 20);
             this.txt_nombre.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(310, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 117);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // Lbl_idSuminstro
             // 
+            this.Lbl_idSuminstro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_idSuminstro.AutoSize = true;
             this.Lbl_idSuminstro.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_idSuminstro.Location = new System.Drawing.Point(62, 206);
@@ -153,6 +194,7 @@
             // 
             // Lbl_CantDisponible
             // 
+            this.Lbl_CantDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_CantDisponible.AutoSize = true;
             this.Lbl_CantDisponible.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_CantDisponible.Location = new System.Drawing.Point(62, 356);
@@ -163,6 +205,7 @@
             // 
             // Lbl_detalle
             // 
+            this.Lbl_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_detalle.AutoSize = true;
             this.Lbl_detalle.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_detalle.Location = new System.Drawing.Point(62, 314);
@@ -173,6 +216,7 @@
             // 
             // Lbl_costo
             // 
+            this.Lbl_costo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_costo.AutoSize = true;
             this.Lbl_costo.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_costo.Location = new System.Drawing.Point(62, 278);
@@ -183,6 +227,7 @@
             // 
             // Lbl_nombre
             // 
+            this.Lbl_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_nombre.Location = new System.Drawing.Point(62, 243);
@@ -193,6 +238,7 @@
             // 
             // Lbl_inventario_suministro
             // 
+            this.Lbl_inventario_suministro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Lbl_inventario_suministro.AutoSize = true;
             this.Lbl_inventario_suministro.Font = new System.Drawing.Font("Century Gothic", 21F);
             this.Lbl_inventario_suministro.Location = new System.Drawing.Point(222, 13);
@@ -201,34 +247,6 @@
             this.Lbl_inventario_suministro.TabIndex = 0;
             this.Lbl_inventario_suministro.Text = "Actualizar Suministros";
             // 
-            // btn_save
-            // 
-            this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
-            this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_save.Location = new System.Drawing.Point(664, 425);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(56, 54);
-            this.btn_save.TabIndex = 12;
-            this.btn_save.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(310, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 117);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(229, 208);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 17;
-            // 
             // frm_act_sum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +254,7 @@
             this.ClientSize = new System.Drawing.Size(760, 554);
             this.Controls.Add(this.panel1);
             this.Name = "frm_act_sum";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar suministros";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

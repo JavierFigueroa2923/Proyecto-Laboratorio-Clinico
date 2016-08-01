@@ -71,14 +71,16 @@
             this.panel1.Controls.Add(this.Lbl_costo);
             this.panel1.Controls.Add(this.Lbl_nombre);
             this.panel1.Controls.Add(this.Lbl_inventario_suministro);
-            this.panel1.Location = new System.Drawing.Point(12, 25);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(754, 494);
+            this.panel1.Size = new System.Drawing.Size(763, 505);
             this.panel1.TabIndex = 2;
             // 
             // cbo_id_inventario
             // 
+            this.cbo_id_inventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_id_inventario.FormattingEnabled = true;
             this.cbo_id_inventario.Location = new System.Drawing.Point(228, 421);
             this.cbo_id_inventario.Name = "cbo_id_inventario";
@@ -87,6 +89,7 @@
             // 
             // cbo_id_laboratorio
             // 
+            this.cbo_id_laboratorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbo_id_laboratorio.FormattingEnabled = true;
             this.cbo_id_laboratorio.Location = new System.Drawing.Point(228, 391);
             this.cbo_id_laboratorio.Name = "cbo_id_laboratorio";
@@ -95,6 +98,7 @@
             // 
             // lbl_inventario
             // 
+            this.lbl_inventario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_inventario.AutoSize = true;
             this.lbl_inventario.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.lbl_inventario.Location = new System.Drawing.Point(62, 425);
@@ -105,6 +109,7 @@
             // 
             // lbl_laboratorio
             // 
+            this.lbl_laboratorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_laboratorio.AutoSize = true;
             this.lbl_laboratorio.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.lbl_laboratorio.Location = new System.Drawing.Point(62, 395);
@@ -115,6 +120,7 @@
             // 
             // btn_save
             // 
+            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
             this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_save.Location = new System.Drawing.Point(683, 437);
@@ -125,6 +131,7 @@
             // 
             // txt_detalle
             // 
+            this.txt_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_detalle.Location = new System.Drawing.Point(229, 315);
             this.txt_detalle.Name = "txt_detalle";
             this.txt_detalle.Size = new System.Drawing.Size(442, 20);
@@ -132,6 +139,7 @@
             // 
             // txt_cantDisponible
             // 
+            this.txt_cantDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_cantDisponible.Location = new System.Drawing.Point(229, 357);
             this.txt_cantDisponible.Name = "txt_cantDisponible";
             this.txt_cantDisponible.Size = new System.Drawing.Size(442, 20);
@@ -139,6 +147,7 @@
             // 
             // txt_costo
             // 
+            this.txt_costo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_costo.Location = new System.Drawing.Point(229, 279);
             this.txt_costo.Name = "txt_costo";
             this.txt_costo.Size = new System.Drawing.Size(442, 20);
@@ -146,6 +155,7 @@
             // 
             // txt_nombre
             // 
+            this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_nombre.Location = new System.Drawing.Point(229, 244);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(442, 20);
@@ -153,6 +163,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(333, 30);
@@ -163,6 +175,7 @@
             // 
             // txt_codigo
             // 
+            this.txt_codigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_codigo.Location = new System.Drawing.Point(229, 207);
             this.txt_codigo.Name = "txt_codigo";
             this.txt_codigo.Size = new System.Drawing.Size(165, 20);
@@ -170,6 +183,7 @@
             // 
             // Lbl_idSuminstro
             // 
+            this.Lbl_idSuminstro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_idSuminstro.AutoSize = true;
             this.Lbl_idSuminstro.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_idSuminstro.Location = new System.Drawing.Point(62, 206);
@@ -180,6 +194,7 @@
             // 
             // Lbl_CantDisponible
             // 
+            this.Lbl_CantDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_CantDisponible.AutoSize = true;
             this.Lbl_CantDisponible.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_CantDisponible.Location = new System.Drawing.Point(62, 356);
@@ -190,6 +205,7 @@
             // 
             // Lbl_detalle
             // 
+            this.Lbl_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_detalle.AutoSize = true;
             this.Lbl_detalle.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_detalle.Location = new System.Drawing.Point(62, 314);
@@ -200,6 +216,7 @@
             // 
             // Lbl_costo
             // 
+            this.Lbl_costo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_costo.AutoSize = true;
             this.Lbl_costo.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_costo.Location = new System.Drawing.Point(62, 278);
@@ -210,6 +227,7 @@
             // 
             // Lbl_nombre
             // 
+            this.Lbl_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11F);
             this.Lbl_nombre.Location = new System.Drawing.Point(62, 243);
@@ -220,9 +238,11 @@
             // 
             // Lbl_inventario_suministro
             // 
+            this.Lbl_inventario_suministro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_inventario_suministro.AutoSize = true;
             this.Lbl_inventario_suministro.Font = new System.Drawing.Font("Century Gothic", 21F);
-            this.Lbl_inventario_suministro.Location = new System.Drawing.Point(222, 160);
+            this.Lbl_inventario_suministro.Location = new System.Drawing.Point(316, 150);
             this.Lbl_inventario_suministro.Name = "Lbl_inventario_suministro";
             this.Lbl_inventario_suministro.Size = new System.Drawing.Size(161, 34);
             this.Lbl_inventario_suministro.TabIndex = 0;
@@ -232,9 +252,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 544);
+            this.ClientSize = new System.Drawing.Size(763, 505);
             this.Controls.Add(this.panel1);
             this.Name = "Nuevos_suministros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevos_suministros";
             this.Load += new System.EventHandler(this.Nuevos_suministros_Load);
             this.panel1.ResumeLayout(false);
