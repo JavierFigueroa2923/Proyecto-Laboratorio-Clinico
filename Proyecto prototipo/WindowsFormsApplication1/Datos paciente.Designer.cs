@@ -31,7 +31,6 @@
             System.Windows.Forms.ListBox Lst_tipo_sangre;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Datos_del_paciente));
             this.Pnl_datos_paciente = new System.Windows.Forms.Panel();
-            this.pic_almacenar = new System.Windows.Forms.PictureBox();
             this.txt_peso = new System.Windows.Forms.TextBox();
             this.txt_altura = new System.Windows.Forms.TextBox();
             this.Lbl_peso = new System.Windows.Forms.Label();
@@ -63,9 +62,9 @@
             this.Lbl_expediente = new System.Windows.Forms.Label();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.Label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             Lst_tipo_sangre = new System.Windows.Forms.ListBox();
             this.Pnl_datos_paciente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_almacenar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +79,7 @@
             // Pnl_datos_paciente
             // 
             this.Pnl_datos_paciente.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Pnl_datos_paciente.Controls.Add(this.pic_almacenar);
+            this.Pnl_datos_paciente.Controls.Add(this.button1);
             this.Pnl_datos_paciente.Controls.Add(this.txt_peso);
             this.Pnl_datos_paciente.Controls.Add(this.txt_altura);
             this.Pnl_datos_paciente.Controls.Add(this.Lbl_peso);
@@ -115,18 +114,8 @@
             this.Pnl_datos_paciente.Controls.Add(this.Label2);
             this.Pnl_datos_paciente.Location = new System.Drawing.Point(54, 39);
             this.Pnl_datos_paciente.Name = "Pnl_datos_paciente";
-            this.Pnl_datos_paciente.Size = new System.Drawing.Size(792, 490);
+            this.Pnl_datos_paciente.Size = new System.Drawing.Size(792, 520);
             this.Pnl_datos_paciente.TabIndex = 10;
-            // 
-            // pic_almacenar
-            // 
-            this.pic_almacenar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_almacenar.BackgroundImage")));
-            this.pic_almacenar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_almacenar.Location = new System.Drawing.Point(596, 440);
-            this.pic_almacenar.Name = "pic_almacenar";
-            this.pic_almacenar.Size = new System.Drawing.Size(30, 30);
-            this.pic_almacenar.TabIndex = 45;
-            this.pic_almacenar.TabStop = false;
             // 
             // txt_peso
             // 
@@ -401,6 +390,16 @@
             this.Label2.TabIndex = 1;
             this.Label2.Text = "Datos del Paciente";
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Save_icon;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(665, 446);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 57);
+            this.button1.TabIndex = 45;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Datos_del_paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,7 +411,6 @@
             this.Load += new System.EventHandler(this.Datos_del_paciente_Load);
             this.Pnl_datos_paciente.ResumeLayout(false);
             this.Pnl_datos_paciente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_almacenar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -421,7 +419,6 @@
         #endregion
 
         internal System.Windows.Forms.Panel Pnl_datos_paciente;
-        internal System.Windows.Forms.PictureBox pic_almacenar;
         internal System.Windows.Forms.TextBox txt_peso;
         internal System.Windows.Forms.TextBox txt_altura;
         internal System.Windows.Forms.Label Lbl_peso;
@@ -453,5 +450,6 @@
         internal System.Windows.Forms.Label Lbl_expediente;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Label Label2;
+        private System.Windows.Forms.Button button1;
     }
 }
