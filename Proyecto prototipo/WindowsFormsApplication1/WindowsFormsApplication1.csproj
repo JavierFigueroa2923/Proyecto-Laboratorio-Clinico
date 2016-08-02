@@ -212,6 +212,7 @@
     <Compile Include="Reporte_Examen_Paciente.Designer.cs">
       <DependentUpon>Reporte_Examen_Paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="Actualizar aseguradora.resx">
       <DependentUpon>Actualizar aseguradora.cs</DependentUpon>
     </EmbeddedResource>
