@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
         frm_nuevo_examen frm_nexam;
         Nuevo_Laboratorio frm_nlab;
         frm_act_lab frm_actlab;
-
+        
 
 
 
