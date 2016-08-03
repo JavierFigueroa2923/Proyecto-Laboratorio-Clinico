@@ -27,9 +27,9 @@ namespace WindowsFormsApplication1
         frm_nuevo_examen frm_nexam;
         Nuevo_Laboratorio frm_nlab;
         frm_act_lab frm_actlab;
-        Cargo_Empleado frm_cargoemp;
-        Manejo_Usuarios frm_users;
-        Citas frm_citas;
+        frm_per frm_per;
+        frm_eti frm_eti;
+
 
         private int childFormNumber = 0;
 
@@ -376,50 +376,35 @@ namespace WindowsFormsApplication1
 
         }
 
-
-        private void cargoEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void permisosRolesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(frm_cargoemp == null)
+            if(frm_per == null)
             {
-                frm_cargoemp = new Cargo_Empleado();
-                frm_cargoemp.MdiParent = this;
-                frm_cargoemp.FormClosed += new FormClosedEventHandler(frm_cargoemp_FormClosed);
-                frm_cargoemp.Show();
+                frm_per = new frm_per();
+                frm_per.MdiParent = this;
+                frm_per.FormClosed += new FormClosedEventHandler(frm_per_FormClosed);
+                frm_per.Show();
             }
         }
-        void frm_cargoemp_FormClosed(object sender, EventArgs e)
+
+        void frm_per_FormClosed(object sender, EventArgs e)
         {
-            frm_cargoemp = null;
+            frm_per = null;
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void actualizarEtiquetasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(frm_users == null)
+            if(frm_eti == null)
             {
-                frm_users = new Manejo_Usuarios();
-                frm_users.MdiParent = this;
-                frm_users.FormClosed += new FormClosedEventHandler(frm_user_FormClosed);
-                frm_users.Show();
+                frm_eti = new frm_eti();
+                frm_eti.MdiParent = this;
+                frm_eti.FormClosed += new FormClosedEventHandler(frm_eti_FormClosed);
+                frm_eti.Show();
             }
         }
-        void frm_user_FormClosed(object sender, EventArgs e)
+        void frm_eti_FormClosed(object sender, EventArgs e)
         {
-            frm_users = null;
-        }
-
-        private void citasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frm_citas == null)
-            {
-                frm_citas = new Citas();
-                frm_citas.MdiParent = this;
-                frm_citas.FormClosed += new FormClosedEventHandler(frm_citas_FormClosed);
-                frm_citas.Show();
-            }
-        }
-        void frm_citas_FormClosed(object sender, EventArgs e)
-        {
-            frm_citas = null;
+            frm_eti = null;
         }
     }
 }

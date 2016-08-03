@@ -134,3 +134,6 @@ C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\
 C:\Users\javie\Documents\Universidad Mariano Galvez\Semestre # 8\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\javie\Documents\Universidad Mariano Galvez\Semestre # 8\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\javie\Documents\Universidad Mariano Galvez\Semestre # 8\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
