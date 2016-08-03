@@ -44,7 +44,6 @@
             this.actualizarPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarAseguradoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarLaboratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarSuministrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,12 +51,7 @@
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeSuministrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaAseguradoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaCotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoSuministroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoLaboratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoExamenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -143,7 +137,6 @@
             this.actualizarPagosToolStripMenuItem,
             this.actualizarAseguradoraToolStripMenuItem,
             this.actualizarLaboratorioToolStripMenuItem,
-            this.actualizarSuministrosToolStripMenuItem,
             this.actualizarInventarioToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
@@ -191,13 +184,6 @@
             this.actualizarLaboratorioToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.actualizarLaboratorioToolStripMenuItem.Text = "Actualizar Laboratorio";
             this.actualizarLaboratorioToolStripMenuItem.Click += new System.EventHandler(this.actualizarLaboratorioToolStripMenuItem_Click);
-            // 
-            // actualizarSuministrosToolStripMenuItem
-            // 
-            this.actualizarSuministrosToolStripMenuItem.Name = "actualizarSuministrosToolStripMenuItem";
-            this.actualizarSuministrosToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.actualizarSuministrosToolStripMenuItem.Text = "Actualizar Suministros";
-            this.actualizarSuministrosToolStripMenuItem.Click += new System.EventHandler(this.actualizarSuministrosToolStripMenuItem_Click);
             // 
             // actualizarInventarioToolStripMenuItem
             // 
@@ -249,71 +235,31 @@
             // creacionToolStripMenuItem
             // 
             this.creacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoClienteToolStripMenuItem,
-            this.nuevoEmpleadoToolStripMenuItem,
-            this.nuevaAseguradoraToolStripMenuItem,
             this.nuevaCotizacionToolStripMenuItem,
-            this.nuevoSuministroToolStripMenuItem,
-            this.nuevoInventarioToolStripMenuItem,
             this.nuevoLaboratorioToolStripMenuItem,
             this.nuevoExamenToolStripMenuItem});
             this.creacionToolStripMenuItem.Name = "creacionToolStripMenuItem";
             this.creacionToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.creacionToolStripMenuItem.Text = "Creacion";
             // 
-            // nuevoClienteToolStripMenuItem
-            // 
-            this.nuevoClienteToolStripMenuItem.Name = "nuevoClienteToolStripMenuItem";
-            this.nuevoClienteToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.nuevoClienteToolStripMenuItem.Text = "Nuevo Cliente";
-            this.nuevoClienteToolStripMenuItem.Click += new System.EventHandler(this.nuevoClienteToolStripMenuItem_Click);
-            // 
-            // nuevoEmpleadoToolStripMenuItem
-            // 
-            this.nuevoEmpleadoToolStripMenuItem.Name = "nuevoEmpleadoToolStripMenuItem";
-            this.nuevoEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.nuevoEmpleadoToolStripMenuItem.Text = "Nuevo Empleado";
-            this.nuevoEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.nuevoEmpleadoToolStripMenuItem_Click);
-            // 
-            // nuevaAseguradoraToolStripMenuItem
-            // 
-            this.nuevaAseguradoraToolStripMenuItem.Name = "nuevaAseguradoraToolStripMenuItem";
-            this.nuevaAseguradoraToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.nuevaAseguradoraToolStripMenuItem.Text = "Nueva Aseguradora";
-            this.nuevaAseguradoraToolStripMenuItem.Click += new System.EventHandler(this.nuevaAseguradoraToolStripMenuItem_Click);
-            // 
             // nuevaCotizacionToolStripMenuItem
             // 
             this.nuevaCotizacionToolStripMenuItem.Name = "nuevaCotizacionToolStripMenuItem";
-            this.nuevaCotizacionToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.nuevaCotizacionToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.nuevaCotizacionToolStripMenuItem.Text = "Nueva Cotizacion";
             this.nuevaCotizacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaCotizacionToolStripMenuItem_Click);
-            // 
-            // nuevoSuministroToolStripMenuItem
-            // 
-            this.nuevoSuministroToolStripMenuItem.Name = "nuevoSuministroToolStripMenuItem";
-            this.nuevoSuministroToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.nuevoSuministroToolStripMenuItem.Text = "Nuevo Suministro";
-            this.nuevoSuministroToolStripMenuItem.Click += new System.EventHandler(this.nuevoSuministroToolStripMenuItem_Click);
-            // 
-            // nuevoInventarioToolStripMenuItem
-            // 
-            this.nuevoInventarioToolStripMenuItem.Name = "nuevoInventarioToolStripMenuItem";
-            this.nuevoInventarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.nuevoInventarioToolStripMenuItem.Text = "Nuevo Inventario";
-            this.nuevoInventarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoInventarioToolStripMenuItem_Click);
             // 
             // nuevoLaboratorioToolStripMenuItem
             // 
             this.nuevoLaboratorioToolStripMenuItem.Name = "nuevoLaboratorioToolStripMenuItem";
-            this.nuevoLaboratorioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.nuevoLaboratorioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.nuevoLaboratorioToolStripMenuItem.Text = "Nuevo Laboratorio";
             this.nuevoLaboratorioToolStripMenuItem.Click += new System.EventHandler(this.nuevoLaboratorioToolStripMenuItem_Click);
             // 
             // nuevoExamenToolStripMenuItem
             // 
             this.nuevoExamenToolStripMenuItem.Name = "nuevoExamenToolStripMenuItem";
-            this.nuevoExamenToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.nuevoExamenToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.nuevoExamenToolStripMenuItem.Text = "Nuevo Examen";
             this.nuevoExamenToolStripMenuItem.Click += new System.EventHandler(this.nuevoExamenToolStripMenuItem_Click);
             // 
@@ -432,15 +378,9 @@
         private System.Windows.Forms.ToolStripMenuItem actualizarPagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarAseguradoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creacionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoEmpleadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaAseguradoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaCotizacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarLaboratorioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarSuministrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeSuministrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoSuministroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoInventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoLaboratorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoExamenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarInventarioToolStripMenuItem;

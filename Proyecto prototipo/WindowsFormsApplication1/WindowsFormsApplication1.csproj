@@ -72,59 +72,47 @@
     <Compile Include="Cotizaciones.Designer.cs">
       <DependentUpon>Cotizaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actualizar datos del cliente.cs">
+    <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar datos del cliente.Designer.cs">
-      <DependentUpon>Actualizar datos del cliente.cs</DependentUpon>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actualizar datos del empleado.cs">
+    <Compile Include="Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar datos del empleado.Designer.cs">
-      <DependentUpon>Actualizar datos del empleado.cs</DependentUpon>
+    <Compile Include="Empleado.Designer.cs">
+      <DependentUpon>Empleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actualizar examenes.cs">
+    <Compile Include="Tipo de Examen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar examenes.Designer.cs">
-      <DependentUpon>Actualizar examenes.cs</DependentUpon>
+    <Compile Include="Tipo de Examen.Designer.cs">
+      <DependentUpon>Tipo de Examen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actualizar pagos.cs">
+    <Compile Include="Formas de Pago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar pagos.Designer.cs">
-      <DependentUpon>Actualizar pagos.cs</DependentUpon>
+    <Compile Include="Formas de Pago.Designer.cs">
+      <DependentUpon>Formas de Pago.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actualizar aseguradora.cs">
+    <Compile Include="Aseguradora.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar aseguradora.Designer.cs">
-      <DependentUpon>Actualizar aseguradora.cs</DependentUpon>
+    <Compile Include="Aseguradora.Designer.cs">
+      <DependentUpon>Aseguradora.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actualizar Laboratorio.cs">
+    <Compile Include="Laboratorios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar Laboratorio.Designer.cs">
-      <DependentUpon>Actualizar Laboratorio.cs</DependentUpon>
+    <Compile Include="Laboratorios.Designer.cs">
+      <DependentUpon>Laboratorios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Actualizar Suministros.cs">
+    <Compile Include="Inventario de Suministros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actualizar Suministros.Designer.cs">
-      <DependentUpon>Actualizar Suministros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Actualizar inventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Actualizar inventario.Designer.cs">
-      <DependentUpon>Actualizar inventario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nueva Aseguradora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nueva Aseguradora.Designer.cs">
-      <DependentUpon>Nueva Aseguradora.cs</DependentUpon>
+    <Compile Include="Inventario de Suministros.Designer.cs">
+      <DependentUpon>Inventario de Suministros.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -138,18 +126,6 @@
     <Compile Include="Bienvenido.Designer.cs">
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </Compile>
-    <Compile Include="Datos paciente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Datos paciente.Designer.cs">
-      <DependentUpon>Datos paciente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Datos empleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Datos empleado.Designer.cs">
-      <DependentUpon>Datos empleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="MDIParent1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,23 +138,11 @@
     <Compile Include="Nuevo examen.Designer.cs">
       <DependentUpon>Nuevo examen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nuevo inventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nuevo inventario.Designer.cs">
-      <DependentUpon>Nuevo inventario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Nuevo Laboratorio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Nuevo Laboratorio.Designer.cs">
       <DependentUpon>Nuevo Laboratorio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nuevos suministros.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nuevos suministros.Designer.cs">
-      <DependentUpon>Nuevos suministros.cs</DependentUpon>
     </Compile>
     <Compile Include="Reporte de suministros.cs">
       <SubType>Form</SubType>
@@ -213,17 +177,14 @@
       <DependentUpon>Reporte_Examen_Paciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Validaciones.cs" />
-    <EmbeddedResource Include="Actualizar aseguradora.resx">
-      <DependentUpon>Actualizar aseguradora.cs</DependentUpon>
+    <EmbeddedResource Include="Aseguradora.resx">
+      <DependentUpon>Aseguradora.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Actualizar Laboratorio.resx">
-      <DependentUpon>Actualizar Laboratorio.cs</DependentUpon>
+    <EmbeddedResource Include="Laboratorios.resx">
+      <DependentUpon>Laboratorios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Actualizar pagos.resx">
-      <DependentUpon>Actualizar pagos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Actualizar Suministros.resx">
-      <DependentUpon>Actualizar Suministros.cs</DependentUpon>
+    <EmbeddedResource Include="Formas de Pago.resx">
+      <DependentUpon>Formas de Pago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cotizaciones.resx">
       <DependentUpon>Cotizaciones.cs</DependentUpon>
@@ -231,41 +192,26 @@
     <EmbeddedResource Include="Bienvenido.resx">
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Datos paciente.resx">
-      <DependentUpon>Datos paciente.cs</DependentUpon>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Datos empleado.resx">
-      <DependentUpon>Datos empleado.cs</DependentUpon>
+    <EmbeddedResource Include="Empleado.resx">
+      <DependentUpon>Empleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Actualizar datos del cliente.resx">
-      <DependentUpon>Actualizar datos del cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Tipo de Examen.resx">
+      <DependentUpon>Tipo de Examen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Actualizar datos del empleado.resx">
-      <DependentUpon>Actualizar datos del empleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Actualizar examenes.resx">
-      <DependentUpon>Actualizar examenes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Actualizar inventario.resx">
-      <DependentUpon>Actualizar inventario.cs</DependentUpon>
+    <EmbeddedResource Include="Inventario de Suministros.resx">
+      <DependentUpon>Inventario de Suministros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nueva Aseguradora.resx">
-      <DependentUpon>Nueva Aseguradora.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Nuevo examen.resx">
       <DependentUpon>Nuevo examen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nuevo inventario.resx">
-      <DependentUpon>Nuevo inventario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Nuevo Laboratorio.resx">
       <DependentUpon>Nuevo Laboratorio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nuevos suministros.resx">
-      <DependentUpon>Nuevos suministros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte de suministros.resx">
       <DependentUpon>Reporte de suministros.cs</DependentUpon>
@@ -382,6 +328,27 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buscar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New-File.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete-.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recargar.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

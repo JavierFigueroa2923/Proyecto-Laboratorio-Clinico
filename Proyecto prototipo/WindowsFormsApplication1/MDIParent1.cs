@@ -18,19 +18,13 @@ namespace WindowsFormsApplication1
         Reporte_pagos rep_pag;
         Reporte_de_suministros rep_sum;
         Cotizacion cot;
-        Datos_del_paciente dat_pac;
-        Datos_del_empleado dat_emp;
         frm_act_cliente act_cliente;
         frm_act_emp act_emp;
         frm_act_examenes act_exam;
         frm_act_aseg act_aseg;
-        frm_aseguradora frm_aseg;
         frm_act_pago act_pago;
         frm_act_inventario act_inv;
         frm_nuevo_examen frm_nexam;
-        frm_Nuevo_inventario frm_ninventario;
-        Nuevos_suministros frm_sumin;
-        frm_act_sum frm_actsum;
         Nuevo_Laboratorio frm_nlab;
         frm_act_lab frm_actlab;
 
@@ -188,36 +182,9 @@ namespace WindowsFormsApplication1
         }
         
     
-        private void nuevoEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dat_emp == null)
-            {
-                dat_emp = new Datos_del_empleado();
-                dat_emp.MdiParent = this;
-                dat_emp.FormClosed += new FormClosedEventHandler(dat_emp_FormClosed);
-                dat_emp.Show();
-            }
-        }
-        void dat_emp_FormClosed(object sender, EventArgs e)
-        {
-            dat_emp = null;
-        }
 
 
-        private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dat_pac == null)
-            {
-                dat_pac = new Datos_del_paciente();
-                dat_pac.MdiParent = this;
-                dat_pac.FormClosed += new FormClosedEventHandler(dat_pac_FormClosed);
-                dat_pac.Show();
-            }
-        }
-        void dat_pac_FormClosed(object sender, EventArgs e)
-        {
-            dat_pac = null;
-        }
+
 
 
         private void nuevaCotizacionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -253,20 +220,7 @@ namespace WindowsFormsApplication1
 
          //   77777777777777777777777777777777777777777777777777777777777777777777777777777
 
-        private void nuevaAseguradoraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frm_aseg == null)
-            {
-                frm_aseg = new frm_aseguradora();
-                frm_aseg.MdiParent = this;
-                frm_aseg.FormClosed += new FormClosedEventHandler(aseguradora_FormClosed);
-                frm_aseg.Show();
-            }
-        }
-        void aseguradora_FormClosed(object sender, EventArgs e)
-        {
-            frm_aseg = null;
-        }
+
 
         private void actualizarExamenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -334,21 +288,6 @@ namespace WindowsFormsApplication1
 
 
 
-        private void actualizarSuministrosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frm_actsum == null)
-            {
-                frm_actsum = new frm_act_sum();
-                frm_actsum.MdiParent = this;
-                frm_actsum.FormClosed += new FormClosedEventHandler(act_sum_FormClosed);
-                frm_actsum.Show();
-            }
-        }
-        void act_sum_FormClosed(object sender, EventArgs e)
-        {
-            frm_actsum = null;
-        }
-
 
 
         private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -386,37 +325,6 @@ namespace WindowsFormsApplication1
             act_emp = null;
         }
 
-        private void nuevoSuministroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frm_sumin == null)
-            {
-                frm_sumin = new Nuevos_suministros();
-                frm_sumin.MdiParent = this;
-                frm_sumin.FormClosed += new FormClosedEventHandler(nsumin_FormClosed);
-                frm_sumin.Show();
-            }
-        }
-        void nsumin_FormClosed(object sender, EventArgs e)
-        {
-            frm_sumin = null;
-        }
-
-
-
-        private void nuevoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (frm_ninventario == null)
-            {
-                frm_ninventario = new frm_Nuevo_inventario();
-                frm_ninventario.MdiParent = this;
-                frm_ninventario.FormClosed += new FormClosedEventHandler(frm_ninventario_FormClosed);
-                frm_ninventario.Show();
-            }
-        }
-        void frm_ninventario_FormClosed(object sender, EventArgs e)
-        {
-            frm_ninventario = null;
-        }
 
         private void reporteDeSuministrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -463,5 +371,9 @@ namespace WindowsFormsApplication1
             frm_nlab = null;
         }
 
+        private void actualizarSuministrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
