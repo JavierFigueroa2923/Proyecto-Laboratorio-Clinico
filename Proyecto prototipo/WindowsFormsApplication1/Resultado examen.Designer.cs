@@ -229,7 +229,9 @@
             this.Controls.Add(this.gpb_tip_exam);
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Lbl_titulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Resultado_examen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resultado_examen";
             this.gpb_vista_result_exm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vist_result_exam)).EndInit();

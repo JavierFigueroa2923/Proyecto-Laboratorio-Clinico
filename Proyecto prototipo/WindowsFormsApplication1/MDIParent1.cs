@@ -38,6 +38,9 @@ namespace WindowsFormsApplication1
         Cargo_Empleado frm_cargo_emp;
         Tipo_de_muestra frm_tip_must;
         frm_muestra frm_muestras;
+        Factura frm_fact;
+        Resultado_examen frm_rest_exam;
+        Cotizacion frm_cotiz;
 
         private int childFormNumber = 0;
 
@@ -549,6 +552,51 @@ namespace WindowsFormsApplication1
         void frm_muestras_FormClosed(object sender, EventArgs e)
         {
             frm_muestras = null;
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_fact == null)
+            {
+                frm_fact = new Factura();
+                frm_fact.MdiParent = this;
+                frm_fact.FormClosed += new FormClosedEventHandler(frm_factFormClosed);
+                frm_fact.Show();
+            }
+        }
+        void frm_factFormClosed(object sender, EventArgs e)
+        {
+            frm_fact = null;
+        }
+
+        private void resultadoExamenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_rest_exam == null)
+            {
+                frm_rest_exam = new Resultado_examen();
+                frm_rest_exam.MdiParent = this;
+                frm_rest_exam.FormClosed += new FormClosedEventHandler(frm_rest_exam_FormClosed);
+                frm_rest_exam.Show();
+            }
+        }
+        void frm_rest_exam_FormClosed(object sender, EventArgs e)
+        {
+            frm_rest_exam = null;
+        }
+
+        private void cotizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_cotiz == null)
+            {
+                frm_cotiz = new Cotizacion();
+                frm_cotiz.MdiParent = this;
+                frm_cotiz.FormClosed += new FormClosedEventHandler(frm_cotiz_FormClosed);
+                frm_cotiz.Show();
+            }
+        }
+        void frm_cotiz_FormClosed(object sender, EventArgs e)
+        {
+            frm_cotiz = null;
         }
     }
 }

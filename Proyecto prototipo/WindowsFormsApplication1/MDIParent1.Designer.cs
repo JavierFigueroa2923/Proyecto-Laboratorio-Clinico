@@ -69,6 +69,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resultadoExamenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -266,7 +269,9 @@
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pagosToolStripMenuItem,
-            this.reporteDeSuministrosToolStripMenuItem});
+            this.reporteDeSuministrosToolStripMenuItem,
+            this.facturasToolStripMenuItem,
+            this.resultadoExamenesToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -291,7 +296,8 @@
             this.creacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tituloEmpleadoToolStripMenuItem,
             this.tipoMuestraToolStripMenuItem,
-            this.muestraToolStripMenuItem});
+            this.muestraToolStripMenuItem,
+            this.cotizacionToolStripMenuItem});
             this.creacionToolStripMenuItem.Name = "creacionToolStripMenuItem";
             this.creacionToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.creacionToolStripMenuItem.Text = "Creacion";
@@ -299,21 +305,21 @@
             // tituloEmpleadoToolStripMenuItem
             // 
             this.tituloEmpleadoToolStripMenuItem.Name = "tituloEmpleadoToolStripMenuItem";
-            this.tituloEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.tituloEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.tituloEmpleadoToolStripMenuItem.Text = "Titulo Empleado";
             this.tituloEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.tituloEmpleadoToolStripMenuItem_Click);
             // 
             // tipoMuestraToolStripMenuItem
             // 
             this.tipoMuestraToolStripMenuItem.Name = "tipoMuestraToolStripMenuItem";
-            this.tipoMuestraToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.tipoMuestraToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.tipoMuestraToolStripMenuItem.Text = "Tipo Muestra";
             this.tipoMuestraToolStripMenuItem.Click += new System.EventHandler(this.tipoMuestraToolStripMenuItem_Click);
             // 
             // muestraToolStripMenuItem
             // 
             this.muestraToolStripMenuItem.Name = "muestraToolStripMenuItem";
-            this.muestraToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.muestraToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.muestraToolStripMenuItem.Text = "Muestra";
             this.muestraToolStripMenuItem.Click += new System.EventHandler(this.muestraToolStripMenuItem_Click);
             // 
@@ -378,6 +384,27 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
+            // 
+            // facturasToolStripMenuItem
+            // 
+            this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.facturasToolStripMenuItem.Text = "Facturas";
+            this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
+            // 
+            // resultadoExamenesToolStripMenuItem
+            // 
+            this.resultadoExamenesToolStripMenuItem.Name = "resultadoExamenesToolStripMenuItem";
+            this.resultadoExamenesToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.resultadoExamenesToolStripMenuItem.Text = "Resultado Examenes";
+            this.resultadoExamenesToolStripMenuItem.Click += new System.EventHandler(this.resultadoExamenesToolStripMenuItem_Click);
+            // 
+            // cotizacionToolStripMenuItem
+            // 
+            this.cotizacionToolStripMenuItem.Name = "cotizacionToolStripMenuItem";
+            this.cotizacionToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.cotizacionToolStripMenuItem.Text = "Cotizacion";
+            this.cotizacionToolStripMenuItem.Click += new System.EventHandler(this.cotizacionToolStripMenuItem_Click);
             // 
             // MDIParent1
             // 
@@ -444,6 +471,9 @@
         private System.Windows.Forms.ToolStripMenuItem cargoEmpleadoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tipoMuestraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem muestraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resultadoExamenesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cotizacionToolStripMenuItem;
     }
 }
 

@@ -215,3 +215,12 @@ C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\
 C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
 C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Area_de_laboratorio.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Membresia.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources

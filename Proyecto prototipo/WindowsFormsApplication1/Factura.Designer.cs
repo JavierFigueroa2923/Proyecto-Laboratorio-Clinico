@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.btn_elim_inv_sumin = new System.Windows.Forms.Button();
             this.lbl_busc_tip_exam = new System.Windows.Forms.Label();
             this.txt_busc_fact = new System.Windows.Forms.TextBox();
@@ -298,7 +299,9 @@
             this.Controls.Add(this.gpb_vista_fct);
             this.Controls.Add(this.gpb_datos_fct);
             this.Controls.Add(this.Lbl_titulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Factura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Factura";
             this.gpb_vista_fct.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vista_fct)).EndInit();
