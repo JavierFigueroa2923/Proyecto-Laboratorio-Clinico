@@ -47,6 +47,7 @@
             this.actualizarInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargoEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.examenDePacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permisosRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +80,7 @@
             this.mantenimientosToolStripMenuItem,
             this.reportesToolStripMenuItem,
             this.creacionToolStripMenuItem,
+            this.seguridadToolStripMenuItem,
             this.helpMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
@@ -212,6 +215,13 @@
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
+            // citasToolStripMenuItem
+            // 
+            this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
+            this.citasToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.citasToolStripMenuItem.Text = "Citas";
+            this.citasToolStripMenuItem.Click += new System.EventHandler(this.citasToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -345,12 +355,19 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // citasToolStripMenuItem
+            // seguridadToolStripMenuItem
             // 
-            this.citasToolStripMenuItem.Name = "citasToolStripMenuItem";
-            this.citasToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.citasToolStripMenuItem.Text = "Citas";
-            this.citasToolStripMenuItem.Click += new System.EventHandler(this.citasToolStripMenuItem_Click);
+            this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.permisosRolesToolStripMenuItem});
+            this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.seguridadToolStripMenuItem.Text = "Seguridad";
+            // 
+            // permisosRolesToolStripMenuItem
+            // 
+            this.permisosRolesToolStripMenuItem.Name = "permisosRolesToolStripMenuItem";
+            this.permisosRolesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.permisosRolesToolStripMenuItem.Text = "Permisos - Roles";
             // 
             // MDIParent1
             // 
@@ -414,6 +431,8 @@
         private System.Windows.Forms.ToolStripMenuItem cargoEmpleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permisosRolesToolStripMenuItem;
     }
 }
 
