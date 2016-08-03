@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frm_eti : Form
+    public partial class frm_etiqueta : Form
     {
-        public frm_eti()
+        public frm_etiqueta()
         {
             InitializeComponent();
-        }
-
-        private void grb_datos1_per_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

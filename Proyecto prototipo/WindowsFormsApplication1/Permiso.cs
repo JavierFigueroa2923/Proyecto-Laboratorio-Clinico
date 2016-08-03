@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frm_per : Form
+    public partial class frm_permiso : Form
     {
-        public frm_per()
+        public frm_permiso()
         {
             InitializeComponent();
+        }
+
+        private void btn_busc_id_per_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

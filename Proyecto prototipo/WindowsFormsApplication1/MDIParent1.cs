@@ -27,9 +27,17 @@ namespace WindowsFormsApplication1
         frm_nuevo_examen frm_nexam;
         Nuevo_Laboratorio frm_nlab;
         frm_act_lab frm_actlab;
-        //frm_per frm_per;
-        //frm_eti frm_eti;
-
+        Cargo_Empleado frm_cargoemp;
+        Manejo_Usuarios frm_users;
+        Citas frm_citas;
+        frm_permiso frm_per;
+        frm_etiqueta frm_etiquet;
+        Area_de_laboratorio frm_area_lab;
+        Membresia frm_mem;
+        Titulo_de_empleado frm_tit_emp;
+        Cargo_Empleado frm_cargo_emp;
+        Tipo_de_muestra frm_tip_must;
+        frm_muestra frm_muestras;
 
         private int childFormNumber = 0;
 
@@ -376,35 +384,171 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void permisosRolesToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void cargoEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(frm_cargoemp == null)
+            {
+                frm_cargoemp = new Cargo_Empleado();
+                frm_cargoemp.MdiParent = this;
+                frm_cargoemp.FormClosed += new FormClosedEventHandler(frm_cargoemp_FormClosed);
+                frm_cargoemp.Show();
+            }
+        }
+        void frm_cargoemp_FormClosed(object sender, EventArgs e)
+        {
+            frm_cargoemp = null;
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(frm_users == null)
+            {
+                frm_users = new Manejo_Usuarios();
+                frm_users.MdiParent = this;
+                frm_users.FormClosed += new FormClosedEventHandler(frm_user_FormClosed);
+                frm_users.Show();
+            }
+        }
+        void frm_user_FormClosed(object sender, EventArgs e)
+        {
+            frm_users = null;
+        }
+
+        private void citasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_citas == null)
+            {
+                frm_citas = new Citas();
+                frm_citas.MdiParent = this;
+                frm_citas.FormClosed += new FormClosedEventHandler(frm_citas_FormClosed);
+                frm_citas.Show();
+            }
+        }
+        void frm_citas_FormClosed(object sender, EventArgs e)
+        {
+            frm_citas = null;
+        }
+
+        private void permisoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(frm_per == null)
             {
-                frm_per = new frm_per();
+                frm_per = new frm_permiso();
                 frm_per.MdiParent = this;
                 frm_per.FormClosed += new FormClosedEventHandler(frm_per_FormClosed);
                 frm_per.Show();
             }
         }
-
         void frm_per_FormClosed(object sender, EventArgs e)
         {
             frm_per = null;
         }
 
-        private void actualizarEtiquetasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void etiquetasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(frm_eti == null)
+            if(frm_etiquet == null)
             {
-                frm_eti = new frm_eti();
-                frm_eti.MdiParent = this;
-                frm_eti.FormClosed += new FormClosedEventHandler(frm_eti_FormClosed);
-                frm_eti.Show();
+                frm_etiquet = new frm_etiqueta();
+                frm_etiquet.MdiParent = this;
+                frm_etiquet.FormClosed += new FormClosedEventHandler(frm_etiquet_FormClosed);
+                frm_etiquet.Show();
+            }
+
+        }
+        void frm_etiquet_FormClosed(object sender, EventArgs e)
+        {
+            frm_etiquet = null;
+        }
+
+        private void areaLaboratorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_area_lab == null)
+            {
+                frm_area_lab = new Area_de_laboratorio();
+                frm_area_lab.MdiParent = this;
+                frm_area_lab.FormClosed += new FormClosedEventHandler(frm_area_lab_FormClosed);
+                frm_area_lab.Show();
             }
         }
-        void frm_eti_FormClosed(object sender, EventArgs e)
+        void frm_area_lab_FormClosed(object sender, EventArgs e)
         {
-            frm_eti = null;
+            frm_area_lab = null;
+        }
+
+        private void membreciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_mem == null)
+            {
+                frm_mem = new Membresia();
+                frm_mem.MdiParent = this;
+                frm_mem.FormClosed += new FormClosedEventHandler(frm_mem_lab_FormClosed);
+                frm_mem.Show();
+            }
+        }
+        void frm_mem_lab_FormClosed(object sender, EventArgs e)
+        {
+            frm_mem = null;
+        }
+
+        private void tituloEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_tit_emp == null)
+            {
+                frm_tit_emp = new Titulo_de_empleado();
+                frm_tit_emp.MdiParent = this;
+                frm_tit_emp.FormClosed += new FormClosedEventHandler(frm_tit_emp_lab_FormClosed);
+                frm_tit_emp.Show();
+            }
+        }
+        void frm_tit_emp_lab_FormClosed(object sender, EventArgs e)
+        {
+            frm_tit_emp = null;
+        }
+
+        private void cargoEmpleadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (frm_cargo_emp == null)
+            {
+                frm_cargo_emp = new Cargo_Empleado();
+                frm_cargo_emp.MdiParent = this;
+                frm_cargo_emp.FormClosed += new FormClosedEventHandler(frm_cargo_emp_lab_FormClosed);
+                frm_cargo_emp.Show();
+            }
+        }
+        void frm_cargo_emp_lab_FormClosed(object sender, EventArgs e)
+        {
+            frm_cargo_emp = null;
+        }
+
+        private void tipoMuestraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_tip_must == null)
+            {
+                frm_tip_must = new Tipo_de_muestra();
+                frm_tip_must.MdiParent = this;
+                frm_tip_must.FormClosed += new FormClosedEventHandler(frm_tip_must_lab_FormClosed);
+                frm_tip_must.Show();
+            }
+        }
+        void frm_tip_must_lab_FormClosed(object sender, EventArgs e)
+        {
+            frm_tip_must = null;
+        }
+
+        private void muestraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_muestras == null)
+            {
+                frm_muestras = new frm_muestra();
+                frm_muestras.MdiParent = this;
+                frm_muestras.FormClosed += new FormClosedEventHandler(frm_muestras_FormClosed);
+                frm_muestras.Show();
+            }
+        }
+        void frm_muestras_FormClosed(object sender, EventArgs e)
+        {
+            frm_muestras = null;
         }
     }
 }

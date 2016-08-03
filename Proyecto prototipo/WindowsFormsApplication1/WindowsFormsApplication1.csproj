@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area de laboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area de laboratorio.Designer.cs">
+      <DependentUpon>Area de laboratorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cargo Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,11 +102,47 @@
     <Compile Include="Empleado.Designer.cs">
       <DependentUpon>Empleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Etiqueta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Etiqueta.Designer.cs">
+      <DependentUpon>Etiqueta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manejo Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Manejo Usuarios.Designer.cs">
       <DependentUpon>Manejo Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Membresia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Membresia.Designer.cs">
+      <DependentUpon>Membresia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Muestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Muestra.Designer.cs">
+      <DependentUpon>Muestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Permiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Permiso.Designer.cs">
+      <DependentUpon>Permiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resultado examen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resultado examen.Designer.cs">
+      <DependentUpon>Resultado examen.cs</DependentUpon>
     </Compile>
     <Compile Include="Tipo de Examen.cs">
       <SubType>Form</SubType>
@@ -194,7 +236,22 @@
     <Compile Include="Reporte_Examen_Paciente.Designer.cs">
       <DependentUpon>Reporte_Examen_Paciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tipo de muestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipo de muestra.Designer.cs">
+      <DependentUpon>Tipo de muestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Titulo de empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Titulo de empleado.Designer.cs">
+      <DependentUpon>Titulo de empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Validaciones.cs" />
+    <EmbeddedResource Include="Area de laboratorio.resx">
+      <DependentUpon>Area de laboratorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Aseguradora.resx">
       <DependentUpon>Aseguradora.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +260,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Citas.resx">
       <DependentUpon>Citas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etiqueta.resx">
+      <DependentUpon>Etiqueta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratorios.resx">
       <DependentUpon>Laboratorios.cs</DependentUpon>
@@ -224,6 +287,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manejo Usuarios.resx">
       <DependentUpon>Manejo Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Membresia.resx">
+      <DependentUpon>Membresia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Muestra.resx">
+      <DependentUpon>Muestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permiso.resx">
+      <DependentUpon>Permiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resultado examen.resx">
+      <DependentUpon>Resultado examen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tipo de Examen.resx">
       <DependentUpon>Tipo de Examen.cs</DependentUpon>
@@ -267,6 +342,12 @@
     </Compile>
     <EmbeddedResource Include="Reporte_Examen_Paciente.resx">
       <DependentUpon>Reporte_Examen_Paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipo de muestra.resx">
+      <DependentUpon>Tipo de muestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Titulo de empleado.resx">
+      <DependentUpon>Titulo de empleado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -376,6 +457,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Recargar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clinica.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

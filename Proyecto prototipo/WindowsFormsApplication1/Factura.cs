@@ -10,31 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frm_act_inventario : Form
+    public partial class Factura : Form
     {
-        public frm_act_inventario()
+        public Factura()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_titulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gpb_datos_inv_sumin_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
