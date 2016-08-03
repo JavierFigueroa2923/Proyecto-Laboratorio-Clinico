@@ -27,9 +27,9 @@ namespace WindowsFormsApplication1
         frm_nuevo_examen frm_nexam;
         Nuevo_Laboratorio frm_nlab;
         frm_act_lab frm_actlab;
-
-
-
+        Cargo_Empleado frm_cargoemp;
+        Manejo_Usuarios frm_users;
+        Citas frm_citas;
 
         private int childFormNumber = 0;
 
@@ -374,6 +374,52 @@ namespace WindowsFormsApplication1
         private void actualizarSuministrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void cargoEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(frm_cargoemp == null)
+            {
+                frm_cargoemp = new Cargo_Empleado();
+                frm_cargoemp.MdiParent = this;
+                frm_cargoemp.FormClosed += new FormClosedEventHandler(frm_cargoemp_FormClosed);
+                frm_cargoemp.Show();
+            }
+        }
+        void frm_cargoemp_FormClosed(object sender, EventArgs e)
+        {
+            frm_cargoemp = null;
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(frm_users == null)
+            {
+                frm_users = new Manejo_Usuarios();
+                frm_users.MdiParent = this;
+                frm_users.FormClosed += new FormClosedEventHandler(frm_user_FormClosed);
+                frm_users.Show();
+            }
+        }
+        void frm_user_FormClosed(object sender, EventArgs e)
+        {
+            frm_users = null;
+        }
+
+        private void citasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_citas == null)
+            {
+                frm_citas = new Citas();
+                frm_citas.MdiParent = this;
+                frm_citas.FormClosed += new FormClosedEventHandler(frm_citas_FormClosed);
+                frm_citas.Show();
+            }
+        }
+        void frm_citas_FormClosed(object sender, EventArgs e)
+        {
+            frm_citas = null;
         }
     }
 }
