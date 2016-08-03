@@ -128,6 +128,7 @@ C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\
 C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
 C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
@@ -155,3 +156,8 @@ C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+=======
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cargo_Empleado.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Citas.resources
+>>>>>>> origin/master
