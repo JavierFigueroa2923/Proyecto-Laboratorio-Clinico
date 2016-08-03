@@ -200,7 +200,7 @@
             // 
             // txt_id_labs
             // 
-            this.txt_id_labs.Location = new System.Drawing.Point(129, 19);
+            this.txt_id_labs.Location = new System.Drawing.Point(121, 19);
             this.txt_id_labs.Name = "txt_id_labs";
             this.txt_id_labs.Size = new System.Drawing.Size(203, 23);
             this.txt_id_labs.TabIndex = 27;

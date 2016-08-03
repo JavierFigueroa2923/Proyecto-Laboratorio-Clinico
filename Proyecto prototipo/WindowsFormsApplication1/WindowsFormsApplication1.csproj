@@ -66,7 +66,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Cargo Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,13 +77,6 @@
     </Compile>
     <Compile Include="Citas.Designer.cs">
       <DependentUpon>Citas.cs</DependentUpon>
-=======
-    <Compile Include="Area de laboratorio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Area de laboratorio.Designer.cs">
-      <DependentUpon>Area de laboratorio.cs</DependentUpon>
->>>>>>> origin/master
     </Compile>
     <Compile Include="Cotizaciones.cs">
       <SubType>Form</SubType>
@@ -104,25 +96,11 @@
     <Compile Include="Empleado.Designer.cs">
       <DependentUpon>Empleado.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Etiqueta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Etiqueta.Designer.cs">
-      <DependentUpon>Etiqueta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Permiso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Permiso.Designer.cs">
-      <DependentUpon>Permiso.cs</DependentUpon>
-=======
     <Compile Include="Manejo Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Manejo Usuarios.Designer.cs">
       <DependentUpon>Manejo Usuarios.cs</DependentUpon>
->>>>>>> origin/master
     </Compile>
     <Compile Include="Tipo de Examen.cs">
       <SubType>Form</SubType>
@@ -216,29 +194,15 @@
     <Compile Include="Reporte_Examen_Paciente.Designer.cs">
       <DependentUpon>Reporte_Examen_Paciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Titulo de empleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Titulo de empleado.Designer.cs">
-      <DependentUpon>Titulo de empleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Validaciones.cs" />
-    <EmbeddedResource Include="Area de laboratorio.resx">
-      <DependentUpon>Area de laboratorio.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Aseguradora.resx">
       <DependentUpon>Aseguradora.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Etiqueta.resx">
-      <DependentUpon>Etiqueta.cs</DependentUpon>
-=======
     <EmbeddedResource Include="Cargo Empleado.resx">
       <DependentUpon>Cargo Empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Citas.resx">
       <DependentUpon>Citas.cs</DependentUpon>
->>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="Laboratorios.resx">
       <DependentUpon>Laboratorios.cs</DependentUpon>
@@ -258,13 +222,8 @@
     <EmbeddedResource Include="Empleado.resx">
       <DependentUpon>Empleado.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Permiso.resx">
-      <DependentUpon>Permiso.cs</DependentUpon>
-=======
     <EmbeddedResource Include="Manejo Usuarios.resx">
       <DependentUpon>Manejo Usuarios.cs</DependentUpon>
->>>>>>> origin/master
     </EmbeddedResource>
     <EmbeddedResource Include="Tipo de Examen.resx">
       <DependentUpon>Tipo de Examen.cs</DependentUpon>
@@ -308,9 +267,6 @@
     </Compile>
     <EmbeddedResource Include="Reporte_Examen_Paciente.resx">
       <DependentUpon>Reporte_Examen_Paciente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Titulo de empleado.resx">
-      <DependentUpon>Titulo de empleado.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
