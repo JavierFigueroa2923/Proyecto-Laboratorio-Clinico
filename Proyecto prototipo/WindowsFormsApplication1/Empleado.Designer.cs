@@ -49,9 +49,10 @@
             this.grb_datos_emp = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_id_empleado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grb_datosp_emp = new System.Windows.Forms.GroupBox();
+            this.btn_nuev_cargo_emp = new System.Windows.Forms.Button();
             this.btn_nuev_titulo = new System.Windows.Forms.Button();
             this.cbo_sexo_emp = new System.Windows.Forms.ComboBox();
             this.Lbl_sexo = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.btn_guardar_emp = new System.Windows.Forms.Button();
             this.btn_busc_emp = new System.Windows.Forms.Button();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
-            this.btn_nuev_cargo_emp = new System.Windows.Forms.Button();
             this.grb_datos_emp.SuspendLayout();
             this.grb_datosp_emp.SuspendLayout();
             this.grb_vista_emp.SuspendLayout();
@@ -241,7 +241,7 @@
             // 
             this.grb_datos_emp.Controls.Add(this.comboBox3);
             this.grb_datos_emp.Controls.Add(this.comboBox2);
-            this.grb_datos_emp.Controls.Add(this.comboBox1);
+            this.grb_datos_emp.Controls.Add(this.cbo_id_empleado);
             this.grb_datos_emp.Controls.Add(this.label1);
             this.grb_datos_emp.Controls.Add(this.txt_nombre);
             this.grb_datos_emp.Controls.Add(this.Lbl_nombre);
@@ -279,14 +279,15 @@
             this.comboBox2.Size = new System.Drawing.Size(37, 24);
             this.comboBox2.TabIndex = 78;
             // 
-            // comboBox1
+            // cbo_id_empleado
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(115, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 24);
-            this.comboBox1.TabIndex = 77;
+            this.cbo_id_empleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbo_id_empleado.FormattingEnabled = true;
+            this.cbo_id_empleado.Location = new System.Drawing.Point(115, 17);
+            this.cbo_id_empleado.Name = "cbo_id_empleado";
+            this.cbo_id_empleado.Size = new System.Drawing.Size(111, 24);
+            this.cbo_id_empleado.TabIndex = 77;
+            this.cbo_id_empleado.SelectedIndexChanged += new System.EventHandler(this.cbo_id_empleado_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -320,6 +321,16 @@
             this.grb_datosp_emp.TabIndex = 79;
             this.grb_datosp_emp.TabStop = false;
             this.grb_datosp_emp.Text = "Datos Personales";
+            // 
+            // btn_nuev_cargo_emp
+            // 
+            this.btn_nuev_cargo_emp.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Add;
+            this.btn_nuev_cargo_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_nuev_cargo_emp.Location = new System.Drawing.Point(285, 109);
+            this.btn_nuev_cargo_emp.Name = "btn_nuev_cargo_emp";
+            this.btn_nuev_cargo_emp.Size = new System.Drawing.Size(27, 24);
+            this.btn_nuev_cargo_emp.TabIndex = 115;
+            this.btn_nuev_cargo_emp.UseVisualStyleBackColor = true;
             // 
             // btn_nuev_titulo
             // 
@@ -413,6 +424,7 @@
             this.btn_elim_emp.Text = "ELIMINAR";
             this.btn_elim_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_emp.UseVisualStyleBackColor = true;
+            this.btn_elim_emp.Click += new System.EventHandler(this.btn_elim_emp_Click);
             // 
             // btn_actlz_emp
             // 
@@ -426,6 +438,7 @@
             this.btn_actlz_emp.Text = "ACTUALIZAR";
             this.btn_actlz_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_emp.UseVisualStyleBackColor = true;
+            this.btn_actlz_emp.Click += new System.EventHandler(this.btn_actlz_emp_Click);
             // 
             // btn_guardar_emp
             // 
@@ -439,6 +452,7 @@
             this.btn_guardar_emp.Text = "GUARDAR";
             this.btn_guardar_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_emp.UseVisualStyleBackColor = true;
+            this.btn_guardar_emp.Click += new System.EventHandler(this.btn_guardar_emp_Click);
             // 
             // btn_busc_emp
             // 
@@ -464,16 +478,6 @@
             this.Pic_logo.TabIndex = 54;
             this.Pic_logo.TabStop = false;
             // 
-            // btn_nuev_cargo_emp
-            // 
-            this.btn_nuev_cargo_emp.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Add;
-            this.btn_nuev_cargo_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_nuev_cargo_emp.Location = new System.Drawing.Point(285, 109);
-            this.btn_nuev_cargo_emp.Name = "btn_nuev_cargo_emp";
-            this.btn_nuev_cargo_emp.Size = new System.Drawing.Size(27, 24);
-            this.btn_nuev_cargo_emp.TabIndex = 115;
-            this.btn_nuev_cargo_emp.UseVisualStyleBackColor = true;
-            // 
             // frm_act_emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,6 +497,7 @@
             this.Name = "frm_act_emp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar datos de empleado";
+            this.Load += new System.EventHandler(this.frm_act_emp_Load);
             this.grb_datos_emp.ResumeLayout(false);
             this.grb_datos_emp.PerformLayout();
             this.grb_datosp_emp.ResumeLayout(false);
@@ -525,7 +530,7 @@
         internal System.Windows.Forms.PictureBox Pic_logo;
         internal System.Windows.Forms.Label Label2;
         private System.Windows.Forms.GroupBox grb_datos_emp;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_id_empleado;
         internal System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
