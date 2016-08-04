@@ -39,7 +39,7 @@
             this.txt_nom_aseg = new System.Windows.Forms.TextBox();
             this.lbl_aseguradora = new System.Windows.Forms.Label();
             this.grb_ing_datos_aseg = new System.Windows.Forms.GroupBox();
-            this.tct_id__aseg = new System.Windows.Forms.TextBox();
+            this.txt_id__aseg = new System.Windows.Forms.TextBox();
             this.grb_datos_aseg = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_busc_aseg = new System.Windows.Forms.Button();
@@ -163,7 +163,7 @@
             // grb_ing_datos_aseg
             // 
             this.grb_ing_datos_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.grb_ing_datos_aseg.Controls.Add(this.tct_id__aseg);
+            this.grb_ing_datos_aseg.Controls.Add(this.txt_id__aseg);
             this.grb_ing_datos_aseg.Controls.Add(this.Lbl_id_aseg);
             this.grb_ing_datos_aseg.Controls.Add(this.txt_nom_aseg);
             this.grb_ing_datos_aseg.Controls.Add(this.label1);
@@ -180,15 +180,15 @@
             this.grb_ing_datos_aseg.TabStop = false;
             this.grb_ing_datos_aseg.Text = "Ingreso de Datos";
             // 
-            // tct_id__aseg
+            // txt_id__aseg
             // 
-            this.tct_id__aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_id__aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tct_id__aseg.Location = new System.Drawing.Point(9, 37);
-            this.tct_id__aseg.Name = "tct_id__aseg";
-            this.tct_id__aseg.Size = new System.Drawing.Size(392, 23);
-            this.tct_id__aseg.TabIndex = 63;
+            this.txt_id__aseg.Location = new System.Drawing.Point(9, 37);
+            this.txt_id__aseg.Name = "txt_id__aseg";
+            this.txt_id__aseg.Size = new System.Drawing.Size(392, 23);
+            this.txt_id__aseg.TabIndex = 63;
             // 
             // grb_datos_aseg
             // 
@@ -226,6 +226,7 @@
             this.btn_busc_aseg.Text = "BUSCAR";
             this.btn_busc_aseg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_busc_aseg.UseVisualStyleBackColor = true;
+            this.btn_busc_aseg.Click += new System.EventHandler(this.btn_busc_aseg_Click);
             // 
             // btn_actlz_aseg
             // 
@@ -239,6 +240,7 @@
             this.btn_actlz_aseg.Text = "ACTUALIZAR";
             this.btn_actlz_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_aseg.UseVisualStyleBackColor = true;
+            this.btn_actlz_aseg.Click += new System.EventHandler(this.btn_actlz_aseg_Click);
             // 
             // btn_guardar_aseg
             // 
@@ -252,6 +254,7 @@
             this.btn_guardar_aseg.Text = "GUARDAR";
             this.btn_guardar_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_aseg.UseVisualStyleBackColor = true;
+            this.btn_guardar_aseg.Click += new System.EventHandler(this.btn_guardar_aseg_Click);
             // 
             // Pic_logo
             // 
@@ -323,7 +326,7 @@
         internal System.Windows.Forms.PictureBox Pic_logo;
         internal System.Windows.Forms.Label lbl_aseguradora;
         private System.Windows.Forms.GroupBox grb_ing_datos_aseg;
-        internal System.Windows.Forms.TextBox tct_id__aseg;
+        internal System.Windows.Forms.TextBox txt_id__aseg;
         private System.Windows.Forms.GroupBox grb_datos_aseg;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_guardar_aseg;

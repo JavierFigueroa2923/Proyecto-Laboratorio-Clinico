@@ -114,5 +114,10 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void btn_busc_emp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
