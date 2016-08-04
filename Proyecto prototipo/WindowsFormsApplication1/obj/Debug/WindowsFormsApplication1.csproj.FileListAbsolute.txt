@@ -226,7 +226,6 @@ C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototi
 C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
 C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
 C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
-C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Membresia.resources
 C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
 C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
 C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
@@ -274,3 +273,50 @@ C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources
 C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.txt_fecha_expir.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Area_de_laboratorio.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cargo_Empleado.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Citas.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_lab.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.txt_fecha_expir.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_inventario.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevo_Laboratorio.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_de_suministros.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\mscorlib.dll
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\MySql.Data.xml
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\es\mscorlib.resources.dll
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normidna.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfc.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfd.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfkc.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfkd.nlp

@@ -50,15 +50,15 @@
             this.Lbl_etiqueta = new System.Windows.Forms.Label();
             this.btn_busc_eti = new System.Windows.Forms.Button();
             this.btn_elim_eti = new System.Windows.Forms.Button();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btn_actlz_eti = new System.Windows.Forms.Button();
             this.btn_guardar_eti = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grb_vista_eti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_eti)).BeginInit();
             this.grb_datos2_eti.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_mst_eti)).BeginInit();
             this.grb_datos1_eti.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_busca_eti
@@ -77,6 +77,7 @@
             this.txt_busc_eti.Name = "txt_busc_eti";
             this.txt_busc_eti.Size = new System.Drawing.Size(473, 20);
             this.txt_busc_eti.TabIndex = 172;
+            this.txt_busc_eti.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_busquedaeti_KeyUp);
             // 
             // grb_vista_eti
             // 
@@ -130,6 +131,7 @@
             this.btn_busc__mst_eti.TabIndex = 132;
             this.btn_busc__mst_eti.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_busc__mst_eti.UseVisualStyleBackColor = true;
+            this.btn_busc__mst_eti.Click += new System.EventHandler(this.btn_busc__mst_eti_Click);
             // 
             // Lbl_busc_id_mst_eti
             // 
@@ -148,6 +150,7 @@
             this.txt_busc_mst_eti.Name = "txt_busc_mst_eti";
             this.txt_busc_mst_eti.Size = new System.Drawing.Size(190, 23);
             this.txt_busc_mst_eti.TabIndex = 82;
+            this.txt_busc_mst_eti.TextChanged += new System.EventHandler(this.txt_busc_mst_eti_TextChanged);
             // 
             // grb_datos1_eti
             // 
@@ -260,6 +263,7 @@
             this.btn_busc_eti.Text = "BUSCAR";
             this.btn_busc_eti.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_busc_eti.UseVisualStyleBackColor = true;
+            this.btn_busc_eti.Click += new System.EventHandler(this.btn_busc_eti_Click);
             // 
             // btn_elim_eti
             // 
@@ -273,18 +277,7 @@
             this.btn_elim_eti.Text = "ELIMINAR";
             this.btn_elim_eti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_eti.UseVisualStyleBackColor = true;
-            // 
-            // pic_logo
-            // 
-            this.pic_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_logo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pic_logo.Location = new System.Drawing.Point(702, 12);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(98, 97);
-            this.pic_logo.TabIndex = 165;
-            this.pic_logo.TabStop = false;
+            this.btn_elim_eti.Click += new System.EventHandler(this.btn_elim_eti_Click);
             // 
             // btn_actlz_eti
             // 
@@ -298,6 +291,7 @@
             this.btn_actlz_eti.Text = "ACTUALIZAR";
             this.btn_actlz_eti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_eti.UseVisualStyleBackColor = true;
+            this.btn_actlz_eti.Click += new System.EventHandler(this.btn_actlz_eti_Click);
             // 
             // btn_guardar_eti
             // 
@@ -311,12 +305,25 @@
             this.btn_guardar_eti.Text = "GUARDAR";
             this.btn_guardar_eti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_eti.UseVisualStyleBackColor = true;
+            this.btn_guardar_eti.Click += new System.EventHandler(this.btn_guardar_eti_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(682, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 102);
+            this.pictureBox1.TabIndex = 176;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_etiqueta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 509);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_busca_eti);
             this.Controls.Add(this.btn_busc_eti);
             this.Controls.Add(this.txt_busc_eti);
@@ -325,13 +332,13 @@
             this.Controls.Add(this.grb_datos1_eti);
             this.Controls.Add(this.Lbl_etiqueta);
             this.Controls.Add(this.btn_elim_eti);
-            this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.btn_actlz_eti);
             this.Controls.Add(this.btn_guardar_eti);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_etiqueta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Etiqueta";
+            this.Load += new System.EventHandler(this.frm_etiqueta_Load);
             this.grb_vista_eti.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_eti)).EndInit();
             this.grb_datos2_eti.ResumeLayout(false);
@@ -339,7 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_mst_eti)).EndInit();
             this.grb_datos1_eti.ResumeLayout(false);
             this.grb_datos1_eti.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,6 +377,6 @@
         private System.Windows.Forms.Button btn_elim_eti;
         private System.Windows.Forms.Button btn_actlz_eti;
         private System.Windows.Forms.Button btn_guardar_eti;
-        internal System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

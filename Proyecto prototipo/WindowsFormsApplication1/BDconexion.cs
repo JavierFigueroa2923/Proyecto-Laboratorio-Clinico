@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         MySqlConnection conectar;
         public void obtener_conexion()
         {
-            conectar = new MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
+            conectar = new MySqlConnection("server=localhost; database=bases; uid=root; pwd=;");
             conectar.Open();
 
         }

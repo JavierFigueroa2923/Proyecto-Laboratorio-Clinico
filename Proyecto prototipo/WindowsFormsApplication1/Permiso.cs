@@ -22,7 +22,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
- 
+
+        Validaciones validar = new Validaciones();
 
         //VENTANA PERMISO
 
@@ -143,6 +144,21 @@ namespace WindowsFormsApplication1
         private void frm_permiso_Load(object sender, EventArgs e)
         {
             cl_gridysql.ActualizarGridPermiso(this.dgv_busc_per, "select pk_id_perm as Identificador, nombre_prm as Nombre, descripcion_perm as Descripcion from permiso;");
+        }
+
+        private void txt_id_per_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.validacion_solonumeros(e);
+        }
+
+        private void txt_nombre_per_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.validacion_sololetras(e);
+        }
+
+        private void txt_busc_id_per_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.validacion_sololetras(e);
         }
     }
 }

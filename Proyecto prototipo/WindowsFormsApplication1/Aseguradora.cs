@@ -23,8 +23,8 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
-                string consulta = "insert into ASEGURADORA values ('" + txt_id__aseg + "','" + txt_num_aseg + "','" + txt_nom_aseg + "','" + txt_dsc_aseg + "');";
+                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;";
+                string consulta = "insert into ASEGURADORA values ('" + tct_id__aseg + "','" + txt_num_aseg + "','" + txt_nom_aseg + "','" + txt_dsc_aseg + "');";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta, con);
                 MySqlDataReader re;
@@ -47,8 +47,8 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
-                string consulta2 = "update proyecto_laboratorio.ASEGURADORA set numero_seguro_asgd='" + txt_num_aseg + "',nombre_asgd='" + txt_nom_aseg + "' , descuento_asgd= '" + txt_dsc_aseg + "' where pk_id_asgd ='" + txt_id__aseg + "';";
+                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
+                string consulta2 = "update proyecto_laboratorio.ASEGURADORA set numero_seguro_asgd='" + txt_num_aseg + "',nombre_asgd='" + txt_nom_aseg + "' , descuento_asgd= '" + txt_dsc_aseg + "' where pk_id_asgd ='" + tct_id__aseg + "';";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta2, con);
                 MySqlDataReader re;
@@ -77,3 +77,4 @@ namespace WindowsFormsApplication1
             throw new NotImplementedException();
         }
     }
+}

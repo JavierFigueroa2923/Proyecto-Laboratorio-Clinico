@@ -36,7 +36,7 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_id_xmn = new System.Windows.Forms.TextBox();
             this.gpb_tip_exam = new System.Windows.Forms.GroupBox();
             this.gpb_vista_tips_exam = new System.Windows.Forms.GroupBox();
             this.dgv_vist_tips_exam = new System.Windows.Forms.DataGridView();
@@ -117,17 +117,17 @@
             this.PictureBox1.TabIndex = 42;
             this.PictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txt_id_xmn
             // 
-            this.textBox1.Location = new System.Drawing.Point(118, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 23);
-            this.textBox1.TabIndex = 49;
+            this.txt_id_xmn.Location = new System.Drawing.Point(118, 19);
+            this.txt_id_xmn.Name = "txt_id_xmn";
+            this.txt_id_xmn.Size = new System.Drawing.Size(191, 23);
+            this.txt_id_xmn.TabIndex = 49;
             // 
             // gpb_tip_exam
             // 
             this.gpb_tip_exam.Controls.Add(this.Lbl_id_examen);
-            this.gpb_tip_exam.Controls.Add(this.textBox1);
+            this.gpb_tip_exam.Controls.Add(this.txt_id_xmn);
             this.gpb_tip_exam.Controls.Add(this.txt_nombre);
             this.gpb_tip_exam.Controls.Add(this.Lbl_nombre);
             this.gpb_tip_exam.Controls.Add(this.Lbl_descripcion);
@@ -172,6 +172,7 @@
             this.btn_busc_tip_exam.Text = "BUSCAR";
             this.btn_busc_tip_exam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_busc_tip_exam.UseVisualStyleBackColor = true;
+            this.btn_busc_tip_exam.Click += new System.EventHandler(this.btn_busc_tip_exam_Click);
             // 
             // btn_actlz_aseg
             // 
@@ -185,6 +186,7 @@
             this.btn_actlz_aseg.Text = "ACTUALIZAR";
             this.btn_actlz_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_aseg.UseVisualStyleBackColor = true;
+            this.btn_actlz_aseg.Click += new System.EventHandler(this.btn_actlz_aseg_Click);
             // 
             // btn_guardar_aseg
             // 
@@ -198,6 +200,7 @@
             this.btn_guardar_aseg.Text = "GUARDAR";
             this.btn_guardar_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_aseg.UseVisualStyleBackColor = true;
+            this.btn_guardar_aseg.Click += new System.EventHandler(this.btn_guardar_aseg_Click);
             // 
             // lbl_busc_tip_exam
             // 
@@ -234,6 +237,7 @@
             this.Name = "frm_act_examenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipos de Examenes";
+            this.Load += new System.EventHandler(this.frm_act_examenes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.gpb_tip_exam.ResumeLayout(false);
             this.gpb_tip_exam.PerformLayout();
@@ -253,7 +257,7 @@
         internal System.Windows.Forms.TextBox txt_nombre;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Label Lbl_titulo;
-        internal System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.TextBox txt_id_xmn;
         private System.Windows.Forms.GroupBox gpb_tip_exam;
         private System.Windows.Forms.GroupBox gpb_vista_tips_exam;
         private System.Windows.Forms.DataGridView dgv_vist_tips_exam;

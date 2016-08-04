@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace WindowsFormsApplication1
 {
+
     public partial class MDIParent1 : Form
     {
         Reporte_Examen_Paciente rep_examenp;
@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
         frm_permiso frm_per;
         frm_etiqueta frm_etiquet;
         Area_de_laboratorio frm_area_lab;
-        Membresia frm_mem;
+        //Membresia frm_mem;
         Titulo_de_empleado frm_tit_emp;
         Cargo_Empleado frm_cargo_emp;
         Tipo_de_muestra frm_tip_must;
@@ -41,8 +41,12 @@ namespace WindowsFormsApplication1
         Factura frm_fact;
         Resultado_examen frm_rest_exam;
         Cotizacion frm_cotiz;
+        frm_act_inventario frm_act_inventarios;
+        frm_act_examenes frm_act_exameness;
 
         private int childFormNumber = 0;
+
+        public String MiPropiedad { get; set; } 
 
         public MDIParent1()
         {
@@ -124,11 +128,10 @@ namespace WindowsFormsApplication1
             }
         }
 
-       
 
         private void MDIParent1_Load(object sender, EventArgs e)
         {
-
+            lbl_usuario.Text = MiPropiedad;
         }
 
         private void mantenimientosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -229,7 +232,6 @@ namespace WindowsFormsApplication1
             act_cliente = null;
         }
 
-         //   77777777777777777777777777777777777777777777777777777777777777777777777777777
 
 
 
@@ -296,7 +298,6 @@ namespace WindowsFormsApplication1
         {
             frm_actlab = null;
         }
-
 
 
 
@@ -481,17 +482,18 @@ namespace WindowsFormsApplication1
 
         private void membreciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frm_mem == null)
+           /* if (frm_mem == null)
             {
                 frm_mem = new Membresia();
                 frm_mem.MdiParent = this;
                 frm_mem.FormClosed += new FormClosedEventHandler(frm_mem_lab_FormClosed);
                 frm_mem.Show();
             }
+            */
         }
         void frm_mem_lab_FormClosed(object sender, EventArgs e)
         {
-            frm_mem = null;
+            //frm_mem = null;
         }
 
         private void tituloEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -597,6 +599,44 @@ namespace WindowsFormsApplication1
         void frm_cotiz_FormClosed(object sender, EventArgs e)
         {
             frm_cotiz = null;
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Bienvenido frm2 = new Bienvenido();
+
+            frm2.Show();
+            this.Hide();
+        }
+
+        private void inventarioDeSuministrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_act_inventarios == null)
+            {
+                frm_act_inventarios = new frm_act_inventario();
+                frm_act_inventarios.MdiParent = this;
+                frm_act_inventarios.FormClosed += new FormClosedEventHandler(frm_act_inventariosClosed);
+                frm_act_inventarios.Show();
+            }
+        }
+        void frm_act_inventariosClosed(object sender, EventArgs e)
+        {
+            frm_act_inventarios = null;
+        }
+
+        private void tipoDeExamenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_act_exameness == null)
+            {
+                frm_act_exameness = new frm_act_examenes();
+                frm_act_exameness.MdiParent = this;
+                frm_act_exameness.FormClosed += new FormClosedEventHandler(frm_act_examenessClosed);
+                frm_act_exameness.Show();
+            }
+        }
+        void frm_act_examenessClosed(object sender, EventArgs e)
+        {
+            frm_act_exameness = null;
         }
     }
 }
