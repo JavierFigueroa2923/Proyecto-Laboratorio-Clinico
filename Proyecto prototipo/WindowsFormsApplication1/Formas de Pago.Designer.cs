@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_pago));
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_id_fm_pg = new System.Windows.Forms.TextBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gpb_datos_frm_pg = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_renovar = new System.Windows.Forms.Button();
             this.btn_busc_lab = new System.Windows.Forms.Button();
             this.txt_busc_lab = new System.Windows.Forms.TextBox();
             this.lbl_busca_lab = new System.Windows.Forms.Label();
@@ -64,30 +64,30 @@
             this.label4.TabIndex = 58;
             this.label4.Text = "Formas de Pago";
             // 
-            // textBox10
+            // txt_id_fm_pg
             // 
-            this.textBox10.Location = new System.Drawing.Point(107, 17);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(187, 23);
-            this.textBox10.TabIndex = 56;
+            this.txt_id_fm_pg.Location = new System.Drawing.Point(107, 17);
+            this.txt_id_fm_pg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_id_fm_pg.Name = "txt_id_fm_pg";
+            this.txt_id_fm_pg.Size = new System.Drawing.Size(187, 23);
+            this.txt_id_fm_pg.TabIndex = 56;
             // 
-            // textBox9
+            // txt_descripcion
             // 
-            this.textBox9.Location = new System.Drawing.Point(107, 80);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(246, 134);
-            this.textBox9.TabIndex = 55;
+            this.txt_descripcion.Location = new System.Drawing.Point(107, 80);
+            this.txt_descripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_descripcion.Multiline = true;
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(246, 134);
+            this.txt_descripcion.TabIndex = 55;
             // 
-            // textBox8
+            // txt_nombre
             // 
-            this.textBox8.Location = new System.Drawing.Point(107, 50);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(246, 23);
-            this.textBox8.TabIndex = 54;
+            this.txt_nombre.Location = new System.Drawing.Point(107, 50);
+            this.txt_nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(246, 23);
+            this.txt_nombre.TabIndex = 54;
             // 
             // label3
             // 
@@ -124,12 +124,12 @@
             // 
             // gpb_datos_frm_pg
             // 
-            this.gpb_datos_frm_pg.Controls.Add(this.textBox9);
+            this.gpb_datos_frm_pg.Controls.Add(this.txt_descripcion);
             this.gpb_datos_frm_pg.Controls.Add(this.label1);
-            this.gpb_datos_frm_pg.Controls.Add(this.textBox10);
+            this.gpb_datos_frm_pg.Controls.Add(this.txt_id_fm_pg);
             this.gpb_datos_frm_pg.Controls.Add(this.label2);
             this.gpb_datos_frm_pg.Controls.Add(this.label3);
-            this.gpb_datos_frm_pg.Controls.Add(this.textBox8);
+            this.gpb_datos_frm_pg.Controls.Add(this.txt_nombre);
             this.gpb_datos_frm_pg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_datos_frm_pg.Location = new System.Drawing.Point(12, 116);
             this.gpb_datos_frm_pg.Name = "gpb_datos_frm_pg";
@@ -138,18 +138,19 @@
             this.gpb_datos_frm_pg.TabStop = false;
             this.gpb_datos_frm_pg.Text = "Datos Generales";
             // 
-            // button1
+            // btn_renovar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(695, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 54);
-            this.button1.TabIndex = 154;
-            this.button1.Text = "RENOVAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_renovar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_renovar.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
+            this.btn_renovar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_renovar.Location = new System.Drawing.Point(695, 56);
+            this.btn_renovar.Name = "btn_renovar";
+            this.btn_renovar.Size = new System.Drawing.Size(65, 54);
+            this.btn_renovar.TabIndex = 154;
+            this.btn_renovar.Text = "RENOVAR";
+            this.btn_renovar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_renovar.UseVisualStyleBackColor = true;
+            this.btn_renovar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_busc_lab
             // 
@@ -194,6 +195,7 @@
             this.btn_elim_pcnt.Text = "ELIMINAR";
             this.btn_elim_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_pcnt.UseVisualStyleBackColor = true;
+            this.btn_elim_pcnt.Click += new System.EventHandler(this.btn_elim_pcnt_Click);
             // 
             // btn_actlz_pcnt
             // 
@@ -207,6 +209,7 @@
             this.btn_actlz_pcnt.Text = "ACTUALIZAR";
             this.btn_actlz_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_pcnt.UseVisualStyleBackColor = true;
+            this.btn_actlz_pcnt.Click += new System.EventHandler(this.btn_actlz_pcnt_Click);
             // 
             // btn_guardar_pcnt
             // 
@@ -220,6 +223,7 @@
             this.btn_guardar_pcnt.Text = "GUARDAR";
             this.btn_guardar_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_pcnt.UseVisualStyleBackColor = true;
+            this.btn_guardar_pcnt.Click += new System.EventHandler(this.btn_guardar_pcnt_Click);
             // 
             // gpb_vista_labs
             // 
@@ -256,7 +260,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 351);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_renovar);
             this.Controls.Add(this.btn_busc_lab);
             this.Controls.Add(this.txt_busc_lab);
             this.Controls.Add(this.lbl_busca_lab);
@@ -283,14 +287,14 @@
 
         #endregion
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txt_id_fm_pg;
+        private System.Windows.Forms.TextBox txt_descripcion;
+        private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gpb_datos_frm_pg;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_renovar;
         private System.Windows.Forms.Button btn_busc_lab;
         internal System.Windows.Forms.TextBox txt_busc_lab;
         internal System.Windows.Forms.Label lbl_busca_lab;
