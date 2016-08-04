@@ -74,6 +74,7 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(195, 23);
             this.txt_telefono.TabIndex = 24;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // txt_correo
             // 
@@ -96,6 +97,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(309, 23);
             this.txt_nombre.TabIndex = 21;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // Lbl_correo
             // 
@@ -170,11 +172,12 @@
             // 
             // txt_id_labs
             // 
-            this.txt_id_labs.Location = new System.Drawing.Point(121, 19);
+            this.txt_id_labs.Location = new System.Drawing.Point(129, 19);
             this.txt_id_labs.Name = "txt_id_labs";
             this.txt_id_labs.Size = new System.Drawing.Size(203, 23);
             this.txt_id_labs.TabIndex = 27;
             this.txt_id_labs.TextChanged += new System.EventHandler(this.txt_id_labs_TextChanged);
+            this.txt_id_labs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_labs_KeyPress);
             // 
             // gpb_vista_labs
             // 

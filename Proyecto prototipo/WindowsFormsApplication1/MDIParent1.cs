@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
         frm_permiso frm_per;
         frm_etiqueta frm_etiquet;
         Area_de_laboratorio frm_area_lab;
-        Membresia frm_mem;
+        //Membresia frm_mem;
         Titulo_de_empleado frm_tit_emp;
         Cargo_Empleado frm_cargo_emp;
         Tipo_de_muestra frm_tip_must;
@@ -481,17 +481,18 @@ namespace WindowsFormsApplication1
 
         private void membreciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frm_mem == null)
+           /* if (frm_mem == null)
             {
                 frm_mem = new Membresia();
                 frm_mem.MdiParent = this;
                 frm_mem.FormClosed += new FormClosedEventHandler(frm_mem_lab_FormClosed);
                 frm_mem.Show();
             }
+            */
         }
         void frm_mem_lab_FormClosed(object sender, EventArgs e)
         {
-            frm_mem = null;
+            //frm_mem = null;
         }
 
         private void tituloEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)

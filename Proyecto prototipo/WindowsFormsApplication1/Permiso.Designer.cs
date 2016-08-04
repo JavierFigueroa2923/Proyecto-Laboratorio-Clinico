@@ -61,6 +61,7 @@ namespace WindowsFormsApplication1
             this.txt_busc_id_per.Name = "txt_busc_id_per";
             this.txt_busc_id_per.Size = new System.Drawing.Size(473, 20);
             this.txt_busc_id_per.TabIndex = 167;
+            this.txt_busc_id_per.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_busc_id_per_KeyPress);
             this.txt_busc_id_per.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_busquedapermiso_KeyUp);
             // 
             // lbl_busca_per
@@ -114,6 +115,7 @@ namespace WindowsFormsApplication1
             this.txt_id_per.Name = "txt_id_per";
             this.txt_id_per.Size = new System.Drawing.Size(115, 23);
             this.txt_id_per.TabIndex = 91;
+            this.txt_id_per.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_per_KeyPress);
             // 
             // Lbl_id_per
             // 
@@ -159,6 +161,7 @@ namespace WindowsFormsApplication1
             this.txt_nombre_per.Name = "txt_nombre_per";
             this.txt_nombre_per.Size = new System.Drawing.Size(581, 23);
             this.txt_nombre_per.TabIndex = 80;
+            this.txt_nombre_per.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_per_KeyPress);
             // 
             // Lbl_permiso
             // 
