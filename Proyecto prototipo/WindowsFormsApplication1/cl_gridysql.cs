@@ -108,7 +108,6 @@ namespace WindowsFormsApplication1
             //Nos desconectamos de la base de datos....
             Conexionmysql.Desconectar();
         }
-
         public static void ActualizarGridMuestra(DataGridView dg, String Query)
         {
             //Conectarnos a la base de datos
