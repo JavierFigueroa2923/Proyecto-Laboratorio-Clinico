@@ -69,38 +69,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        public void validaciones_otros(KeyPressEventArgs e) // VALIDACIONES PARA CAMPOS DE NUMERACION COMO DESCUENTOS Y ENTRE ESOS TIPOS 
-        {
-            try
-            {
-                if (Char.IsNumber(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else if (Char.IsControl(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else if (Char.IsSeparator(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-                else if (Char.IsPunctuation(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                    MessageBox.Show("Llene el campo con numeros", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch
-            {
-
-
-            }
-
-        }
+        
     }
 }

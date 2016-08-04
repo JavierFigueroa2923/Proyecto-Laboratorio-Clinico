@@ -285,8 +285,9 @@
             this.cbo_id_empleado.FormattingEnabled = true;
             this.cbo_id_empleado.Location = new System.Drawing.Point(115, 17);
             this.cbo_id_empleado.Name = "cbo_id_empleado";
-            this.cbo_id_empleado.Size = new System.Drawing.Size(179, 24);
+            this.cbo_id_empleado.Size = new System.Drawing.Size(111, 24);
             this.cbo_id_empleado.TabIndex = 77;
+            this.cbo_id_empleado.SelectedIndexChanged += new System.EventHandler(this.cbo_id_empleado_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -496,6 +497,7 @@
             this.Name = "frm_act_emp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar datos de empleado";
+            this.Load += new System.EventHandler(this.frm_act_emp_Load);
             this.grb_datos_emp.ResumeLayout(false);
             this.grb_datos_emp.PerformLayout();
             this.grb_datosp_emp.ResumeLayout(false);

@@ -104,5 +104,15 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void frm_act_emp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbo_id_empleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
