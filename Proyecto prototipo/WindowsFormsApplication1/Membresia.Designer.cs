@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Membresia
+    partial class txt_fecha_expir
     {
         /// <summary>
         /// Required designer variable.
@@ -28,43 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Membresia));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(txt_fecha_expir));
             this.lbl_membresia = new System.Windows.Forms.Label();
             this.gpb_ingreso_datos = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_beneficio = new System.Windows.Forms.TextBox();
             this.txt_id_clt = new System.Windows.Forms.TextBox();
             this.txt_membresia = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_fecha_expr = new System.Windows.Forms.Label();
+            this.lbl_fecha_expe = new System.Windows.Forms.Label();
+            this.lbl_benef = new System.Windows.Forms.Label();
+            this.lbl_id_cliente = new System.Windows.Forms.Label();
+            this.lbl_mem = new System.Windows.Forms.Label();
             this.btn_guardar_membresia = new System.Windows.Forms.Button();
             this.btn_actlz_membresia = new System.Windows.Forms.Button();
             this.btn_elim_membresia = new System.Windows.Forms.Button();
             this.gpb_vista_clientes = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_membresia = new System.Windows.Forms.DataGridView();
             this.txt_buscar_clt = new System.Windows.Forms.TextBox();
             this.btn_busc_memb = new System.Windows.Forms.Button();
             this.btn_act_datos = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lbl_busq_clt = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_fecha_exp = new System.Windows.Forms.TextBox();
+            this.txt_fec_expirar = new System.Windows.Forms.TextBox();
             this.gpb_ingreso_datos.SuspendLayout();
             this.gpb_vista_clientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_membresia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(697, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 102);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
             // 
             // lbl_membresia
             // 
@@ -78,16 +69,16 @@
             // 
             // gpb_ingreso_datos
             // 
-            this.gpb_ingreso_datos.Controls.Add(this.dateTimePicker2);
-            this.gpb_ingreso_datos.Controls.Add(this.dateTimePicker1);
+            this.gpb_ingreso_datos.Controls.Add(this.txt_fec_expirar);
+            this.gpb_ingreso_datos.Controls.Add(this.txt_fecha_exp);
             this.gpb_ingreso_datos.Controls.Add(this.txt_beneficio);
             this.gpb_ingreso_datos.Controls.Add(this.txt_id_clt);
             this.gpb_ingreso_datos.Controls.Add(this.txt_membresia);
-            this.gpb_ingreso_datos.Controls.Add(this.label5);
-            this.gpb_ingreso_datos.Controls.Add(this.label4);
-            this.gpb_ingreso_datos.Controls.Add(this.label3);
-            this.gpb_ingreso_datos.Controls.Add(this.label2);
-            this.gpb_ingreso_datos.Controls.Add(this.label1);
+            this.gpb_ingreso_datos.Controls.Add(this.lbl_fecha_expr);
+            this.gpb_ingreso_datos.Controls.Add(this.lbl_fecha_expe);
+            this.gpb_ingreso_datos.Controls.Add(this.lbl_benef);
+            this.gpb_ingreso_datos.Controls.Add(this.lbl_id_cliente);
+            this.gpb_ingreso_datos.Controls.Add(this.lbl_mem);
             this.gpb_ingreso_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_ingreso_datos.Location = new System.Drawing.Point(12, 160);
             this.gpb_ingreso_datos.Name = "gpb_ingreso_datos";
@@ -95,24 +86,6 @@
             this.gpb_ingreso_datos.TabIndex = 58;
             this.gpb_ingreso_datos.TabStop = false;
             this.gpb_ingreso_datos.Text = "Ingreso de datos";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(9, 327);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(310, 24);
-            this.dateTimePicker2.TabIndex = 162;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 267);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(310, 24);
-            this.dateTimePicker1.TabIndex = 161;
             // 
             // txt_beneficio
             // 
@@ -128,6 +101,7 @@
             this.txt_id_clt.Name = "txt_id_clt";
             this.txt_id_clt.Size = new System.Drawing.Size(310, 24);
             this.txt_id_clt.TabIndex = 6;
+            this.txt_id_clt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_clt_KeyPress);
             // 
             // txt_membresia
             // 
@@ -135,51 +109,52 @@
             this.txt_membresia.Name = "txt_membresia";
             this.txt_membresia.Size = new System.Drawing.Size(310, 24);
             this.txt_membresia.TabIndex = 5;
+            this.txt_membresia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_membresia_KeyPress);
             // 
-            // label5
+            // lbl_fecha_expr
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 306);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Fecha de expiración";
+            this.lbl_fecha_expr.AutoSize = true;
+            this.lbl_fecha_expr.Location = new System.Drawing.Point(6, 306);
+            this.lbl_fecha_expr.Name = "lbl_fecha_expr";
+            this.lbl_fecha_expr.Size = new System.Drawing.Size(140, 18);
+            this.lbl_fecha_expr.TabIndex = 4;
+            this.lbl_fecha_expr.Text = "Fecha de expiración";
             // 
-            // label4
+            // lbl_fecha_expe
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 246);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Fecha de expedición";
+            this.lbl_fecha_expe.AutoSize = true;
+            this.lbl_fecha_expe.Location = new System.Drawing.Point(6, 246);
+            this.lbl_fecha_expe.Name = "lbl_fecha_expe";
+            this.lbl_fecha_expe.Size = new System.Drawing.Size(143, 18);
+            this.lbl_fecha_expe.TabIndex = 3;
+            this.lbl_fecha_expe.Text = "Fecha de expedición";
             // 
-            // label3
+            // lbl_benef
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Beneficios";
+            this.lbl_benef.AutoSize = true;
+            this.lbl_benef.Location = new System.Drawing.Point(6, 138);
+            this.lbl_benef.Name = "lbl_benef";
+            this.lbl_benef.Size = new System.Drawing.Size(77, 18);
+            this.lbl_benef.TabIndex = 2;
+            this.lbl_benef.Text = "Beneficios";
             // 
-            // label2
+            // lbl_id_cliente
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Id Cliente";
+            this.lbl_id_cliente.AutoSize = true;
+            this.lbl_id_cliente.Location = new System.Drawing.Point(6, 80);
+            this.lbl_id_cliente.Name = "lbl_id_cliente";
+            this.lbl_id_cliente.Size = new System.Drawing.Size(68, 18);
+            this.lbl_id_cliente.TabIndex = 1;
+            this.lbl_id_cliente.Text = "Id Cliente";
             // 
-            // label1
+            // lbl_mem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Id Membresía";
+            this.lbl_mem.AutoSize = true;
+            this.lbl_mem.Location = new System.Drawing.Point(6, 20);
+            this.lbl_mem.Name = "lbl_mem";
+            this.lbl_mem.Size = new System.Drawing.Size(97, 18);
+            this.lbl_mem.TabIndex = 0;
+            this.lbl_mem.Text = "Id Membresía";
             // 
             // btn_guardar_membresia
             // 
@@ -193,6 +168,7 @@
             this.btn_guardar_membresia.Text = "GUARDAR";
             this.btn_guardar_membresia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_membresia.UseVisualStyleBackColor = true;
+            this.btn_guardar_membresia.Click += new System.EventHandler(this.btn_guardar_membresia_Click);
             // 
             // btn_actlz_membresia
             // 
@@ -206,6 +182,7 @@
             this.btn_actlz_membresia.Text = "ACTUALIZAR";
             this.btn_actlz_membresia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_membresia.UseVisualStyleBackColor = true;
+            this.btn_actlz_membresia.Click += new System.EventHandler(this.btn_actlz_membresia_Click);
             // 
             // btn_elim_membresia
             // 
@@ -219,10 +196,11 @@
             this.btn_elim_membresia.Text = "ELIMINAR";
             this.btn_elim_membresia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_membresia.UseVisualStyleBackColor = true;
+            this.btn_elim_membresia.Click += new System.EventHandler(this.btn_elim_membresia_Click);
             // 
             // gpb_vista_clientes
             // 
-            this.gpb_vista_clientes.Controls.Add(this.dataGridView1);
+            this.gpb_vista_clientes.Controls.Add(this.dgv_membresia);
             this.gpb_vista_clientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_vista_clientes.Location = new System.Drawing.Point(355, 174);
             this.gpb_vista_clientes.Name = "gpb_vista_clientes";
@@ -231,13 +209,13 @@
             this.gpb_vista_clientes.TabStop = false;
             this.gpb_vista_clientes.Text = "Clientes";
             // 
-            // dataGridView1
+            // dgv_membresia
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(448, 289);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_membresia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_membresia.Location = new System.Drawing.Point(6, 23);
+            this.dgv_membresia.Name = "dgv_membresia";
+            this.dgv_membresia.Size = new System.Drawing.Size(448, 289);
+            this.dgv_membresia.TabIndex = 0;
             // 
             // txt_buscar_clt
             // 
@@ -245,6 +223,7 @@
             this.txt_buscar_clt.Name = "txt_buscar_clt";
             this.txt_buscar_clt.Size = new System.Drawing.Size(261, 20);
             this.txt_buscar_clt.TabIndex = 162;
+            this.txt_buscar_clt.TextChanged += new System.EventHandler(this.txt_buscar_clt_TextChanged);
             // 
             // btn_busc_memb
             // 
@@ -259,9 +238,11 @@
             this.btn_busc_memb.Text = "BUSCAR";
             this.btn_busc_memb.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_busc_memb.UseVisualStyleBackColor = true;
+            this.btn_busc_memb.Click += new System.EventHandler(this.btn_busc_memb_Click);
             // 
             // btn_act_datos
             // 
+            this.btn_act_datos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_act_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_act_datos.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
             this.btn_act_datos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -272,23 +253,49 @@
             this.btn_act_datos.Text = "RENOVAR";
             this.btn_act_datos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_act_datos.UseVisualStyleBackColor = true;
+            this.btn_act_datos.Click += new System.EventHandler(this.btn_act_datos_Click);
             // 
-            // label6
+            // lbl_busq_clt
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(358, 137);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 18);
-            this.label6.TabIndex = 165;
-            this.label6.Text = "Buscar";
+            this.lbl_busq_clt.AutoSize = true;
+            this.lbl_busq_clt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_busq_clt.Location = new System.Drawing.Point(358, 137);
+            this.lbl_busq_clt.Name = "lbl_busq_clt";
+            this.lbl_busq_clt.Size = new System.Drawing.Size(55, 18);
+            this.lbl_busq_clt.TabIndex = 165;
+            this.lbl_busq_clt.Text = "Buscar";
             // 
-            // Membresia
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Clinica;
+            this.pictureBox1.Location = new System.Drawing.Point(706, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 102);
+            this.pictureBox1.TabIndex = 166;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txt_fecha_exp
+            // 
+            this.txt_fecha_exp.Location = new System.Drawing.Point(9, 268);
+            this.txt_fecha_exp.Name = "txt_fecha_exp";
+            this.txt_fecha_exp.Size = new System.Drawing.Size(310, 24);
+            this.txt_fecha_exp.TabIndex = 163;
+            // 
+            // txt_fec_expirar
+            // 
+            this.txt_fec_expirar.Location = new System.Drawing.Point(9, 331);
+            this.txt_fec_expirar.Name = "txt_fec_expirar";
+            this.txt_fec_expirar.Size = new System.Drawing.Size(310, 24);
+            this.txt_fec_expirar.TabIndex = 164;
+            // 
+            // txt_fecha_expir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 540);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbl_busq_clt);
             this.Controls.Add(this.btn_act_datos);
             this.Controls.Add(this.btn_busc_memb);
             this.Controls.Add(this.txt_buscar_clt);
@@ -298,24 +305,22 @@
             this.Controls.Add(this.btn_guardar_membresia);
             this.Controls.Add(this.gpb_ingreso_datos);
             this.Controls.Add(this.lbl_membresia);
-            this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Membresia";
+            this.Name = "txt_fecha_expir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Membresia";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.txt_fecha_expir_Load);
             this.gpb_ingreso_datos.ResumeLayout(false);
             this.gpb_ingreso_datos.PerformLayout();
             this.gpb_vista_clientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_membresia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_membresia;
         private System.Windows.Forms.GroupBox gpb_ingreso_datos;
         private System.Windows.Forms.Button btn_guardar_membresia;
@@ -324,18 +329,19 @@
         private System.Windows.Forms.TextBox txt_beneficio;
         private System.Windows.Forms.TextBox txt_id_clt;
         private System.Windows.Forms.TextBox txt_membresia;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lbl_fecha_expr;
+        private System.Windows.Forms.Label lbl_fecha_expe;
+        private System.Windows.Forms.Label lbl_benef;
+        private System.Windows.Forms.Label lbl_id_cliente;
+        private System.Windows.Forms.Label lbl_mem;
         private System.Windows.Forms.GroupBox gpb_vista_clientes;
         private System.Windows.Forms.TextBox txt_buscar_clt;
         private System.Windows.Forms.Button btn_busc_memb;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_membresia;
         private System.Windows.Forms.Button btn_act_datos;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_busq_clt;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txt_fec_expirar;
+        private System.Windows.Forms.TextBox txt_fecha_exp;
     }
 }
