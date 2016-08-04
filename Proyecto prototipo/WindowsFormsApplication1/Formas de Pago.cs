@@ -162,7 +162,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
+                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta = "insert into FORMA_DE_PAGO values ('" + txt_id_fm_pg + "','" + txt_nombre + "','" + txt_descripcion + "');";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta, con);
@@ -186,7 +186,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
+                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta2 = "update proyecto_laboratorio.FORMA_DE_PAGO set nombre_fm_pago='" + txt_nombre + "',descripcion_fm_pg='" + txt_descripcion + "' where pk_id_fm_pg ='" + txt_id_fm_pg + "';";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta2, con);
@@ -210,7 +210,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
+                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta3 = "DELETE from FORMA_DE_PAGO where pk_id_fm_pg ='" + txt_id_fm_pg + "');";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta3, con);
@@ -228,6 +228,11 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_busc_lab_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

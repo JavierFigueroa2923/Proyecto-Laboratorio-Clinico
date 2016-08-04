@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_aseg_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private bool OpenConnection()

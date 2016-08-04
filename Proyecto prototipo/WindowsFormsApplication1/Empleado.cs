@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
+                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta = "insert into EMPLEADO values ('" + cbo_id_empleado + "','" + cbo_sexo_emp + "','" + txt_nombre + "','" + txt_apellido + "','" + txt_fecha_nacimiento + "');";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta, con);
@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
+                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta2 = "update proyecto_laboratorio.EMPLEADO set genero='" + cbo_sexo_emp + "',nombre_emp='" + txt_nombre + "' , apellido_emp= '" + txt_apellido + "', fecha_nacimiento_emp= '" + txt_fecha_nacimiento + "', where pk_id_emp ='" + cbo_id_empleado + "';";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta2, con);
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = "server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
+                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta3 = "DELETE from EMPLEADO where pk_id_emp ='" + cbo_id_empleado + "');";
                 MySqlConnection con = new MySqlConnection(miconexion);
                 MySqlCommand man = new MySqlCommand(consulta3, con);

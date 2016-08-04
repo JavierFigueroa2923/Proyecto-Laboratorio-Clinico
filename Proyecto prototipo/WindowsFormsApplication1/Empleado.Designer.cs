@@ -67,8 +67,6 @@
             this.btn_guardar_emp = new System.Windows.Forms.Button();
             this.btn_busc_emp = new System.Windows.Forms.Button();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
             this.grb_datos_emp.SuspendLayout();
             this.grb_datosp_emp.SuspendLayout();
             this.grb_vista_emp.SuspendLayout();
@@ -112,7 +110,7 @@
             this.txt_apellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_apellido.Location = new System.Drawing.Point(114, 79);
             this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(279, 23);
+            this.txt_apellido.Size = new System.Drawing.Size(264, 23);
             this.txt_apellido.TabIndex = 70;
             // 
             // txt_dpi
@@ -137,7 +135,7 @@
             this.txt_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_email.Location = new System.Drawing.Point(157, 186);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(236, 23);
+            this.txt_email.Size = new System.Drawing.Size(221, 23);
             this.txt_email.TabIndex = 67;
             // 
             // Lbl_email_emp
@@ -173,7 +171,7 @@
             this.txt_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_telefono.Location = new System.Drawing.Point(157, 153);
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(236, 23);
+            this.txt_telefono.Size = new System.Drawing.Size(221, 23);
             this.txt_telefono.TabIndex = 61;
             this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             // 
@@ -206,7 +204,7 @@
             this.txt_direccion.Location = new System.Drawing.Point(113, 108);
             this.txt_direccion.Multiline = true;
             this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(280, 39);
+            this.txt_direccion.Size = new System.Drawing.Size(265, 39);
             this.txt_direccion.TabIndex = 57;
             // 
             // Lbl_nombre
@@ -225,7 +223,7 @@
             this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_nombre.Location = new System.Drawing.Point(114, 47);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(279, 23);
+            this.txt_nombre.Size = new System.Drawing.Size(264, 23);
             this.txt_nombre.TabIndex = 55;
             // 
             // Label2
@@ -241,8 +239,6 @@
             // 
             // grb_datos_emp
             // 
-            this.grb_datos_emp.Controls.Add(this.cbo_id_lab);
-            this.grb_datos_emp.Controls.Add(this.label3);
             this.grb_datos_emp.Controls.Add(this.comboBox3);
             this.grb_datos_emp.Controls.Add(this.comboBox2);
             this.grb_datos_emp.Controls.Add(this.cbo_id_empleado);
@@ -289,7 +285,7 @@
             this.cbo_id_empleado.FormattingEnabled = true;
             this.cbo_id_empleado.Location = new System.Drawing.Point(115, 17);
             this.cbo_id_empleado.Name = "cbo_id_empleado";
-            this.cbo_id_empleado.Size = new System.Drawing.Size(79, 24);
+            this.cbo_id_empleado.Size = new System.Drawing.Size(111, 24);
             this.cbo_id_empleado.TabIndex = 77;
             this.cbo_id_empleado.SelectedIndexChanged += new System.EventHandler(this.cbo_id_empleado_SelectedIndexChanged);
             // 
@@ -483,26 +479,6 @@
             this.Pic_logo.TabIndex = 54;
             this.Pic_logo.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(200, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 20);
-            this.label3.TabIndex = 80;
-            this.label3.Text = "Id Laboratorio:";
-            // 
-            // cbo_id_lab
-            // 
-            this.cbo_id_lab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbo_id_lab.FormattingEnabled = true;
-            this.cbo_id_lab.Location = new System.Drawing.Point(314, 17);
-            this.cbo_id_lab.Name = "cbo_id_lab";
-            this.cbo_id_lab.Size = new System.Drawing.Size(79, 24);
-            this.cbo_id_lab.TabIndex = 81;
-            // 
             // frm_act_emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,7 +550,5 @@
         private System.Windows.Forms.Button btn_nuev_titulo;
         private System.Windows.Forms.Button btn_elim_emp;
         private System.Windows.Forms.Button btn_nuev_cargo_emp;
-        private System.Windows.Forms.ComboBox cbo_id_lab;
-        internal System.Windows.Forms.Label label3;
     }
 }
