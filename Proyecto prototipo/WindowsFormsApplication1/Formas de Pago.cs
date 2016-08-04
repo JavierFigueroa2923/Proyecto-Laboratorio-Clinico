@@ -229,5 +229,10 @@ namespace WindowsFormsApplication1
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_busc_lab_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

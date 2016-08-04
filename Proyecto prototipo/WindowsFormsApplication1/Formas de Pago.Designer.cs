@@ -165,6 +165,7 @@
             this.btn_busc_lab.Text = "BUSCAR";
             this.btn_busc_lab.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_busc_lab.UseVisualStyleBackColor = true;
+            this.btn_busc_lab.Click += new System.EventHandler(this.btn_busc_lab_Click);
             // 
             // txt_busc_lab
             // 
