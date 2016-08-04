@@ -31,25 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tipo_de_muestra));
             this.lbl_tipo_muestra = new System.Windows.Forms.Label();
             this.gpb_ingr_datos = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txt_descp_muestra = new System.Windows.Forms.TextBox();
+            this.lbl_descrp_tip_mst = new System.Windows.Forms.Label();
+            this.txt_nombre_tipo = new System.Windows.Forms.TextBox();
+            this.lbl_nom_mst = new System.Windows.Forms.Label();
+            this.lbl_id_mst = new System.Windows.Forms.Label();
             this.txt_tp_muestra = new System.Windows.Forms.TextBox();
             this.btn_elim_tp_muestra = new System.Windows.Forms.Button();
             this.btn_actlz_tipo_muestra = new System.Windows.Forms.Button();
             this.btn_guardar_tipo_muestra = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gpb_vista_tipos_mist = new System.Windows.Forms.GroupBox();
+            this.dgv_muestras = new System.Windows.Forms.DataGridView();
             this.gpb_ingr_datos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gpb_vista_tipos_mist.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_muestras)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_tipo_muestra
             // 
             this.lbl_tipo_muestra.AutoSize = true;
             this.lbl_tipo_muestra.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipo_muestra.Location = new System.Drawing.Point(56, 12);
+            this.lbl_tipo_muestra.Location = new System.Drawing.Point(256, 12);
             this.lbl_tipo_muestra.Name = "lbl_tipo_muestra";
             this.lbl_tipo_muestra.Size = new System.Drawing.Size(232, 34);
             this.lbl_tipo_muestra.TabIndex = 71;
@@ -57,60 +61,61 @@
             // 
             // gpb_ingr_datos
             // 
-            this.gpb_ingr_datos.Controls.Add(this.textBox2);
-            this.gpb_ingr_datos.Controls.Add(this.label3);
-            this.gpb_ingr_datos.Controls.Add(this.textBox1);
-            this.gpb_ingr_datos.Controls.Add(this.label2);
-            this.gpb_ingr_datos.Controls.Add(this.label1);
+            this.gpb_ingr_datos.Controls.Add(this.txt_descp_muestra);
+            this.gpb_ingr_datos.Controls.Add(this.lbl_descrp_tip_mst);
+            this.gpb_ingr_datos.Controls.Add(this.txt_nombre_tipo);
+            this.gpb_ingr_datos.Controls.Add(this.lbl_nom_mst);
+            this.gpb_ingr_datos.Controls.Add(this.lbl_id_mst);
             this.gpb_ingr_datos.Controls.Add(this.txt_tp_muestra);
             this.gpb_ingr_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_ingr_datos.Location = new System.Drawing.Point(53, 169);
+            this.gpb_ingr_datos.Location = new System.Drawing.Point(12, 166);
             this.gpb_ingr_datos.Name = "gpb_ingr_datos";
-            this.gpb_ingr_datos.Size = new System.Drawing.Size(362, 247);
+            this.gpb_ingr_datos.Size = new System.Drawing.Size(362, 292);
             this.gpb_ingr_datos.TabIndex = 162;
             this.gpb_ingr_datos.TabStop = false;
             this.gpb_ingr_datos.Text = "Datos generales";
             // 
-            // textBox2
+            // txt_descp_muestra
             // 
-            this.textBox2.Location = new System.Drawing.Point(9, 193);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(326, 24);
-            this.textBox2.TabIndex = 5;
+            this.txt_descp_muestra.Location = new System.Drawing.Point(9, 193);
+            this.txt_descp_muestra.Multiline = true;
+            this.txt_descp_muestra.Name = "txt_descp_muestra";
+            this.txt_descp_muestra.Size = new System.Drawing.Size(326, 93);
+            this.txt_descp_muestra.TabIndex = 5;
             // 
-            // label3
+            // lbl_descrp_tip_mst
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 172);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Descripción del tipo de muestra";
+            this.lbl_descrp_tip_mst.AutoSize = true;
+            this.lbl_descrp_tip_mst.Location = new System.Drawing.Point(6, 172);
+            this.lbl_descrp_tip_mst.Name = "lbl_descrp_tip_mst";
+            this.lbl_descrp_tip_mst.Size = new System.Drawing.Size(216, 18);
+            this.lbl_descrp_tip_mst.TabIndex = 4;
+            this.lbl_descrp_tip_mst.Text = "Descripción del tipo de muestra";
             // 
-            // textBox1
+            // txt_nombre_tipo
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(326, 24);
-            this.textBox1.TabIndex = 3;
+            this.txt_nombre_tipo.Location = new System.Drawing.Point(9, 124);
+            this.txt_nombre_tipo.Name = "txt_nombre_tipo";
+            this.txt_nombre_tipo.Size = new System.Drawing.Size(326, 24);
+            this.txt_nombre_tipo.TabIndex = 3;
             // 
-            // label2
+            // lbl_nom_mst
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Nombre del tipo de muestra";
+            this.lbl_nom_mst.AutoSize = true;
+            this.lbl_nom_mst.Location = new System.Drawing.Point(6, 103);
+            this.lbl_nom_mst.Name = "lbl_nom_mst";
+            this.lbl_nom_mst.Size = new System.Drawing.Size(191, 18);
+            this.lbl_nom_mst.TabIndex = 2;
+            this.lbl_nom_mst.Text = "Nombre del tipo de muestra";
             // 
-            // label1
+            // lbl_id_mst
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Id Tipo de muestra";
+            this.lbl_id_mst.AutoSize = true;
+            this.lbl_id_mst.Location = new System.Drawing.Point(6, 36);
+            this.lbl_id_mst.Name = "lbl_id_mst";
+            this.lbl_id_mst.Size = new System.Drawing.Size(130, 18);
+            this.lbl_id_mst.TabIndex = 1;
+            this.lbl_id_mst.Text = "Id Tipo de muestra";
             // 
             // txt_tp_muestra
             // 
@@ -118,6 +123,7 @@
             this.txt_tp_muestra.Name = "txt_tp_muestra";
             this.txt_tp_muestra.Size = new System.Drawing.Size(326, 24);
             this.txt_tp_muestra.TabIndex = 0;
+            this.txt_tp_muestra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tp_muestra_KeyPress);
             // 
             // btn_elim_tp_muestra
             // 
@@ -131,6 +137,7 @@
             this.btn_elim_tp_muestra.Text = "ELIMINAR";
             this.btn_elim_tp_muestra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_tp_muestra.UseVisualStyleBackColor = true;
+            this.btn_elim_tp_muestra.Click += new System.EventHandler(this.btn_elim_tp_muestra_Click);
             // 
             // btn_actlz_tipo_muestra
             // 
@@ -144,6 +151,7 @@
             this.btn_actlz_tipo_muestra.Text = "ACTUALIZAR";
             this.btn_actlz_tipo_muestra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_tipo_muestra.UseVisualStyleBackColor = true;
+            this.btn_actlz_tipo_muestra.Click += new System.EventHandler(this.btn_actlz_tipo_muestra_Click);
             // 
             // btn_guardar_tipo_muestra
             // 
@@ -157,22 +165,43 @@
             this.btn_guardar_tipo_muestra.Text = "GUARDAR";
             this.btn_guardar_tipo_muestra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_tipo_muestra.UseVisualStyleBackColor = true;
+            this.btn_guardar_tipo_muestra.Click += new System.EventHandler(this.btn_guardar_tipo_muestra_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Clinica;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(624, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(103, 102);
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
+            // 
+            // gpb_vista_tipos_mist
+            // 
+            this.gpb_vista_tipos_mist.Controls.Add(this.dgv_muestras);
+            this.gpb_vista_tipos_mist.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpb_vista_tipos_mist.Location = new System.Drawing.Point(381, 166);
+            this.gpb_vista_tipos_mist.Name = "gpb_vista_tipos_mist";
+            this.gpb_vista_tipos_mist.Size = new System.Drawing.Size(346, 292);
+            this.gpb_vista_tipos_mist.TabIndex = 163;
+            this.gpb_vista_tipos_mist.TabStop = false;
+            this.gpb_vista_tipos_mist.Text = "Tipos de Muestra";
+            // 
+            // dgv_muestras
+            // 
+            this.dgv_muestras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_muestras.Location = new System.Drawing.Point(6, 24);
+            this.dgv_muestras.Name = "dgv_muestras";
+            this.dgv_muestras.Size = new System.Drawing.Size(340, 262);
+            this.dgv_muestras.TabIndex = 0;
             // 
             // Tipo_de_muestra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 470);
+            this.ClientSize = new System.Drawing.Size(739, 492);
+            this.Controls.Add(this.gpb_vista_tipos_mist);
             this.Controls.Add(this.gpb_ingr_datos);
             this.Controls.Add(this.btn_elim_tp_muestra);
             this.Controls.Add(this.btn_actlz_tipo_muestra);
@@ -183,9 +212,12 @@
             this.Name = "Tipo_de_muestra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipo_de_muestra";
+            this.Load += new System.EventHandler(this.Tipo_de_muestra_Load);
             this.gpb_ingr_datos.ResumeLayout(false);
             this.gpb_ingr_datos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gpb_vista_tipos_mist.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_muestras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,11 +231,13 @@
         private System.Windows.Forms.Button btn_actlz_tipo_muestra;
         private System.Windows.Forms.Button btn_elim_tp_muestra;
         private System.Windows.Forms.GroupBox gpb_ingr_datos;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_descp_muestra;
+        private System.Windows.Forms.Label lbl_descrp_tip_mst;
+        private System.Windows.Forms.TextBox txt_nombre_tipo;
+        private System.Windows.Forms.Label lbl_nom_mst;
+        private System.Windows.Forms.Label lbl_id_mst;
         private System.Windows.Forms.TextBox txt_tp_muestra;
+        private System.Windows.Forms.GroupBox gpb_vista_tipos_mist;
+        private System.Windows.Forms.DataGridView dgv_muestras;
     }
 }

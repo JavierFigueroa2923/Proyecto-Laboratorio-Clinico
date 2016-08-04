@@ -35,24 +35,24 @@
             this.txt_ubicacion = new System.Windows.Forms.TextBox();
             this.txt_id_lab = new System.Windows.Forms.TextBox();
             this.txt_id_area_lab = new System.Windows.Forms.TextBox();
-            this.descrip_area_lab = new System.Windows.Forms.Label();
-            this.ubicacion_area_lab = new System.Windows.Forms.Label();
-            this.id_lab = new System.Windows.Forms.Label();
-            this.id_area_lab = new System.Windows.Forms.Label();
+            this.lbl_descrip_area_lab = new System.Windows.Forms.Label();
+            this.lbl_ubicacion_area_lab = new System.Windows.Forms.Label();
+            this.lbl_id_lab = new System.Windows.Forms.Label();
+            this.lbl_id_area_lab = new System.Windows.Forms.Label();
             this.gpb_vista_labs = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgv_area_labs = new System.Windows.Forms.DataGridView();
+            this.lbl_busq = new System.Windows.Forms.Label();
             this.txt_buscar_lab = new System.Windows.Forms.TextBox();
             this.btn_buscar_lab = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_act_data = new System.Windows.Forms.Button();
             this.btn_elim_area = new System.Windows.Forms.Button();
             this.btn_actlz_area = new System.Windows.Forms.Button();
             this.btn_guardar_area = new System.Windows.Forms.Button();
-            this.Pic_logo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpb_datos_area_lab.SuspendLayout();
             this.gpb_vista_labs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_area_labs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_area_laboratorio
@@ -72,10 +72,10 @@
             this.gpb_datos_area_lab.Controls.Add(this.txt_ubicacion);
             this.gpb_datos_area_lab.Controls.Add(this.txt_id_lab);
             this.gpb_datos_area_lab.Controls.Add(this.txt_id_area_lab);
-            this.gpb_datos_area_lab.Controls.Add(this.descrip_area_lab);
-            this.gpb_datos_area_lab.Controls.Add(this.ubicacion_area_lab);
-            this.gpb_datos_area_lab.Controls.Add(this.id_lab);
-            this.gpb_datos_area_lab.Controls.Add(this.id_area_lab);
+            this.gpb_datos_area_lab.Controls.Add(this.lbl_descrip_area_lab);
+            this.gpb_datos_area_lab.Controls.Add(this.lbl_ubicacion_area_lab);
+            this.gpb_datos_area_lab.Controls.Add(this.lbl_id_lab);
+            this.gpb_datos_area_lab.Controls.Add(this.lbl_id_area_lab);
             this.gpb_datos_area_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_datos_area_lab.Location = new System.Drawing.Point(12, 167);
             this.gpb_datos_area_lab.Name = "gpb_datos_area_lab";
@@ -105,6 +105,7 @@
             this.txt_id_lab.Name = "txt_id_lab";
             this.txt_id_lab.Size = new System.Drawing.Size(315, 24);
             this.txt_id_lab.TabIndex = 5;
+            this.txt_id_lab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_lab_KeyPress);
             // 
             // txt_id_area_lab
             // 
@@ -112,46 +113,47 @@
             this.txt_id_area_lab.Name = "txt_id_area_lab";
             this.txt_id_area_lab.Size = new System.Drawing.Size(315, 24);
             this.txt_id_area_lab.TabIndex = 4;
+            this.txt_id_area_lab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_area_lab_KeyPress);
             // 
-            // descrip_area_lab
+            // lbl_descrip_area_lab
             // 
-            this.descrip_area_lab.AutoSize = true;
-            this.descrip_area_lab.Location = new System.Drawing.Point(6, 204);
-            this.descrip_area_lab.Name = "descrip_area_lab";
-            this.descrip_area_lab.Size = new System.Drawing.Size(143, 18);
-            this.descrip_area_lab.TabIndex = 3;
-            this.descrip_area_lab.Text = "Descripción del área";
+            this.lbl_descrip_area_lab.AutoSize = true;
+            this.lbl_descrip_area_lab.Location = new System.Drawing.Point(6, 204);
+            this.lbl_descrip_area_lab.Name = "lbl_descrip_area_lab";
+            this.lbl_descrip_area_lab.Size = new System.Drawing.Size(143, 18);
+            this.lbl_descrip_area_lab.TabIndex = 3;
+            this.lbl_descrip_area_lab.Text = "Descripción del área";
             // 
-            // ubicacion_area_lab
+            // lbl_ubicacion_area_lab
             // 
-            this.ubicacion_area_lab.AutoSize = true;
-            this.ubicacion_area_lab.Location = new System.Drawing.Point(6, 147);
-            this.ubicacion_area_lab.Name = "ubicacion_area_lab";
-            this.ubicacion_area_lab.Size = new System.Drawing.Size(74, 18);
-            this.ubicacion_area_lab.TabIndex = 2;
-            this.ubicacion_area_lab.Text = "Ubicación";
+            this.lbl_ubicacion_area_lab.AutoSize = true;
+            this.lbl_ubicacion_area_lab.Location = new System.Drawing.Point(6, 147);
+            this.lbl_ubicacion_area_lab.Name = "lbl_ubicacion_area_lab";
+            this.lbl_ubicacion_area_lab.Size = new System.Drawing.Size(74, 18);
+            this.lbl_ubicacion_area_lab.TabIndex = 2;
+            this.lbl_ubicacion_area_lab.Text = "Ubicación";
             // 
-            // id_lab
+            // lbl_id_lab
             // 
-            this.id_lab.AutoSize = true;
-            this.id_lab.Location = new System.Drawing.Point(6, 90);
-            this.id_lab.Name = "id_lab";
-            this.id_lab.Size = new System.Drawing.Size(99, 18);
-            this.id_lab.TabIndex = 1;
-            this.id_lab.Text = "Id Laboratorio";
+            this.lbl_id_lab.AutoSize = true;
+            this.lbl_id_lab.Location = new System.Drawing.Point(6, 90);
+            this.lbl_id_lab.Name = "lbl_id_lab";
+            this.lbl_id_lab.Size = new System.Drawing.Size(99, 18);
+            this.lbl_id_lab.TabIndex = 1;
+            this.lbl_id_lab.Text = "Id Laboratorio";
             // 
-            // id_area_lab
+            // lbl_id_area_lab
             // 
-            this.id_area_lab.AutoSize = true;
-            this.id_area_lab.Location = new System.Drawing.Point(6, 30);
-            this.id_area_lab.Name = "id_area_lab";
-            this.id_area_lab.Size = new System.Drawing.Size(153, 18);
-            this.id_area_lab.TabIndex = 0;
-            this.id_area_lab.Text = "Id Área de Laboratorio";
+            this.lbl_id_area_lab.AutoSize = true;
+            this.lbl_id_area_lab.Location = new System.Drawing.Point(6, 30);
+            this.lbl_id_area_lab.Name = "lbl_id_area_lab";
+            this.lbl_id_area_lab.Size = new System.Drawing.Size(153, 18);
+            this.lbl_id_area_lab.TabIndex = 0;
+            this.lbl_id_area_lab.Text = "Id Área de Laboratorio";
             // 
             // gpb_vista_labs
             // 
-            this.gpb_vista_labs.Controls.Add(this.dataGridView1);
+            this.gpb_vista_labs.Controls.Add(this.dgv_area_labs);
             this.gpb_vista_labs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_vista_labs.Location = new System.Drawing.Point(371, 167);
             this.gpb_vista_labs.Name = "gpb_vista_labs";
@@ -160,23 +162,23 @@
             this.gpb_vista_labs.TabStop = false;
             this.gpb_vista_labs.Text = "Laboratorios";
             // 
-            // dataGridView1
+            // dgv_area_labs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(435, 288);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_area_labs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_area_labs.Location = new System.Drawing.Point(6, 23);
+            this.dgv_area_labs.Name = "dgv_area_labs";
+            this.dgv_area_labs.Size = new System.Drawing.Size(435, 288);
+            this.dgv_area_labs.TabIndex = 0;
             // 
-            // label1
+            // lbl_busq
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(368, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 18);
-            this.label1.TabIndex = 157;
-            this.label1.Text = "Buscar";
+            this.lbl_busq.AutoSize = true;
+            this.lbl_busq.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_busq.Location = new System.Drawing.Point(368, 131);
+            this.lbl_busq.Name = "lbl_busq";
+            this.lbl_busq.Size = new System.Drawing.Size(55, 18);
+            this.lbl_busq.TabIndex = 157;
+            this.lbl_busq.Text = "Buscar";
             // 
             // txt_buscar_lab
             // 
@@ -198,19 +200,20 @@
             this.btn_buscar_lab.Text = "BUSCAR";
             this.btn_buscar_lab.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_buscar_lab.UseVisualStyleBackColor = true;
+            this.btn_buscar_lab.Click += new System.EventHandler(this.btn_buscar_lab_Click);
             // 
-            // button1
+            // btn_act_data
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(747, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 54);
-            this.button1.TabIndex = 155;
-            this.button1.Text = "RENOVAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_act_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_act_data.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
+            this.btn_act_data.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_act_data.Location = new System.Drawing.Point(747, 118);
+            this.btn_act_data.Name = "btn_act_data";
+            this.btn_act_data.Size = new System.Drawing.Size(65, 54);
+            this.btn_act_data.TabIndex = 155;
+            this.btn_act_data.Text = "RENOVAR";
+            this.btn_act_data.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_act_data.UseVisualStyleBackColor = true;
             // 
             // btn_elim_area
             // 
@@ -224,6 +227,7 @@
             this.btn_elim_area.Text = "ELIMINAR";
             this.btn_elim_area.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_area.UseVisualStyleBackColor = true;
+            this.btn_elim_area.Click += new System.EventHandler(this.btn_elim_area_Click);
             // 
             // btn_actlz_area
             // 
@@ -237,6 +241,7 @@
             this.btn_actlz_area.Text = "ACTUALIZAR";
             this.btn_actlz_area.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_area.UseVisualStyleBackColor = true;
+            this.btn_actlz_area.Click += new System.EventHandler(this.btn_actlz_area_Click);
             // 
             // btn_guardar_area
             // 
@@ -250,49 +255,50 @@
             this.btn_guardar_area.Text = "GUARDAR";
             this.btn_guardar_area.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_area.UseVisualStyleBackColor = true;
+            this.btn_guardar_area.Click += new System.EventHandler(this.btn_guardar_area_Click);
             // 
-            // Pic_logo
+            // pictureBox1
             // 
-            this.Pic_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Pic_logo.Location = new System.Drawing.Point(718, 12);
-            this.Pic_logo.Name = "Pic_logo";
-            this.Pic_logo.Size = new System.Drawing.Size(100, 100);
-            this.Pic_logo.TabIndex = 55;
-            this.Pic_logo.TabStop = false;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Clinica;
+            this.pictureBox1.Location = new System.Drawing.Point(715, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 102);
+            this.pictureBox1.TabIndex = 159;
+            this.pictureBox1.TabStop = false;
             // 
             // Area_de_laboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 496);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_buscar_lab);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_busq);
             this.Controls.Add(this.btn_buscar_lab);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_act_data);
             this.Controls.Add(this.gpb_vista_labs);
             this.Controls.Add(this.gpb_datos_area_lab);
             this.Controls.Add(this.btn_elim_area);
             this.Controls.Add(this.btn_actlz_area);
             this.Controls.Add(this.btn_guardar_area);
             this.Controls.Add(this.lbl_area_laboratorio);
-            this.Controls.Add(this.Pic_logo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Area_de_laboratorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Area de laboratorio";
+            this.Load += new System.EventHandler(this.Area_de_laboratorio_Load);
             this.gpb_datos_area_lab.ResumeLayout(false);
             this.gpb_datos_area_lab.PerformLayout();
             this.gpb_vista_labs.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_area_labs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        internal System.Windows.Forms.PictureBox Pic_logo;
         internal System.Windows.Forms.Label lbl_area_laboratorio;
         private System.Windows.Forms.Button btn_guardar_area;
         private System.Windows.Forms.Button btn_actlz_area;
@@ -302,15 +308,16 @@
         private System.Windows.Forms.TextBox txt_ubicacion;
         private System.Windows.Forms.TextBox txt_id_lab;
         private System.Windows.Forms.TextBox txt_id_area_lab;
-        private System.Windows.Forms.Label descrip_area_lab;
-        private System.Windows.Forms.Label ubicacion_area_lab;
-        private System.Windows.Forms.Label id_lab;
-        private System.Windows.Forms.Label id_area_lab;
+        private System.Windows.Forms.Label lbl_descrip_area_lab;
+        private System.Windows.Forms.Label lbl_ubicacion_area_lab;
+        private System.Windows.Forms.Label lbl_id_lab;
+        private System.Windows.Forms.Label lbl_id_area_lab;
         private System.Windows.Forms.GroupBox gpb_vista_labs;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_act_data;
         private System.Windows.Forms.Button btn_buscar_lab;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lbl_busq;
+        private System.Windows.Forms.DataGridView dgv_area_labs;
         private System.Windows.Forms.TextBox txt_buscar_lab;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
