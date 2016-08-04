@@ -467,6 +467,7 @@
             this.btn_busc_emp.Text = "BUSCAR";
             this.btn_busc_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_busc_emp.UseVisualStyleBackColor = true;
+            this.btn_busc_emp.Click += new System.EventHandler(this.btn_busc_emp_Click);
             // 
             // Pic_logo
             // 

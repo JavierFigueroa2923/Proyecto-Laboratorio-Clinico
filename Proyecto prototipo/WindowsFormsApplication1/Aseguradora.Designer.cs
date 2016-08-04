@@ -226,6 +226,7 @@
             this.btn_busc_aseg.Text = "BUSCAR";
             this.btn_busc_aseg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_busc_aseg.UseVisualStyleBackColor = true;
+            this.btn_busc_aseg.Click += new System.EventHandler(this.btn_busc_aseg_Click);
             // 
             // btn_actlz_aseg
             // 
