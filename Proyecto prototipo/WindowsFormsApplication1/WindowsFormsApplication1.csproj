@@ -86,6 +86,8 @@
     <Compile Include="Citas.Designer.cs">
       <DependentUpon>Citas.cs</DependentUpon>
     </Compile>
+    <Compile Include="cl_gridysql.cs" />
+    <Compile Include="Conexionmysql.cs" />
     <Compile Include="Cotizaciones.cs">
       <SubType>Form</SubType>
     </Compile>

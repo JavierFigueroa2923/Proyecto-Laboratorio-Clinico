@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApplication1
+﻿using System;
+
+namespace WindowsFormsApplication1
 {
     partial class frm_permiso
     {
@@ -33,16 +35,9 @@
             this.lbl_busca_per = new System.Windows.Forms.Label();
             this.grb_vista_per = new System.Windows.Forms.GroupBox();
             this.dgv_busc_per = new System.Windows.Forms.DataGridView();
-            this.grb_datos2_per = new System.Windows.Forms.GroupBox();
-            this.dgv_id_usur_per = new System.Windows.Forms.DataGridView();
-            this.btn_busc_id_usur_per = new System.Windows.Forms.Button();
-            this.Lbl_id_usur_per = new System.Windows.Forms.Label();
-            this.txt_busc_id_usur_per = new System.Windows.Forms.TextBox();
             this.grb_datos1_per = new System.Windows.Forms.GroupBox();
             this.txt_id_per = new System.Windows.Forms.TextBox();
             this.Lbl_id_per = new System.Windows.Forms.Label();
-            this.Lbl_id_usur = new System.Windows.Forms.Label();
-            this.txt_usur_per = new System.Windows.Forms.TextBox();
             this.Lbl_descripcion = new System.Windows.Forms.Label();
             this.txt_descr_per = new System.Windows.Forms.TextBox();
             this.Lbl_nombre = new System.Windows.Forms.Label();
@@ -52,13 +47,12 @@
             this.btn_elim_per = new System.Windows.Forms.Button();
             this.btn_actlz_per = new System.Windows.Forms.Button();
             this.btn_guardar_per = new System.Windows.Forms.Button();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.btn_rnv_per = new System.Windows.Forms.Button();
+            this.pl_lab_user = new System.Windows.Forms.PictureBox();
             this.grb_vista_per.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_per)).BeginInit();
-            this.grb_datos2_per.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_id_usur_per)).BeginInit();
             this.grb_datos1_per.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pl_lab_user)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_busc_id_per
@@ -67,6 +61,7 @@
             this.txt_busc_id_per.Name = "txt_busc_id_per";
             this.txt_busc_id_per.Size = new System.Drawing.Size(473, 20);
             this.txt_busc_id_per.TabIndex = 167;
+            this.txt_busc_id_per.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_busquedapermiso_KeyUp);
             // 
             // lbl_busca_per
             // 
@@ -97,64 +92,10 @@
             this.dgv_busc_per.Size = new System.Drawing.Size(739, 135);
             this.dgv_busc_per.TabIndex = 0;
             // 
-            // grb_datos2_per
-            // 
-            this.grb_datos2_per.Controls.Add(this.dgv_id_usur_per);
-            this.grb_datos2_per.Controls.Add(this.btn_busc_id_usur_per);
-            this.grb_datos2_per.Controls.Add(this.Lbl_id_usur_per);
-            this.grb_datos2_per.Controls.Add(this.txt_busc_id_usur_per);
-            this.grb_datos2_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_datos2_per.Location = new System.Drawing.Point(482, 140);
-            this.grb_datos2_per.Name = "grb_datos2_per";
-            this.grb_datos2_per.Size = new System.Drawing.Size(338, 189);
-            this.grb_datos2_per.TabIndex = 165;
-            this.grb_datos2_per.TabStop = false;
-            this.grb_datos2_per.Text = "Datos de usuarios";
-            // 
-            // dgv_id_usur_per
-            // 
-            this.dgv_id_usur_per.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_id_usur_per.Location = new System.Drawing.Point(10, 63);
-            this.dgv_id_usur_per.Name = "dgv_id_usur_per";
-            this.dgv_id_usur_per.Size = new System.Drawing.Size(322, 112);
-            this.dgv_id_usur_per.TabIndex = 133;
-            // 
-            // btn_busc_id_usur_per
-            // 
-            this.btn_busc_id_usur_per.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_busc_id_usur_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busc_id_usur_per.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
-            this.btn_busc_id_usur_per.Location = new System.Drawing.Point(292, 16);
-            this.btn_busc_id_usur_per.Name = "btn_busc_id_usur_per";
-            this.btn_busc_id_usur_per.Size = new System.Drawing.Size(44, 41);
-            this.btn_busc_id_usur_per.TabIndex = 132;
-            this.btn_busc_id_usur_per.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_busc_id_usur_per.UseVisualStyleBackColor = true;
-            // 
-            // Lbl_id_usur_per
-            // 
-            this.Lbl_id_usur_per.AutoSize = true;
-            this.Lbl_id_usur_per.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_usur_per.Location = new System.Drawing.Point(6, 32);
-            this.Lbl_id_usur_per.Name = "Lbl_id_usur_per";
-            this.Lbl_id_usur_per.Size = new System.Drawing.Size(86, 20);
-            this.Lbl_id_usur_per.TabIndex = 85;
-            this.Lbl_id_usur_per.Text = "Id Usuario:";
-            // 
-            // txt_busc_id_usur_per
-            // 
-            this.txt_busc_id_usur_per.Location = new System.Drawing.Point(98, 32);
-            this.txt_busc_id_usur_per.Multiline = true;
-            this.txt_busc_id_usur_per.Name = "txt_busc_id_usur_per";
-            this.txt_busc_id_usur_per.Size = new System.Drawing.Size(190, 23);
-            this.txt_busc_id_usur_per.TabIndex = 82;
-            // 
             // grb_datos1_per
             // 
             this.grb_datos1_per.Controls.Add(this.txt_id_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_id_per);
-            this.grb_datos1_per.Controls.Add(this.Lbl_id_usur);
-            this.grb_datos1_per.Controls.Add(this.txt_usur_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_descripcion);
             this.grb_datos1_per.Controls.Add(this.txt_descr_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_nombre);
@@ -162,14 +103,14 @@
             this.grb_datos1_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_datos1_per.Location = new System.Drawing.Point(18, 140);
             this.grb_datos1_per.Name = "grb_datos1_per";
-            this.grb_datos1_per.Size = new System.Drawing.Size(436, 189);
+            this.grb_datos1_per.Size = new System.Drawing.Size(716, 173);
             this.grb_datos1_per.TabIndex = 164;
             this.grb_datos1_per.TabStop = false;
             this.grb_datos1_per.Text = "Datos de permiso";
             // 
             // txt_id_per
             // 
-            this.txt_id_per.Location = new System.Drawing.Point(102, 27);
+            this.txt_id_per.Location = new System.Drawing.Point(102, 22);
             this.txt_id_per.Name = "txt_id_per";
             this.txt_id_per.Size = new System.Drawing.Size(115, 23);
             this.txt_id_per.TabIndex = 91;
@@ -178,34 +119,17 @@
             // 
             this.Lbl_id_per.AutoSize = true;
             this.Lbl_id_per.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_per.Location = new System.Drawing.Point(9, 26);
+            this.Lbl_id_per.Location = new System.Drawing.Point(6, 22);
             this.Lbl_id_per.Name = "Lbl_id_per";
             this.Lbl_id_per.Size = new System.Drawing.Size(92, 20);
             this.Lbl_id_per.TabIndex = 90;
             this.Lbl_id_per.Text = "Id Permiso: ";
             // 
-            // Lbl_id_usur
-            // 
-            this.Lbl_id_usur.AutoSize = true;
-            this.Lbl_id_usur.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_usur.Location = new System.Drawing.Point(9, 56);
-            this.Lbl_id_usur.Name = "Lbl_id_usur";
-            this.Lbl_id_usur.Size = new System.Drawing.Size(90, 20);
-            this.Lbl_id_usur.TabIndex = 89;
-            this.Lbl_id_usur.Text = "Id Usuario: ";
-            // 
-            // txt_usur_per
-            // 
-            this.txt_usur_per.Location = new System.Drawing.Point(102, 56);
-            this.txt_usur_per.Name = "txt_usur_per";
-            this.txt_usur_per.Size = new System.Drawing.Size(115, 23);
-            this.txt_usur_per.TabIndex = 86;
-            // 
             // Lbl_descripcion
             // 
             this.Lbl_descripcion.AutoSize = true;
             this.Lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_descripcion.Location = new System.Drawing.Point(-4, 114);
+            this.Lbl_descripcion.Location = new System.Drawing.Point(-4, 83);
             this.Lbl_descripcion.Name = "Lbl_descripcion";
             this.Lbl_descripcion.Size = new System.Drawing.Size(100, 20);
             this.Lbl_descripcion.TabIndex = 85;
@@ -213,17 +137,17 @@
             // 
             // txt_descr_per
             // 
-            this.txt_descr_per.Location = new System.Drawing.Point(102, 114);
+            this.txt_descr_per.Location = new System.Drawing.Point(102, 83);
             this.txt_descr_per.Multiline = true;
             this.txt_descr_per.Name = "txt_descr_per";
-            this.txt_descr_per.Size = new System.Drawing.Size(316, 69);
+            this.txt_descr_per.Size = new System.Drawing.Size(581, 69);
             this.txt_descr_per.TabIndex = 82;
             // 
             // Lbl_nombre
             // 
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(24, 85);
+            this.Lbl_nombre.Location = new System.Drawing.Point(24, 54);
             this.Lbl_nombre.Name = "Lbl_nombre";
             this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
             this.Lbl_nombre.TabIndex = 81;
@@ -231,9 +155,9 @@
             // 
             // txt_nombre_per
             // 
-            this.txt_nombre_per.Location = new System.Drawing.Point(102, 85);
+            this.txt_nombre_per.Location = new System.Drawing.Point(102, 54);
             this.txt_nombre_per.Name = "txt_nombre_per";
-            this.txt_nombre_per.Size = new System.Drawing.Size(316, 23);
+            this.txt_nombre_per.Size = new System.Drawing.Size(581, 23);
             this.txt_nombre_per.TabIndex = 80;
             // 
             // Lbl_permiso
@@ -255,7 +179,7 @@
             this.btn_busc_id_per.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_busc_id_per.Location = new System.Drawing.Point(656, 329);
             this.btn_busc_id_per.Name = "btn_busc_id_per";
-            this.btn_busc_id_per.Size = new System.Drawing.Size(114, 40);
+            this.btn_busc_id_per.Size = new System.Drawing.Size(103, 40);
             this.btn_busc_id_per.TabIndex = 169;
             this.btn_busc_id_per.Text = "BUSCAR";
             this.btn_busc_id_per.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -274,6 +198,7 @@
             this.btn_elim_per.Text = "ELIMINAR";
             this.btn_elim_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_per.UseVisualStyleBackColor = true;
+            this.btn_elim_per.Click += new System.EventHandler(this.btn_elim_per_Click);
             // 
             // btn_actlz_per
             // 
@@ -287,6 +212,7 @@
             this.btn_actlz_per.Text = "ACTUALIZAR";
             this.btn_actlz_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_per.UseVisualStyleBackColor = true;
+            this.btn_actlz_per.Click += new System.EventHandler(this.btn_actlz_per_Click);
             // 
             // btn_guardar_per
             // 
@@ -300,17 +226,32 @@
             this.btn_guardar_per.Text = "GUARDAR";
             this.btn_guardar_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_per.UseVisualStyleBackColor = true;
+            this.btn_guardar_per.Click += new System.EventHandler(this.btn_guardar_per_Click);
             // 
-            // pic_logo
+            // btn_rnv_per
             // 
-            this.pic_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pic_logo.Location = new System.Drawing.Point(711, 34);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(103, 100);
-            this.pic_logo.TabIndex = 159;
-            this.pic_logo.TabStop = false;
+            this.btn_rnv_per.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_rnv_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rnv_per.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
+            this.btn_rnv_per.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_rnv_per.Location = new System.Drawing.Point(761, 319);
+            this.btn_rnv_per.Name = "btn_rnv_per";
+            this.btn_rnv_per.Size = new System.Drawing.Size(63, 50);
+            this.btn_rnv_per.TabIndex = 170;
+            this.btn_rnv_per.Text = "RENOVAR";
+            this.btn_rnv_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_rnv_per.UseVisualStyleBackColor = true;
+            this.btn_rnv_per.Click += new System.EventHandler(this.btn_rnv_per_Click);
+            // 
+            // pl_lab_user
+            // 
+            this.pl_lab_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_lab_user.Image = ((System.Drawing.Image)(resources.GetObject("pl_lab_user.Image")));
+            this.pl_lab_user.Location = new System.Drawing.Point(724, 12);
+            this.pl_lab_user.Name = "pl_lab_user";
+            this.pl_lab_user.Size = new System.Drawing.Size(100, 105);
+            this.pl_lab_user.TabIndex = 171;
+            this.pl_lab_user.TabStop = false;
             // 
             // frm_permiso
             // 
@@ -318,33 +259,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(828, 539);
+            this.Controls.Add(this.pl_lab_user);
+            this.Controls.Add(this.btn_rnv_per);
             this.Controls.Add(this.btn_busc_id_per);
             this.Controls.Add(this.txt_busc_id_per);
             this.Controls.Add(this.lbl_busca_per);
             this.Controls.Add(this.grb_vista_per);
-            this.Controls.Add(this.grb_datos2_per);
             this.Controls.Add(this.grb_datos1_per);
             this.Controls.Add(this.btn_elim_per);
             this.Controls.Add(this.btn_actlz_per);
             this.Controls.Add(this.btn_guardar_per);
             this.Controls.Add(this.Lbl_permiso);
-            this.Controls.Add(this.pic_logo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_permiso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permiso";
+            this.Load += new System.EventHandler(this.frm_permiso_Load);
             this.grb_vista_per.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_per)).EndInit();
-            this.grb_datos2_per.ResumeLayout(false);
-            this.grb_datos2_per.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_id_usur_per)).EndInit();
             this.grb_datos1_per.ResumeLayout(false);
             this.grb_datos1_per.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pl_lab_user)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
 
         #endregion
 
@@ -353,16 +293,9 @@
         internal System.Windows.Forms.Label lbl_busca_per;
         private System.Windows.Forms.GroupBox grb_vista_per;
         private System.Windows.Forms.DataGridView dgv_busc_per;
-        private System.Windows.Forms.GroupBox grb_datos2_per;
-        private System.Windows.Forms.DataGridView dgv_id_usur_per;
-        private System.Windows.Forms.Button btn_busc_id_usur_per;
-        internal System.Windows.Forms.Label Lbl_id_usur_per;
-        internal System.Windows.Forms.TextBox txt_busc_id_usur_per;
         private System.Windows.Forms.GroupBox grb_datos1_per;
         internal System.Windows.Forms.TextBox txt_id_per;
         internal System.Windows.Forms.Label Lbl_id_per;
-        internal System.Windows.Forms.Label Lbl_id_usur;
-        internal System.Windows.Forms.TextBox txt_usur_per;
         internal System.Windows.Forms.Label Lbl_descripcion;
         internal System.Windows.Forms.TextBox txt_descr_per;
         internal System.Windows.Forms.Label Lbl_nombre;
@@ -371,6 +304,7 @@
         private System.Windows.Forms.Button btn_actlz_per;
         private System.Windows.Forms.Button btn_guardar_per;
         internal System.Windows.Forms.Label Lbl_permiso;
-        internal System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Button btn_rnv_per;
+        internal System.Windows.Forms.PictureBox pl_lab_user;
     }
 }
