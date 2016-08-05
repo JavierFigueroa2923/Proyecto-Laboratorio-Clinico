@@ -152,7 +152,7 @@ namespace WindowsFormsApplication1
             ManipularDato.obtener_conexion();
             String Query = ("select * from area_laboratorio where ubicacion = '" + txt_buscar_lab.Text + "%'; ");
 
-            ManipularDato.Busqueda(Query);
+            //ManipularDato.Busqueda(Query);
 
             ActualizarGrid(this.dgv_area_labs, Query);
 

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class txt_fecha_expir
+    partial class Membresia
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(txt_fecha_expir));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Membresia));
             this.lbl_membresia = new System.Windows.Forms.Label();
             this.gpb_ingreso_datos = new System.Windows.Forms.GroupBox();
+            this.txt_fec_expirar = new System.Windows.Forms.TextBox();
+            this.txt_fecha_exp = new System.Windows.Forms.TextBox();
             this.txt_beneficio = new System.Windows.Forms.TextBox();
             this.txt_id_clt = new System.Windows.Forms.TextBox();
             this.txt_membresia = new System.Windows.Forms.TextBox();
@@ -49,8 +51,6 @@
             this.btn_act_datos = new System.Windows.Forms.Button();
             this.lbl_busq_clt = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_fecha_exp = new System.Windows.Forms.TextBox();
-            this.txt_fec_expirar = new System.Windows.Forms.TextBox();
             this.gpb_ingreso_datos.SuspendLayout();
             this.gpb_vista_clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_membresia)).BeginInit();
@@ -86,6 +86,20 @@
             this.gpb_ingreso_datos.TabIndex = 58;
             this.gpb_ingreso_datos.TabStop = false;
             this.gpb_ingreso_datos.Text = "Ingreso de datos";
+            // 
+            // txt_fec_expirar
+            // 
+            this.txt_fec_expirar.Location = new System.Drawing.Point(9, 331);
+            this.txt_fec_expirar.Name = "txt_fec_expirar";
+            this.txt_fec_expirar.Size = new System.Drawing.Size(310, 24);
+            this.txt_fec_expirar.TabIndex = 164;
+            // 
+            // txt_fecha_exp
+            // 
+            this.txt_fecha_exp.Location = new System.Drawing.Point(9, 268);
+            this.txt_fecha_exp.Name = "txt_fecha_exp";
+            this.txt_fecha_exp.Size = new System.Drawing.Size(310, 24);
+            this.txt_fecha_exp.TabIndex = 163;
             // 
             // txt_beneficio
             // 
@@ -275,21 +289,7 @@
             this.pictureBox1.TabIndex = 166;
             this.pictureBox1.TabStop = false;
             // 
-            // txt_fecha_exp
-            // 
-            this.txt_fecha_exp.Location = new System.Drawing.Point(9, 268);
-            this.txt_fecha_exp.Name = "txt_fecha_exp";
-            this.txt_fecha_exp.Size = new System.Drawing.Size(310, 24);
-            this.txt_fecha_exp.TabIndex = 163;
-            // 
-            // txt_fec_expirar
-            // 
-            this.txt_fec_expirar.Location = new System.Drawing.Point(9, 331);
-            this.txt_fec_expirar.Name = "txt_fec_expirar";
-            this.txt_fec_expirar.Size = new System.Drawing.Size(310, 24);
-            this.txt_fec_expirar.TabIndex = 164;
-            // 
-            // txt_fecha_expir
+            // Membresia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -306,7 +306,7 @@
             this.Controls.Add(this.gpb_ingreso_datos);
             this.Controls.Add(this.lbl_membresia);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "txt_fecha_expir";
+            this.Name = "Membresia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Membresia";
             this.Load += new System.EventHandler(this.txt_fecha_expir_Load);

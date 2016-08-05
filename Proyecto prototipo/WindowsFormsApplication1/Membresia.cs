@@ -11,14 +11,14 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
 {
-    public partial class txt_fecha_expir : Form
+    public partial class Membresia : Form
     {
         Validaciones validar = new Validaciones();
         BDconexion manipular = new BDconexion();
         String Codigo;
         Boolean Editar;
 
-        public txt_fecha_expir()
+        public Membresia()
         {
             InitializeComponent();
         }
@@ -95,10 +95,10 @@ namespace WindowsFormsApplication1
                 else
                 {
 
-                    
+
 
                     manipular.obtener_conexion();
-                    String Query = "INSERT INTO membresia (pk_id_mem,beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + Convert.ToDouble(txt_membresia.Text) + "','" + txt_beneficio.Text + "','" + txt_fecha_exp.Text + "','" + txt_fec_expirar.Text + "', '" + Convert.ToDouble(txt_id_clt.Text) + "') ";
+                    String Query="INSERT INTO membresia (pk_id_mem,beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + Convert.ToDouble(txt_membresia.Text) + "','" + txt_beneficio.Text + "','" + txt_fecha_exp.Text + "','" + txt_fec_expirar.Text + "', '" + Convert.ToDouble(txt_id_clt.Text) + "') ";
 
                     manipular.EjecutarSql(Query);
 

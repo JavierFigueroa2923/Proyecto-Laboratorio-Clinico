@@ -32,9 +32,7 @@
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.grb_datos1_pcnt = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.Lbl_apellido = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.Lbl_email = new System.Windows.Forms.Label();
@@ -103,9 +101,7 @@
             // 
             // grb_datos1_pcnt
             // 
-            this.grb_datos1_pcnt.Controls.Add(this.comboBox3);
             this.grb_datos1_pcnt.Controls.Add(this.Lbl_apellido);
-            this.grb_datos1_pcnt.Controls.Add(this.comboBox2);
             this.grb_datos1_pcnt.Controls.Add(this.txt_apellido);
             this.grb_datos1_pcnt.Controls.Add(this.txt_email);
             this.grb_datos1_pcnt.Controls.Add(this.Lbl_email);
@@ -125,15 +121,6 @@
             this.grb_datos1_pcnt.TabStop = false;
             this.grb_datos1_pcnt.Text = "Datos Generales";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(93, 152);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(37, 24);
-            this.comboBox3.TabIndex = 140;
-            // 
             // Lbl_apellido
             // 
             this.Lbl_apellido.AutoSize = true;
@@ -144,27 +131,19 @@
             this.Lbl_apellido.TabIndex = 103;
             this.Lbl_apellido.Text = "Apellido:";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(93, 123);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(37, 24);
-            this.comboBox2.TabIndex = 139;
-            // 
             // txt_apellido
             // 
             this.txt_apellido.Location = new System.Drawing.Point(93, 48);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(325, 23);
             this.txt_apellido.TabIndex = 102;
+            this.txt_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_KeyPress);
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(140, 152);
+            this.txt_email.Location = new System.Drawing.Point(93, 152);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(278, 23);
+            this.txt_email.Size = new System.Drawing.Size(325, 23);
             this.txt_email.TabIndex = 94;
             // 
             // Lbl_email
@@ -183,13 +162,15 @@
             this.txt_nit.Name = "txt_nit";
             this.txt_nit.Size = new System.Drawing.Size(106, 23);
             this.txt_nit.TabIndex = 89;
+            this.txt_nit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nit_KeyPress);
             // 
             // txt_telefono
             // 
-            this.txt_telefono.Location = new System.Drawing.Point(140, 123);
+            this.txt_telefono.Location = new System.Drawing.Point(93, 123);
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(126, 23);
+            this.txt_telefono.Size = new System.Drawing.Size(173, 23);
             this.txt_telefono.TabIndex = 88;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // Lbl_nit
             // 
@@ -245,6 +226,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(325, 23);
             this.txt_nombre.TabIndex = 80;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // cbo_expediente
             // 
@@ -260,6 +242,7 @@
             this.txt_peso_pcnt.Name = "txt_peso_pcnt";
             this.txt_peso_pcnt.Size = new System.Drawing.Size(224, 23);
             this.txt_peso_pcnt.TabIndex = 124;
+            this.txt_peso_pcnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_peso_pcnt_KeyPress);
             // 
             // txt_altura
             // 
@@ -267,6 +250,7 @@
             this.txt_altura.Name = "txt_altura";
             this.txt_altura.Size = new System.Drawing.Size(224, 23);
             this.txt_altura.TabIndex = 123;
+            this.txt_altura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_altura_KeyPress);
             // 
             // Lbl_peso
             // 
@@ -312,6 +296,7 @@
             this.txt_dpi.Name = "txt_dpi";
             this.txt_dpi.Size = new System.Drawing.Size(224, 23);
             this.txt_dpi.TabIndex = 117;
+            this.txt_dpi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dpi_KeyPress);
             // 
             // Lbl_dpi
             // 
@@ -339,16 +324,17 @@
             this.txt_fecha_nacimiento.Name = "txt_fecha_nacimiento";
             this.txt_fecha_nacimiento.Size = new System.Drawing.Size(127, 23);
             this.txt_fecha_nacimiento.TabIndex = 114;
+            this.txt_fecha_nacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fecha_nacimiento_KeyPress);
             // 
             // Lbl_fecha_nacimiento
             // 
             this.Lbl_fecha_nacimiento.AutoSize = true;
             this.Lbl_fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_fecha_nacimiento.Location = new System.Drawing.Point(10, 22);
+            this.Lbl_fecha_nacimiento.Location = new System.Drawing.Point(120, 19);
             this.Lbl_fecha_nacimiento.Name = "Lbl_fecha_nacimiento";
-            this.Lbl_fecha_nacimiento.Size = new System.Drawing.Size(171, 20);
+            this.Lbl_fecha_nacimiento.Size = new System.Drawing.Size(51, 20);
             this.Lbl_fecha_nacimiento.TabIndex = 112;
-            this.Lbl_fecha_nacimiento.Text = "Fecha de Nacimiento:";
+            this.Lbl_fecha_nacimiento.Text = "Edad:";
             // 
             // Lbl_sexo
             // 
@@ -498,6 +484,7 @@
             this.btn_guardar_pcnt.Text = "GUARDAR";
             this.btn_guardar_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_pcnt.UseVisualStyleBackColor = true;
+            this.btn_guardar_pcnt.Click += new System.EventHandler(this.btn_guardar_pcnt_Click);
             // 
             // btn_elim_pcnt
             // 
@@ -587,10 +574,8 @@
         private System.Windows.Forms.Button btn_busc_aseg;
         private System.Windows.Forms.Button btn_actlz_pcnt;
         private System.Windows.Forms.Button btn_guardar_pcnt;
-        private System.Windows.Forms.ComboBox cbo_sexo_pcnt;
-        private System.Windows.Forms.ComboBox cbo_tip_sang_pcnt;
         private System.Windows.Forms.Button btn_elim_pcnt;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        protected System.Windows.Forms.ComboBox cbo_sexo_pcnt;
+        protected System.Windows.Forms.ComboBox cbo_tip_sang_pcnt;
     }
 }

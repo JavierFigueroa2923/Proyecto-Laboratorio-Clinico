@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
             ManipularDato.obtener_conexion();
             String Query = ("select L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where nombre_lab like '%" + txt_busc_lab.Text + "%' and L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab ");
 
-            ManipularDato.Busqueda(Query);
+            //ManipularDato.Busqueda(Query);
 
             GridViewActualizar(this.dgv_labs, Query);
 

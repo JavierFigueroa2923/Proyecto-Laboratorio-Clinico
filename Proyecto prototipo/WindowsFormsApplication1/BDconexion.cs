@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         MySqlConnection conectar;
         public void obtener_conexion()
         {
-            conectar = new MySqlConnection("server=localhost; database=bases; uid=root; pwd=;");
+            conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
             conectar.Open();
 
         }
@@ -27,23 +27,13 @@ namespace WindowsFormsApplication1
 
             //ejecutamos la consulta (query) sql...
             int FilasAfectadas = MiComando.ExecuteNonQuery();
-
-        }
-
-        public void Busqueda(String Query)
-        {
-            MySqlCommand MiComando = new MySqlCommand(Query,conectar);
-
-            //ejecutamos la consulta (query) sql...
-            int FilasAfectadas = MiComando.ExecuteNonQuery();
-
             if (FilasAfectadas > 0)
-                MessageBox.Show("No se Encontro el Registro", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Operación realizada exitosamente", "la base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
 
-                MessageBox.Show("Busqueda Realizada", "Busqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se pudo realizar la modificación de la base de datos :-(", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        
     }
 }
