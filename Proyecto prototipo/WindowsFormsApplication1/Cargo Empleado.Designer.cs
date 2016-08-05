@@ -35,18 +35,18 @@
             this.btn_guardar_cargo_emp = new System.Windows.Forms.Button();
             this.pl_lab_cargo_emp = new System.Windows.Forms.PictureBox();
             this.gpb_datos_cargo_emp = new System.Windows.Forms.GroupBox();
+            this.txt_id_cargo_emp = new System.Windows.Forms.TextBox();
+            this.txt_descp_cargo_emp = new System.Windows.Forms.TextBox();
+            this.txt_id_emp_cargo_emp = new System.Windows.Forms.TextBox();
             this.lbl_id_cargo_emp = new System.Windows.Forms.Label();
             this.txt_nombre_cargo_emp = new System.Windows.Forms.TextBox();
+            this.Lbl_id_lab_cargo_emp = new System.Windows.Forms.Label();
             this.Lbl_nombre_cargo_emp = new System.Windows.Forms.Label();
-            this.txt_id_emp_cargo_emp = new System.Windows.Forms.TextBox();
+            this.txt_dpi = new System.Windows.Forms.TextBox();
+            this.lbl_descrp_cargo_emp = new System.Windows.Forms.Label();
+            this.txt_fecha_contrat_cargo_emp = new System.Windows.Forms.TextBox();
             this.Lbl_id_emp_cargo_emp = new System.Windows.Forms.Label();
             this.Lbl_fecha_contrat_cargo_emp = new System.Windows.Forms.Label();
-            this.txt_fecha_contrat_cargo_emp = new System.Windows.Forms.TextBox();
-            this.txt_dpi = new System.Windows.Forms.TextBox();
-            this.Lbl_id_lab_cargo_emp = new System.Windows.Forms.Label();
-            this.txt_id_cargo_emp = new System.Windows.Forms.TextBox();
-            this.lbl_descrp_cargo_emp = new System.Windows.Forms.Label();
-            this.txt_descp_cargo_emp = new System.Windows.Forms.TextBox();
             this.dgv_cargo_emp = new System.Windows.Forms.DataGridView();
             this.grb_vista_emp = new System.Windows.Forms.GroupBox();
             this.btn_rnv_cargo_emp = new System.Windows.Forms.Button();
@@ -89,6 +89,7 @@
             this.btn_elim_cargo_emp.Text = "ELIMINAR";
             this.btn_elim_cargo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_cargo_emp.UseVisualStyleBackColor = true;
+            this.btn_elim_cargo_emp.Click += new System.EventHandler(this.btn_elim_cargo_emp_Click);
             // 
             // btn_actlz_cargo_emp
             // 
@@ -102,6 +103,7 @@
             this.btn_actlz_cargo_emp.Text = "ACTUALIZAR";
             this.btn_actlz_cargo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_cargo_emp.UseVisualStyleBackColor = true;
+            this.btn_actlz_cargo_emp.Click += new System.EventHandler(this.btn_actlz_cargo_emp_Click);
             // 
             // btn_guardar_cargo_emp
             // 
@@ -115,6 +117,7 @@
             this.btn_guardar_cargo_emp.Text = "GUARDAR";
             this.btn_guardar_cargo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_cargo_emp.UseVisualStyleBackColor = true;
+            this.btn_guardar_cargo_emp.Click += new System.EventHandler(this.btn_guardar_cargo_emp_Click);
             // 
             // pl_lab_cargo_emp
             // 
@@ -148,6 +151,28 @@
             this.gpb_datos_cargo_emp.TabStop = false;
             this.gpb_datos_cargo_emp.Text = "Informacion General";
             // 
+            // txt_id_cargo_emp
+            // 
+            this.txt_id_cargo_emp.Location = new System.Drawing.Point(119, 19);
+            this.txt_id_cargo_emp.Name = "txt_id_cargo_emp";
+            this.txt_id_cargo_emp.Size = new System.Drawing.Size(174, 23);
+            this.txt_id_cargo_emp.TabIndex = 155;
+            // 
+            // txt_descp_cargo_emp
+            // 
+            this.txt_descp_cargo_emp.Location = new System.Drawing.Point(118, 75);
+            this.txt_descp_cargo_emp.Multiline = true;
+            this.txt_descp_cargo_emp.Name = "txt_descp_cargo_emp";
+            this.txt_descp_cargo_emp.Size = new System.Drawing.Size(256, 55);
+            this.txt_descp_cargo_emp.TabIndex = 145;
+            // 
+            // txt_id_emp_cargo_emp
+            // 
+            this.txt_id_emp_cargo_emp.Location = new System.Drawing.Point(172, 165);
+            this.txt_id_emp_cargo_emp.Name = "txt_id_emp_cargo_emp";
+            this.txt_id_emp_cargo_emp.Size = new System.Drawing.Size(202, 23);
+            this.txt_id_emp_cargo_emp.TabIndex = 145;
+            // 
             // lbl_id_cargo_emp
             // 
             this.lbl_id_cargo_emp.AutoSize = true;
@@ -165,6 +190,16 @@
             this.txt_nombre_cargo_emp.Size = new System.Drawing.Size(255, 23);
             this.txt_nombre_cargo_emp.TabIndex = 143;
             // 
+            // Lbl_id_lab_cargo_emp
+            // 
+            this.Lbl_id_lab_cargo_emp.AutoSize = true;
+            this.Lbl_id_lab_cargo_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.Lbl_id_lab_cargo_emp.Location = new System.Drawing.Point(9, 194);
+            this.Lbl_id_lab_cargo_emp.Name = "Lbl_id_lab_cargo_emp";
+            this.Lbl_id_lab_cargo_emp.Size = new System.Drawing.Size(141, 20);
+            this.Lbl_id_lab_cargo_emp.TabIndex = 149;
+            this.Lbl_id_lab_cargo_emp.Text = "Id de Laboratorio:";
+            // 
             // Lbl_nombre_cargo_emp
             // 
             this.Lbl_nombre_cargo_emp.AutoSize = true;
@@ -175,12 +210,29 @@
             this.Lbl_nombre_cargo_emp.TabIndex = 144;
             this.Lbl_nombre_cargo_emp.Text = "Nombre:";
             // 
-            // txt_id_emp_cargo_emp
+            // txt_dpi
             // 
-            this.txt_id_emp_cargo_emp.Location = new System.Drawing.Point(172, 165);
-            this.txt_id_emp_cargo_emp.Name = "txt_id_emp_cargo_emp";
-            this.txt_id_emp_cargo_emp.Size = new System.Drawing.Size(202, 23);
-            this.txt_id_emp_cargo_emp.TabIndex = 145;
+            this.txt_dpi.Location = new System.Drawing.Point(172, 194);
+            this.txt_dpi.Name = "txt_dpi";
+            this.txt_dpi.Size = new System.Drawing.Size(202, 23);
+            this.txt_dpi.TabIndex = 150;
+            // 
+            // lbl_descrp_cargo_emp
+            // 
+            this.lbl_descrp_cargo_emp.AutoSize = true;
+            this.lbl_descrp_cargo_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lbl_descrp_cargo_emp.Location = new System.Drawing.Point(9, 75);
+            this.lbl_descrp_cargo_emp.Name = "lbl_descrp_cargo_emp";
+            this.lbl_descrp_cargo_emp.Size = new System.Drawing.Size(100, 20);
+            this.lbl_descrp_cargo_emp.TabIndex = 146;
+            this.lbl_descrp_cargo_emp.Text = "Descripción:";
+            // 
+            // txt_fecha_contrat_cargo_emp
+            // 
+            this.txt_fecha_contrat_cargo_emp.Location = new System.Drawing.Point(172, 136);
+            this.txt_fecha_contrat_cargo_emp.Name = "txt_fecha_contrat_cargo_emp";
+            this.txt_fecha_contrat_cargo_emp.Size = new System.Drawing.Size(202, 23);
+            this.txt_fecha_contrat_cargo_emp.TabIndex = 148;
             // 
             // Lbl_id_emp_cargo_emp
             // 
@@ -201,55 +253,6 @@
             this.Lbl_fecha_contrat_cargo_emp.Size = new System.Drawing.Size(161, 20);
             this.Lbl_fecha_contrat_cargo_emp.TabIndex = 147;
             this.Lbl_fecha_contrat_cargo_emp.Text = "Fecha Contratacion:";
-            // 
-            // txt_fecha_contrat_cargo_emp
-            // 
-            this.txt_fecha_contrat_cargo_emp.Location = new System.Drawing.Point(172, 136);
-            this.txt_fecha_contrat_cargo_emp.Name = "txt_fecha_contrat_cargo_emp";
-            this.txt_fecha_contrat_cargo_emp.Size = new System.Drawing.Size(202, 23);
-            this.txt_fecha_contrat_cargo_emp.TabIndex = 148;
-            // 
-            // txt_dpi
-            // 
-            this.txt_dpi.Location = new System.Drawing.Point(172, 194);
-            this.txt_dpi.Name = "txt_dpi";
-            this.txt_dpi.Size = new System.Drawing.Size(202, 23);
-            this.txt_dpi.TabIndex = 150;
-            // 
-            // Lbl_id_lab_cargo_emp
-            // 
-            this.Lbl_id_lab_cargo_emp.AutoSize = true;
-            this.Lbl_id_lab_cargo_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_id_lab_cargo_emp.Location = new System.Drawing.Point(9, 194);
-            this.Lbl_id_lab_cargo_emp.Name = "Lbl_id_lab_cargo_emp";
-            this.Lbl_id_lab_cargo_emp.Size = new System.Drawing.Size(141, 20);
-            this.Lbl_id_lab_cargo_emp.TabIndex = 149;
-            this.Lbl_id_lab_cargo_emp.Text = "Id de Laboratorio:";
-            // 
-            // txt_id_cargo_emp
-            // 
-            this.txt_id_cargo_emp.Location = new System.Drawing.Point(119, 19);
-            this.txt_id_cargo_emp.Name = "txt_id_cargo_emp";
-            this.txt_id_cargo_emp.Size = new System.Drawing.Size(174, 23);
-            this.txt_id_cargo_emp.TabIndex = 155;
-            // 
-            // lbl_descrp_cargo_emp
-            // 
-            this.lbl_descrp_cargo_emp.AutoSize = true;
-            this.lbl_descrp_cargo_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lbl_descrp_cargo_emp.Location = new System.Drawing.Point(9, 75);
-            this.lbl_descrp_cargo_emp.Name = "lbl_descrp_cargo_emp";
-            this.lbl_descrp_cargo_emp.Size = new System.Drawing.Size(100, 20);
-            this.lbl_descrp_cargo_emp.TabIndex = 146;
-            this.lbl_descrp_cargo_emp.Text = "Descripción:";
-            // 
-            // txt_descp_cargo_emp
-            // 
-            this.txt_descp_cargo_emp.Location = new System.Drawing.Point(118, 75);
-            this.txt_descp_cargo_emp.Multiline = true;
-            this.txt_descp_cargo_emp.Name = "txt_descp_cargo_emp";
-            this.txt_descp_cargo_emp.Size = new System.Drawing.Size(256, 55);
-            this.txt_descp_cargo_emp.TabIndex = 145;
             // 
             // dgv_cargo_emp
             // 
@@ -282,6 +285,7 @@
             this.btn_rnv_cargo_emp.Text = "RENOVAR";
             this.btn_rnv_cargo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_rnv_cargo_emp.UseVisualStyleBackColor = true;
+            this.btn_rnv_cargo_emp.Click += new System.EventHandler(this.btn_rnv_cargo_emp_Click);
             // 
             // btn_busc_cargo_emp
             // 
@@ -296,6 +300,7 @@
             this.btn_busc_cargo_emp.Text = "BUSCAR";
             this.btn_busc_cargo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_busc_cargo_emp.UseVisualStyleBackColor = true;
+            this.btn_busc_cargo_emp.Click += new System.EventHandler(this.btn_busc_cargo_emp_Click);
             // 
             // txt_busc_cargo_emp
             // 
@@ -317,7 +322,7 @@
             // dgv_emps_cargo_emp
             // 
             this.dgv_emps_cargo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_emps_cargo_emp.Location = new System.Drawing.Point(6, 19);
+            this.dgv_emps_cargo_emp.Location = new System.Drawing.Point(6, 22);
             this.dgv_emps_cargo_emp.Name = "dgv_emps_cargo_emp";
             this.dgv_emps_cargo_emp.Size = new System.Drawing.Size(434, 94);
             this.dgv_emps_cargo_emp.TabIndex = 0;
@@ -374,6 +379,7 @@
             this.Name = "Cargo_Empleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargo Empleado";
+            this.Load += new System.EventHandler(this.Cargo_Empleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pl_lab_cargo_emp)).EndInit();
             this.gpb_datos_cargo_emp.ResumeLayout(false);
             this.gpb_datos_cargo_emp.PerformLayout();

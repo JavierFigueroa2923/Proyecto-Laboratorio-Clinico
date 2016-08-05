@@ -17,6 +17,26 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+        BDconexion ManipularDato = new BDconexion();
+        public void GridViewActualizar(DataGridView dgv, String Query)
+        {
+            //Establecemos la conexion
+            ManipularDato.obtener_conexion();
+            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
+
+            //creamos el DataSet a utilizar
+            System.Data.DataSet newDataSet = new System.Data.DataSet();
+
+            //Creamos un nuevo adaptador de datos
+            MySqlDataAdapter newDataAdapter = new MySqlDataAdapter(Query, conectar);
+
+            //LLenamos el DataSet
+            newDataAdapter.Fill(newDataSet, "Forma de Pago");
+
+            //Asignando valores al DataGrid
+            dgv.DataSource = newDataSet;
+            dgv.DataMember = "Forma de Pago";
+        }
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -232,7 +252,15 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_lab_Click(object sender, EventArgs e)
         {
+            ManipularDato.obtener_conexion();
+            String Query = ("select * from forma_de_pago where nombre_fm_pago like '%" + txt_busc_lab + "%' ");
 
+            ManipularDato.Busqueda(Query);
+
+            GridViewActualizar(this.dataGridView1, Query);
+
+
+            ManipularDato.Desconectar();
         }
     }
 }

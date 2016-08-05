@@ -91,6 +91,7 @@
             this.Btn_Inicio_secion.TabIndex = 11;
             this.Btn_Inicio_secion.Text = "Iniciar Sesion";
             this.Btn_Inicio_secion.UseVisualStyleBackColor = false;
+            this.Btn_Inicio_secion.Click += new System.EventHandler(this.Btn_Inicio_secion_Click);
             // 
             // txt_pass
             // 
@@ -99,6 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_pass.Location = new System.Drawing.Point(111, 297);
             this.txt_pass.Name = "txt_pass";
+            this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(244, 20);
             this.txt_pass.TabIndex = 10;
             // 
@@ -186,6 +188,7 @@
             this.Name = "Bienvenido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar secion";
+            this.Load += new System.EventHandler(this.Bienvenido_Load);
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
