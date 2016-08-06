@@ -1,0 +1,276 @@
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\beto\Documents\diseño sistemas\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Datos_del_paciente.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form7.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Menu_de_empleado.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Datos_del_empleado.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_aseguradora.resources
+C:\Users\beto\Desktop\diseño\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_lab.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_sum.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Datos_del_paciente.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Datos_del_empleado.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_inventario.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_aseguradora.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_Nuevo_inventario.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevo_Laboratorio.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevos_suministros.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_de_suministros.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\beto\Documents\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_lab.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_inventario.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevo_Laboratorio.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_de_suministros.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_lab.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_inventario.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevo_Laboratorio.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_de_suministros.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cargo_Empleado.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Citas.resources
+C:\Users\javie\Documents\Universidad Mariano Galvez\Semestre # 8\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\javie\Documents\Universidad Mariano Galvez\Semestre # 8\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\javie\Documents\Universidad Mariano Galvez\Semestre # 8\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cargo_Empleado.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Citas.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_lab.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_inventario.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevo_Laboratorio.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_de_suministros.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Area_de_laboratorio.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Membresia.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
+C:\Users\javie\Music\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\mscorlib.dll
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\es\mscorlib.resources.dll
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normidna.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfc.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfd.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfkc.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\normnfkd.nlp
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Area_de_laboratorio.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cargo_Empleado.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Citas.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_lab.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Membresia.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_inventario.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevo_Laboratorio.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_de_suministros.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
+C:\Users\denil\Documents\Visual Studio 2012\Projects\prueba1\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Area_de_laboratorio.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Membresia.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\MySql.Data.dll
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\MySql.Data.xml
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Area_de_laboratorio.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cargo_Empleado.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Citas.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\MySql.Data.dll
+C:\Users\javie\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\MySql.Data.xml
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\MySql.Data.dll
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\bin\Debug\MySql.Data.xml
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Area_de_laboratorio.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_aseg.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cargo_Empleado.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Citas.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_etiqueta.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Factura.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_lab.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_pago.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Cotizacion.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Bienvenido.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_cliente.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_emp.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Manejo_Usuarios.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Membresia.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_muestra.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_permiso.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Resultado_examen.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_examenes.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_act_inventario.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MDIParent1.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frm_nuevo_examen.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Nuevo_Laboratorio.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_de_suministros.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Login.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_pagos.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Ganancias.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_examenes.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reporte_Examen_Paciente.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tipo_de_muestra.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Titulo_de_empleado.resources
+C:\Users\ottog\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Cristian\Documents\GitHub\Proyecto-Laboratorio-Clinico\Proyecto prototipo\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Membresia.resources
