@@ -44,7 +44,6 @@
             this.txt_direccion = new System.Windows.Forms.TextBox();
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.cbo_expediente = new System.Windows.Forms.ComboBox();
             this.txt_peso_pcnt = new System.Windows.Forms.TextBox();
             this.txt_altura = new System.Windows.Forms.TextBox();
             this.Lbl_peso = new System.Windows.Forms.Label();
@@ -57,25 +56,25 @@
             this.txt_fecha_nacimiento = new System.Windows.Forms.TextBox();
             this.Lbl_fecha_nacimiento = new System.Windows.Forms.Label();
             this.Lbl_sexo = new System.Windows.Forms.Label();
-            this.Lbl_expediente = new System.Windows.Forms.Label();
             this.grb_datos2_pcnt = new System.Windows.Forms.GroupBox();
             this.cbo_tip_sang_pcnt = new System.Windows.Forms.ComboBox();
             this.cbo_sexo_pcnt = new System.Windows.Forms.ComboBox();
             this.grb_datos3_pnct = new System.Windows.Forms.GroupBox();
             this.grb_vista_pcnt = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_list_pcnt = new System.Windows.Forms.DataGridView();
             this.txt_busc_pcnt = new System.Windows.Forms.TextBox();
             this.lbl_busca_pcnt = new System.Windows.Forms.Label();
-            this.btn_busc_aseg = new System.Windows.Forms.Button();
+            this.btn_busc_pcnt = new System.Windows.Forms.Button();
             this.btn_actlz_pcnt = new System.Windows.Forms.Button();
             this.btn_guardar_pcnt = new System.Windows.Forms.Button();
             this.btn_elim_pcnt = new System.Windows.Forms.Button();
+            this.btn_renov_pcnt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.grb_datos1_pcnt.SuspendLayout();
             this.grb_datos2_pcnt.SuspendLayout();
             this.grb_datos3_pnct.SuspendLayout();
             this.grb_vista_pcnt.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_list_pcnt)).BeginInit();
             this.SuspendLayout();
             // 
             // PictureBox1
@@ -136,7 +135,9 @@
             this.txt_apellido.Location = new System.Drawing.Point(93, 48);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(325, 23);
-            this.txt_apellido.TabIndex = 102;
+            this.txt_apellido.TabIndex = 2;
+            this.txt_apellido.TextChanged += new System.EventHandler(this.txt_apellido_TextChanged);
+            this.txt_apellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_apellido_KeyDown);
             this.txt_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_KeyPress);
             // 
             // txt_email
@@ -144,7 +145,9 @@
             this.txt_email.Location = new System.Drawing.Point(93, 152);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(325, 23);
-            this.txt_email.TabIndex = 94;
+            this.txt_email.TabIndex = 6;
+            this.txt_email.TextChanged += new System.EventHandler(this.txt_email_TextChanged);
+            this.txt_email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_email_KeyDown);
             // 
             // Lbl_email
             // 
@@ -161,7 +164,9 @@
             this.txt_nit.Location = new System.Drawing.Point(310, 123);
             this.txt_nit.Name = "txt_nit";
             this.txt_nit.Size = new System.Drawing.Size(106, 23);
-            this.txt_nit.TabIndex = 89;
+            this.txt_nit.TabIndex = 5;
+            this.txt_nit.TextChanged += new System.EventHandler(this.txt_nit_TextChanged);
+            this.txt_nit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nit_KeyDown);
             this.txt_nit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nit_KeyPress);
             // 
             // txt_telefono
@@ -169,7 +174,8 @@
             this.txt_telefono.Location = new System.Drawing.Point(93, 123);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(173, 23);
-            this.txt_telefono.TabIndex = 88;
+            this.txt_telefono.TabIndex = 4;
+            this.txt_telefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_telefono_KeyDown);
             this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // Lbl_nit
@@ -208,7 +214,9 @@
             this.txt_direccion.Multiline = true;
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(325, 40);
-            this.txt_direccion.TabIndex = 82;
+            this.txt_direccion.TabIndex = 3;
+            this.txt_direccion.TextChanged += new System.EventHandler(this.txt_direccion_TextChanged);
+            this.txt_direccion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_direccion_KeyDown);
             // 
             // Lbl_nombre
             // 
@@ -225,52 +233,48 @@
             this.txt_nombre.Location = new System.Drawing.Point(93, 19);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(325, 23);
-            this.txt_nombre.TabIndex = 80;
+            this.txt_nombre.TabIndex = 1;
+            this.txt_nombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nombre_KeyDown);
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
-            // 
-            // cbo_expediente
-            // 
-            this.cbo_expediente.FormattingEnabled = true;
-            this.cbo_expediente.Location = new System.Drawing.Point(539, 21);
-            this.cbo_expediente.Name = "cbo_expediente";
-            this.cbo_expediente.Size = new System.Drawing.Size(207, 24);
-            this.cbo_expediente.TabIndex = 125;
             // 
             // txt_peso_pcnt
             // 
-            this.txt_peso_pcnt.Location = new System.Drawing.Point(80, 106);
+            this.txt_peso_pcnt.Location = new System.Drawing.Point(113, 106);
             this.txt_peso_pcnt.Name = "txt_peso_pcnt";
-            this.txt_peso_pcnt.Size = new System.Drawing.Size(224, 23);
-            this.txt_peso_pcnt.TabIndex = 124;
+            this.txt_peso_pcnt.Size = new System.Drawing.Size(191, 23);
+            this.txt_peso_pcnt.TabIndex = 10;
+            this.txt_peso_pcnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_peso_pcnt_KeyDown);
             this.txt_peso_pcnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_peso_pcnt_KeyPress);
             // 
             // txt_altura
             // 
-            this.txt_altura.Location = new System.Drawing.Point(80, 77);
+            this.txt_altura.Location = new System.Drawing.Point(113, 77);
             this.txt_altura.Name = "txt_altura";
-            this.txt_altura.Size = new System.Drawing.Size(224, 23);
-            this.txt_altura.TabIndex = 123;
+            this.txt_altura.Size = new System.Drawing.Size(191, 23);
+            this.txt_altura.TabIndex = 9;
+            this.txt_altura.TextChanged += new System.EventHandler(this.txt_altura_TextChanged);
+            this.txt_altura.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_altura_KeyDown);
             this.txt_altura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_altura_KeyPress);
             // 
             // Lbl_peso
             // 
             this.Lbl_peso.AutoSize = true;
             this.Lbl_peso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_peso.Location = new System.Drawing.Point(26, 104);
+            this.Lbl_peso.Location = new System.Drawing.Point(30, 106);
             this.Lbl_peso.Name = "Lbl_peso";
-            this.Lbl_peso.Size = new System.Drawing.Size(48, 20);
+            this.Lbl_peso.Size = new System.Drawing.Size(75, 20);
             this.Lbl_peso.TabIndex = 122;
-            this.Lbl_peso.Text = "Peso:";
+            this.Lbl_peso.Text = "Peso(Lb):";
             // 
             // Lbl_altura
             // 
             this.Lbl_altura.AutoSize = true;
             this.Lbl_altura.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_altura.Location = new System.Drawing.Point(18, 77);
+            this.Lbl_altura.Location = new System.Drawing.Point(11, 77);
             this.Lbl_altura.Name = "Lbl_altura";
-            this.Lbl_altura.Size = new System.Drawing.Size(56, 20);
+            this.Lbl_altura.Size = new System.Drawing.Size(94, 20);
             this.Lbl_altura.TabIndex = 121;
-            this.Lbl_altura.Text = "Altura:";
+            this.Lbl_altura.Text = "Altura (mts):";
             // 
             // Label13
             // 
@@ -288,21 +292,23 @@
             this.txt_referido.Location = new System.Drawing.Point(121, 22);
             this.txt_referido.Name = "txt_referido";
             this.txt_referido.Size = new System.Drawing.Size(297, 23);
-            this.txt_referido.TabIndex = 118;
+            this.txt_referido.TabIndex = 12;
+            this.txt_referido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_referido_KeyDown);
             // 
             // txt_dpi
             // 
-            this.txt_dpi.Location = new System.Drawing.Point(80, 48);
+            this.txt_dpi.Location = new System.Drawing.Point(113, 48);
             this.txt_dpi.Name = "txt_dpi";
-            this.txt_dpi.Size = new System.Drawing.Size(224, 23);
-            this.txt_dpi.TabIndex = 117;
+            this.txt_dpi.Size = new System.Drawing.Size(191, 23);
+            this.txt_dpi.TabIndex = 8;
+            this.txt_dpi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_dpi_KeyDown);
             this.txt_dpi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dpi_KeyPress);
             // 
             // Lbl_dpi
             // 
             this.Lbl_dpi.AutoSize = true;
             this.Lbl_dpi.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_dpi.Location = new System.Drawing.Point(36, 48);
+            this.Lbl_dpi.Location = new System.Drawing.Point(67, 48);
             this.Lbl_dpi.Name = "Lbl_dpi";
             this.Lbl_dpi.Size = new System.Drawing.Size(38, 20);
             this.Lbl_dpi.TabIndex = 116;
@@ -323,7 +329,8 @@
             this.txt_fecha_nacimiento.Location = new System.Drawing.Point(177, 19);
             this.txt_fecha_nacimiento.Name = "txt_fecha_nacimiento";
             this.txt_fecha_nacimiento.Size = new System.Drawing.Size(127, 23);
-            this.txt_fecha_nacimiento.TabIndex = 114;
+            this.txt_fecha_nacimiento.TabIndex = 7;
+            this.txt_fecha_nacimiento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_fecha_nacimiento_KeyDown);
             this.txt_fecha_nacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fecha_nacimiento_KeyPress);
             // 
             // Lbl_fecha_nacimiento
@@ -341,21 +348,11 @@
             this.Lbl_sexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_sexo.AutoSize = true;
             this.Lbl_sexo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_sexo.Location = new System.Drawing.Point(27, 138);
+            this.Lbl_sexo.Location = new System.Drawing.Point(58, 138);
             this.Lbl_sexo.Name = "Lbl_sexo";
             this.Lbl_sexo.Size = new System.Drawing.Size(47, 20);
             this.Lbl_sexo.TabIndex = 110;
             this.Lbl_sexo.Text = "Sexo:";
-            // 
-            // Lbl_expediente
-            // 
-            this.Lbl_expediente.AutoSize = true;
-            this.Lbl_expediente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_expediente.Location = new System.Drawing.Point(438, 21);
-            this.Lbl_expediente.Name = "Lbl_expediente";
-            this.Lbl_expediente.Size = new System.Drawing.Size(95, 20);
-            this.Lbl_expediente.TabIndex = 109;
-            this.Lbl_expediente.Text = "Expediente:";
             // 
             // grb_datos2_pcnt
             // 
@@ -381,26 +378,38 @@
             // 
             // cbo_tip_sang_pcnt
             // 
+            this.cbo_tip_sang_pcnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_tip_sang_pcnt.FormattingEnabled = true;
+            this.cbo_tip_sang_pcnt.Items.AddRange(new object[] {
+            "A Positiva (A+)",
+            "A Negativo (A-)",
+            "B Positivo (B+)",
+            "B Negativo (B-)",
+            "O Positivo (O+)",
+            "O Negativo (O-)",
+            "AB Positivo (AB+)",
+            "AB Negativo (AB-)"});
             this.cbo_tip_sang_pcnt.Location = new System.Drawing.Point(137, 164);
             this.cbo_tip_sang_pcnt.Name = "cbo_tip_sang_pcnt";
-            this.cbo_tip_sang_pcnt.Size = new System.Drawing.Size(100, 24);
+            this.cbo_tip_sang_pcnt.Size = new System.Drawing.Size(120, 24);
             this.cbo_tip_sang_pcnt.TabIndex = 127;
             // 
             // cbo_sexo_pcnt
             // 
+            this.cbo_sexo_pcnt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_sexo_pcnt.FormattingEnabled = true;
-            this.cbo_sexo_pcnt.Location = new System.Drawing.Point(80, 137);
+            this.cbo_sexo_pcnt.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.cbo_sexo_pcnt.Location = new System.Drawing.Point(113, 134);
             this.cbo_sexo_pcnt.Name = "cbo_sexo_pcnt";
-            this.cbo_sexo_pcnt.Size = new System.Drawing.Size(157, 24);
+            this.cbo_sexo_pcnt.Size = new System.Drawing.Size(177, 24);
             this.cbo_sexo_pcnt.TabIndex = 126;
             // 
             // grb_datos3_pnct
             // 
             this.grb_datos3_pnct.Controls.Add(this.txt_referido);
             this.grb_datos3_pnct.Controls.Add(this.Lbl_referido);
-            this.grb_datos3_pnct.Controls.Add(this.cbo_expediente);
-            this.grb_datos3_pnct.Controls.Add(this.Lbl_expediente);
             this.grb_datos3_pnct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_datos3_pnct.Location = new System.Drawing.Point(12, 321);
             this.grb_datos3_pnct.Name = "grb_datos3_pnct";
@@ -411,7 +420,7 @@
             // 
             // grb_vista_pcnt
             // 
-            this.grb_vista_pcnt.Controls.Add(this.dataGridView1);
+            this.grb_vista_pcnt.Controls.Add(this.dgv_list_pcnt);
             this.grb_vista_pcnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_vista_pcnt.Location = new System.Drawing.Point(12, 418);
             this.grb_vista_pcnt.Name = "grb_vista_pcnt";
@@ -420,20 +429,25 @@
             this.grb_vista_pcnt.TabStop = false;
             this.grb_vista_pcnt.Text = "Pacientes";
             // 
-            // dataGridView1
+            // dgv_list_pcnt
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(739, 152);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_list_pcnt.AllowUserToAddRows = false;
+            this.dgv_list_pcnt.AllowUserToDeleteRows = false;
+            this.dgv_list_pcnt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_list_pcnt.Location = new System.Drawing.Point(7, 22);
+            this.dgv_list_pcnt.Name = "dgv_list_pcnt";
+            this.dgv_list_pcnt.ReadOnly = true;
+            this.dgv_list_pcnt.Size = new System.Drawing.Size(739, 152);
+            this.dgv_list_pcnt.TabIndex = 0;
             // 
             // txt_busc_pcnt
             // 
             this.txt_busc_pcnt.Location = new System.Drawing.Point(162, 392);
             this.txt_busc_pcnt.Name = "txt_busc_pcnt";
-            this.txt_busc_pcnt.Size = new System.Drawing.Size(473, 20);
-            this.txt_busc_pcnt.TabIndex = 127;
+            this.txt_busc_pcnt.Size = new System.Drawing.Size(366, 20);
+            this.txt_busc_pcnt.TabIndex = 14;
+            this.txt_busc_pcnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_busc_pcnt_KeyDown);
+            this.txt_busc_pcnt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busc_pcnt_KeyUp);
             // 
             // lbl_busca_pcnt
             // 
@@ -445,19 +459,21 @@
             this.lbl_busca_pcnt.TabIndex = 126;
             this.lbl_busca_pcnt.Text = "Buscar Paciente:";
             // 
-            // btn_busc_aseg
+            // btn_busc_pcnt
             // 
-            this.btn_busc_aseg.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_busc_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busc_aseg.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
-            this.btn_busc_aseg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_busc_aseg.Location = new System.Drawing.Point(644, 381);
-            this.btn_busc_aseg.Name = "btn_busc_aseg";
-            this.btn_busc_aseg.Size = new System.Drawing.Size(114, 40);
-            this.btn_busc_aseg.TabIndex = 131;
-            this.btn_busc_aseg.Text = "BUSCAR";
-            this.btn_busc_aseg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_busc_aseg.UseVisualStyleBackColor = true;
+            this.btn_busc_pcnt.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_busc_pcnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_busc_pcnt.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
+            this.btn_busc_pcnt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_busc_pcnt.Location = new System.Drawing.Point(534, 381);
+            this.btn_busc_pcnt.Name = "btn_busc_pcnt";
+            this.btn_busc_pcnt.Size = new System.Drawing.Size(114, 40);
+            this.btn_busc_pcnt.TabIndex = 15;
+            this.btn_busc_pcnt.Text = "BUSCAR";
+            this.btn_busc_pcnt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_busc_pcnt.UseVisualStyleBackColor = true;
+            this.btn_busc_pcnt.Click += new System.EventHandler(this.btn_busc_pcnt_Click);
+            this.btn_busc_pcnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_busc_pcnt_KeyDown);
             // 
             // btn_actlz_pcnt
             // 
@@ -471,6 +487,7 @@
             this.btn_actlz_pcnt.Text = "ACTUALIZAR";
             this.btn_actlz_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_pcnt.UseVisualStyleBackColor = true;
+            this.btn_actlz_pcnt.Click += new System.EventHandler(this.btn_actlz_pcnt_Click);
             // 
             // btn_guardar_pcnt
             // 
@@ -480,11 +497,12 @@
             this.btn_guardar_pcnt.Location = new System.Drawing.Point(12, 57);
             this.btn_guardar_pcnt.Name = "btn_guardar_pcnt";
             this.btn_guardar_pcnt.Size = new System.Drawing.Size(94, 54);
-            this.btn_guardar_pcnt.TabIndex = 129;
+            this.btn_guardar_pcnt.TabIndex = 11;
             this.btn_guardar_pcnt.Text = "GUARDAR";
             this.btn_guardar_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_pcnt.UseVisualStyleBackColor = true;
             this.btn_guardar_pcnt.Click += new System.EventHandler(this.btn_guardar_pcnt_Click);
+            this.btn_guardar_pcnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_guardar_pcnt_KeyDown);
             // 
             // btn_elim_pcnt
             // 
@@ -498,14 +516,31 @@
             this.btn_elim_pcnt.Text = "ELIMINAR";
             this.btn_elim_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_pcnt.UseVisualStyleBackColor = true;
+            this.btn_elim_pcnt.Click += new System.EventHandler(this.btn_elim_pcnt_Click);
+            // 
+            // btn_renov_pcnt
+            // 
+            this.btn_renov_pcnt.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_renov_pcnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_renov_pcnt.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
+            this.btn_renov_pcnt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_renov_pcnt.Location = new System.Drawing.Point(654, 381);
+            this.btn_renov_pcnt.Name = "btn_renov_pcnt";
+            this.btn_renov_pcnt.Size = new System.Drawing.Size(114, 40);
+            this.btn_renov_pcnt.TabIndex = 139;
+            this.btn_renov_pcnt.Text = "RENOVAR";
+            this.btn_renov_pcnt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_renov_pcnt.UseVisualStyleBackColor = true;
+            this.btn_renov_pcnt.Click += new System.EventHandler(this.btn_renov_pcnt_Click);
             // 
             // frm_act_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 603);
+            this.Controls.Add(this.btn_renov_pcnt);
             this.Controls.Add(this.btn_elim_pcnt);
-            this.Controls.Add(this.btn_busc_aseg);
+            this.Controls.Add(this.btn_busc_pcnt);
             this.Controls.Add(this.btn_actlz_pcnt);
             this.Controls.Add(this.btn_guardar_pcnt);
             this.Controls.Add(this.txt_busc_pcnt);
@@ -516,6 +551,10 @@
             this.Controls.Add(this.grb_datos1_pcnt);
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Lbl_titulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_act_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Datos del Cliente";
@@ -528,7 +567,7 @@
             this.grb_datos3_pnct.ResumeLayout(false);
             this.grb_datos3_pnct.PerformLayout();
             this.grb_vista_pcnt.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_list_pcnt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,7 +590,6 @@
         internal System.Windows.Forms.TextBox txt_direccion;
         internal System.Windows.Forms.Label Lbl_nombre;
         internal System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.ComboBox cbo_expediente;
         internal System.Windows.Forms.TextBox txt_peso_pcnt;
         internal System.Windows.Forms.TextBox txt_altura;
         internal System.Windows.Forms.Label Lbl_peso;
@@ -564,18 +602,18 @@
         internal System.Windows.Forms.TextBox txt_fecha_nacimiento;
         internal System.Windows.Forms.Label Lbl_fecha_nacimiento;
         internal System.Windows.Forms.Label Lbl_sexo;
-        internal System.Windows.Forms.Label Lbl_expediente;
         private System.Windows.Forms.GroupBox grb_datos2_pcnt;
         private System.Windows.Forms.GroupBox grb_datos3_pnct;
         private System.Windows.Forms.GroupBox grb_vista_pcnt;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_list_pcnt;
         internal System.Windows.Forms.TextBox txt_busc_pcnt;
         internal System.Windows.Forms.Label lbl_busca_pcnt;
-        private System.Windows.Forms.Button btn_busc_aseg;
+        private System.Windows.Forms.Button btn_busc_pcnt;
         private System.Windows.Forms.Button btn_actlz_pcnt;
         private System.Windows.Forms.Button btn_guardar_pcnt;
         private System.Windows.Forms.Button btn_elim_pcnt;
         protected System.Windows.Forms.ComboBox cbo_sexo_pcnt;
         protected System.Windows.Forms.ComboBox cbo_tip_sang_pcnt;
+        private System.Windows.Forms.Button btn_renov_pcnt;
     }
 }

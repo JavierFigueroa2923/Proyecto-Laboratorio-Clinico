@@ -151,9 +151,9 @@ namespace WindowsFormsApplication1
         private void btn_busc_emp_Click(object sender, EventArgs e)
         {
             ManipularDato.obtener_conexion();
-            String Query = ("select E.nombre_emp, D.direccion, T.telefono,  C.correo_e, CA.nombre_cargo_emp, TI.nombre_titl_emp from empleado E, direccion D, telefono T, correo_e C, cargo_empleaco CA, titulo_empleado TI where nombre_emp like '%" + txt_busc_emp.txt + "%' and E.pk_id_emp = D.pk_id_emp and E.pk_id_emp = T.pk_id_emp and E.pk_id_emp = C.pk_id_emp and E.pk_id_emp = CA.pk_id_emp and E.pk_id_emp = TI.pk_id_emp");
+            String Query = ("select E.nombre_emp, D.direccion, T.telefono,  C.correo_e, CA.nombre_cargo_emp, TI.nombre_titl_emp from empleado E, direccion D, telefono T, correo_e C, cargo_empleaco CA, titulo_empleado TI where nombre_emp like '%" + txt_busc_emp.Text + "%' and E.pk_id_emp = D.pk_id_emp and E.pk_id_emp = T.pk_id_emp and E.pk_id_emp = C.pk_id_emp and E.pk_id_emp = CA.pk_id_emp and E.pk_id_emp = TI.pk_id_emp");
 
-            ManipularDato.Busqueda(Query);
+            //ManipularDato.Busqueda(Query);
 
             GridViewActualizar(this.dgv_empleads, Query);
 

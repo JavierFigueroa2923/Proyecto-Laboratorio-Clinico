@@ -255,7 +255,7 @@ namespace WindowsFormsApplication1
             ManipularDato.obtener_conexion();
             String Query = ("select * from forma_de_pago where nombre_fm_pago like '%" + txt_busc_lab + "%' ");
 
-            ManipularDato.Busqueda(Query);
+           // ManipularDato.Busqueda(Query);
 
             GridViewActualizar(this.dataGridView1, Query);
 

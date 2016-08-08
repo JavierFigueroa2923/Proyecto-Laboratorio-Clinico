@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
@@ -16,15 +17,38 @@ namespace WindowsFormsApplication1
         public frm_act_cliente()
         {
             InitializeComponent();
+            ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
         }
 
         Validaciones validar = new Validaciones();
-        BDconexion manipular = new BDconexion();
+        BDconexion ManipularDato = new BDconexion();
         String Codigo;
         Boolean Editar;
+        String Selecionar_pacientes = "select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo, C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt";
         private void Label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public static bool ComprobarFormatoEmail(string seMailAComprobar)
+        {
+            String sFormato;
+            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(seMailAComprobar, sFormato))
+            {
+                if (Regex.Replace(seMailAComprobar, sFormato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void Label11_Click(object sender, EventArgs e)
@@ -38,7 +62,6 @@ namespace WindowsFormsApplication1
         }
         public void LimpiarCajasTexto()
         {
-
             txt_altura.Text = "";
             txt_apellido.Text = "";
             txt_busc_pcnt.Text = "";
@@ -56,7 +79,7 @@ namespace WindowsFormsApplication1
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
-            manipular.obtener_conexion();
+            ManipularDato.obtener_conexion();
             MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
             //crear DataSet
             System.Data.DataSet MiDataSet = new System.Data.DataSet();
@@ -72,15 +95,15 @@ namespace WindowsFormsApplication1
             dg.DataMember = "cliente";
 
             //nos desconectamos de la base de datos...
-            manipular.Desconectar();
+            ManipularDato.Desconectar();
 
 
 
         }
         private void btn_guardar_pcnt_Click(object sender, EventArgs e)
         {
-            if (txt_altura.Text == "" || txt_apellido.Text == "" || txt_busc_pcnt.Text == "" || txt_direccion.Text == "" || txt_email.Text == "" || txt_fecha_nacimiento.Text == "" ||
-               txt_nit.Text == "" || txt_nombre.Text == "" || txt_nombre.Text == "" || txt_peso_pcnt.Text == "" || txt_telefono.Text == "")
+            if (txt_altura.Text == "" || txt_apellido.Text == "" || txt_direccion.Text == "" || txt_email.Text == "" || txt_fecha_nacimiento.Text == "" ||
+               txt_nit.Text == "" || txt_nombre.Text == "" || txt_peso_pcnt.Text == "" || txt_telefono.Text == "")
             {
                 MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -88,28 +111,58 @@ namespace WindowsFormsApplication1
             {
                 if (Editar)
                 {
-                    manipular.obtener_conexion();
-                    //String query2 = "UPDATE tipo_de_muestra SET descripcion_tip_mst='" + txt_descp_muestra.Text + "', nombre_tipo='" + txt_nombre_tipo.Text + "' WHERE pk_id_tip_mst='" + Codigo + "';";
-
-                    //manipular.EjecutarSql(query2);
-                    manipular.Desconectar();
-
-                    //6.limpiar cajas de texto
-                    this.LimpiarCajasTexto();
-                    ActualizarGrid(this.dataGridView1, "SELECT * FROM cliente");
-                    Editar = false;
+                    try
+                    {
+                        ManipularDato.obtener_conexion();
+                        String Query1 = "UPDATE cliente SET nombre_clt ='" + txt_nombre.Text + "', apellido_clt='"+ txt_apellido.Text + "', nit='"+ txt_nit.Text + "', referido_clt='"+ txt_referido.Text + "', dpi='"+ txt_dpi.Text + "', edad_clt='"+ txt_fecha_nacimiento.Text + "', tipo_sangre_clt='"+ cbo_tip_sang_pcnt.Text + "', sexo_clt='"+ cbo_sexo_pcnt.Text + "', altura_clt= '"+ txt_altura.Text + "', peso_clt='"+ txt_peso_pcnt.Text +"' WHERE pk_id_clt ='" + Codigo + "';";
+                        ManipularDato.EjecutarSql(Query1);
+                        String Query2 = "UPDATE correo_e SET correo_e ='" + txt_email.Text + "' WHERE pk_id_clt ='" + Codigo + "';";
+                        ManipularDato.EjecutarSql(Query2);
+                        String Query3 = "UPDATE direccion SET direccion ='" + txt_direccion.Text + "' WHERE pk_id_clt ='" + Codigo + "';";
+                        ManipularDato.EjecutarSql(Query3);
+                        String Query4 = "UPDATE telefono SET telefono ='" + txt_telefono.Text + "' WHERE pk_id_clt ='" + Codigo + "';";
+                        ManipularDato.EjecutarSql(Query4);
+                        ManipularDato.Desconectar();
+                        MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.LimpiarCajasTexto();
+                        ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
+                        Editar = false;
+                    }catch { MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                 }
                 else
                 {
+                    try
+                    {
+                        ManipularDato.obtener_conexion();
+                        String Query1 = "INSERT INTO cliente (nombre_clt, apellido_clt, nit, edad_clt, dpi, altura_clt, peso_clt, sexo_clt, tipo_sangre_clt, referido_clt) VALUES ('" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_nit.Text + "','" + txt_fecha_nacimiento.Text + "','" + txt_dpi.Text + "','" + txt_altura.Text + "','" + txt_peso_pcnt.Text + "','" + cbo_sexo_pcnt.Text + "','" + cbo_tip_sang_pcnt.Text + "','" + txt_referido.Text + "')";
+                        ManipularDato.EjecutarSql(Query1);
+
+                        if (ComprobarFormatoEmail(txt_email.Text) == false)
+                        {
+                            MessageBox.Show("No se pudo realizar la modificación de la base de datos", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            String Query2 = "INSERT INTO correo_e (correo_e, pk_id_clt) VALUES ('" + txt_email.Text + "',(select MAX(pk_id_clt) FROM cliente))";
+                            ManipularDato.EjecutarSql(Query2);
+                            String Query3 = "INSERT INTO direccion (direccion, pk_id_clt) VALUES ('" + txt_direccion.Text + "',(select MAX(pk_id_clt) FROM cliente))";
+                            ManipularDato.EjecutarSql(Query3);
+
+                            String Query4 = "INSERT INTO telefono (telefono, pk_id_clt) VALUES ('" + txt_telefono.Text + "',(select MAX(pk_id_clt) FROM cliente))";
+                            ManipularDato.EjecutarSql(Query4);
+
+                            ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
+                            this.LimpiarCajasTexto();
+                            ManipularDato.Desconectar();
+                            MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-
-                    manipular.obtener_conexion();
-                    //String query = "INSERT INTO tipo_de_muestra(pk_id_tip_mst,descripcion_tip_mst,nombre_tipo) Values('" + Convert.ToDouble(txt_tp_muestra.Text) + "','" + txt_nombre_tipo.Text + "','" + txt_descp_muestra.Text + "') ";
-                    //manipular.EjecutarSql(query);
-                    LimpiarCajasTexto();
-                    ActualizarGrid(this.dataGridView1, "select * from  tipo_de_muestra");
-                    this.LimpiarCajasTexto();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
         }
@@ -210,5 +263,238 @@ namespace WindowsFormsApplication1
             else
                 e.Handled = true;
         }
+
+        private void txt_nombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_apellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_direccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_direccion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_telefono_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_nit_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void txt_email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_email_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_fecha_nacimiento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_dpi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_altura_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_altura_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_peso_pcnt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void btn_guardar_pcnt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_referido_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void cbo_expediente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_busc_pcnt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void btn_busc_pcnt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_busc_pcnt.PerformClick();
+            }
+        }
+
+        private void btn_renov_pcnt_Click(object sender, EventArgs e)
+        {
+            ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
+        }
+
+        private void btn_busc_pcnt_Click(object sender, EventArgs e)
+        {
+            ManipularDato.obtener_conexion();
+            String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt");
+            ActualizarGrid(this.dgv_list_pcnt, Query);
+            ManipularDato.Desconectar();
+
+        }
+
+        private void btn_elim_pcnt_Click(object sender, EventArgs e)
+        {
+            try {
+                Codigo = this.dgv_list_pcnt.CurrentRow.Cells[0].Value.ToString();
+                var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+                {
+                    ManipularDato.obtener_conexion();
+                    String Query = "delete from cliente where pk_id_clt = '" + Codigo + "';";
+                    ManipularDato.EjecutarSql(Query);
+                    ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
+                    ManipularDato.Desconectar();
+                }//cerrar el if
+                else
+                    //no pasa nada
+                    return;
+                //cerrar else
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Dato a Eliminar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txt_apellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_actlz_pcnt_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Editar = true;
+                Codigo = this.dgv_list_pcnt.CurrentRow.Cells[0].Value.ToString();
+                txt_nombre.Text = this.dgv_list_pcnt.CurrentRow.Cells[1].Value.ToString();
+                txt_apellido.Text = this.dgv_list_pcnt.CurrentRow.Cells[2].Value.ToString();
+                cbo_sexo_pcnt.Text = this.dgv_list_pcnt.CurrentRow.Cells[3].Value.ToString();
+                txt_dpi.Text = this.dgv_list_pcnt.CurrentRow.Cells[4].Value.ToString();
+                txt_fecha_nacimiento.Text = this.dgv_list_pcnt.CurrentRow.Cells[5].Value.ToString();
+                cbo_tip_sang_pcnt.Text = this.dgv_list_pcnt.CurrentRow.Cells[6].Value.ToString();
+                txt_altura.Text = this.dgv_list_pcnt.CurrentRow.Cells[7].Value.ToString();
+                txt_peso_pcnt.Text = this.dgv_list_pcnt.CurrentRow.Cells[8].Value.ToString();
+                txt_direccion.Text = this.dgv_list_pcnt.CurrentRow.Cells[9].Value.ToString();
+                txt_telefono.Text = this.dgv_list_pcnt.CurrentRow.Cells[10].Value.ToString();
+                txt_email.Text = this.dgv_list_pcnt.CurrentRow.Cells[11].Value.ToString();
+                txt_nit.Text = this.dgv_list_pcnt.CurrentRow.Cells[12].Value.ToString();
+                txt_referido.Text = this.dgv_list_pcnt.CurrentRow.Cells[13].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Dato a Actualizar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txt_busc_pcnt_KeyUp(object sender, KeyEventArgs e)
+        {
+            ManipularDato.obtener_conexion();
+            String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt");
+            ActualizarGrid(this.dgv_list_pcnt, Query);
+            ManipularDato.Desconectar();
+        }
     }
-}
+} 
+    
+

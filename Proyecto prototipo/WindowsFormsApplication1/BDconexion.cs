@@ -27,11 +27,11 @@ namespace WindowsFormsApplication1
 
             //ejecutamos la consulta (query) sql...
             int FilasAfectadas = MiComando.ExecuteNonQuery();
-            if (FilasAfectadas > 0)
-                MessageBox.Show("Operación realizada exitosamente", "la base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (FilasAfectadas > 0) { }
+            //MessageBox.Show("Operación realizada exitosamente", "la base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
 
-                MessageBox.Show("No se pudo realizar la modificación de la base de datos :-(", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo realizar la modificación de la base de datos", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         
