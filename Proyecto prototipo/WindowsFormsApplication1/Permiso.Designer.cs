@@ -36,19 +36,20 @@ namespace WindowsFormsApplication1
             this.grb_vista_per = new System.Windows.Forms.GroupBox();
             this.dgv_busc_per = new System.Windows.Forms.DataGridView();
             this.grb_datos1_per = new System.Windows.Forms.GroupBox();
-            this.txt_id_per = new System.Windows.Forms.TextBox();
-            this.Lbl_id_per = new System.Windows.Forms.Label();
+            this.cbo_id_carg_emp_per = new System.Windows.Forms.ComboBox();
+            this.btn_busc_id_carg_emp_per = new System.Windows.Forms.Button();
+            this.Lbl_id_carg_emp_per = new System.Windows.Forms.Label();
             this.Lbl_descripcion = new System.Windows.Forms.Label();
             this.txt_descr_per = new System.Windows.Forms.TextBox();
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.txt_nombre_per = new System.Windows.Forms.TextBox();
             this.Lbl_permiso = new System.Windows.Forms.Label();
+            this.pl_lab_user = new System.Windows.Forms.PictureBox();
+            this.btn_rnv_per = new System.Windows.Forms.Button();
             this.btn_busc_id_per = new System.Windows.Forms.Button();
             this.btn_elim_per = new System.Windows.Forms.Button();
             this.btn_actlz_per = new System.Windows.Forms.Button();
             this.btn_guardar_per = new System.Windows.Forms.Button();
-            this.btn_rnv_per = new System.Windows.Forms.Button();
-            this.pl_lab_user = new System.Windows.Forms.PictureBox();
             this.grb_vista_per.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_per)).BeginInit();
             this.grb_datos1_per.SuspendLayout();
@@ -60,7 +61,8 @@ namespace WindowsFormsApplication1
             this.txt_busc_id_per.Location = new System.Drawing.Point(177, 341);
             this.txt_busc_id_per.Name = "txt_busc_id_per";
             this.txt_busc_id_per.Size = new System.Drawing.Size(473, 20);
-            this.txt_busc_id_per.TabIndex = 167;
+            this.txt_busc_id_per.TabIndex = 5;
+            this.txt_busc_id_per.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_busc_id_per_KeyDown);
             this.txt_busc_id_per.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_busc_id_per_KeyPress);
             this.txt_busc_id_per.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txt_busquedapermiso_KeyUp);
             // 
@@ -92,11 +94,13 @@ namespace WindowsFormsApplication1
             this.dgv_busc_per.Name = "dgv_busc_per";
             this.dgv_busc_per.Size = new System.Drawing.Size(739, 135);
             this.dgv_busc_per.TabIndex = 0;
+            this.dgv_busc_per.TabStop = false;
             // 
             // grb_datos1_per
             // 
-            this.grb_datos1_per.Controls.Add(this.txt_id_per);
-            this.grb_datos1_per.Controls.Add(this.Lbl_id_per);
+            this.grb_datos1_per.Controls.Add(this.cbo_id_carg_emp_per);
+            this.grb_datos1_per.Controls.Add(this.btn_busc_id_carg_emp_per);
+            this.grb_datos1_per.Controls.Add(this.Lbl_id_carg_emp_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_descripcion);
             this.grb_datos1_per.Controls.Add(this.txt_descr_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_nombre);
@@ -104,34 +108,51 @@ namespace WindowsFormsApplication1
             this.grb_datos1_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_datos1_per.Location = new System.Drawing.Point(18, 140);
             this.grb_datos1_per.Name = "grb_datos1_per";
-            this.grb_datos1_per.Size = new System.Drawing.Size(716, 173);
+            this.grb_datos1_per.Size = new System.Drawing.Size(716, 183);
             this.grb_datos1_per.TabIndex = 164;
             this.grb_datos1_per.TabStop = false;
-            this.grb_datos1_per.Text = "Datos de permiso";
+            this.grb_datos1_per.Text = "Datos de Rol";
             // 
-            // txt_id_per
+            // cbo_id_carg_emp_per
             // 
-            this.txt_id_per.Location = new System.Drawing.Point(102, 22);
-            this.txt_id_per.Name = "txt_id_per";
-            this.txt_id_per.Size = new System.Drawing.Size(115, 23);
-            this.txt_id_per.TabIndex = 91;
-            this.txt_id_per.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_per_KeyPress);
+            this.cbo_id_carg_emp_per.FormattingEnabled = true;
+            this.cbo_id_carg_emp_per.Location = new System.Drawing.Point(102, 143);
+            this.cbo_id_carg_emp_per.Name = "cbo_id_carg_emp_per";
+            this.cbo_id_carg_emp_per.Size = new System.Drawing.Size(151, 24);
+            this.cbo_id_carg_emp_per.TabIndex = 3;
+            this.cbo_id_carg_emp_per.SelectedIndexChanged += new System.EventHandler(this.cbo_id_carg_emp_per_SelectedIndexChanged);
+            this.cbo_id_carg_emp_per.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_id_carg_emp_per_KeyDown);
             // 
-            // Lbl_id_per
+            // btn_busc_id_carg_emp_per
             // 
-            this.Lbl_id_per.AutoSize = true;
-            this.Lbl_id_per.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_per.Location = new System.Drawing.Point(6, 22);
-            this.Lbl_id_per.Name = "Lbl_id_per";
-            this.Lbl_id_per.Size = new System.Drawing.Size(92, 20);
-            this.Lbl_id_per.TabIndex = 90;
-            this.Lbl_id_per.Text = "Id Permiso: ";
+            this.btn_busc_id_carg_emp_per.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_busc_id_carg_emp_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_busc_id_carg_emp_per.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
+            this.btn_busc_id_carg_emp_per.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_busc_id_carg_emp_per.Location = new System.Drawing.Point(259, 140);
+            this.btn_busc_id_carg_emp_per.Name = "btn_busc_id_carg_emp_per";
+            this.btn_busc_id_carg_emp_per.Size = new System.Drawing.Size(103, 43);
+            this.btn_busc_id_carg_emp_per.TabIndex = 170;
+            this.btn_busc_id_carg_emp_per.Text = "BUSCAR";
+            this.btn_busc_id_carg_emp_per.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_busc_id_carg_emp_per.UseVisualStyleBackColor = true;
+            this.btn_busc_id_carg_emp_per.Click += new System.EventHandler(this.btn_busc_id_carg_emp_per_Click);
+            // 
+            // Lbl_id_carg_emp_per
+            // 
+            this.Lbl_id_carg_emp_per.AutoSize = true;
+            this.Lbl_id_carg_emp_per.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_id_carg_emp_per.Location = new System.Drawing.Point(24, 140);
+            this.Lbl_id_carg_emp_per.Name = "Lbl_id_carg_emp_per";
+            this.Lbl_id_carg_emp_per.Size = new System.Drawing.Size(79, 20);
+            this.Lbl_id_carg_emp_per.TabIndex = 86;
+            this.Lbl_id_carg_emp_per.Text = "Id Cargo:";
             // 
             // Lbl_descripcion
             // 
             this.Lbl_descripcion.AutoSize = true;
             this.Lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_descripcion.Location = new System.Drawing.Point(-4, 83);
+            this.Lbl_descripcion.Location = new System.Drawing.Point(-4, 62);
             this.Lbl_descripcion.Name = "Lbl_descripcion";
             this.Lbl_descripcion.Size = new System.Drawing.Size(100, 20);
             this.Lbl_descripcion.TabIndex = 85;
@@ -139,17 +160,18 @@ namespace WindowsFormsApplication1
             // 
             // txt_descr_per
             // 
-            this.txt_descr_per.Location = new System.Drawing.Point(102, 83);
+            this.txt_descr_per.Location = new System.Drawing.Point(102, 65);
             this.txt_descr_per.Multiline = true;
             this.txt_descr_per.Name = "txt_descr_per";
-            this.txt_descr_per.Size = new System.Drawing.Size(581, 69);
-            this.txt_descr_per.TabIndex = 82;
+            this.txt_descr_per.Size = new System.Drawing.Size(591, 69);
+            this.txt_descr_per.TabIndex = 2;
+            this.txt_descr_per.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_descr_per_KeyDown);
             // 
             // Lbl_nombre
             // 
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(24, 54);
+            this.Lbl_nombre.Location = new System.Drawing.Point(24, 34);
             this.Lbl_nombre.Name = "Lbl_nombre";
             this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
             this.Lbl_nombre.TabIndex = 81;
@@ -157,10 +179,11 @@ namespace WindowsFormsApplication1
             // 
             // txt_nombre_per
             // 
-            this.txt_nombre_per.Location = new System.Drawing.Point(102, 54);
+            this.txt_nombre_per.Location = new System.Drawing.Point(102, 34);
             this.txt_nombre_per.Name = "txt_nombre_per";
-            this.txt_nombre_per.Size = new System.Drawing.Size(581, 23);
-            this.txt_nombre_per.TabIndex = 80;
+            this.txt_nombre_per.Size = new System.Drawing.Size(591, 23);
+            this.txt_nombre_per.TabIndex = 1;
+            this.txt_nombre_per.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nombre_per_KeyDown);
             this.txt_nombre_per.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_per_KeyPress);
             // 
             // Lbl_permiso
@@ -170,9 +193,36 @@ namespace WindowsFormsApplication1
             this.Lbl_permiso.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_permiso.Location = new System.Drawing.Point(332, 34);
             this.Lbl_permiso.Name = "Lbl_permiso";
-            this.Lbl_permiso.Size = new System.Drawing.Size(133, 34);
+            this.Lbl_permiso.Size = new System.Drawing.Size(86, 34);
             this.Lbl_permiso.TabIndex = 160;
-            this.Lbl_permiso.Text = "Permisos";
+            this.Lbl_permiso.Text = "Roles";
+            this.Lbl_permiso.Click += new System.EventHandler(this.Lbl_permiso_Click);
+            // 
+            // pl_lab_user
+            // 
+            this.pl_lab_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pl_lab_user.Image = ((System.Drawing.Image)(resources.GetObject("pl_lab_user.Image")));
+            this.pl_lab_user.Location = new System.Drawing.Point(724, 12);
+            this.pl_lab_user.Name = "pl_lab_user";
+            this.pl_lab_user.Size = new System.Drawing.Size(100, 105);
+            this.pl_lab_user.TabIndex = 171;
+            this.pl_lab_user.TabStop = false;
+            // 
+            // btn_rnv_per
+            // 
+            this.btn_rnv_per.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_rnv_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rnv_per.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
+            this.btn_rnv_per.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_rnv_per.Location = new System.Drawing.Point(761, 319);
+            this.btn_rnv_per.Name = "btn_rnv_per";
+            this.btn_rnv_per.Size = new System.Drawing.Size(63, 50);
+            this.btn_rnv_per.TabIndex = 7;
+            this.btn_rnv_per.Tag = "";
+            this.btn_rnv_per.Text = "RENOVAR";
+            this.btn_rnv_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_rnv_per.UseVisualStyleBackColor = true;
+            this.btn_rnv_per.Click += new System.EventHandler(this.btn_rnv_per_Click);
             // 
             // btn_busc_id_per
             // 
@@ -183,7 +233,7 @@ namespace WindowsFormsApplication1
             this.btn_busc_id_per.Location = new System.Drawing.Point(656, 329);
             this.btn_busc_id_per.Name = "btn_busc_id_per";
             this.btn_busc_id_per.Size = new System.Drawing.Size(103, 40);
-            this.btn_busc_id_per.TabIndex = 169;
+            this.btn_busc_id_per.TabIndex = 6;
             this.btn_busc_id_per.Text = "BUSCAR";
             this.btn_busc_id_per.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_busc_id_per.UseVisualStyleBackColor = true;
@@ -197,7 +247,7 @@ namespace WindowsFormsApplication1
             this.btn_elim_per.Location = new System.Drawing.Point(241, 80);
             this.btn_elim_per.Name = "btn_elim_per";
             this.btn_elim_per.Size = new System.Drawing.Size(94, 54);
-            this.btn_elim_per.TabIndex = 163;
+            this.btn_elim_per.TabIndex = 9;
             this.btn_elim_per.Text = "ELIMINAR";
             this.btn_elim_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_elim_per.UseVisualStyleBackColor = true;
@@ -211,7 +261,7 @@ namespace WindowsFormsApplication1
             this.btn_actlz_per.Location = new System.Drawing.Point(141, 80);
             this.btn_actlz_per.Name = "btn_actlz_per";
             this.btn_actlz_per.Size = new System.Drawing.Size(94, 54);
-            this.btn_actlz_per.TabIndex = 162;
+            this.btn_actlz_per.TabIndex = 8;
             this.btn_actlz_per.Text = "ACTUALIZAR";
             this.btn_actlz_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_actlz_per.UseVisualStyleBackColor = true;
@@ -225,42 +275,17 @@ namespace WindowsFormsApplication1
             this.btn_guardar_per.Location = new System.Drawing.Point(41, 80);
             this.btn_guardar_per.Name = "btn_guardar_per";
             this.btn_guardar_per.Size = new System.Drawing.Size(94, 54);
-            this.btn_guardar_per.TabIndex = 161;
+            this.btn_guardar_per.TabIndex = 4;
             this.btn_guardar_per.Text = "GUARDAR";
             this.btn_guardar_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_per.UseVisualStyleBackColor = true;
             this.btn_guardar_per.Click += new System.EventHandler(this.btn_guardar_per_Click);
             // 
-            // btn_rnv_per
-            // 
-            this.btn_rnv_per.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_rnv_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rnv_per.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
-            this.btn_rnv_per.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_rnv_per.Location = new System.Drawing.Point(761, 319);
-            this.btn_rnv_per.Name = "btn_rnv_per";
-            this.btn_rnv_per.Size = new System.Drawing.Size(63, 50);
-            this.btn_rnv_per.TabIndex = 170;
-            this.btn_rnv_per.Text = "RENOVAR";
-            this.btn_rnv_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_rnv_per.UseVisualStyleBackColor = true;
-            this.btn_rnv_per.Click += new System.EventHandler(this.btn_rnv_per_Click);
-            // 
-            // pl_lab_user
-            // 
-            this.pl_lab_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pl_lab_user.Image = ((System.Drawing.Image)(resources.GetObject("pl_lab_user.Image")));
-            this.pl_lab_user.Location = new System.Drawing.Point(724, 12);
-            this.pl_lab_user.Name = "pl_lab_user";
-            this.pl_lab_user.Size = new System.Drawing.Size(100, 105);
-            this.pl_lab_user.TabIndex = 171;
-            this.pl_lab_user.TabStop = false;
-            // 
             // frm_permiso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(828, 539);
             this.Controls.Add(this.pl_lab_user);
             this.Controls.Add(this.btn_rnv_per);
@@ -273,7 +298,10 @@ namespace WindowsFormsApplication1
             this.Controls.Add(this.btn_actlz_per);
             this.Controls.Add(this.btn_guardar_per);
             this.Controls.Add(this.Lbl_permiso);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_permiso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permiso";
@@ -297,8 +325,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.GroupBox grb_vista_per;
         private System.Windows.Forms.DataGridView dgv_busc_per;
         private System.Windows.Forms.GroupBox grb_datos1_per;
-        internal System.Windows.Forms.TextBox txt_id_per;
-        internal System.Windows.Forms.Label Lbl_id_per;
         internal System.Windows.Forms.Label Lbl_descripcion;
         internal System.Windows.Forms.TextBox txt_descr_per;
         internal System.Windows.Forms.Label Lbl_nombre;
@@ -309,5 +335,8 @@ namespace WindowsFormsApplication1
         internal System.Windows.Forms.Label Lbl_permiso;
         private System.Windows.Forms.Button btn_rnv_per;
         internal System.Windows.Forms.PictureBox pl_lab_user;
+        private System.Windows.Forms.Button btn_busc_id_carg_emp_per;
+        internal System.Windows.Forms.Label Lbl_id_carg_emp_per;
+        public System.Windows.Forms.ComboBox cbo_id_carg_emp_per;
     }
 }
