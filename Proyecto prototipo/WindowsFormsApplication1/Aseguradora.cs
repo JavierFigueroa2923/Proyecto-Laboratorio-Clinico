@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         Boolean Editar;
         public void LimpiarCajasTexto()
         {
-            txt_busca_aseg.Text = "";
+            cbo_buscar = "";
             txt_dsc_aseg.Text = "";
             txt_id__aseg.Text = "";
             txt_nom_aseg.Text = "";
@@ -75,7 +75,7 @@ namespace WindowsFormsApplication1
         private void btn_busc_aseg_Click(object sender, EventArgs e)
         {
             manipular.obtener_conexion();
-            String Query = ("select * from aseguradora where pk_id_asgd = '" + Convert.ToDouble(txt_busca_aseg.Text) + "%'; ");
+            String Query = ("select * from aseguradora where nombre_aseg = '" + Convert.ToDouble(cbo_buscar) + "%'; ");
 
             //ManipularDato.Busqueda(Query);
 
@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1
 
 
             manipular.Desconectar();
-            txt_busca_aseg.Text = "";
+            cbo_buscar = "";
         }
 
         private void txt_id__aseg_KeyPress(object sender, KeyPressEventArgs e)
@@ -208,6 +208,16 @@ namespace WindowsFormsApplication1
             txt_num_aseg.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txt_nom_aseg.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
             txt_dsc_aseg.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void txt_busca_aseg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_busc_aseg_Click(object sender, EventArgs e)
+        {
+
         }
     } 
    }

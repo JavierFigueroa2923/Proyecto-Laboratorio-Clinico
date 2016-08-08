@@ -253,7 +253,7 @@ namespace WindowsFormsApplication1
         private void btn_busc_lab_Click(object sender, EventArgs e)
         {
             ManipularDato.obtener_conexion();
-            String Query = ("select * from forma_de_pago where nombre_fm_pago like '%" + txt_busc_lab + "%' ");
+            String Query = ("select * from forma_de_pago where nombre_fm_pago like '%" + cbo_buscar + "%' ");
 
            // ManipularDato.Busqueda(Query);
 

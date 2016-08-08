@@ -39,7 +39,6 @@
             this.gpb_datos_frm_pg = new System.Windows.Forms.GroupBox();
             this.btn_renovar = new System.Windows.Forms.Button();
             this.btn_busc_lab = new System.Windows.Forms.Button();
-            this.txt_busc_lab = new System.Windows.Forms.TextBox();
             this.lbl_busca_lab = new System.Windows.Forms.Label();
             this.btn_elim_pcnt = new System.Windows.Forms.Button();
             this.btn_actlz_pcnt = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.gpb_vista_labs = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.gpb_datos_frm_pg.SuspendLayout();
             this.gpb_vista_labs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -167,22 +167,15 @@
             this.btn_busc_lab.UseVisualStyleBackColor = true;
             this.btn_busc_lab.Click += new System.EventHandler(this.btn_busc_lab_Click);
             // 
-            // txt_busc_lab
-            // 
-            this.txt_busc_lab.Location = new System.Drawing.Point(410, 88);
-            this.txt_busc_lab.Name = "txt_busc_lab";
-            this.txt_busc_lab.Size = new System.Drawing.Size(208, 20);
-            this.txt_busc_lab.TabIndex = 152;
-            // 
             // lbl_busca_lab
             // 
             this.lbl_busca_lab.AutoSize = true;
             this.lbl_busca_lab.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_busca_lab.Location = new System.Drawing.Point(342, 90);
+            this.lbl_busca_lab.Location = new System.Drawing.Point(381, 65);
             this.lbl_busca_lab.Name = "lbl_busca_lab";
-            this.lbl_busca_lab.Size = new System.Drawing.Size(62, 20);
+            this.lbl_busca_lab.Size = new System.Drawing.Size(161, 20);
             this.lbl_busca_lab.TabIndex = 151;
-            this.lbl_busca_lab.Text = "Buscar:";
+            this.lbl_busca_lab.Text = "Buscar Tipo de Pago:";
             // 
             // btn_elim_pcnt
             // 
@@ -256,14 +249,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // cbo_buscar
+            // 
+            this.cbo_buscar.FormattingEnabled = true;
+            this.cbo_buscar.Location = new System.Drawing.Point(385, 90);
+            this.cbo_buscar.Name = "cbo_buscar";
+            this.cbo_buscar.Size = new System.Drawing.Size(233, 21);
+            this.cbo_buscar.TabIndex = 155;
+            // 
             // frm_act_pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 351);
+            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.btn_renovar);
             this.Controls.Add(this.btn_busc_lab);
-            this.Controls.Add(this.txt_busc_lab);
             this.Controls.Add(this.lbl_busca_lab);
             this.Controls.Add(this.btn_elim_pcnt);
             this.Controls.Add(this.btn_actlz_pcnt);
@@ -297,7 +298,6 @@
         private System.Windows.Forms.GroupBox gpb_datos_frm_pg;
         private System.Windows.Forms.Button btn_renovar;
         private System.Windows.Forms.Button btn_busc_lab;
-        internal System.Windows.Forms.TextBox txt_busc_lab;
         internal System.Windows.Forms.Label lbl_busca_lab;
         private System.Windows.Forms.Button btn_elim_pcnt;
         private System.Windows.Forms.Button btn_actlz_pcnt;
@@ -305,5 +305,6 @@
         private System.Windows.Forms.GroupBox gpb_vista_labs;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbo_buscar;
     }
 }

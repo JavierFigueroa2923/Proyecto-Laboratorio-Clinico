@@ -47,8 +47,6 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.grb_datos_emp = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cbo_id_empleado = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grb_datosp_emp = new System.Windows.Forms.GroupBox();
@@ -60,13 +58,13 @@
             this.cbo_titl_emp = new System.Windows.Forms.ComboBox();
             this.grb_vista_emp = new System.Windows.Forms.GroupBox();
             this.dgv_empleads = new System.Windows.Forms.DataGridView();
-            this.txt_busc_emp = new System.Windows.Forms.TextBox();
             this.lbl_busca_emp = new System.Windows.Forms.Label();
             this.btn_elim_emp = new System.Windows.Forms.Button();
             this.btn_actlz_emp = new System.Windows.Forms.Button();
             this.btn_guardar_emp = new System.Windows.Forms.Button();
             this.btn_busc_emp = new System.Windows.Forms.Button();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
+            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.grb_datos_emp.SuspendLayout();
             this.grb_datosp_emp.SuspendLayout();
             this.grb_vista_emp.SuspendLayout();
@@ -133,9 +131,9 @@
             // txt_email
             // 
             this.txt_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_email.Location = new System.Drawing.Point(157, 186);
+            this.txt_email.Location = new System.Drawing.Point(113, 186);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(221, 23);
+            this.txt_email.Size = new System.Drawing.Size(265, 23);
             this.txt_email.TabIndex = 67;
             // 
             // Lbl_email_emp
@@ -169,9 +167,9 @@
             // txt_telefono
             // 
             this.txt_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_telefono.Location = new System.Drawing.Point(157, 153);
+            this.txt_telefono.Location = new System.Drawing.Point(113, 153);
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(221, 23);
+            this.txt_telefono.Size = new System.Drawing.Size(265, 23);
             this.txt_telefono.TabIndex = 61;
             this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             // 
@@ -239,8 +237,6 @@
             // 
             // grb_datos_emp
             // 
-            this.grb_datos_emp.Controls.Add(this.comboBox3);
-            this.grb_datos_emp.Controls.Add(this.comboBox2);
             this.grb_datos_emp.Controls.Add(this.cbo_id_empleado);
             this.grb_datos_emp.Controls.Add(this.label1);
             this.grb_datos_emp.Controls.Add(this.txt_nombre);
@@ -260,24 +256,6 @@
             this.grb_datos_emp.TabIndex = 78;
             this.grb_datos_emp.TabStop = false;
             this.grb_datos_emp.Text = "Datos Generales";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(114, 186);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(37, 24);
-            this.comboBox3.TabIndex = 79;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(114, 152);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(37, 24);
-            this.comboBox2.TabIndex = 78;
             // 
             // cbo_id_empleado
             // 
@@ -321,6 +299,7 @@
             this.grb_datosp_emp.TabIndex = 79;
             this.grb_datosp_emp.TabStop = false;
             this.grb_datosp_emp.Text = "Datos Personales";
+            this.grb_datosp_emp.Enter += new System.EventHandler(this.grb_datosp_emp_Enter);
             // 
             // btn_nuev_cargo_emp
             // 
@@ -341,6 +320,7 @@
             this.btn_nuev_titulo.Size = new System.Drawing.Size(27, 24);
             this.btn_nuev_titulo.TabIndex = 114;
             this.btn_nuev_titulo.UseVisualStyleBackColor = true;
+            this.btn_nuev_titulo.Click += new System.EventHandler(this.btn_nuev_titulo_Click);
             // 
             // cbo_sexo_emp
             // 
@@ -376,6 +356,7 @@
             this.cbo_titl_emp.Name = "cbo_titl_emp";
             this.cbo_titl_emp.Size = new System.Drawing.Size(206, 24);
             this.cbo_titl_emp.TabIndex = 80;
+            this.cbo_titl_emp.SelectedIndexChanged += new System.EventHandler(this.cbo_titl_emp_SelectedIndexChanged);
             // 
             // grb_vista_emp
             // 
@@ -395,22 +376,15 @@
             this.dgv_empleads.Size = new System.Drawing.Size(716, 178);
             this.dgv_empleads.TabIndex = 0;
             // 
-            // txt_busc_emp
-            // 
-            this.txt_busc_emp.Location = new System.Drawing.Point(485, 329);
-            this.txt_busc_emp.Name = "txt_busc_emp";
-            this.txt_busc_emp.Size = new System.Drawing.Size(175, 20);
-            this.txt_busc_emp.TabIndex = 133;
-            // 
             // lbl_busca_emp
             // 
             this.lbl_busca_emp.AutoSize = true;
             this.lbl_busca_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_busca_emp.Location = new System.Drawing.Point(417, 329);
+            this.lbl_busca_emp.Location = new System.Drawing.Point(417, 305);
             this.lbl_busca_emp.Name = "lbl_busca_emp";
-            this.lbl_busca_emp.Size = new System.Drawing.Size(62, 20);
+            this.lbl_busca_emp.Size = new System.Drawing.Size(230, 20);
             this.lbl_busca_emp.TabIndex = 132;
-            this.lbl_busca_emp.Text = "Buscar:";
+            this.lbl_busca_emp.Text = "Buscar Nombre del Empleado:";
             // 
             // btn_elim_emp
             // 
@@ -479,16 +453,24 @@
             this.Pic_logo.TabIndex = 54;
             this.Pic_logo.TabStop = false;
             // 
+            // cbo_buscar
+            // 
+            this.cbo_buscar.FormattingEnabled = true;
+            this.cbo_buscar.Location = new System.Drawing.Point(417, 331);
+            this.cbo_buscar.Name = "cbo_buscar";
+            this.cbo_buscar.Size = new System.Drawing.Size(243, 21);
+            this.cbo_buscar.TabIndex = 138;
+            // 
             // frm_act_emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 568);
+            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.btn_elim_emp);
             this.Controls.Add(this.btn_actlz_emp);
             this.Controls.Add(this.btn_guardar_emp);
             this.Controls.Add(this.btn_busc_emp);
-            this.Controls.Add(this.txt_busc_emp);
             this.Controls.Add(this.lbl_busca_emp);
             this.Controls.Add(this.grb_vista_emp);
             this.Controls.Add(this.grb_datosp_emp);
@@ -533,8 +515,6 @@
         private System.Windows.Forms.GroupBox grb_datos_emp;
         private System.Windows.Forms.ComboBox cbo_id_empleado;
         internal System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox grb_datosp_emp;
         private System.Windows.Forms.ComboBox cbo_carg_emp;
         private System.Windows.Forms.ComboBox cbo_titl_emp;
@@ -542,7 +522,6 @@
         private System.Windows.Forms.GroupBox grb_vista_emp;
         private System.Windows.Forms.DataGridView dgv_empleads;
         private System.Windows.Forms.Button btn_busc_emp;
-        internal System.Windows.Forms.TextBox txt_busc_emp;
         internal System.Windows.Forms.Label lbl_busca_emp;
         private System.Windows.Forms.Button btn_actlz_emp;
         private System.Windows.Forms.Button btn_guardar_emp;
@@ -550,5 +529,6 @@
         private System.Windows.Forms.Button btn_nuev_titulo;
         private System.Windows.Forms.Button btn_elim_emp;
         private System.Windows.Forms.Button btn_nuev_cargo_emp;
+        private System.Windows.Forms.ComboBox cbo_buscar;
     }
 }

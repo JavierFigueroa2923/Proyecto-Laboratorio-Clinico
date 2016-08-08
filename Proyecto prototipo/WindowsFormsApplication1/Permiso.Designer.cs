@@ -116,7 +116,7 @@ namespace WindowsFormsApplication1
             // cbo_id_carg_emp_per
             // 
             this.cbo_id_carg_emp_per.FormattingEnabled = true;
-            this.cbo_id_carg_emp_per.Location = new System.Drawing.Point(102, 143);
+            this.cbo_id_carg_emp_per.Location = new System.Drawing.Point(102, 150);
             this.cbo_id_carg_emp_per.Name = "cbo_id_carg_emp_per";
             this.cbo_id_carg_emp_per.Size = new System.Drawing.Size(151, 24);
             this.cbo_id_carg_emp_per.TabIndex = 3;
@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1
             // 
             this.Lbl_id_carg_emp_per.AutoSize = true;
             this.Lbl_id_carg_emp_per.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_carg_emp_per.Location = new System.Drawing.Point(24, 140);
+            this.Lbl_id_carg_emp_per.Location = new System.Drawing.Point(23, 151);
             this.Lbl_id_carg_emp_per.Name = "Lbl_id_carg_emp_per";
             this.Lbl_id_carg_emp_per.Size = new System.Drawing.Size(79, 20);
             this.Lbl_id_carg_emp_per.TabIndex = 86;

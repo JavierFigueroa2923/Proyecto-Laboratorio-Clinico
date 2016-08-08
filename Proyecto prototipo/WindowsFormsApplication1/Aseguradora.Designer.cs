@@ -47,8 +47,8 @@
             this.btn_guardar_aseg = new System.Windows.Forms.Button();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
             this.lbl_busc_aseg = new System.Windows.Forms.Label();
-            this.txt_busca_aseg = new System.Windows.Forms.TextBox();
             this.btn_elim_aseg = new System.Windows.Forms.Button();
+            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.grb_ing_datos_aseg.SuspendLayout();
             this.grb_datos_aseg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -278,17 +278,10 @@
             this.lbl_busc_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.lbl_busc_aseg.Location = new System.Drawing.Point(18, 328);
             this.lbl_busc_aseg.Name = "lbl_busc_aseg";
-            this.lbl_busc_aseg.Size = new System.Drawing.Size(59, 18);
+            this.lbl_busc_aseg.Size = new System.Drawing.Size(225, 18);
             this.lbl_busc_aseg.TabIndex = 64;
-            this.lbl_busc_aseg.Text = "Buscar:";
-            // 
-            // txt_busca_aseg
-            // 
-            this.txt_busca_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_busca_aseg.Location = new System.Drawing.Point(83, 327);
-            this.txt_busca_aseg.Name = "txt_busca_aseg";
-            this.txt_busca_aseg.Size = new System.Drawing.Size(392, 20);
-            this.txt_busca_aseg.TabIndex = 64;
+            this.lbl_busc_aseg.Text = "Buscar Nombre de Aseguradora:";
+            this.lbl_busc_aseg.Click += new System.EventHandler(this.lbl_busc_aseg_Click);
             // 
             // btn_elim_aseg
             // 
@@ -304,13 +297,21 @@
             this.btn_elim_aseg.UseVisualStyleBackColor = true;
             this.btn_elim_aseg.Click += new System.EventHandler(this.btn_elim_aseg_Click);
             // 
+            // cbo_buscar
+            // 
+            this.cbo_buscar.FormattingEnabled = true;
+            this.cbo_buscar.Location = new System.Drawing.Point(248, 328);
+            this.cbo_buscar.Name = "cbo_buscar";
+            this.cbo_buscar.Size = new System.Drawing.Size(246, 21);
+            this.cbo_buscar.TabIndex = 162;
+            // 
             // frm_act_aseg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 570);
+            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.btn_elim_aseg);
-            this.Controls.Add(this.txt_busca_aseg);
             this.Controls.Add(this.lbl_busc_aseg);
             this.Controls.Add(this.btn_busc_aseg);
             this.Controls.Add(this.btn_actlz_aseg);
@@ -320,6 +321,7 @@
             this.Controls.Add(this.Pic_logo);
             this.Controls.Add(this.lbl_aseguradora);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_act_aseg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aseguradora";
@@ -354,7 +356,7 @@
         private System.Windows.Forms.Button btn_actlz_aseg;
         private System.Windows.Forms.Button btn_busc_aseg;
         internal System.Windows.Forms.Label lbl_busc_aseg;
-        internal System.Windows.Forms.TextBox txt_busca_aseg;
         private System.Windows.Forms.Button btn_elim_aseg;
+        private System.Windows.Forms.ComboBox cbo_buscar;
     }
 }
