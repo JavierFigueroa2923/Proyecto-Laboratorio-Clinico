@@ -24,9 +24,9 @@ namespace WindowsFormsApplication1
         }
         public void LimpiarCajasTexto()
         {
-            txt_buscar_clt.Text = "";
+            cbo_buscar.Text = "";
             txt_id_clt.Text = "";
-            txt_membresia.Text = "";
+           // txt_membresia.Text = "";
             txt_beneficio.Text = "";
             txt_fecha_exp.Text = "";
             txt_fec_expirar.Text = "";
@@ -72,83 +72,100 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_membresia_Click(object sender, EventArgs e)
         {
- 
-           if ( txt_beneficio.Text == "" || txt_id_clt.Text == "" || txt_fec_expirar.Text =="" || txt_fecha_exp.Text =="")
-            {
-                MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (Editar)
+            try {
+                if (txt_beneficio.Text == "" || txt_id_clt.Text == "" || txt_fec_expirar.Text == "" || txt_fecha_exp.Text == "")
                 {
-                    manipular.obtener_conexion();
-                    String query2 = "UPDATE membresia SET beneficios='" + txt_beneficio.Text + "', fecha_expendicion_mem='" + txt_fecha_exp.Text + "', fecha_expiracion_mem = '"+txt_fec_expirar.Text +"' WHERE pk_id_mem='" + Codigo + "';";
-
-                    manipular.EjecutarSql(query2);
-                    manipular.Desconectar();
-
-                    //6.limpiar cajas de texto
-                    this.LimpiarCajasTexto();
-                    ActualizarGrid(this.dgv_membresia, "SELECT * FROM membresia");
-                    Editar = false;
+                    MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                    if (Editar)
+                    {
+                        manipular.obtener_conexion();
+                        String query2 = "UPDATE membresia SET beneficios='" + txt_beneficio.Text + "', fecha_expendicion_mem='" + txt_fecha_exp.Text + "', fecha_expiracion_mem = '" + txt_fec_expirar.Text + "' WHERE pk_id_mem='" + Codigo + "';";
+
+                        manipular.EjecutarSql(query2);
+                        manipular.Desconectar();
+
+                        //6.limpiar cajas de texto
+                        this.LimpiarCajasTexto();
+                        ActualizarGrid(this.dgv_membresia, "SELECT * FROM membresia");
+                        Editar = false;
+                    }
+                    else
+                    {
 
 
 
-                    manipular.obtener_conexion();
-                    String Query="INSERT INTO membresia (pk_id_mem,beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + Convert.ToDouble(txt_membresia.Text) + "','" + txt_beneficio.Text + "','" + txt_fecha_exp.Text + "','" + txt_fec_expirar.Text + "', '" + Convert.ToDouble(txt_id_clt.Text) + "') ";
+                        manipular.obtener_conexion();
+                        String Query = "INSERT INTO membresia (beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + txt_beneficio.Text + "','" + txt_fecha_exp.Text + "','" + txt_fec_expirar.Text + "', '" + Convert.ToDouble(txt_id_clt.Text) + "') ";
 
-                    manipular.EjecutarSql(Query);
+                        manipular.EjecutarSql(Query);
 
-                    ActualizarGrid(this.dgv_membresia, "select * from membresia;");
+                        ActualizarGrid(this.dgv_membresia, "select * from membresia;");
 
-                    this.LimpiarCajasTexto();
-                    manipular.Desconectar();
+                        this.LimpiarCajasTexto();
+                        manipular.Desconectar();
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btn_elim_membresia_Click(object sender, EventArgs e)
         {
-            Codigo = this.dgv_membresia.CurrentRow.Cells[0].Value.ToString();
+            try {
+                Codigo = this.dgv_membresia.CurrentRow.Cells[0].Value.ToString();
 
-            //2. preguntar al usuario si realmente quiere borrar el resgistro
+                //2. preguntar al usuario si realmente quiere borrar el resgistro
 
-            var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            //3.PROCEDER AVALUAR EL RESULTADO
-            if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+                //3.PROCEDER AVALUAR EL RESULTADO
+                if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+                {
+                    //procedemos a borrar el registro
+
+                    //1. conectar a base de datosx
+                    manipular.obtener_conexion();
+
+                    //2. armar la query
+                    String Query = "delete from membresia where pk_id_mem= '" + Codigo + "';";
+
+                    //3.ejecutar la query
+                    manipular.EjecutarSql(Query);
+
+                    //4.Actualizar grid..
+                    ActualizarGrid(this.dgv_membresia, "select * from membresia;");
+
+
+                    //5.desconectar en base de datos
+                    manipular.Desconectar();
+                }
+            }
+            catch
             {
-                //procedemos a borrar el registro
-
-                //1. conectar a base de datosx
-                manipular.obtener_conexion();
-
-                //2. armar la query
-                String Query = "delete from membresia where pk_id_mem= '" + Codigo + "';";
-
-                //3.ejecutar la query
-                manipular.EjecutarSql(Query);
-
-                //4.Actualizar grid..
-                ActualizarGrid(this.dgv_membresia, "select * from membresia;");
-
-
-                //5.desconectar en base de datos
-                manipular.Desconectar();
+                MessageBox.Show("Seleccione el Dato a Eliminar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btn_actlz_membresia_Click(object sender, EventArgs e)
         {
-            Editar = true;
-            Codigo = this.dgv_membresia.CurrentRow.Cells[0].Value.ToString();
-            txt_beneficio.Text = this.dgv_membresia.CurrentRow.Cells[1].Value.ToString();
-            txt_fecha_exp.Text = this.dgv_membresia.CurrentRow.Cells[2].Value.ToString();
-            txt_fec_expirar.Text = this.dgv_membresia.CurrentRow.Cells[3].Value.ToString();
-            txt_id_clt.Text = this.dgv_membresia.CurrentRow.Cells[4].Value.ToString();
+            try {
+                Editar = true;
+                Codigo = this.dgv_membresia.CurrentRow.Cells[0].Value.ToString();
+                txt_beneficio.Text = this.dgv_membresia.CurrentRow.Cells[1].Value.ToString();
+                txt_fecha_exp.Text = this.dgv_membresia.CurrentRow.Cells[2].Value.ToString();
+                txt_fec_expirar.Text = this.dgv_membresia.CurrentRow.Cells[3].Value.ToString();
+                txt_id_clt.Text = this.dgv_membresia.CurrentRow.Cells[4].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Dato a Actualizar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txt_buscar_clt_TextChanged(object sender, EventArgs e)
@@ -159,7 +176,7 @@ namespace WindowsFormsApplication1
         private void btn_busc_memb_Click(object sender, EventArgs e)
         {
             manipular.obtener_conexion();
-            String Query = ("select * from membresia where pk_id_clt = '" + Convert.ToDouble(txt_buscar_clt.Text) + "%'; ");
+            String Query = ("select * from membresia where pk_id_clt = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
 
             //ManipularDato.Busqueda(Query);
 
@@ -167,12 +184,17 @@ namespace WindowsFormsApplication1
 
 
             manipular.Desconectar();
-            txt_buscar_clt.Text = "";
+            cbo_buscar.Text = "";
         }
 
         private void btn_act_datos_Click(object sender, EventArgs e)
         {
             ActualizarGrid(this.dgv_membresia, "SELECT * FROM membresia;");
+        }
+
+        private void txt_id_clt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

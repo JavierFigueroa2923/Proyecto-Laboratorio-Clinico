@@ -34,21 +34,19 @@
             this.txt_descrip_area = new System.Windows.Forms.TextBox();
             this.txt_ubicacion = new System.Windows.Forms.TextBox();
             this.txt_id_lab = new System.Windows.Forms.TextBox();
-            this.txt_id_area_lab = new System.Windows.Forms.TextBox();
             this.lbl_descrip_area_lab = new System.Windows.Forms.Label();
             this.lbl_ubicacion_area_lab = new System.Windows.Forms.Label();
             this.lbl_id_lab = new System.Windows.Forms.Label();
-            this.lbl_id_area_lab = new System.Windows.Forms.Label();
             this.gpb_vista_labs = new System.Windows.Forms.GroupBox();
             this.dgv_area_labs = new System.Windows.Forms.DataGridView();
             this.lbl_busq = new System.Windows.Forms.Label();
-            this.txt_buscar_lab = new System.Windows.Forms.TextBox();
             this.btn_buscar_lab = new System.Windows.Forms.Button();
             this.btn_act_data = new System.Windows.Forms.Button();
             this.btn_elim_area = new System.Windows.Forms.Button();
             this.btn_actlz_area = new System.Windows.Forms.Button();
             this.btn_guardar_area = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.gpb_datos_area_lab.SuspendLayout();
             this.gpb_vista_labs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_area_labs)).BeginInit();
@@ -71,54 +69,44 @@
             this.gpb_datos_area_lab.Controls.Add(this.txt_descrip_area);
             this.gpb_datos_area_lab.Controls.Add(this.txt_ubicacion);
             this.gpb_datos_area_lab.Controls.Add(this.txt_id_lab);
-            this.gpb_datos_area_lab.Controls.Add(this.txt_id_area_lab);
             this.gpb_datos_area_lab.Controls.Add(this.lbl_descrip_area_lab);
             this.gpb_datos_area_lab.Controls.Add(this.lbl_ubicacion_area_lab);
             this.gpb_datos_area_lab.Controls.Add(this.lbl_id_lab);
-            this.gpb_datos_area_lab.Controls.Add(this.lbl_id_area_lab);
             this.gpb_datos_area_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_datos_area_lab.Location = new System.Drawing.Point(12, 167);
             this.gpb_datos_area_lab.Name = "gpb_datos_area_lab";
-            this.gpb_datos_area_lab.Size = new System.Drawing.Size(344, 317);
+            this.gpb_datos_area_lab.Size = new System.Drawing.Size(344, 287);
             this.gpb_datos_area_lab.TabIndex = 152;
             this.gpb_datos_area_lab.TabStop = false;
             this.gpb_datos_area_lab.Text = "Ingreso de datos";
             // 
             // txt_descrip_area
             // 
-            this.txt_descrip_area.Location = new System.Drawing.Point(9, 234);
+            this.txt_descrip_area.Location = new System.Drawing.Point(6, 152);
             this.txt_descrip_area.Multiline = true;
             this.txt_descrip_area.Name = "txt_descrip_area";
-            this.txt_descrip_area.Size = new System.Drawing.Size(315, 77);
+            this.txt_descrip_area.Size = new System.Drawing.Size(315, 100);
             this.txt_descrip_area.TabIndex = 7;
             // 
             // txt_ubicacion
             // 
-            this.txt_ubicacion.Location = new System.Drawing.Point(9, 168);
+            this.txt_ubicacion.Location = new System.Drawing.Point(6, 92);
             this.txt_ubicacion.Name = "txt_ubicacion";
             this.txt_ubicacion.Size = new System.Drawing.Size(315, 24);
             this.txt_ubicacion.TabIndex = 6;
             // 
             // txt_id_lab
             // 
-            this.txt_id_lab.Location = new System.Drawing.Point(9, 111);
+            this.txt_id_lab.Location = new System.Drawing.Point(6, 44);
             this.txt_id_lab.Name = "txt_id_lab";
             this.txt_id_lab.Size = new System.Drawing.Size(315, 24);
             this.txt_id_lab.TabIndex = 5;
             this.txt_id_lab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_lab_KeyPress);
             // 
-            // txt_id_area_lab
-            // 
-            this.txt_id_area_lab.Location = new System.Drawing.Point(9, 61);
-            this.txt_id_area_lab.Name = "txt_id_area_lab";
-            this.txt_id_area_lab.Size = new System.Drawing.Size(315, 24);
-            this.txt_id_area_lab.TabIndex = 4;
-            this.txt_id_area_lab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_area_lab_KeyPress);
-            // 
             // lbl_descrip_area_lab
             // 
             this.lbl_descrip_area_lab.AutoSize = true;
-            this.lbl_descrip_area_lab.Location = new System.Drawing.Point(6, 204);
+            this.lbl_descrip_area_lab.Location = new System.Drawing.Point(6, 119);
             this.lbl_descrip_area_lab.Name = "lbl_descrip_area_lab";
             this.lbl_descrip_area_lab.Size = new System.Drawing.Size(143, 18);
             this.lbl_descrip_area_lab.TabIndex = 3;
@@ -127,7 +115,7 @@
             // lbl_ubicacion_area_lab
             // 
             this.lbl_ubicacion_area_lab.AutoSize = true;
-            this.lbl_ubicacion_area_lab.Location = new System.Drawing.Point(6, 147);
+            this.lbl_ubicacion_area_lab.Location = new System.Drawing.Point(6, 71);
             this.lbl_ubicacion_area_lab.Name = "lbl_ubicacion_area_lab";
             this.lbl_ubicacion_area_lab.Size = new System.Drawing.Size(74, 18);
             this.lbl_ubicacion_area_lab.TabIndex = 2;
@@ -136,20 +124,11 @@
             // lbl_id_lab
             // 
             this.lbl_id_lab.AutoSize = true;
-            this.lbl_id_lab.Location = new System.Drawing.Point(6, 90);
+            this.lbl_id_lab.Location = new System.Drawing.Point(6, 23);
             this.lbl_id_lab.Name = "lbl_id_lab";
             this.lbl_id_lab.Size = new System.Drawing.Size(99, 18);
             this.lbl_id_lab.TabIndex = 1;
             this.lbl_id_lab.Text = "Id Laboratorio";
-            // 
-            // lbl_id_area_lab
-            // 
-            this.lbl_id_area_lab.AutoSize = true;
-            this.lbl_id_area_lab.Location = new System.Drawing.Point(6, 30);
-            this.lbl_id_area_lab.Name = "lbl_id_area_lab";
-            this.lbl_id_area_lab.Size = new System.Drawing.Size(153, 18);
-            this.lbl_id_area_lab.TabIndex = 0;
-            this.lbl_id_area_lab.Text = "Id Área de Laboratorio";
             // 
             // gpb_vista_labs
             // 
@@ -179,13 +158,6 @@
             this.lbl_busq.Size = new System.Drawing.Size(55, 18);
             this.lbl_busq.TabIndex = 157;
             this.lbl_busq.Text = "Buscar";
-            // 
-            // txt_buscar_lab
-            // 
-            this.txt_buscar_lab.Location = new System.Drawing.Point(442, 131);
-            this.txt_buscar_lab.Name = "txt_buscar_lab";
-            this.txt_buscar_lab.Size = new System.Drawing.Size(228, 20);
-            this.txt_buscar_lab.TabIndex = 158;
             // 
             // btn_buscar_lab
             // 
@@ -267,13 +239,21 @@
             this.pictureBox1.TabIndex = 159;
             this.pictureBox1.TabStop = false;
             // 
+            // cbo_buscar
+            // 
+            this.cbo_buscar.FormattingEnabled = true;
+            this.cbo_buscar.Location = new System.Drawing.Point(430, 127);
+            this.cbo_buscar.Name = "cbo_buscar";
+            this.cbo_buscar.Size = new System.Drawing.Size(240, 21);
+            this.cbo_buscar.TabIndex = 160;
+            // 
             // Area_de_laboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 496);
+            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txt_buscar_lab);
             this.Controls.Add(this.lbl_busq);
             this.Controls.Add(this.btn_buscar_lab);
             this.Controls.Add(this.btn_act_data);
@@ -307,17 +287,15 @@
         private System.Windows.Forms.TextBox txt_descrip_area;
         private System.Windows.Forms.TextBox txt_ubicacion;
         private System.Windows.Forms.TextBox txt_id_lab;
-        private System.Windows.Forms.TextBox txt_id_area_lab;
         private System.Windows.Forms.Label lbl_descrip_area_lab;
         private System.Windows.Forms.Label lbl_ubicacion_area_lab;
         private System.Windows.Forms.Label lbl_id_lab;
-        private System.Windows.Forms.Label lbl_id_area_lab;
         private System.Windows.Forms.GroupBox gpb_vista_labs;
         private System.Windows.Forms.Button btn_act_data;
         private System.Windows.Forms.Button btn_buscar_lab;
         private System.Windows.Forms.Label lbl_busq;
         private System.Windows.Forms.DataGridView dgv_area_labs;
-        private System.Windows.Forms.TextBox txt_buscar_lab;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbo_buscar;
     }
 }

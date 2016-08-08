@@ -30,9 +30,10 @@ namespace WindowsFormsApplication1
 
         public void LimpiarCajasTexto()
         {
+            cbo_buscar.Text = "";
             txt_descp_muestra.Text = "";
             txt_nombre_tipo.Text = "";
-            txt_tp_muestra.Text = "";
+            //txt_tp_muestra.Text = "";
 
 
         }
@@ -62,103 +63,131 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_tipo_muestra_Click(object sender, EventArgs e)
         {
-
-            if (txt_descp_muestra.Text == "" || txt_nombre_tipo.Text == "" )
-            {
-                MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (Editar)
+            try {
+                if (txt_descp_muestra.Text == "" || txt_nombre_tipo.Text == "")
                 {
-                    manipular.obtener_conexion();
-                    String query2 = "UPDATE tipo_de_muestra SET descripcion_tip_mst='" + txt_descp_muestra.Text + "', nombre_tipo='" + txt_nombre_tipo.Text + "' WHERE pk_id_tip_mst='" + Codigo + "';";
-
-                    manipular.EjecutarSql(query2);
-                    manipular.Desconectar();
-
-                    //6.limpiar cajas de texto
-                    this.LimpiarCajasTexto();
-                    ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra");
-                    Editar = false;
+                    MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                    if (Editar)
+                    {
+                        manipular.obtener_conexion();
+                        String query2 = "UPDATE tipo_de_muestra SET descripcion_tip_mst='" + txt_descp_muestra.Text + "', nombre_tipo='" + txt_nombre_tipo.Text + "' WHERE pk_id_tip_mst='" + Codigo + "';";
+
+                        manipular.EjecutarSql(query2);
+                        manipular.Desconectar();
+
+                        //6.limpiar cajas de texto
+                        this.LimpiarCajasTexto();
+                        ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra");
+                        Editar = false;
+                    }
+                    else
+                    {
 
 
 
-                    manipular.obtener_conexion();
-                    String query = "INSERT INTO tipo_de_muestra(pk_id_tip_mst,descripcion_tip_mst,nombre_tipo) Values('" + Convert.ToDouble(txt_tp_muestra.Text) + "','" + txt_nombre_tipo.Text + "','" + txt_descp_muestra.Text + "') ";
-                    manipular.EjecutarSql(query);
-                    LimpiarCajasTexto();
-                    ActualizarGrid(this.dgv_muestras, "select * from  tipo_de_muestra");
-                    this.LimpiarCajasTexto();
+                        manipular.obtener_conexion();
+                        String query = "INSERT INTO tipo_de_muestra(descripcion_tip_mst,nombre_tipo) Values('" + txt_nombre_tipo.Text + "','" + txt_descp_muestra.Text + "') ";
+                        manipular.EjecutarSql(query);
+                        LimpiarCajasTexto();
+                        ActualizarGrid(this.dgv_muestras, "select * from  tipo_de_muestra");
+                        this.LimpiarCajasTexto();
+                    }
                 }
             }
-
+            catch
+            {
+                MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btn_actlz_tipo_muestra_Click(object sender, EventArgs e)
         {
-            manipular.obtener_conexion();
-            Editar = true;
-            Codigo = this.dgv_muestras.CurrentRow.Cells[0].Value.ToString();
-            txt_descp_muestra.Text = this.dgv_muestras.CurrentRow.Cells[1].Value.ToString();
-            txt_nombre_tipo.Text = this.dgv_muestras.CurrentRow.Cells[2].Value.ToString();
-
-            //String query = "UPDATE tipo_de_muestra SET descripcion_tip_mst='" + txt_descp_muestra.Text + "', nombre_tipo='" + txt_nombre_tipo.Text + "' WHERE pk_id_tip_mst='" + Convert.ToDouble(txt_tp_muestra.Text) + "';";
-
-            //manipular.EjecutarSql(query);
-            // manipular.Desconectar();
-
-            //6.limpiar cajas de texto
-            //this.LimpiarCajasTexto();
-           // ActualizarGrid(this.dataGridView1, "SELECT * FROM tipo_de_muestra");
+            try {
+                manipular.obtener_conexion();
+                Editar = true;
+                Codigo = this.dgv_muestras.CurrentRow.Cells[0].Value.ToString();
+                txt_descp_muestra.Text = this.dgv_muestras.CurrentRow.Cells[1].Value.ToString();
+                txt_nombre_tipo.Text = this.dgv_muestras.CurrentRow.Cells[2].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Dato a Actualizar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+           
         }
 
         private void btn_elim_tp_muestra_Click(object sender, EventArgs e)
         {
-            Codigo = this.dgv_muestras.CurrentRow.Cells[0].Value.ToString();
-
-            //2. preguntar al usuario si realmente quiere borrar el resgistro
-
-            var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            //3.PROCEDER AVALUAR EL RESULTADO
-            if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+            try
             {
-                //procedemos a borrar el registro
+                Codigo = this.dgv_muestras.CurrentRow.Cells[0].Value.ToString();
 
-                //1. conectar a base de datos
-                manipular.obtener_conexion();
+                //2. preguntar al usuario si realmente quiere borrar el resgistro
 
-                //2. armar la query
-                String Query = "DELETE FROM tipo_de_muestra WHERE pk_id_tip_mst= '" + Codigo + "';";
+                var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                //3.ejecutar la query
-                manipular.EjecutarSql(Query);
+                //3.PROCEDER AVALUAR EL RESULTADO
+                if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+                {
+                    //procedemos a borrar el registro
 
-                //4.Actualizar grid..
-                ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra;");
+                    //1. conectar a base de datos
+                    manipular.obtener_conexion();
+
+                    //2. armar la query
+                    String Query = "DELETE FROM tipo_de_muestra WHERE pk_id_tip_mst= '" + Codigo + "';";
+
+                    //3.ejecutar la query
+                    manipular.EjecutarSql(Query);
+
+                    //4.Actualizar grid..
+                    ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra;");
 
 
-                //5.desconectar en base de datos
-                manipular.Desconectar();
+                    //5.desconectar en base de datos
+                    manipular.Desconectar();
 
 
-            }//cerrar el if
+                }//cerrar el if
 
-            else
+                else
 
-                //no pasa nada
-                return;
+                    //no pasa nada
+                    return;
 
-            //cerrar else
+                //cerrar else
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Dato a Eliminar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txt_tp_muestra_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.validacion_solonumeros(e);
+        }
+
+        private void btn_busc_memb_Click(object sender, EventArgs e)
+        {
+            manipular.obtener_conexion();
+            String Query = ("select * from membresia where pk_id_tip_mst = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
+
+            //ManipularDato.Busqueda(Query);
+
+            ActualizarGrid(this.dgv_muestras, Query);
+
+
+            manipular.Desconectar();
+            cbo_buscar.Text = "";
+        }
+
+        private void btn_act_datos_Click(object sender, EventArgs e)
+        {
+            ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_muestra;");
         }
     }
 }

@@ -35,22 +35,20 @@
             this.txt_fecha_exp = new System.Windows.Forms.TextBox();
             this.txt_beneficio = new System.Windows.Forms.TextBox();
             this.txt_id_clt = new System.Windows.Forms.TextBox();
-            this.txt_membresia = new System.Windows.Forms.TextBox();
             this.lbl_fecha_expr = new System.Windows.Forms.Label();
             this.lbl_fecha_expe = new System.Windows.Forms.Label();
             this.lbl_benef = new System.Windows.Forms.Label();
             this.lbl_id_cliente = new System.Windows.Forms.Label();
-            this.lbl_mem = new System.Windows.Forms.Label();
             this.btn_guardar_membresia = new System.Windows.Forms.Button();
             this.btn_actlz_membresia = new System.Windows.Forms.Button();
             this.btn_elim_membresia = new System.Windows.Forms.Button();
             this.gpb_vista_clientes = new System.Windows.Forms.GroupBox();
             this.dgv_membresia = new System.Windows.Forms.DataGridView();
-            this.txt_buscar_clt = new System.Windows.Forms.TextBox();
             this.btn_busc_memb = new System.Windows.Forms.Button();
             this.btn_act_datos = new System.Windows.Forms.Button();
             this.lbl_busq_clt = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.gpb_ingreso_datos.SuspendLayout();
             this.gpb_vista_clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_membresia)).BeginInit();
@@ -73,62 +71,53 @@
             this.gpb_ingreso_datos.Controls.Add(this.txt_fecha_exp);
             this.gpb_ingreso_datos.Controls.Add(this.txt_beneficio);
             this.gpb_ingreso_datos.Controls.Add(this.txt_id_clt);
-            this.gpb_ingreso_datos.Controls.Add(this.txt_membresia);
             this.gpb_ingreso_datos.Controls.Add(this.lbl_fecha_expr);
             this.gpb_ingreso_datos.Controls.Add(this.lbl_fecha_expe);
             this.gpb_ingreso_datos.Controls.Add(this.lbl_benef);
             this.gpb_ingreso_datos.Controls.Add(this.lbl_id_cliente);
-            this.gpb_ingreso_datos.Controls.Add(this.lbl_mem);
             this.gpb_ingreso_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_ingreso_datos.Location = new System.Drawing.Point(12, 160);
             this.gpb_ingreso_datos.Name = "gpb_ingreso_datos";
-            this.gpb_ingreso_datos.Size = new System.Drawing.Size(337, 357);
+            this.gpb_ingreso_datos.Size = new System.Drawing.Size(337, 326);
             this.gpb_ingreso_datos.TabIndex = 58;
             this.gpb_ingreso_datos.TabStop = false;
             this.gpb_ingreso_datos.Text = "Ingreso de datos";
             // 
             // txt_fec_expirar
             // 
-            this.txt_fec_expirar.Location = new System.Drawing.Point(9, 331);
+            this.txt_fec_expirar.Location = new System.Drawing.Point(6, 252);
             this.txt_fec_expirar.Name = "txt_fec_expirar";
             this.txt_fec_expirar.Size = new System.Drawing.Size(310, 24);
             this.txt_fec_expirar.TabIndex = 164;
             // 
             // txt_fecha_exp
             // 
-            this.txt_fecha_exp.Location = new System.Drawing.Point(9, 268);
+            this.txt_fecha_exp.Location = new System.Drawing.Point(6, 204);
             this.txt_fecha_exp.Name = "txt_fecha_exp";
             this.txt_fecha_exp.Size = new System.Drawing.Size(310, 24);
             this.txt_fecha_exp.TabIndex = 163;
             // 
             // txt_beneficio
             // 
-            this.txt_beneficio.Location = new System.Drawing.Point(9, 159);
+            this.txt_beneficio.Location = new System.Drawing.Point(6, 89);
             this.txt_beneficio.Multiline = true;
             this.txt_beneficio.Name = "txt_beneficio";
-            this.txt_beneficio.Size = new System.Drawing.Size(310, 71);
+            this.txt_beneficio.Size = new System.Drawing.Size(310, 91);
             this.txt_beneficio.TabIndex = 7;
             // 
             // txt_id_clt
             // 
-            this.txt_id_clt.Location = new System.Drawing.Point(9, 101);
+            this.txt_id_clt.Location = new System.Drawing.Point(6, 41);
             this.txt_id_clt.Name = "txt_id_clt";
             this.txt_id_clt.Size = new System.Drawing.Size(310, 24);
             this.txt_id_clt.TabIndex = 6;
+            this.txt_id_clt.TextChanged += new System.EventHandler(this.txt_id_clt_TextChanged);
             this.txt_id_clt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_clt_KeyPress);
-            // 
-            // txt_membresia
-            // 
-            this.txt_membresia.Location = new System.Drawing.Point(9, 41);
-            this.txt_membresia.Name = "txt_membresia";
-            this.txt_membresia.Size = new System.Drawing.Size(310, 24);
-            this.txt_membresia.TabIndex = 5;
-            this.txt_membresia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_membresia_KeyPress);
             // 
             // lbl_fecha_expr
             // 
             this.lbl_fecha_expr.AutoSize = true;
-            this.lbl_fecha_expr.Location = new System.Drawing.Point(6, 306);
+            this.lbl_fecha_expr.Location = new System.Drawing.Point(3, 231);
             this.lbl_fecha_expr.Name = "lbl_fecha_expr";
             this.lbl_fecha_expr.Size = new System.Drawing.Size(140, 18);
             this.lbl_fecha_expr.TabIndex = 4;
@@ -137,7 +126,7 @@
             // lbl_fecha_expe
             // 
             this.lbl_fecha_expe.AutoSize = true;
-            this.lbl_fecha_expe.Location = new System.Drawing.Point(6, 246);
+            this.lbl_fecha_expe.Location = new System.Drawing.Point(6, 183);
             this.lbl_fecha_expe.Name = "lbl_fecha_expe";
             this.lbl_fecha_expe.Size = new System.Drawing.Size(143, 18);
             this.lbl_fecha_expe.TabIndex = 3;
@@ -146,7 +135,7 @@
             // lbl_benef
             // 
             this.lbl_benef.AutoSize = true;
-            this.lbl_benef.Location = new System.Drawing.Point(6, 138);
+            this.lbl_benef.Location = new System.Drawing.Point(6, 68);
             this.lbl_benef.Name = "lbl_benef";
             this.lbl_benef.Size = new System.Drawing.Size(77, 18);
             this.lbl_benef.TabIndex = 2;
@@ -155,20 +144,11 @@
             // lbl_id_cliente
             // 
             this.lbl_id_cliente.AutoSize = true;
-            this.lbl_id_cliente.Location = new System.Drawing.Point(6, 80);
+            this.lbl_id_cliente.Location = new System.Drawing.Point(6, 20);
             this.lbl_id_cliente.Name = "lbl_id_cliente";
             this.lbl_id_cliente.Size = new System.Drawing.Size(68, 18);
             this.lbl_id_cliente.TabIndex = 1;
             this.lbl_id_cliente.Text = "Id Cliente";
-            // 
-            // lbl_mem
-            // 
-            this.lbl_mem.AutoSize = true;
-            this.lbl_mem.Location = new System.Drawing.Point(6, 20);
-            this.lbl_mem.Name = "lbl_mem";
-            this.lbl_mem.Size = new System.Drawing.Size(97, 18);
-            this.lbl_mem.TabIndex = 0;
-            this.lbl_mem.Text = "Id Membresía";
             // 
             // btn_guardar_membresia
             // 
@@ -231,14 +211,6 @@
             this.dgv_membresia.Size = new System.Drawing.Size(448, 289);
             this.dgv_membresia.TabIndex = 0;
             // 
-            // txt_buscar_clt
-            // 
-            this.txt_buscar_clt.Location = new System.Drawing.Point(413, 135);
-            this.txt_buscar_clt.Name = "txt_buscar_clt";
-            this.txt_buscar_clt.Size = new System.Drawing.Size(261, 20);
-            this.txt_buscar_clt.TabIndex = 162;
-            this.txt_buscar_clt.TextChanged += new System.EventHandler(this.txt_buscar_clt_TextChanged);
-            // 
             // btn_busc_memb
             // 
             this.btn_busc_memb.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -289,16 +261,24 @@
             this.pictureBox1.TabIndex = 166;
             this.pictureBox1.TabStop = false;
             // 
+            // cbo_buscar
+            // 
+            this.cbo_buscar.FormattingEnabled = true;
+            this.cbo_buscar.Location = new System.Drawing.Point(419, 132);
+            this.cbo_buscar.Name = "cbo_buscar";
+            this.cbo_buscar.Size = new System.Drawing.Size(254, 21);
+            this.cbo_buscar.TabIndex = 167;
+            // 
             // Membresia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 540);
+            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_busq_clt);
             this.Controls.Add(this.btn_act_datos);
             this.Controls.Add(this.btn_busc_memb);
-            this.Controls.Add(this.txt_buscar_clt);
             this.Controls.Add(this.gpb_vista_clientes);
             this.Controls.Add(this.btn_elim_membresia);
             this.Controls.Add(this.btn_actlz_membresia);
@@ -328,14 +308,11 @@
         private System.Windows.Forms.Button btn_elim_membresia;
         private System.Windows.Forms.TextBox txt_beneficio;
         private System.Windows.Forms.TextBox txt_id_clt;
-        private System.Windows.Forms.TextBox txt_membresia;
         private System.Windows.Forms.Label lbl_fecha_expr;
         private System.Windows.Forms.Label lbl_fecha_expe;
         private System.Windows.Forms.Label lbl_benef;
         private System.Windows.Forms.Label lbl_id_cliente;
-        private System.Windows.Forms.Label lbl_mem;
         private System.Windows.Forms.GroupBox gpb_vista_clientes;
-        private System.Windows.Forms.TextBox txt_buscar_clt;
         private System.Windows.Forms.Button btn_busc_memb;
         private System.Windows.Forms.DataGridView dgv_membresia;
         private System.Windows.Forms.Button btn_act_datos;
@@ -343,5 +320,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_fec_expirar;
         private System.Windows.Forms.TextBox txt_fecha_exp;
+        private System.Windows.Forms.ComboBox cbo_buscar;
     }
 }

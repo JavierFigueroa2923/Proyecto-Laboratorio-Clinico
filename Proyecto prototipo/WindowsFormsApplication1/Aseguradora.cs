@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         {
             cbo_buscar = "";
             txt_dsc_aseg.Text = "";
-            txt_id__aseg.Text = "";
+            //txt_id__aseg.Text = "";
             txt_nom_aseg.Text = "";
             txt_num_aseg.Text = "";
             
@@ -104,32 +104,38 @@ namespace WindowsFormsApplication1
 
         private void btn_elim_aseg_Click(object sender, EventArgs e)
         {
-            Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            try {
+                Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
-            //2. preguntar al usuario si realmente quiere borrar el resgistro
+                //2. preguntar al usuario si realmente quiere borrar el resgistro
 
-            var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            //3.PROCEDER AVALUAR EL RESULTADO
-            if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+                //3.PROCEDER AVALUAR EL RESULTADO
+                if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+                {
+                    //procedemos a borrar el registro
+
+                    //1. conectar a base de datosx
+                    manipular.obtener_conexion();
+
+                    //2. armar la query
+                    String Query = "delete from aseguradora where pk_id_asgd= '" + Codigo + "';";
+
+                    //3.ejecutar la query
+                    manipular.EjecutarSql(Query);
+
+                    //4.Actualizar grid..
+                    ActualizarGrid(this.dataGridView1, "select * from aseguradora;");
+
+
+                    //5.desconectar en base de datos
+                    manipular.Desconectar();
+                }
+            }
+            catch
             {
-                //procedemos a borrar el registro
-
-                //1. conectar a base de datosx
-                manipular.obtener_conexion();
-
-                //2. armar la query
-                String Query = "delete from aseguradora where pk_id_asgd= '" + Codigo + "';";
-
-                //3.ejecutar la query
-                manipular.EjecutarSql(Query);
-
-                //4.Actualizar grid..
-                ActualizarGrid(this.dataGridView1, "select * from aseguradora;");
-
-
-                //5.desconectar en base de datos
-                manipular.Desconectar();
+                MessageBox.Show("Seleccione el Dato a Eliminar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -167,47 +173,59 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_aseg_Click_1(object sender, EventArgs e)
         {
-            if (txt_num_aseg.Text == "" || txt_dsc_aseg.Text == "" || txt_num_aseg.Text == "")
-            {
-                MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (Editar)
+            try {
+                if (txt_num_aseg.Text == "" || txt_dsc_aseg.Text == "" || txt_num_aseg.Text == "")
                 {
-                    manipular.obtener_conexion();
-                    String query2 = "UPDATE aseguradora SET numero_seguro_asgd='" + txt_num_aseg.Text + "', nombre_asgd='" + txt_nom_aseg.Text + "', descuento_asgd = '" + txt_dsc_aseg.Text + "' WHERE pk_id_asgd='" + Codigo + "';";
-
-                    manipular.EjecutarSql(query2);
-                    manipular.Desconectar();
-
-                    //6.limpiar cajas de texto
-                    this.LimpiarCajasTexto();
-                    ActualizarGrid(this.dataGridView1, "SELECT * FROM aseguradora");
-                    Editar = false;
+                    MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                    if (Editar)
+                    {
+                        manipular.obtener_conexion();
+                        String query2 = "UPDATE aseguradora SET numero_seguro_asgd='" + txt_num_aseg.Text + "', nombre_asgd='" + txt_nom_aseg.Text + "', descuento_asgd = '" + txt_dsc_aseg.Text + "' WHERE pk_id_asgd='" + Codigo + "';";
 
-                    manipular.obtener_conexion();
-                    String query = "INSERT INTO aseguradora (pk_id_asgd, numero_seguro_asgd, nombre_asgd, descuento_asgd) VALUES('" + Convert.ToDouble(txt_id__aseg.Text) + "', '" + txt_num_aseg.Text + "', '" + txt_nom_aseg.Text + "', '" + txt_dsc_aseg.Text + "') ";
-                    manipular.EjecutarSql(query);
-                    LimpiarCajasTexto();
-                    ActualizarGrid(this.dataGridView1, "select * from  aseguradora");
-                    this.LimpiarCajasTexto();
+                        manipular.EjecutarSql(query2);
+                        manipular.Desconectar();
+
+                        //6.limpiar cajas de texto
+                        this.LimpiarCajasTexto();
+                        ActualizarGrid(this.dataGridView1, "SELECT * FROM aseguradora");
+                        Editar = false;
+                    }
+                    else
+                    {
+
+                        manipular.obtener_conexion();
+                        String query = "INSERT INTO aseguradora (numero_seguro_asgd, nombre_asgd, descuento_asgd) VALUES('" + txt_num_aseg.Text + "', '" + txt_nom_aseg.Text + "', '" + txt_dsc_aseg.Text + "') ";
+                        manipular.EjecutarSql(query);
+                        LimpiarCajasTexto();
+                        ActualizarGrid(this.dataGridView1, "select * from  aseguradora");
+                        this.LimpiarCajasTexto();
 
 
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btn_actlz_aseg_Click_1(object sender, EventArgs e)
         {
-            Editar = true;
-            Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txt_num_aseg.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txt_nom_aseg.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txt_dsc_aseg.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            try {
+                Editar = true;
+                Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                txt_num_aseg.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txt_nom_aseg.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txt_dsc_aseg.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione el Dato a Actualizar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txt_busca_aseg_TextChanged(object sender, EventArgs e)
