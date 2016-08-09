@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
                 MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
 
                 MySqlCommand cmd = dbConn.CreateCommand();
-                cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo, permiso.nombre_prm, empleado.usuario , empleado.pk_id_emp FROM cargo_emleado, empleado,permiso WHERE empleado.usuario='" + usuario + "' AND empleado.contrasenia = '" + pass + "'";
+                cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo, permiso.nombre_prm, empleado.usuario , empleado.pk_id_emp FROM cargo_empleado, empleado,permiso WHERE empleado.usuario='" + usuario + "' AND empleado.contrasenia = '" + pass + "'";
 
                 try
                 {
