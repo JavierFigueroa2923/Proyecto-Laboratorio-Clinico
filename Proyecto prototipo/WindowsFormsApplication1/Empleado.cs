@@ -163,7 +163,7 @@ namespace WindowsFormsApplication1
 
         private void cbo_titl_emp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String Query = ("select ")
+            String Query = ("select ");
         }
 
         private void grb_datosp_emp_Enter(object sender, EventArgs e)

@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
         public void LimpiarCajaTextoPermiso()
         {
             txt_descr_per.Text = "";
-            txt_nombre_per.Text = "";
+            cbo_nombre_per.Text = "";
         }
 
         
@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                if ( txt_descr_per.Text == "" || txt_nombre_per.Text == "")
+                if ( txt_descr_per.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -49,7 +49,7 @@ namespace WindowsFormsApplication1
                     {
                         Conexionmysql.ObtenerConexion();
                         int NumVal = Int32.Parse(codigo);
-                        String Query = "update permiso set nombre_prm = '" + txt_nombre_per.Text + "', descripcion_perm = '" + txt_descr_per.Text + "',  pk_id_cargo_emp = " + cbo_id_carg_emp_per.Text + " where pk_id_perm = '" + NumVal + "';";
+                        String Query = "update permiso set descripcion_perm = '" + txt_descr_per.Text + "',  pk_id_cargo_emp = " + cbo_id_carg_emp_per.SelectedValue + " where pk_id_perm = '" + NumVal + "';";
                         cl_gridysql.EjecutarMySql(Query);
                         cl_gridysql.ActualizarGridPermiso(this.dgv_busc_per, "select pk_id_perm as Identificador, nombre_prm as Nombre, descripcion_perm as Descripcion, pk_id_cargo_emp as id_cargo_empleado from permiso;");
                         Conexionmysql.Desconectar();
@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
                         //Conectarse a base de datos
                         Conexionmysql.ObtenerConexion();
                         //Armar Query
-                        String Query = "insert into permiso(nombre_prm,descripcion_perm,pk_id_cargo_emp)values('" + txt_nombre_per.Text + "','" + txt_descr_per.Text + "'," + cbo_id_carg_emp_per.Text + ");";
+                        String Query = "insert into permiso(nombre_prm,descripcion_perm,pk_id_cargo_emp)values('" + cbo_nombre_per.SelectedItem + "','" + txt_descr_per.Text + "'," + cbo_id_carg_emp_per.SelectedValue + ");";
                         //Ejecutar Query
                         cl_gridysql.EjecutarMySql(Query);
                         //Actualizar el DataGrid
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
             try
             {
                 codigo = this.dgv_busc_per.CurrentRow.Cells[0].Value.ToString();
-                txt_nombre_per.Text = this.dgv_busc_per.CurrentRow.Cells[1].Value.ToString();
+                cbo_nombre_per.Text = this.dgv_busc_per.CurrentRow.Cells[1].Value.ToString();
                 txt_descr_per.Text = this.dgv_busc_per.CurrentRow.Cells[2].Value.ToString();
                 cbo_id_carg_emp_per.Text = this.dgv_busc_per.CurrentRow.Cells[3].Value.ToString();
             }
@@ -168,7 +168,8 @@ namespace WindowsFormsApplication1
         private void frm_permiso_Load(object sender, EventArgs e)
         {
             cl_gridysql.ActualizarGridPermiso(this.dgv_busc_per, "select pk_id_perm as Identificador, nombre_prm as Nombre, descripcion_perm as Descripcion, pk_id_cargo_emp as id_cargo_empleado from permiso;");
-            //llenarCboIdCargo();
+            llenarCboIdCargo();
+            btn_busc_id_carg_emp_per.Visible = false;
         }
 
         private void txt_id_per_KeyPress(object sender, KeyPressEventArgs e)
@@ -193,7 +194,7 @@ namespace WindowsFormsApplication1
             //se inicia un DataSet
             DataSet ds = new DataSet();
             //se indica la consulta en sql
-            String Query = "select pk_id_cargo_emp, nombre_cargo_emp from cargo_emleado;";
+            String Query = "select DISTINCT cargo_emleado.pk_id_cargo_emp, cargo_emleado.nombre_cargo_emp, empleado.nombre_emp from cargo_emleado, empleado WHERE cargo_emleado.pk_id_emp = empleado.pk_id_emp";
             MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //se indica con quu tabla se llena
             dad.Fill(ds, "cargo_emleado");
@@ -201,15 +202,27 @@ namespace WindowsFormsApplication1
             //indicamos el valor de los miembros
             cbo_id_carg_emp_per.ValueMember = ("pk_id_cargo_emp");
             //se indica el valor a desplegar en el combobox
-            cbo_id_carg_emp_per.DisplayMember = ("pk_id_cargo_emp");
+            string cb = "nombre_cargo_emp, nombre_cargo_emp";
+
+            DataTable dt = ds.Tables[0];
+            dt.Columns.Add("NewColumn", typeof(string));
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["nombre_cargo_emp"] = dr["pk_id_cargo_emp"].ToString() + " " + dr["nombre_cargo_emp"].ToString() + " " + dr["nombre_emp"].ToString();
+            }
+            cbo_id_carg_emp_per.DataSource = dt;
+
+
+            cbo_id_carg_emp_per.DisplayMember = "nombre_cargo_emp";
         }
 
         private void btn_busc_id_carg_emp_per_Click(object sender, EventArgs e)
         {
-            Busqueda_cargo_empleado ini = new Busqueda_cargo_empleado();
-            ini.MdiParent = this.MdiParent;
-            ini.Show();
-            this.Hide();
+            //Busqueda_cargo_empleado ini = new Busqueda_cargo_empleado();
+            //ini.MdiParent = this.MdiParent;
+            //ini.Show();
+            //this.Hide();
         }
 
         private void Lbl_permiso_Click(object sender, EventArgs e)
@@ -256,6 +269,11 @@ namespace WindowsFormsApplication1
                 e.SuppressKeyPress = true;
                 SelectNextControl(ActiveControl, true, true, true, true);
             }
+        }
+
+        private void grb_datos1_per_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

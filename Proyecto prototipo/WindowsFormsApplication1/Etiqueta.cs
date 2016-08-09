@@ -161,10 +161,10 @@ namespace WindowsFormsApplication1
        
         private void btn_id_mst_busc_eti_Click(object sender, EventArgs e)
         {
-            Busqueda_id_muestra ini = new Busqueda_id_muestra();
-            ini.MdiParent = this.MdiParent;
-            ini.Show();
-            this.Hide();
+            //Busqueda_id_muestra ini = new Busqueda_id_muestra();
+            //ini.MdiParent = this.MdiParent;
+            //ini.Show();
+            //this.Hide();
         }
     }
 }

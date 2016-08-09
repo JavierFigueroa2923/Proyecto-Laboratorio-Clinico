@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         Boolean Editar;
         public void LimpiarCajasTexto()
         {
-            cbo_buscar = "";
+            cbo_buscar.Text = "";
             txt_dsc_aseg.Text = "";
             //txt_id__aseg.Text = "";
             txt_nom_aseg.Text = "";
@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1
 
 
             manipular.Desconectar();
-            cbo_buscar = "";
+            cbo_buscar.Text = "";
         }
 
         private void txt_id__aseg_KeyPress(object sender, KeyPressEventArgs e)

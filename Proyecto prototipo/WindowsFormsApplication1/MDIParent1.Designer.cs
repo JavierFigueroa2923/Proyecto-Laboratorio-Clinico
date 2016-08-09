@@ -45,7 +45,6 @@
             this.actualizarAseguradoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarLaboratorioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cargoEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permisoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.etiquetasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -150,7 +149,6 @@
             this.actualizarAseguradoraToolStripMenuItem,
             this.actualizarLaboratorioToolStripMenuItem,
             this.actualizarInventarioToolStripMenuItem,
-            this.cargoEmpleadoToolStripMenuItem,
             this.citasToolStripMenuItem,
             this.permisoToolStripMenuItem,
             this.etiquetasToolStripMenuItem,
@@ -212,13 +210,6 @@
             this.actualizarInventarioToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.actualizarInventarioToolStripMenuItem.Text = "Actualizar Inventario";
             this.actualizarInventarioToolStripMenuItem.Click += new System.EventHandler(this.actualizarInventarioToolStripMenuItem_Click);
-            // 
-            // cargoEmpleadoToolStripMenuItem
-            // 
-            this.cargoEmpleadoToolStripMenuItem.Name = "cargoEmpleadoToolStripMenuItem";
-            this.cargoEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.cargoEmpleadoToolStripMenuItem.Text = "Cargo Empleado";
-            this.cargoEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.cargoEmpleadoToolStripMenuItem_Click);
             // 
             // citasToolStripMenuItem
             // 
@@ -428,9 +419,10 @@
             // lbl_usuario
             // 
             this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lbl_usuario.Location = new System.Drawing.Point(626, 6);
             this.lbl_usuario.Name = "lbl_usuario";
-            this.lbl_usuario.Size = new System.Drawing.Size(0, 13);
+            this.lbl_usuario.Size = new System.Drawing.Size(0, 15);
             this.lbl_usuario.TabIndex = 4;
             // 
             // MDIParent1
@@ -487,7 +479,6 @@
         private System.Windows.Forms.ToolStripMenuItem actualizarLaboratorioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeSuministrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarInventarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cargoEmpleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem permisoToolStripMenuItem;

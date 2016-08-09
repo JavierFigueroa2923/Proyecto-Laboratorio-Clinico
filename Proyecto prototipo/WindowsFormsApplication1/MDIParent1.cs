@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +47,9 @@ namespace WindowsFormsApplication1
 
         private int childFormNumber = 0;
 
-        public String MiPropiedad { get; set; } 
+        public String MiPropiedad { get; set; }
+        public int MiIdUsuario { get; set; }
+
 
         public MDIParent1()
         {
@@ -132,6 +135,96 @@ namespace WindowsFormsApplication1
         private void MDIParent1_Load(object sender, EventArgs e)
         {
             lbl_usuario.Text = MiPropiedad;
+
+            actualizarClienteToolStripMenuItem.Visible = false;
+            actualizarToolStripMenuItem.Visible = false;
+            actualizarExamenesToolStripMenuItem.Visible = false;
+            actualizarPagosToolStripMenuItem.Visible = false;
+            actualizarAseguradoraToolStripMenuItem.Visible = false;
+            actualizarLaboratorioToolStripMenuItem.Visible = false;
+            actualizarInventarioToolStripMenuItem.Visible = false;
+            citasToolStripMenuItem.Visible = false;
+            permisoToolStripMenuItem.Visible = false;
+            etiquetasToolStripMenuItem.Visible = false;
+            areaLaboratorioToolStripMenuItem.Visible = false;
+            membreciaToolStripMenuItem.Visible = false;
+            cargoEmpleadoToolStripMenuItem1.Visible = false;
+            inventarioDeSuministrosToolStripMenuItem.Visible = false;
+            tipoDeExamenToolStripMenuItem.Visible = false;
+
+
+            MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
+
+            MySqlCommand cmd = dbConn.CreateCommand();
+            cmd.CommandText = "SELECT permiso.nombre_prm, empleado.usuario FROM cargo_emleado, empleado, permiso WHERE empleado.pk_id_emp = cargo_emleado.pk_id_emp AND cargo_emleado.pk_id_cargo_emp = permiso.pk_id_cargo_emp AND empleado.pk_id_emp = "+ MiIdUsuario +"";
+
+            try
+            {
+                dbConn.Open();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro" + erro);
+                this.Close();
+            }
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string nilson = reader.GetString(0);
+                switch (nilson) {
+                    case "Actualizar Cliente":
+                        actualizarClienteToolStripMenuItem.Visible = true;
+                        break;
+                    case "Actualizar Empleado":
+                        actualizarToolStripMenuItem.Visible = true;
+                        break;
+                    case "Actualizar Examenes":
+                        actualizarExamenesToolStripMenuItem.Visible = true;
+                        break;
+                    case "Actualizar Pagos":
+                        actualizarPagosToolStripMenuItem.Visible = true;
+                        break;
+                    case "Actualizar Aseguradora":
+                        actualizarAseguradoraToolStripMenuItem.Visible = true;
+                        break;
+                    case "Actualizar Laboratorio":
+                        actualizarLaboratorioToolStripMenuItem.Visible = true;
+                        break;
+                    case "Actualizar Inventario":
+                        actualizarInventarioToolStripMenuItem.Visible = true;
+                        break;
+                    case "Citas":
+                        citasToolStripMenuItem.Visible = true;
+                        break;
+                    case "Roles":
+                        permisoToolStripMenuItem.Visible = true;
+                        break;
+                    case "Etiquetas":
+                        etiquetasToolStripMenuItem.Visible = true;
+                        break;
+                    case "Area Laboratorio":
+                        areaLaboratorioToolStripMenuItem.Visible = true;
+                        break;
+                    case "Membrecia":
+                        membreciaToolStripMenuItem.Visible = true;
+                        break;
+                    case "Cargo Empleado":
+                        cargoEmpleadoToolStripMenuItem1.Visible = true;
+                        break;
+                    case "Inventario De Suministros":
+                        inventarioDeSuministrosToolStripMenuItem.Visible = true;
+                        break;
+                    case "Tipo De Examen":
+                        tipoDeExamenToolStripMenuItem.Visible = true;
+                        break;
+                    default:
+                        
+                        break;
+                }
+
+            }
         }
 
         private void mantenimientosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -603,7 +696,7 @@ namespace WindowsFormsApplication1
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            Bienvenido frm2 = new Bienvenido();
+            Login frm2 = new Login();
 
             frm2.Show();
             this.Hide();

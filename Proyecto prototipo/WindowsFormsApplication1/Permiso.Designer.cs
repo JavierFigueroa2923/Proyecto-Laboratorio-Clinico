@@ -42,7 +42,6 @@ namespace WindowsFormsApplication1
             this.Lbl_descripcion = new System.Windows.Forms.Label();
             this.txt_descr_per = new System.Windows.Forms.TextBox();
             this.Lbl_nombre = new System.Windows.Forms.Label();
-            this.txt_nombre_per = new System.Windows.Forms.TextBox();
             this.Lbl_permiso = new System.Windows.Forms.Label();
             this.pl_lab_user = new System.Windows.Forms.PictureBox();
             this.btn_rnv_per = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@ namespace WindowsFormsApplication1
             this.btn_elim_per = new System.Windows.Forms.Button();
             this.btn_actlz_per = new System.Windows.Forms.Button();
             this.btn_guardar_per = new System.Windows.Forms.Button();
+            this.cbo_nombre_per = new System.Windows.Forms.ComboBox();
             this.grb_vista_per.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_per)).BeginInit();
             this.grb_datos1_per.SuspendLayout();
@@ -98,13 +98,13 @@ namespace WindowsFormsApplication1
             // 
             // grb_datos1_per
             // 
+            this.grb_datos1_per.Controls.Add(this.cbo_nombre_per);
             this.grb_datos1_per.Controls.Add(this.cbo_id_carg_emp_per);
             this.grb_datos1_per.Controls.Add(this.btn_busc_id_carg_emp_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_id_carg_emp_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_descripcion);
             this.grb_datos1_per.Controls.Add(this.txt_descr_per);
             this.grb_datos1_per.Controls.Add(this.Lbl_nombre);
-            this.grb_datos1_per.Controls.Add(this.txt_nombre_per);
             this.grb_datos1_per.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_datos1_per.Location = new System.Drawing.Point(18, 140);
             this.grb_datos1_per.Name = "grb_datos1_per";
@@ -112,6 +112,7 @@ namespace WindowsFormsApplication1
             this.grb_datos1_per.TabIndex = 164;
             this.grb_datos1_per.TabStop = false;
             this.grb_datos1_per.Text = "Datos de Rol";
+            this.grb_datos1_per.Enter += new System.EventHandler(this.grb_datos1_per_Enter);
             // 
             // cbo_id_carg_emp_per
             // 
@@ -176,15 +177,6 @@ namespace WindowsFormsApplication1
             this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
             this.Lbl_nombre.TabIndex = 81;
             this.Lbl_nombre.Text = "Nombre:";
-            // 
-            // txt_nombre_per
-            // 
-            this.txt_nombre_per.Location = new System.Drawing.Point(102, 34);
-            this.txt_nombre_per.Name = "txt_nombre_per";
-            this.txt_nombre_per.Size = new System.Drawing.Size(591, 23);
-            this.txt_nombre_per.TabIndex = 1;
-            this.txt_nombre_per.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nombre_per_KeyDown);
-            this.txt_nombre_per.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_per_KeyPress);
             // 
             // Lbl_permiso
             // 
@@ -281,6 +273,30 @@ namespace WindowsFormsApplication1
             this.btn_guardar_per.UseVisualStyleBackColor = true;
             this.btn_guardar_per.Click += new System.EventHandler(this.btn_guardar_per_Click);
             // 
+            // cbo_nombre_per
+            // 
+            this.cbo_nombre_per.FormattingEnabled = true;
+            this.cbo_nombre_per.Items.AddRange(new object[] {
+            "Actualizar Cliente",
+            "Actualizar Empleado",
+            "Actualizar Examenes",
+            "Actualizar Pagos",
+            "Actualizar Aseguradora",
+            "Actualizar Laboratorio",
+            "Actualizar Inventario",
+            "Citas",
+            "Roles",
+            "Etiquetas",
+            "Area Laboratorio",
+            "Membrecia",
+            "Cargo Empleado",
+            "Inventario De Suministros",
+            "Tipo De Examen"});
+            this.cbo_nombre_per.Location = new System.Drawing.Point(102, 30);
+            this.cbo_nombre_per.Name = "cbo_nombre_per";
+            this.cbo_nombre_per.Size = new System.Drawing.Size(403, 24);
+            this.cbo_nombre_per.TabIndex = 171;
+            // 
             // frm_permiso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,7 +344,6 @@ namespace WindowsFormsApplication1
         internal System.Windows.Forms.Label Lbl_descripcion;
         internal System.Windows.Forms.TextBox txt_descr_per;
         internal System.Windows.Forms.Label Lbl_nombre;
-        internal System.Windows.Forms.TextBox txt_nombre_per;
         private System.Windows.Forms.Button btn_elim_per;
         private System.Windows.Forms.Button btn_actlz_per;
         private System.Windows.Forms.Button btn_guardar_per;
@@ -338,5 +353,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Button btn_busc_id_carg_emp_per;
         internal System.Windows.Forms.Label Lbl_id_carg_emp_per;
         public System.Windows.Forms.ComboBox cbo_id_carg_emp_per;
+        public System.Windows.Forms.ComboBox cbo_nombre_per;
     }
 }

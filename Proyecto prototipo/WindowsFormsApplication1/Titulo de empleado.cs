@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1
 
 
                         manipular.obtener_conexion();
-                        String Query = "INSERT INTO titulo_empleado (pk_id_titl_emp,descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + Convert.ToDouble(txt_id_titulo_emp.Text) + "','" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + txt_fecha_obt_titulo.Text + "', '" + Convert.ToDouble(txt_id_emp.Text) + "', '" + Convert.ToDouble(txt_id_lab.Text) + "') ";
+                        String Query = "INSERT INTO titulo_empleado (descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + txt_fecha_obt_titulo.Text + "', '" + Convert.ToDouble(txt_id_emp.Text) + "', '" + Convert.ToDouble(txt_id_lab.Text) + "') ";
 
                         manipular.EjecutarSql(Query);
 
@@ -181,7 +181,7 @@ namespace WindowsFormsApplication1
         private void btn_busc_emp_Click(object sender, EventArgs e)
         {
             manipular.obtener_conexion();
-            String Query = ("select * from titulo_empleado where pk_id_titl_emp = '" + Convert.ToDouble(txt_buscar_emp.Text) + "%'; ");
+            String Query = ("select * from titulo_empleado where pk_id_titl_emp = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
 
             //ManipularDato.Busqueda(Query);
 
@@ -189,7 +189,7 @@ namespace WindowsFormsApplication1
 
 
             manipular.Desconectar();
-            txt_buscar_emp.Text = "";
+            cbo_buscar.Text = "";
         }
 
         
