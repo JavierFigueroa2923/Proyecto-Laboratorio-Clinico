@@ -194,7 +194,7 @@ namespace WindowsFormsApplication1
             //se inicia un DataSet
             DataSet ds = new DataSet();
             //se indica la consulta en sql
-            String Query = "select DISTINCT cargo_emleado.pk_id_cargo_emp, cargo_emleado.nombre_cargo_emp, empleado.nombre_emp from cargo_emleado, empleado WHERE cargo_emleado.pk_id_emp = empleado.pk_id_emp";
+            String Query = "select DISTINCT cargo_empleado.pk_id_cargo_emp, cargo_empleado.nombre_cargo_emp, empleado.nombre_emp from cargo_empleado, empleado WHERE cargo_empleado.pk_id_emp = empleado.pk_id_emp";
             MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //se indica con quu tabla se llena
             dad.Fill(ds, "cargo_emleado");

@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
                 MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
 
                 MySqlCommand cmd = dbConn.CreateCommand();
-                cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo, permiso.nombre_prm, empleado.usuario , empleado.pk_id_emp FROM cargo_empleado, empleado,permiso WHERE empleado.usuario='" + usuario + "' AND empleado.contrasenia = '" + pass + "'";
+                cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo FROM cargo_empleado, empleado,permiso WHERE empleado.usuario='"+usuario+"' AND empleado.contrasenia = '"+pass+"' AND empleado.pk_id_emp = cargo_empleado.pk_id_emp";
 
                 try
                 {
@@ -63,25 +63,58 @@ namespace WindowsFormsApplication1
                 string us = "";
                 string permisos = "";
                 int id_empleado = 0;
-                if (contador > 0)
-                {
-                    permisos = reader.GetString(1);
-                    us = reader.GetString(2);
-                    id_empleado = reader.GetInt32(3);
-                }
+                int cant_permisos = 0;
+                
                 if (contador == 0)
                 {
                     MessageBox.Show("Usuario o contraseña incorrecta, intente de nuevo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     LimpiarCajaTexto();
                 }
                 else
+                if(contador>0)
                 {
-                    MessageBox.Show("Bienvenido " + us, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MDIParent1 frm2 = new MDIParent1();
-                    frm2.MiPropiedad = "Bienvenido "+us;
-                    frm2.MiIdUsuario = id_empleado;
-                    frm2.Show();
-                    this.Hide();
+                    MySql.Data.MySqlClient.MySqlConnection dbConn1 = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
+                    MySqlCommand cmd1 = dbConn1.CreateCommand();
+                    cmd1.CommandText = "SELECT COUNT(permiso.pk_id_perm),empleado.usuario, empleado.pk_id_emp FROM cargo_empleado, empleado,permiso WHERE empleado.usuario='" + usuario + "' AND empleado.contrasenia = '" + pass + "' AND empleado.pk_id_emp = cargo_empleado.pk_id_emp AND permiso.pk_id_cargo_emp = cargo_empleado.pk_id_cargo_emp";
+                            try
+                            {
+                                dbConn1.Open();
+                            }
+                            catch (Exception erro)
+                            {
+                                MessageBox.Show("Erro" + erro);
+                                this.Close();
+                            }
+
+                            MySqlDataReader reader1 = cmd1.ExecuteReader();
+
+                            while (reader1.Read())
+                            {
+                                cant_permisos = reader1.GetInt32(0);
+                               
+
+                            }
+                            cant_permisos = reader1.GetInt32(0);
+                            if (cant_permisos == 0)
+                            {
+                                MessageBox.Show("Su usuario aun no posee permisos asignados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                LimpiarCajaTexto();
+                            }
+                            else
+                            
+                            if (cant_permisos > 0)
+                            {
+                                string a1 = reader1.GetString(1);
+                                int b2 = reader1.GetInt32(2);
+                                MessageBox.Show("Bienvenido " + a1, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MDIParent1 frm2 = new MDIParent1();
+                                frm2.MiPropiedad = "Bienvenido " + a1;
+                                frm2.MiIdUsuario = b2;
+                                frm2.Show();
+                                this.Hide();
+                            }
+                                
+                            
                 }
             }
         }
