@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         BDconexion ManipularDato = new BDconexion();
         String Codigo;
         Boolean Editar;
-        String Selecionar_pacientes = "select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo, C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt";
+        String Selecionar_pacientes = "select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo, C.nit AS NIT, C.referido_clt as Referencia, L.pk_id_lab as Laboratorio from cliente C, direccion D, telefono T, correo_e E, laboratorio L where C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt and C.pk_id_lab = L.pk_id_lab";
         private void Label2_Click(object sender, EventArgs e)
         {
 
@@ -58,7 +58,9 @@ namespace WindowsFormsApplication1
 
         private void frm_act_cliente_Load(object sender, EventArgs e)
         {
-
+            cbo_lab_pcnt.DataSource = Cargar();
+            cbo_lab_pcnt.DisplayMember = "pk_id_lab";
+            cbo_lab_pcnt.ValueMember = "pk_id_lab";
         }
         public void LimpiarCajasTexto()
         {
@@ -126,7 +128,7 @@ namespace WindowsFormsApplication1
                     try
                     {
                         Conexionmysql.ObtenerConexion();
-                        String Query1 = "INSERT INTO cliente (nombre_clt, apellido_clt, nit, edad_clt, dpi, altura_clt, peso_clt, sexo_clt, tipo_sangre_clt, referido_clt) VALUES ('" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_nit.Text + "','" + txt_fecha_nacimiento.Text + "','" + txt_dpi.Text + "','" + txt_altura.Text + "','" + txt_peso_pcnt.Text + "','" + cbo_sexo_pcnt.Text + "','" + cbo_tip_sang_pcnt.Text + "','" + txt_referido.Text + "')";
+                        String Query1 = "INSERT INTO cliente (nombre_clt, apellido_clt, nit, edad_clt, dpi, altura_clt, peso_clt, sexo_clt, tipo_sangre_clt, referido_clt, pk_id_lab) VALUES ('" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_nit.Text + "','" + txt_fecha_nacimiento.Text + "','" + txt_dpi.Text + "','" + txt_altura.Text + "','" + txt_peso_pcnt.Text + "','" + cbo_sexo_pcnt.Text + "','" + cbo_tip_sang_pcnt.Text + "','" + txt_referido.Text + "', "+cbo_lab_pcnt.Text +" )";
                         cl_gridysql.EjecutarMySql(Query1);
 
                         if (ComprobarFormatoEmail(txt_email.Text) == false)
@@ -414,7 +416,7 @@ namespace WindowsFormsApplication1
         private void btn_busc_pcnt_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt");
+            String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia, L.pk_id_lab as Laboratorio from cliente C, direccion D, telefono T, correo_e E, laboratorio L where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt and C.pk_id_lab = L.pk_id_lab");
             ActualizarGrid(this.dgv_list_pcnt, Query);
             Conexionmysql.Desconectar();
         }
@@ -429,6 +431,13 @@ namespace WindowsFormsApplication1
                     Conexionmysql.ObtenerConexion();
                     String Query = "delete from cliente where pk_id_clt = '" + Codigo + "';";
                     cl_gridysql.EjecutarMySql(Query);
+                    String Query2 = "delete from telefono where pk_id_clt = '" + Codigo + "';";
+                    cl_gridysql.EjecutarMySql(Query2);
+                    String Query3 = "delete from correo_e where pk_id_clt = '" + Codigo + "';";
+                    cl_gridysql.EjecutarMySql(Query3);
+                    String Query4 = "delete from direccion where pk_id_clt = '" + Codigo + "';";
+                    cl_gridysql.EjecutarMySql(Query4);
+
                     ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
                     Conexionmysql.Desconectar();
                 }//cerrar el if
@@ -467,6 +476,7 @@ namespace WindowsFormsApplication1
                 txt_email.Text = this.dgv_list_pcnt.CurrentRow.Cells[11].Value.ToString();
                 txt_nit.Text = this.dgv_list_pcnt.CurrentRow.Cells[12].Value.ToString();
                 txt_referido.Text = this.dgv_list_pcnt.CurrentRow.Cells[13].Value.ToString();
+                cbo_lab_pcnt.Text = this.dgv_list_pcnt.CurrentRow.Cells[14].Value.ToString();
             }
             catch
             {
@@ -477,10 +487,22 @@ namespace WindowsFormsApplication1
         private void txt_busc_pcnt_KeyUp(object sender, KeyEventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt");
+            String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia, L.pk_id_lab as Laboratorio from cliente C, direccion D, telefono T, correo_e E, laboratorio L where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt and C.pk_id_lab = L.pk_id_lab");
             ActualizarGrid(this.dgv_list_pcnt, Query);
            Conexionmysql.Desconectar();
         }
+
+        private DataTable Cargar()
+        {
+                Conexionmysql.ObtenerConexion();
+                DataTable dt = new DataTable();
+                string query = "SELECT pk_id_lab, nombre_lab FROM laboratorio";
+                MySqlCommand cmd = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
+                MySqlDataAdapter adap = new MySqlDataAdapter(cmd);
+                adap.Fill(dt);
+                return dt;
+        }
+
     }
 } 
     
