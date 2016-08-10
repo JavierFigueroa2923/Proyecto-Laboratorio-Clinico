@@ -46,26 +46,18 @@ namespace WindowsFormsApplication1
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
-            ManipularDato.obtener_conexion();
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
+            Conexionmysql.ObtenerConexion();
             //crear DataSet
             System.Data.DataSet MiDataSet = new System.Data.DataSet();
-
             //Crear Adaptador de datos
-            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, conectar);
-
+            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenar el DataSet
             MiDataAdapter.Fill(MiDataSet, "area_laboratorio");
-
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
             dg.DataMember = "area_laboratorio";
-
             //nos desconectamos de la base de datos...
-            ManipularDato.Desconectar();
-
-
-
+            Conexionmysql.Desconectar();
         }
 
         private void btn_guardar_area_Click(object sender, EventArgs e)
@@ -79,12 +71,10 @@ namespace WindowsFormsApplication1
                 {
                     if (Editar)
                     {
-                        ManipularDato.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String query2 = "UPDATE area_laboratorio SET ubicacion='" + txt_ubicacion.Text + "', des='" + txt_descrip_area.Text + "' WHERE pk_id_area_lab='" + Codigo + "';";
-
-                        ManipularDato.EjecutarSql(query2);
-                        ManipularDato.Desconectar();
-
+                        cl_gridysql.EjecutarMySql(query2);
+                        Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
                         ActualizarGrid(this.dgv_area_labs, "SELECT * FROM area_laboratorio");
@@ -92,18 +82,12 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-
-
-
-                        ManipularDato.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String Query = "INSERT INTO area_laboratorio (pk_id_lab,ubicacion,des) VALUES ('" + Convert.ToDouble(txt_id_lab.Text) + "','" + txt_ubicacion.Text + "','" + txt_descrip_area.Text + "') ";
-
-                        ManipularDato.EjecutarSql(Query);
-
+                        cl_gridysql.EjecutarMySql(Query);
                         ActualizarGrid(this.dgv_area_labs, "select * from area_laboratorio;");
-
                         this.LimpiarCajasTexto();
-                        ManipularDato.Desconectar();
+                        Conexionmysql.Desconectar();
                     }
                 }
             }
@@ -117,40 +101,26 @@ namespace WindowsFormsApplication1
         {
             try {
                 Codigo = this.dgv_area_labs.CurrentRow.Cells[0].Value.ToString();
-
                 //2. preguntar al usuario si realmente quiere borrar el resgistro
-
                 var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 //3.PROCEDER AVALUAR EL RESULTADO
                 if (resultado == DialogResult.Yes)// si el usuario hizo click en si
                 {
                     //procedemos a borrar el registro
-
                     //1. conectar a base de datosx
-                    ManipularDato.obtener_conexion();
-
+                    Conexionmysql.ObtenerConexion();
                     //2. armar la query
                     String Query = "delete from area_laboratorio where pk_id_area_lab= '" + Codigo + "';";
-
                     //3.ejecutar la query
-                    ManipularDato.EjecutarSql(Query);
-
+                    cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
                     ActualizarGrid(this.dgv_area_labs, "select * from area_laboratorio;");
-
-
                     //5.desconectar en base de datos
-                    ManipularDato.Desconectar();
-
-
+                    Conexionmysql.Desconectar();
                 }//cerrar el if
-
                 else
-
                     //no pasa nada
                     return;
-
                 //cerrar else
             }
             catch
@@ -161,15 +131,11 @@ namespace WindowsFormsApplication1
 
         private void btn_buscar_lab_Click(object sender, EventArgs e)
         {
-            ManipularDato.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select * from area_laboratorio where ubicacion = '" + cbo_buscar.Text + "%'; ");
-
             //ManipularDato.Busqueda(Query);
-
             ActualizarGrid(this.dgv_area_labs, Query);
-
-
-            ManipularDato.Desconectar();
+            Conexionmysql.Desconectar();
         }
 
         private void btn_actlz_area_Click(object sender, EventArgs e)

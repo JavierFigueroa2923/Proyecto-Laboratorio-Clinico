@@ -39,26 +39,18 @@ namespace WindowsFormsApplication1
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
-            manipular.obtener_conexion();
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
+            Conexionmysql.ObtenerConexion();
             //crear DataSet
             System.Data.DataSet MiDataSet = new System.Data.DataSet();
-
             //Crear Adaptador de datos
-            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, conectar);
-
+            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenar el DataSet
             MiDataAdapter.Fill(MiDataSet, "tipo_de_muestra");
-
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
             dg.DataMember = "tipo_de_muestra";
-
             //nos desconectamos de la base de datos...
-            manipular.Desconectar();
-
-
-
+            Conexionmysql.Desconectar();
         }
 
         private void btn_guardar_tipo_muestra_Click(object sender, EventArgs e)
@@ -72,12 +64,10 @@ namespace WindowsFormsApplication1
                 {
                     if (Editar)
                     {
-                        manipular.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String query2 = "UPDATE tipo_de_muestra SET descripcion_tip_mst='" + txt_descp_muestra.Text + "', nombre_tipo='" + txt_nombre_tipo.Text + "' WHERE pk_id_tip_mst='" + Codigo + "';";
-
-                        manipular.EjecutarSql(query2);
-                        manipular.Desconectar();
-
+                        cl_gridysql.EjecutarMySql(query2);
+                        Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
                         ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra");
@@ -85,12 +75,9 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-
-
-
-                        manipular.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String query = "INSERT INTO tipo_de_muestra(descripcion_tip_mst,nombre_tipo) Values('" + txt_nombre_tipo.Text + "','" + txt_descp_muestra.Text + "') ";
-                        manipular.EjecutarSql(query);
+                        cl_gridysql.EjecutarMySql(query);
                         LimpiarCajasTexto();
                         ActualizarGrid(this.dgv_muestras, "select * from  tipo_de_muestra");
                         this.LimpiarCajasTexto();
@@ -135,20 +122,20 @@ namespace WindowsFormsApplication1
                     //procedemos a borrar el registro
 
                     //1. conectar a base de datos
-                    manipular.obtener_conexion();
+                    Conexionmysql.ObtenerConexion();
 
                     //2. armar la query
                     String Query = "DELETE FROM tipo_de_muestra WHERE pk_id_tip_mst= '" + Codigo + "';";
 
                     //3.ejecutar la query
-                    manipular.EjecutarSql(Query);
+                    cl_gridysql.EjecutarMySql(Query);
 
                     //4.Actualizar grid..
                     ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra;");
 
 
                     //5.desconectar en base de datos
-                    manipular.Desconectar();
+                    Conexionmysql.Desconectar();
 
 
                 }//cerrar el if
@@ -173,15 +160,13 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_memb_Click(object sender, EventArgs e)
         {
-            manipular.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select * from membresia where pk_id_tip_mst = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
 
             //ManipularDato.Busqueda(Query);
 
             ActualizarGrid(this.dgv_muestras, Query);
-
-
-            manipular.Desconectar();
+            Conexionmysql.Desconectar();
             cbo_buscar.Text = "";
         }
 

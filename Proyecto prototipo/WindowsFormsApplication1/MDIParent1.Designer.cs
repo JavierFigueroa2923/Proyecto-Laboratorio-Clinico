@@ -397,7 +397,7 @@
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(176, 22);
-            this.toolStripMenuItem3.Text = "Login";
+            this.toolStripMenuItem3.Text = "Cerrar Sesion";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // statusStrip

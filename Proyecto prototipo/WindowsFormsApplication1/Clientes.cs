@@ -79,26 +79,18 @@ namespace WindowsFormsApplication1
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
-            ManipularDato.obtener_conexion();
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
+            Conexionmysql.ObtenerConexion();
             //crear DataSet
             System.Data.DataSet MiDataSet = new System.Data.DataSet();
-
             //Crear Adaptador de datos
-            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, conectar);
-
+            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenar el DataSet
             MiDataAdapter.Fill(MiDataSet, "cliente");
-
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
             dg.DataMember = "cliente";
-
             //nos desconectamos de la base de datos...
-            ManipularDato.Desconectar();
-
-
-
+            Conexionmysql.Desconectar();
         }
         private void btn_guardar_pcnt_Click(object sender, EventArgs e)
         {
@@ -113,16 +105,16 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                        ManipularDato.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String Query1 = "UPDATE cliente SET nombre_clt ='" + txt_nombre.Text + "', apellido_clt='"+ txt_apellido.Text + "', nit='"+ txt_nit.Text + "', referido_clt='"+ txt_referido.Text + "', dpi='"+ txt_dpi.Text + "', edad_clt='"+ txt_fecha_nacimiento.Text + "', tipo_sangre_clt='"+ cbo_tip_sang_pcnt.Text + "', sexo_clt='"+ cbo_sexo_pcnt.Text + "', altura_clt= '"+ txt_altura.Text + "', peso_clt='"+ txt_peso_pcnt.Text +"' WHERE pk_id_clt ='" + Codigo + "';";
-                        ManipularDato.EjecutarSql(Query1);
+                        cl_gridysql.EjecutarMySql(Query1);
                         String Query2 = "UPDATE correo_e SET correo_e ='" + txt_email.Text + "' WHERE pk_id_clt ='" + Codigo + "';";
-                        ManipularDato.EjecutarSql(Query2);
+                        cl_gridysql.EjecutarMySql(Query2);
                         String Query3 = "UPDATE direccion SET direccion ='" + txt_direccion.Text + "' WHERE pk_id_clt ='" + Codigo + "';";
-                        ManipularDato.EjecutarSql(Query3);
+                        cl_gridysql.EjecutarMySql(Query3);
                         String Query4 = "UPDATE telefono SET telefono ='" + txt_telefono.Text + "' WHERE pk_id_clt ='" + Codigo + "';";
-                        ManipularDato.EjecutarSql(Query4);
-                        ManipularDato.Desconectar();
+                        cl_gridysql.EjecutarMySql(Query4);
+                        Conexionmysql.Desconectar();
                         MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.LimpiarCajasTexto();
                         ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
@@ -133,9 +125,9 @@ namespace WindowsFormsApplication1
                 {
                     try
                     {
-                        ManipularDato.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String Query1 = "INSERT INTO cliente (nombre_clt, apellido_clt, nit, edad_clt, dpi, altura_clt, peso_clt, sexo_clt, tipo_sangre_clt, referido_clt) VALUES ('" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_nit.Text + "','" + txt_fecha_nacimiento.Text + "','" + txt_dpi.Text + "','" + txt_altura.Text + "','" + txt_peso_pcnt.Text + "','" + cbo_sexo_pcnt.Text + "','" + cbo_tip_sang_pcnt.Text + "','" + txt_referido.Text + "')";
-                        ManipularDato.EjecutarSql(Query1);
+                        cl_gridysql.EjecutarMySql(Query1);
 
                         if (ComprobarFormatoEmail(txt_email.Text) == false)
                         {
@@ -144,19 +136,15 @@ namespace WindowsFormsApplication1
                         else
                         {
                             String Query2 = "INSERT INTO correo_e (correo_e, pk_id_clt) VALUES ('" + txt_email.Text + "',(select MAX(pk_id_clt) FROM cliente))";
-                            ManipularDato.EjecutarSql(Query2);
+                            cl_gridysql.EjecutarMySql(Query2);
                             String Query3 = "INSERT INTO direccion (direccion, pk_id_clt) VALUES ('" + txt_direccion.Text + "',(select MAX(pk_id_clt) FROM cliente))";
-                            ManipularDato.EjecutarSql(Query3);
-
+                            cl_gridysql.EjecutarMySql(Query3);
                             String Query4 = "INSERT INTO telefono (telefono, pk_id_clt) VALUES ('" + txt_telefono.Text + "',(select MAX(pk_id_clt) FROM cliente))";
-                            ManipularDato.EjecutarSql(Query4);
-
+                            cl_gridysql.EjecutarMySql(Query4);
                             ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
                             this.LimpiarCajasTexto();
-                            ManipularDato.Desconectar();
+                            Conexionmysql.Desconectar();
                             MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
                         }
                     }
                     catch
@@ -425,11 +413,10 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_pcnt_Click(object sender, EventArgs e)
         {
-            ManipularDato.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt");
             ActualizarGrid(this.dgv_list_pcnt, Query);
-            ManipularDato.Desconectar();
-
+            Conexionmysql.Desconectar();
         }
 
         private void btn_elim_pcnt_Click(object sender, EventArgs e)
@@ -439,11 +426,11 @@ namespace WindowsFormsApplication1
                 var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)// si el usuario hizo click en si
                 {
-                    ManipularDato.obtener_conexion();
+                    Conexionmysql.ObtenerConexion();
                     String Query = "delete from cliente where pk_id_clt = '" + Codigo + "';";
-                    ManipularDato.EjecutarSql(Query);
+                    cl_gridysql.EjecutarMySql(Query);
                     ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
-                    ManipularDato.Desconectar();
+                    Conexionmysql.Desconectar();
                 }//cerrar el if
                 else
                     //no pasa nada
@@ -489,10 +476,10 @@ namespace WindowsFormsApplication1
 
         private void txt_busc_pcnt_KeyUp(object sender, KeyEventArgs e)
         {
-            ManipularDato.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo,  C.nit AS NIT, C.referido_clt as Referencia from cliente C, direccion D, telefono T, correo_e E where nombre_clt like '%" + txt_busc_pcnt.Text + "%' and C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt");
             ActualizarGrid(this.dgv_list_pcnt, Query);
-            ManipularDato.Desconectar();
+           Conexionmysql.Desconectar();
         }
     }
 } 

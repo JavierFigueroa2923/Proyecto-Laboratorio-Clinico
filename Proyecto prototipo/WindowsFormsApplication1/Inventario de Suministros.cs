@@ -25,14 +25,13 @@ namespace WindowsFormsApplication1
 
         }
         private void grid() {
-            string config = "server=localhost; database=proyecto_laboratorio; uid=root; pwd=;";
             string query = String.Format("SELECT * FROM {0}", "inventario_suministro");
-            MySqlConnection conexao = new MySqlConnection(config);
-            conexao.Open(); MySqlCommand command = new MySqlCommand(query, conexao);
+            Conexionmysql.ObtenerConexion();
+            MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable data = new DataTable(); adapter.Fill(data);
             dgv_vista_inv_sumin.DataSource = data;
-
+            Conexionmysql.Desconectar();
         }
         private void Lbl_titulo_Click(object sender, EventArgs e)
         {
@@ -54,7 +53,7 @@ namespace WindowsFormsApplication1
                     String Query = "update inventario_suministro set pk_id_simin = " + txt_id_inv_sumin.Text + ", existencia_sumin = " + txt_cantidad.Text + ", nombre_sumin = '" + txt_nombre_sm.Text + "', costo_por_unidad_inv_sumin = " + txt_prec_comp_inv_sumin.Text + ", precio_venta_unidad_inv_sumin = " + txt_prec_vent_inv_sumin.Text + ", detalle_sumin = " + txt_direccion.Text + ", pk_id_lab = " + cbo_id_laboratorio.Text + " where pk_id_simin = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
                     grid();
-                    Conexionmysql.ObtenerConexion();
+                    Conexionmysql.Desconectar();
                     //this.LimpiarCajaTextoEtiqueta();
                     Editar = false;
                 }
@@ -63,15 +62,13 @@ namespace WindowsFormsApplication1
 
                     try
                     {
-                        string MyConnection2 = "server=localhost; database=proyecto_laboratorio; uid=root; pwd=;";
                         String Query = "insert into inventario_suministro(pk_id_simin, existencia_sumin, nombre_sumin, costo_por_unidad_inv_sumin, precio_venta_unidad_inv_sumin, detalle_sumin, pk_id_lab)values(" + txt_id_inv_sumin.Text + "," + txt_cantidad.Text + ",'" + txt_nombre_sm.Text + "'," + txt_prec_comp_inv_sumin.Text + "," + txt_prec_vent_inv_sumin.Text + "," + txt_direccion.Text + "," + cbo_id_laboratorio.Text + ");";
-                        MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                        MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                        MySqlCommand MyCommand2 = new MySqlCommand(Query, Conexionmysql.ObtenerConexion());
                         MySqlDataReader MyReader2;
-                        MyConn2.Open();
+                        Conexionmysql.ObtenerConexion();
                         MyReader2 = MyCommand2.ExecuteReader();
                         MessageBox.Show("Registro ingresado exitosamente");
-                        MyConn2.Close();
+                        Conexionmysql.Desconectar();
                         grid();
 
                     }

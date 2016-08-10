@@ -39,26 +39,18 @@ namespace WindowsFormsApplication1
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
-            manipular.obtener_conexion();
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
+            Conexionmysql.ObtenerConexion();
             //crear DataSet
             System.Data.DataSet MiDataSet = new System.Data.DataSet();
-
             //Crear Adaptador de datos
-            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, conectar);
-
+            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenar el DataSet
             MiDataAdapter.Fill(MiDataSet, "aseguradora");
-
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
             dg.DataMember = "aseguradora";
-
             //nos desconectamos de la base de datos...
-            manipular.Desconectar();
-
-
-
+            Conexionmysql.Desconectar();
         }
 
         private void btn_guardar_aseg_Click(object sender, EventArgs e)
@@ -74,15 +66,11 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_aseg_Click(object sender, EventArgs e)
         {
-            manipular.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select * from aseguradora where nombre_aseg = '" + Convert.ToDouble(cbo_buscar) + "%'; ");
-
             //ManipularDato.Busqueda(Query);
-
             ActualizarGrid(this.dataGridView1, Query);
-
-
-            manipular.Desconectar();
+            Conexionmysql.Desconectar();
             cbo_buscar.Text = "";
         }
 
@@ -108,29 +96,21 @@ namespace WindowsFormsApplication1
                 Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
                 //2. preguntar al usuario si realmente quiere borrar el resgistro
-
                 var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 //3.PROCEDER AVALUAR EL RESULTADO
                 if (resultado == DialogResult.Yes)// si el usuario hizo click en si
                 {
                     //procedemos a borrar el registro
-
                     //1. conectar a base de datosx
-                    manipular.obtener_conexion();
-
+                    Conexionmysql.ObtenerConexion();
                     //2. armar la query
                     String Query = "delete from aseguradora where pk_id_asgd= '" + Codigo + "';";
-
                     //3.ejecutar la query
-                    manipular.EjecutarSql(Query);
-
+                    cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
                     ActualizarGrid(this.dataGridView1, "select * from aseguradora;");
-
-
                     //5.desconectar en base de datos
-                    manipular.Desconectar();
+                    Conexionmysql.Desconectar();
                 }
             }
             catch
@@ -182,12 +162,10 @@ namespace WindowsFormsApplication1
                 {
                     if (Editar)
                     {
-                        manipular.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String query2 = "UPDATE aseguradora SET numero_seguro_asgd='" + txt_num_aseg.Text + "', nombre_asgd='" + txt_nom_aseg.Text + "', descuento_asgd = '" + txt_dsc_aseg.Text + "' WHERE pk_id_asgd='" + Codigo + "';";
-
-                        manipular.EjecutarSql(query2);
-                        manipular.Desconectar();
-
+                        cl_gridysql.EjecutarMySql(query2);
+                        Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
                         ActualizarGrid(this.dataGridView1, "SELECT * FROM aseguradora");
@@ -196,14 +174,12 @@ namespace WindowsFormsApplication1
                     else
                     {
 
-                        manipular.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String query = "INSERT INTO aseguradora (numero_seguro_asgd, nombre_asgd, descuento_asgd) VALUES('" + txt_num_aseg.Text + "', '" + txt_nom_aseg.Text + "', '" + txt_dsc_aseg.Text + "') ";
-                        manipular.EjecutarSql(query);
+                        cl_gridysql.EjecutarMySql(query);
                         LimpiarCajasTexto();
                         ActualizarGrid(this.dataGridView1, "select * from  aseguradora");
                         this.LimpiarCajasTexto();
-
-
                     }
                 }
             }
