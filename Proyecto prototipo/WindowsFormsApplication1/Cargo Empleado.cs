@@ -43,36 +43,34 @@ namespace WindowsFormsApplication1
         }
         private void grid_empleados()
         {
-            string config = "server=localhost; database=proyecto_laboratorio; uid=root; pwd=;";
             string query = String.Format("SELECT * FROM {0}", "empleado");
-            MySqlConnection conexao = new MySqlConnection(config);
-            conexao.Open(); MySqlCommand command = new MySqlCommand(query, conexao);
+            Conexionmysql.ObtenerConexion();
+            MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-            DataTable data = new DataTable(); adapter.Fill(data);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
             dgv_emps_cargo_emp.DataSource = data;
-
+            Conexionmysql.Desconectar();
         }
         private void grid_labs()
         {
-            string config = "server=localhost; database=proyecto_laboratorio; uid=root; pwd=;";
             string query = String.Format("SELECT * FROM {0}", "laboratorio");
-            MySqlConnection conexao = new MySqlConnection(config);
-            conexao.Open(); MySqlCommand command = new MySqlCommand(query, conexao);
+            Conexionmysql.ObtenerConexion();
+            MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable data = new DataTable(); adapter.Fill(data);
             dgv_labs_cargo_emp.DataSource = data;
-
+            Conexionmysql.Desconectar();
         }
         private void grid_cargos()
         {
-            string config = "server=localhost; database=proyecto_laboratorio; uid=root; pwd=;";
             string query = String.Format("SELECT * FROM {0}", "cargo_emleado");
-            MySqlConnection conexao = new MySqlConnection(config);
-            conexao.Open(); MySqlCommand command = new MySqlCommand(query, conexao);
+            Conexionmysql.ObtenerConexion();
+            MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable data = new DataTable(); adapter.Fill(data);
             dgv_cargo_emp.DataSource = data;
-
+            Conexionmysql.Desconectar();
         }
 
         private void btn_guardar_cargo_emp_Click(object sender, EventArgs e)
@@ -92,7 +90,7 @@ namespace WindowsFormsApplication1
                     grid_cargos();
                     grid_empleados();
                     grid_labs();
-                    Conexionmysql.ObtenerConexion();
+                    Conexionmysql.Desconectar();
                     Editar = false;
                     limpiar();
                 }
@@ -101,18 +99,15 @@ namespace WindowsFormsApplication1
 
                     try
                     {
-                        string MyConnection2 = "server=localhost; database=proyecto_laboratorio; uid=root; pwd=;";
                         String Query = "insert into cargo_emleado(pk_id_cargo_emp, pk_id_emp, pk_id_lab, nombre_cargo_emp, descripcion_cargo_emp, fecha_contratacion)values(" + txt_id_cargo_emp.Text + "," + txt_id_emp_cargo_emp.Text + "," + txt_dpi.Text + ",'" + txt_nombre_cargo_emp.Text + "','" + txt_descp_cargo_emp.Text + "','" + txt_fecha_contrat_cargo_emp.Text + "');";
-                        MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                        MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                        MySqlCommand MyCommand2 = new MySqlCommand(Query, Conexionmysql.ObtenerConexion());
                         MySqlDataReader MyReader2;
-                        MyConn2.Open();
+                        Conexionmysql.ObtenerConexion();
                         MyReader2 = MyCommand2.ExecuteReader();
                         MessageBox.Show("Registro ingresado exitosamente");
-                        MyConn2.Close();
+                        Conexionmysql.Desconectar();
                         grid_cargos();
                         limpiar();
-
                     }
                     catch (Exception ex)
                     {

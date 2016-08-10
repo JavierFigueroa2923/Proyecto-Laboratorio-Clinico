@@ -22,21 +22,17 @@ namespace WindowsFormsApplication1
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
             //Establecemos la conexion
-            ManipularDato.obtener_conexion();
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
-
+            Conexionmysql.ObtenerConexion();
             //creamos el DataSet a utilizar
             System.Data.DataSet newDataSet = new System.Data.DataSet();
-
             //Creamos un nuevo adaptador de datos
-            MySqlDataAdapter newDataAdapter = new MySqlDataAdapter(Query, conectar);
-
+            MySqlDataAdapter newDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenamos el DataSet
             newDataAdapter.Fill(newDataSet, "Empleado");
-
             //Asignando valores al DataGrid
             dgv.DataSource = newDataSet;
             dgv.DataMember = "Empleado";
+            Conexionmysql.Desconectar();
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -58,30 +54,25 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta = "insert into EMPLEADO values ('" + cbo_id_empleado + "','" + cbo_sexo_emp + "','" + txt_nombre + "','" + txt_apellido + "','" + txt_fecha_nacimiento + "');";
                 string consulta4 = "insert into DIRECCION values ('" + txt_direccion + "'), pk_id_emp(FK) = '" + cbo_id_empleado + "'";
                 string consulta5 = "insert into TELEFONO values ('" + txt_telefono + "'), pk_id_emp(FK) = '" + cbo_id_empleado + "'";
                 string consulta6 = "insert into CORREO_E values ('" + txt_email + "'), pk_id_emp(FK) = '" + cbo_id_empleado + "'";
                 string consulta7 = "insert into CARGO_EMPLEADO values ('" + cbo_carg_emp + "'), pk_id_emp(FK) = '" + cbo_id_empleado + "'";
                 string consulta8 = "insert into TITULO_EMPLEADO values ('" + cbo_titl_emp + "'), pk_idem_emp(FK) = '" + cbo_id_empleado + "'";
-
-                MySqlConnection con = new MySqlConnection(miconexion);
-                MySqlCommand man = new MySqlCommand(consulta, con);
-               MySqlCommand man2 = new MySqlCommand(consulta4, con);
-                MySqlCommand man3 = new MySqlCommand(consulta5, con);
-                MySqlCommand man4 = new MySqlCommand(consulta6, con);
-                MySqlCommand man5 = new MySqlCommand(consulta7, con);
-                MySqlCommand man6 = new MySqlCommand(consulta8, con);
+                MySqlCommand man = new MySqlCommand(consulta, Conexionmysql.ObtenerConexion());
+                MySqlCommand man2 = new MySqlCommand(consulta4, Conexionmysql.ObtenerConexion());
+                MySqlCommand man3 = new MySqlCommand(consulta5, Conexionmysql.ObtenerConexion());
+                MySqlCommand man4 = new MySqlCommand(consulta6, Conexionmysql.ObtenerConexion());
+                MySqlCommand man5 = new MySqlCommand(consulta7, Conexionmysql.ObtenerConexion());
+                MySqlCommand man6 = new MySqlCommand(consulta8, Conexionmysql.ObtenerConexion());
                 MySqlDataReader re;
-                con.Open();
+                Conexionmysql.ObtenerConexion();
                 re = man.ExecuteReader();
-               
                 MessageBox.Show("Los datos han sido insertados exitosamente");
                 while (re.Read())
                 { }
-                con.Close();
-
+                Conexionmysql.Desconectar();
             }
 
             catch (Exception ex)
@@ -94,20 +85,16 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta2 = "update proyecto_laboratorio.EMPLEADO set genero='" + cbo_sexo_emp + "',nombre_emp='" + txt_nombre + "' , apellido_emp= '" + txt_apellido + "', fecha_nacimiento_emp= '" + txt_fecha_nacimiento + "', where pk_id_emp ='" + cbo_id_empleado + "';";
-                MySqlConnection con = new MySqlConnection(miconexion);
-                MySqlCommand man = new MySqlCommand(consulta2, con);
+                MySqlCommand man = new MySqlCommand(consulta2, Conexionmysql.ObtenerConexion());
                 MySqlDataReader re;
-                con.Open();
+                Conexionmysql.ObtenerConexion();
                 re = man.ExecuteReader();
                 MessageBox.Show("Los datos han sido actualizados exitosamente");
                 while (re.Read())
                 { }
-                con.Close();
-
+                Conexionmysql.Desconectar();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -118,20 +105,16 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta3 = "DELETE from EMPLEADO where pk_id_emp ='" + cbo_id_empleado + "');";
-                MySqlConnection con = new MySqlConnection(miconexion);
-                MySqlCommand man = new MySqlCommand(consulta3, con);
+                MySqlCommand man = new MySqlCommand(consulta3, Conexionmysql.ObtenerConexion());
                 MySqlDataReader re;
-                con.Open();
+                Conexionmysql.ObtenerConexion();
                 re = man.ExecuteReader();
                 MessageBox.Show("Los datos han sido eliminados exitosamente");
                 while (re.Read())
                 { }
-                con.Close();
-
+                Conexionmysql.Desconectar();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -150,20 +133,16 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_emp_Click(object sender, EventArgs e)
         {
-            ManipularDato.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select E.nombre_emp, D.ojjdireccion, T.telefono,  C.correo_e, CA.nombre_cargo_emp, TI.nombre_titl_emp from empleado E, direccion D, telefono T, correo_e C, cargo_empleaco CA, titulo_empleado TI where nombre_emp like '%" + cbo_buscar + "%' and E.pk_id_emp = D.pk_id_emp and E.pk_id_emp = T.pk_id_emp and E.pk_id_emp = C.pk_id_emp and E.pk_id_emp = CA.pk_id_emp and E.pk_id_emp = TI.pk_id_emp");
-
             //ManipularDato.Busqueda(Query);
-
             GridViewActualizar(this.dgv_empleads, Query);
-
-
-            ManipularDato.Desconectar();
+            Conexionmysql.Desconectar();
         }
 
         private void cbo_titl_emp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String Query = ("select ");
+            //String Query = ("select ");
         }
 
         private void grb_datosp_emp_Enter(object sender, EventArgs e)

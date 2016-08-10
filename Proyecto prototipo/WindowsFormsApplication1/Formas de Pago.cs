@@ -21,21 +21,17 @@ namespace WindowsFormsApplication1
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
             //Establecemos la conexion
-            ManipularDato.obtener_conexion();
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
-
+            Conexionmysql.ObtenerConexion();
             //creamos el DataSet a utilizar
             System.Data.DataSet newDataSet = new System.Data.DataSet();
-
             //Creamos un nuevo adaptador de datos
-            MySqlDataAdapter newDataAdapter = new MySqlDataAdapter(Query, conectar);
-
+            MySqlDataAdapter newDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenamos el DataSet
             newDataAdapter.Fill(newDataSet, "Forma de Pago");
-
             //Asignando valores al DataGrid
             dgv.DataSource = newDataSet;
             dgv.DataMember = "Forma de Pago";
+            Conexionmysql.Desconectar();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -182,18 +178,15 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta = "insert into FORMA_DE_PAGO values ('" + txt_id_fm_pg + "','" + txt_nombre + "','" + txt_descripcion + "');";
-                MySqlConnection con = new MySqlConnection(miconexion);
-                MySqlCommand man = new MySqlCommand(consulta, con);
+                MySqlCommand man = new MySqlCommand(consulta, Conexionmysql.ObtenerConexion());
                 MySqlDataReader re;
-                con.Open();
+                Conexionmysql.ObtenerConexion();
                 re = man.ExecuteReader();
                 MessageBox.Show("Los datos han sido insertados exitosamente");
                 while (re.Read())
                 { }
-                con.Close();
-
+                Conexionmysql.Desconectar();
             }
 
             catch (Exception ex)
@@ -206,18 +199,15 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta2 = "update proyecto_laboratorio.FORMA_DE_PAGO set nombre_fm_pago='" + txt_nombre + "',descripcion_fm_pg='" + txt_descripcion + "' where pk_id_fm_pg ='" + txt_id_fm_pg + "';";
-                MySqlConnection con = new MySqlConnection(miconexion);
-                MySqlCommand man = new MySqlCommand(consulta2, con);
+                MySqlCommand man = new MySqlCommand(consulta2, Conexionmysql.ObtenerConexion());
                 MySqlDataReader re;
-                con.Open();
+                Conexionmysql.ObtenerConexion();
                 re = man.ExecuteReader();
                 MessageBox.Show("Los datos han sido actualizados exitosamente");
                 while (re.Read())
                 { }
-                con.Close();
-
+                Conexionmysql.Desconectar();
             }
 
             catch (Exception ex)
@@ -230,18 +220,15 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string miconexion = ("server=localhost; database=proyecto_laboratorio;uid=root;pwd=;");
                 string consulta3 = "DELETE from FORMA_DE_PAGO where pk_id_fm_pg ='" + txt_id_fm_pg + "');";
-                MySqlConnection con = new MySqlConnection(miconexion);
-                MySqlCommand man = new MySqlCommand(consulta3, con);
+                MySqlCommand man = new MySqlCommand(consulta3, Conexionmysql.ObtenerConexion());
                 MySqlDataReader re;
-                con.Open();
+                Conexionmysql.ObtenerConexion();
                 re = man.ExecuteReader();
                 MessageBox.Show("Los datos han sido eliminados exitosamente");
                 while (re.Read())
                 { }
-                con.Close();
-
+                Conexionmysql.Desconectar();
             }
 
             catch (Exception ex)
@@ -252,15 +239,11 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_lab_Click(object sender, EventArgs e)
         {
-            ManipularDato.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select * from forma_de_pago where nombre_fm_pago like '%" + cbo_buscar + "%' ");
-
            // ManipularDato.Busqueda(Query);
-
             GridViewActualizar(this.dataGridView1, Query);
-
-
-            ManipularDato.Desconectar();
+            Conexionmysql.Desconectar();
         }
     }
 }

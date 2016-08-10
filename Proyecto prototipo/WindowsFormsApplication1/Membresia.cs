@@ -39,26 +39,18 @@ namespace WindowsFormsApplication1
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
-            manipular.obtener_conexion();
-            MySqlConnection conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
+            Conexionmysql.ObtenerConexion();
             //crear DataSet
             System.Data.DataSet MiDataSet = new System.Data.DataSet();
-
             //Crear Adaptador de datos
-            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, conectar);
-
+            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenar el DataSet
             MiDataAdapter.Fill(MiDataSet, "membresia");
-
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
             dg.DataMember = "membresia";
-
             //nos desconectamos de la base de datos...
-            manipular.Desconectar();
-
-
-
+            Conexionmysql.Desconectar();
         }
         private void txt_membresia_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -81,12 +73,10 @@ namespace WindowsFormsApplication1
                 {
                     if (Editar)
                     {
-                        manipular.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String query2 = "UPDATE membresia SET beneficios='" + txt_beneficio.Text + "', fecha_expendicion_mem='" + txt_fecha_exp.Text + "', fecha_expiracion_mem = '" + txt_fec_expirar.Text + "' WHERE pk_id_mem='" + Codigo + "';";
-
-                        manipular.EjecutarSql(query2);
-                        manipular.Desconectar();
-
+                        cl_gridysql.EjecutarMySql(query2);
+                        Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
                         ActualizarGrid(this.dgv_membresia, "SELECT * FROM membresia");
@@ -94,18 +84,12 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-
-
-
-                        manipular.obtener_conexion();
+                        Conexionmysql.ObtenerConexion();
                         String Query = "INSERT INTO membresia (beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + txt_beneficio.Text + "','" + txt_fecha_exp.Text + "','" + txt_fec_expirar.Text + "', '" + Convert.ToDouble(txt_id_clt.Text) + "') ";
-
-                        manipular.EjecutarSql(Query);
-
+                        cl_gridysql.EjecutarMySql(Query);
                         ActualizarGrid(this.dgv_membresia, "select * from membresia;");
-
                         this.LimpiarCajasTexto();
-                        manipular.Desconectar();
+                        Conexionmysql.Desconectar();
                     }
                 }
             }
@@ -119,31 +103,28 @@ namespace WindowsFormsApplication1
         {
             try {
                 Codigo = this.dgv_membresia.CurrentRow.Cells[0].Value.ToString();
-
                 //2. preguntar al usuario si realmente quiere borrar el resgistro
-
                 var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 //3.PROCEDER AVALUAR EL RESULTADO
                 if (resultado == DialogResult.Yes)// si el usuario hizo click en si
                 {
                     //procedemos a borrar el registro
 
                     //1. conectar a base de datosx
-                    manipular.obtener_conexion();
+                    Conexionmysql.ObtenerConexion();
 
                     //2. armar la query
                     String Query = "delete from membresia where pk_id_mem= '" + Codigo + "';";
 
                     //3.ejecutar la query
-                    manipular.EjecutarSql(Query);
+                    cl_gridysql.EjecutarMySql(Query);
 
                     //4.Actualizar grid..
                     ActualizarGrid(this.dgv_membresia, "select * from membresia;");
 
 
                     //5.desconectar en base de datos
-                    manipular.Desconectar();
+                    Conexionmysql.Desconectar();
                 }
             }
             catch
@@ -175,15 +156,11 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_memb_Click(object sender, EventArgs e)
         {
-            manipular.obtener_conexion();
+            Conexionmysql.ObtenerConexion();
             String Query = ("select * from membresia where pk_id_clt = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
-
             //ManipularDato.Busqueda(Query);
-
             ActualizarGrid(this.dgv_membresia, Query);
-
-
-            manipular.Desconectar();
+            Conexionmysql.Desconectar();
             cbo_buscar.Text = "";
         }
 
