@@ -35,8 +35,6 @@
             this.gpb_vista_result_exm = new System.Windows.Forms.GroupBox();
             this.dgv_vist_result_exam = new System.Windows.Forms.DataGridView();
             this.gpb_tip_exam = new System.Windows.Forms.GroupBox();
-            this.lbl_fecha_result_exam = new System.Windows.Forms.Label();
-            this.dtp_fecha_resul = new System.Windows.Forms.DateTimePicker();
             this.Lbl_id_examen = new System.Windows.Forms.Label();
             this.txt_id_exm = new System.Windows.Forms.TextBox();
             this.Lbl_descripcion = new System.Windows.Forms.Label();
@@ -46,6 +44,8 @@
             this.btn_elim_resl_exam = new System.Windows.Forms.Button();
             this.btn_act_renov = new System.Windows.Forms.Button();
             this.btn_buscar_resl_exam = new System.Windows.Forms.Button();
+            this.dtp_fecha_resul = new System.Windows.Forms.DateTimePicker();
+            this.lbl_fecha_result_exam = new System.Windows.Forms.Label();
             this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.gpb_vista_result_exm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vist_result_exam)).BeginInit();
@@ -127,23 +127,6 @@
             this.gpb_tip_exam.TabStop = false;
             this.gpb_tip_exam.Text = "Informacion del Examen";
             // 
-            // lbl_fecha_result_exam
-            // 
-            this.lbl_fecha_result_exam.AutoSize = true;
-            this.lbl_fecha_result_exam.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_result_exam.Location = new System.Drawing.Point(12, 45);
-            this.lbl_fecha_result_exam.Name = "lbl_fecha_result_exam";
-            this.lbl_fecha_result_exam.Size = new System.Drawing.Size(241, 20);
-            this.lbl_fecha_result_exam.TabIndex = 51;
-            this.lbl_fecha_result_exam.Text = "Fecha del resultado de examen";
-            // 
-            // dtp_fecha_resul
-            // 
-            this.dtp_fecha_resul.Location = new System.Drawing.Point(118, 68);
-            this.dtp_fecha_resul.Name = "dtp_fecha_resul";
-            this.dtp_fecha_resul.Size = new System.Drawing.Size(241, 23);
-            this.dtp_fecha_resul.TabIndex = 50;
-            // 
             // Lbl_id_examen
             // 
             this.Lbl_id_examen.AutoSize = true;
@@ -160,8 +143,6 @@
             this.txt_id_exm.Name = "txt_id_exm";
             this.txt_id_exm.Size = new System.Drawing.Size(191, 23);
             this.txt_id_exm.TabIndex = 49;
-            this.txt_id_exm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_exm_KeyDown);
-            this.txt_id_exm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_exm_KeyPress);
             // 
             // Lbl_descripcion
             // 
@@ -180,8 +161,6 @@
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(278, 139);
             this.txt_descripcion.TabIndex = 45;
-            this.txt_descripcion.TextChanged += new System.EventHandler(this.txt_descripcion_TextChanged);
-            this.txt_descripcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_descripcion_KeyDown);
             // 
             // PictureBox1
             // 
@@ -245,6 +224,23 @@
             this.btn_buscar_resl_exam.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_buscar_resl_exam.UseVisualStyleBackColor = true;
             this.btn_buscar_resl_exam.Click += new System.EventHandler(this.btn_buscar_resl_exam_Click);
+            // 
+            // dtp_fecha_resul
+            // 
+            this.dtp_fecha_resul.Location = new System.Drawing.Point(118, 68);
+            this.dtp_fecha_resul.Name = "dtp_fecha_resul";
+            this.dtp_fecha_resul.Size = new System.Drawing.Size(241, 23);
+            this.dtp_fecha_resul.TabIndex = 50;
+            // 
+            // lbl_fecha_result_exam
+            // 
+            this.lbl_fecha_result_exam.AutoSize = true;
+            this.lbl_fecha_result_exam.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_result_exam.Location = new System.Drawing.Point(12, 45);
+            this.lbl_fecha_result_exam.Name = "lbl_fecha_result_exam";
+            this.lbl_fecha_result_exam.Size = new System.Drawing.Size(241, 20);
+            this.lbl_fecha_result_exam.TabIndex = 51;
+            this.lbl_fecha_result_exam.Text = "Fecha del resultado de examen";
             // 
             // cbo_buscar
             // 

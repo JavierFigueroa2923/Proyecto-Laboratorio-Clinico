@@ -82,7 +82,6 @@
             this.txt_descp_muestra.Name = "txt_descp_muestra";
             this.txt_descp_muestra.Size = new System.Drawing.Size(326, 146);
             this.txt_descp_muestra.TabIndex = 5;
-            this.txt_descp_muestra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_descp_muestra_KeyDown);
             // 
             // lbl_descrp_tip_mst
             // 
@@ -99,7 +98,6 @@
             this.txt_nombre_tipo.Name = "txt_nombre_tipo";
             this.txt_nombre_tipo.Size = new System.Drawing.Size(326, 24);
             this.txt_nombre_tipo.TabIndex = 3;
-            this.txt_nombre_tipo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nombre_tipo_KeyDown);
             // 
             // lbl_nom_mst
             // 

@@ -96,8 +96,8 @@ namespace WindowsFormsApplication1
                 manipular.obtener_conexion();
                 Editar = true;
                 Codigo = this.dgv_muestras.CurrentRow.Cells[0].Value.ToString();
-                txt_descp_muestra.Text = this.dgv_muestras.CurrentRow.Cells[2].Value.ToString();
-                txt_nombre_tipo.Text = this.dgv_muestras.CurrentRow.Cells[1].Value.ToString();
+                txt_descp_muestra.Text = this.dgv_muestras.CurrentRow.Cells[1].Value.ToString();
+                txt_nombre_tipo.Text = this.dgv_muestras.CurrentRow.Cells[2].Value.ToString();
             }
             catch
             {
@@ -173,24 +173,6 @@ namespace WindowsFormsApplication1
         private void btn_act_datos_Click(object sender, EventArgs e)
         {
             ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_muestra;");
-        }
-
-        private void txt_nombre_tipo_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                SelectNextControl(ActiveControl, true, true, true, true);
-            }
-        }
-
-        private void txt_descp_muestra_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                SelectNextControl(ActiveControl, true, true, true, true);
-            }
         }
     }
 }

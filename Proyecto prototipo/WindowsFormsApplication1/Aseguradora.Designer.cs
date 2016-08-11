@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_aseg));
-            this.txt_desc_aseg = new System.Windows.Forms.TextBox();
-            this.Lbl_desc_aseg = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_dsc_aseg = new System.Windows.Forms.TextBox();
+            this.lbl_descuento = new System.Windows.Forms.Label();
+            this.txt_num_aseg = new System.Windows.Forms.TextBox();
+            this.Lbl_num_aseg = new System.Windows.Forms.Label();
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.txt_nom_aseg = new System.Windows.Forms.TextBox();
             this.lbl_aseguradora = new System.Windows.Forms.Label();
@@ -50,31 +53,66 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_desc_aseg
+            // label1
             // 
-            this.txt_desc_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_desc_aseg.Location = new System.Drawing.Point(9, 109);
-            this.txt_desc_aseg.Multiline = true;
-            this.txt_desc_aseg.Name = "txt_desc_aseg";
-            this.txt_desc_aseg.Size = new System.Drawing.Size(392, 52);
-            this.txt_desc_aseg.TabIndex = 59;
-            this.txt_desc_aseg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_desc_aseg_KeyDown);
-            this.txt_desc_aseg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_num_aseg_KeyPress);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label1.Location = new System.Drawing.Point(21, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 18);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "%";
             // 
-            // Lbl_desc_aseg
+            // txt_dsc_aseg
             // 
-            this.Lbl_desc_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_dsc_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Lbl_desc_aseg.AutoSize = true;
-            this.Lbl_desc_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Lbl_desc_aseg.Location = new System.Drawing.Point(6, 79);
-            this.Lbl_desc_aseg.Name = "Lbl_desc_aseg";
-            this.Lbl_desc_aseg.Size = new System.Drawing.Size(87, 18);
-            this.Lbl_desc_aseg.TabIndex = 58;
-            this.Lbl_desc_aseg.Text = "Descripcion";
+            this.txt_dsc_aseg.Location = new System.Drawing.Point(48, 134);
+            this.txt_dsc_aseg.Name = "txt_dsc_aseg";
+            this.txt_dsc_aseg.Size = new System.Drawing.Size(46, 23);
+            this.txt_dsc_aseg.TabIndex = 61;
+            this.txt_dsc_aseg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dsc_aseg_KeyPress);
+            // 
+            // lbl_descuento
+            // 
+            this.lbl_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_descuento.AutoSize = true;
+            this.lbl_descuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lbl_descuento.Location = new System.Drawing.Point(6, 113);
+            this.lbl_descuento.Name = "lbl_descuento";
+            this.lbl_descuento.Size = new System.Drawing.Size(80, 18);
+            this.lbl_descuento.TabIndex = 60;
+            this.lbl_descuento.Text = "Descuento";
+            // 
+            // txt_num_aseg
+            // 
+            this.txt_num_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_num_aseg.Location = new System.Drawing.Point(9, 40);
+            this.txt_num_aseg.Name = "txt_num_aseg";
+            this.txt_num_aseg.Size = new System.Drawing.Size(392, 23);
+            this.txt_num_aseg.TabIndex = 59;
+            this.txt_num_aseg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_num_aseg_KeyPress);
+            // 
+            // Lbl_num_aseg
+            // 
+            this.Lbl_num_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_num_aseg.AutoSize = true;
+            this.Lbl_num_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.Lbl_num_aseg.Location = new System.Drawing.Point(6, 19);
+            this.Lbl_num_aseg.Name = "Lbl_num_aseg";
+            this.Lbl_num_aseg.Size = new System.Drawing.Size(150, 18);
+            this.Lbl_num_aseg.TabIndex = 58;
+            this.Lbl_num_aseg.Text = "Numero Aseguradora";
             // 
             // Lbl_nombre
             // 
@@ -83,7 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Lbl_nombre.Location = new System.Drawing.Point(6, 19);
+            this.Lbl_nombre.Location = new System.Drawing.Point(6, 66);
             this.Lbl_nombre.Name = "Lbl_nombre";
             this.Lbl_nombre.Size = new System.Drawing.Size(66, 18);
             this.Lbl_nombre.TabIndex = 56;
@@ -94,11 +132,10 @@
             this.txt_nom_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_nom_aseg.Location = new System.Drawing.Point(6, 40);
+            this.txt_nom_aseg.Location = new System.Drawing.Point(9, 87);
             this.txt_nom_aseg.Name = "txt_nom_aseg";
             this.txt_nom_aseg.Size = new System.Drawing.Size(392, 23);
             this.txt_nom_aseg.TabIndex = 55;
-            this.txt_nom_aseg.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nom_aseg_KeyDown);
             this.txt_nom_aseg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nom_aseg_KeyPress);
             // 
             // lbl_aseguradora
@@ -116,9 +153,12 @@
             // 
             this.grb_ing_datos_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.grb_ing_datos_aseg.Controls.Add(this.txt_nom_aseg);
+            this.grb_ing_datos_aseg.Controls.Add(this.label1);
             this.grb_ing_datos_aseg.Controls.Add(this.Lbl_nombre);
-            this.grb_ing_datos_aseg.Controls.Add(this.Lbl_desc_aseg);
-            this.grb_ing_datos_aseg.Controls.Add(this.txt_desc_aseg);
+            this.grb_ing_datos_aseg.Controls.Add(this.txt_dsc_aseg);
+            this.grb_ing_datos_aseg.Controls.Add(this.Lbl_num_aseg);
+            this.grb_ing_datos_aseg.Controls.Add(this.lbl_descuento);
+            this.grb_ing_datos_aseg.Controls.Add(this.txt_num_aseg);
             this.grb_ing_datos_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_ing_datos_aseg.Location = new System.Drawing.Point(12, 116);
             this.grb_ing_datos_aseg.Name = "grb_ing_datos_aseg";
@@ -220,7 +260,7 @@
             this.btn_elim_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_elim_aseg.Image = global::WindowsFormsApplication1.Properties.Resources.Delete_;
             this.btn_elim_aseg.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_elim_aseg.Location = new System.Drawing.Point(212, 56);
+            this.btn_elim_aseg.Location = new System.Drawing.Point(212, 55);
             this.btn_elim_aseg.Name = "btn_elim_aseg";
             this.btn_elim_aseg.Size = new System.Drawing.Size(94, 54);
             this.btn_elim_aseg.TabIndex = 161;
@@ -269,8 +309,12 @@
         }
 
         #endregion
-        internal System.Windows.Forms.TextBox txt_desc_aseg;
-        internal System.Windows.Forms.Label Lbl_desc_aseg;
+
+        internal System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.TextBox txt_dsc_aseg;
+        internal System.Windows.Forms.Label lbl_descuento;
+        internal System.Windows.Forms.TextBox txt_num_aseg;
+        internal System.Windows.Forms.Label Lbl_num_aseg;
         internal System.Windows.Forms.Label Lbl_nombre;
         internal System.Windows.Forms.TextBox txt_nom_aseg;
         internal System.Windows.Forms.PictureBox Pic_logo;

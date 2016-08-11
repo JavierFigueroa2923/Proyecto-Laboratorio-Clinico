@@ -19,16 +19,16 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         Validaciones validar = new Validaciones();
-        Conexionmysql manipular = new Conexionmysql();
+        BDconexion manipular = new BDconexion();
         String Codigo;
         Boolean Editar;
         public void LimpiarCajasTexto()
         {
             cbo_buscar.Text = "";
-           
+            txt_dsc_aseg.Text = "";
             //txt_id__aseg.Text = "";
             txt_nom_aseg.Text = "";
-            txt_desc_aseg.Text = "";
+            txt_num_aseg.Text = "";
             
 
 
@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
 
         private void txt_num_aseg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            validar.validacion_solonumeros(e);
 
         }
 
@@ -119,12 +119,42 @@ namespace WindowsFormsApplication1
             }
         }
 
-       
+        private void txt_dsc_aseg_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool IsDec = false;
+            int nroDec = 0;
+
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            for (int i = 0; i < txt_dsc_aseg.Text.Length; i++)
+            {
+                if (txt_dsc_aseg.Text[i] == '.')
+                    IsDec = true;
+
+                if (IsDec && nroDec++ >= 2)
+                {
+                    e.Handled = true;
+                    return;
+                }
+
+            }
+
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                e.Handled = false;
+            else if (e.KeyChar == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true;
+        }
 
         private void btn_guardar_aseg_Click_1(object sender, EventArgs e)
         {
             try {
-                if (txt_desc_aseg.Text == "" || txt_desc_aseg.Text == "" )
+                if (txt_num_aseg.Text == "" || txt_dsc_aseg.Text == "" || txt_num_aseg.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -133,7 +163,7 @@ namespace WindowsFormsApplication1
                     if (Editar)
                     {
                         Conexionmysql.ObtenerConexion();
-                        String query2 = "UPDATE aseguradora SET descripcion_aseg='" + txt_desc_aseg.Text + "', nombre_aseg='" + txt_nom_aseg.Text + "' WHERE pk_id_asgd='" + Codigo + "';";
+                        String query2 = "UPDATE aseguradora SET numero_seguro_asgd='" + txt_num_aseg.Text + "', nombre_asgd='" + txt_nom_aseg.Text + "', descuento_asgd = '" + txt_dsc_aseg.Text + "' WHERE pk_id_asgd='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
@@ -145,7 +175,7 @@ namespace WindowsFormsApplication1
                     {
 
                         Conexionmysql.ObtenerConexion();
-                        String query = "INSERT INTO aseguradora (nombre_aseg,descripcion_aseg) VALUES('" + txt_nom_aseg.Text + "', '" + txt_desc_aseg.Text + "') ";
+                        String query = "INSERT INTO aseguradora (numero_seguro_asgd, nombre_asgd, descuento_asgd) VALUES('" + txt_num_aseg.Text + "', '" + txt_nom_aseg.Text + "', '" + txt_dsc_aseg.Text + "') ";
                         cl_gridysql.EjecutarMySql(query);
                         LimpiarCajasTexto();
                         ActualizarGrid(this.dataGridView1, "select * from  aseguradora");
@@ -164,9 +194,9 @@ namespace WindowsFormsApplication1
             try {
                 Editar = true;
                 Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txt_desc_aseg.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                txt_nom_aseg.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                
+                txt_num_aseg.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                txt_nom_aseg.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                txt_dsc_aseg.Text = this.dataGridView1.CurrentRow.Cells[3].Value.ToString();
             }
             catch
             {
@@ -182,24 +212,6 @@ namespace WindowsFormsApplication1
         private void lbl_busc_aseg_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void txt_nom_aseg_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                SelectNextControl(ActiveControl, true, true, true, true);
-            }
-        }
-
-        private void txt_desc_aseg_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                SelectNextControl(ActiveControl, true, true, true, true);
-            }
         }
     } 
    }

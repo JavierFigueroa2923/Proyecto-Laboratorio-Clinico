@@ -161,33 +161,5 @@ namespace WindowsFormsApplication1
         {
             ActualizarGrid(this.dgv_vist_result_exam, "SELECT * FROM resultado_examen;");
         }
-
-        private void txt_id_exm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                SelectNextControl(ActiveControl, true, true, true, true);
-            }
-        }
-
-        private void txt_id_exm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.validacion_solonumeros(e);
-        }
-
-        private void txt_descripcion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_descripcion_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                SelectNextControl(ActiveControl, true, true, true, true);
-            }
-        }
     }
 }
