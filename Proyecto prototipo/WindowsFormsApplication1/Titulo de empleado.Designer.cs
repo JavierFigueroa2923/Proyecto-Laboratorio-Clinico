@@ -37,7 +37,6 @@
             this.lbl_id_lab = new System.Windows.Forms.Label();
             this.lbl_id_empleado = new System.Windows.Forms.Label();
             this.txt_decrip_titulo_emp = new System.Windows.Forms.TextBox();
-            this.txt_fecha_obt_titulo = new System.Windows.Forms.TextBox();
             this.txt_nom_titulo = new System.Windows.Forms.TextBox();
             this.txt_id_lab = new System.Windows.Forms.TextBox();
             this.txt_id_emp = new System.Windows.Forms.TextBox();
@@ -49,12 +48,13 @@
             this.actualizar_titulo_emp = new System.Windows.Forms.Button();
             this.btn_actlz_titulo_emp = new System.Windows.Forms.Button();
             this.btn_guardar_titulo_emp = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtp_fecha = new System.Windows.Forms.PictureBox();
             this.cbo_buscar = new System.Windows.Forms.ComboBox();
+            this.dtp_fecha_title = new System.Windows.Forms.DateTimePicker();
             this.gpb_ingre_datos_titulo_emp.SuspendLayout();
             this.gpb_busqueda_empleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busqueda_datos_empleado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_empleado
@@ -69,13 +69,13 @@
             // 
             // gpb_ingre_datos_titulo_emp
             // 
+            this.gpb_ingre_datos_titulo_emp.Controls.Add(this.dtp_fecha_title);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_descrip_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_fecha_obt_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_nombre_titulo_emp);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_id_lab);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_id_empleado);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_decrip_titulo_emp);
-            this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_fecha_obt_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_nom_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_id_lab);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_id_emp);
@@ -139,13 +139,7 @@
             this.txt_decrip_titulo_emp.Name = "txt_decrip_titulo_emp";
             this.txt_decrip_titulo_emp.Size = new System.Drawing.Size(348, 100);
             this.txt_decrip_titulo_emp.TabIndex = 5;
-            // 
-            // txt_fecha_obt_titulo
-            // 
-            this.txt_fecha_obt_titulo.Location = new System.Drawing.Point(6, 189);
-            this.txt_fecha_obt_titulo.Name = "txt_fecha_obt_titulo";
-            this.txt_fecha_obt_titulo.Size = new System.Drawing.Size(348, 24);
-            this.txt_fecha_obt_titulo.TabIndex = 4;
+            this.txt_decrip_titulo_emp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_decrip_titulo_emp_KeyDown);
             // 
             // txt_nom_titulo
             // 
@@ -153,6 +147,7 @@
             this.txt_nom_titulo.Name = "txt_nom_titulo";
             this.txt_nom_titulo.Size = new System.Drawing.Size(348, 24);
             this.txt_nom_titulo.TabIndex = 3;
+            this.txt_nom_titulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nom_titulo_KeyDown);
             this.txt_nom_titulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nom_titulo_KeyPress);
             // 
             // txt_id_lab
@@ -161,6 +156,7 @@
             this.txt_id_lab.Name = "txt_id_lab";
             this.txt_id_lab.Size = new System.Drawing.Size(348, 24);
             this.txt_id_lab.TabIndex = 2;
+            this.txt_id_lab.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_lab_KeyDown);
             this.txt_id_lab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_lab_KeyPress);
             // 
             // txt_id_emp
@@ -169,6 +165,7 @@
             this.txt_id_emp.Name = "txt_id_emp";
             this.txt_id_emp.Size = new System.Drawing.Size(348, 24);
             this.txt_id_emp.TabIndex = 1;
+            this.txt_id_emp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_emp_KeyDown);
             this.txt_id_emp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_emp_KeyPress);
             // 
             // gpb_busqueda_empleado
@@ -271,15 +268,15 @@
             this.btn_guardar_titulo_emp.UseVisualStyleBackColor = true;
             this.btn_guardar_titulo_emp.Click += new System.EventHandler(this.btn_guardar_titulo_emp_Click);
             // 
-            // pictureBox1
+            // dtp_fecha
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Clinica;
-            this.pictureBox1.Location = new System.Drawing.Point(688, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 102);
-            this.pictureBox1.TabIndex = 167;
-            this.pictureBox1.TabStop = false;
+            this.dtp_fecha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dtp_fecha.Image = global::WindowsFormsApplication1.Properties.Resources.Clinica;
+            this.dtp_fecha.Location = new System.Drawing.Point(688, 12);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(103, 102);
+            this.dtp_fecha.TabIndex = 167;
+            this.dtp_fecha.TabStop = false;
             // 
             // cbo_buscar
             // 
@@ -289,13 +286,20 @@
             this.cbo_buscar.Size = new System.Drawing.Size(206, 21);
             this.cbo_buscar.TabIndex = 168;
             // 
+            // dtp_fecha_title
+            // 
+            this.dtp_fecha_title.Location = new System.Drawing.Point(9, 193);
+            this.dtp_fecha_title.Name = "dtp_fecha_title";
+            this.dtp_fecha_title.Size = new System.Drawing.Size(345, 24);
+            this.dtp_fecha_title.TabIndex = 73;
+            // 
             // Titulo_de_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 579);
             this.Controls.Add(this.cbo_buscar);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.dtp_fecha);
             this.Controls.Add(this.btn_elim_titulo);
             this.Controls.Add(this.buscar_emp);
             this.Controls.Add(this.btn_busc_emp);
@@ -313,7 +317,7 @@
             this.gpb_ingre_datos_titulo_emp.PerformLayout();
             this.gpb_busqueda_empleado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busqueda_datos_empleado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,7 +334,6 @@
         private System.Windows.Forms.Label lbl_id_lab;
         private System.Windows.Forms.Label lbl_id_empleado;
         private System.Windows.Forms.TextBox txt_decrip_titulo_emp;
-        private System.Windows.Forms.TextBox txt_fecha_obt_titulo;
         private System.Windows.Forms.TextBox txt_nom_titulo;
         private System.Windows.Forms.TextBox txt_id_lab;
         private System.Windows.Forms.TextBox txt_id_emp;
@@ -340,7 +343,8 @@
         private System.Windows.Forms.Button btn_busc_emp;
         private System.Windows.Forms.Label buscar_emp;
         private System.Windows.Forms.Button btn_elim_titulo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox dtp_fecha;
         private System.Windows.Forms.ComboBox cbo_buscar;
+        private System.Windows.Forms.DateTimePicker dtp_fecha_title;
     }
 }
