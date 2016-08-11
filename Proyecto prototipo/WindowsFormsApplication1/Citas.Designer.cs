@@ -34,14 +34,10 @@
             this.gpb_datos_cita = new System.Windows.Forms.GroupBox();
             this.cbo_estado_cita = new System.Windows.Forms.ComboBox();
             this.lbl_estado_cita = new System.Windows.Forms.Label();
-            this.txt_id_cita = new System.Windows.Forms.TextBox();
             this.txt_hora_cita = new System.Windows.Forms.TextBox();
-            this.txt_id_emp_user = new System.Windows.Forms.TextBox();
             this.lbl_id_cita = new System.Windows.Forms.Label();
-            this.txt_fecha_cita = new System.Windows.Forms.TextBox();
             this.Lbl_id_lab_user = new System.Windows.Forms.Label();
             this.Lbl_fecha_cita = new System.Windows.Forms.Label();
-            this.txt_id_lab_user = new System.Windows.Forms.TextBox();
             this.lbl_hora_cita = new System.Windows.Forms.Label();
             this.Lbl_id_emp_user = new System.Windows.Forms.Label();
             this.btn_rnv_cita = new System.Windows.Forms.Button();
@@ -53,18 +49,13 @@
             this.btn_actlz_cita = new System.Windows.Forms.Button();
             this.btn_guardar_cita = new System.Windows.Forms.Button();
             this.lbl_cita = new System.Windows.Forms.Label();
-            this.gpb_labs_cita = new System.Windows.Forms.GroupBox();
-            this.dgv_labs_cita = new System.Windows.Forms.DataGridView();
-            this.gpb_emps_cita = new System.Windows.Forms.GroupBox();
-            this.dgv_emps_cita = new System.Windows.Forms.DataGridView();
+            this.cbo_id_emp = new System.Windows.Forms.ComboBox();
+            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.gpb_vista_cita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vista_cita)).BeginInit();
             this.gpb_datos_cita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pl_lab_cita)).BeginInit();
-            this.gpb_labs_cita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_labs_cita)).BeginInit();
-            this.gpb_emps_cita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_emps_cita)).BeginInit();
             this.SuspendLayout();
             // 
             // gpb_vista_cita
@@ -89,22 +80,21 @@
             // 
             // gpb_datos_cita
             // 
+            this.gpb_datos_cita.Controls.Add(this.dtp_fecha);
+            this.gpb_datos_cita.Controls.Add(this.cbo_id_lab);
+            this.gpb_datos_cita.Controls.Add(this.cbo_id_emp);
             this.gpb_datos_cita.Controls.Add(this.cbo_estado_cita);
             this.gpb_datos_cita.Controls.Add(this.lbl_estado_cita);
-            this.gpb_datos_cita.Controls.Add(this.txt_id_cita);
             this.gpb_datos_cita.Controls.Add(this.txt_hora_cita);
-            this.gpb_datos_cita.Controls.Add(this.txt_id_emp_user);
             this.gpb_datos_cita.Controls.Add(this.lbl_id_cita);
-            this.gpb_datos_cita.Controls.Add(this.txt_fecha_cita);
             this.gpb_datos_cita.Controls.Add(this.Lbl_id_lab_user);
             this.gpb_datos_cita.Controls.Add(this.Lbl_fecha_cita);
-            this.gpb_datos_cita.Controls.Add(this.txt_id_lab_user);
             this.gpb_datos_cita.Controls.Add(this.lbl_hora_cita);
             this.gpb_datos_cita.Controls.Add(this.Lbl_id_emp_user);
             this.gpb_datos_cita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_datos_cita.Location = new System.Drawing.Point(12, 123);
             this.gpb_datos_cita.Name = "gpb_datos_cita";
-            this.gpb_datos_cita.Size = new System.Drawing.Size(335, 198);
+            this.gpb_datos_cita.Size = new System.Drawing.Size(335, 206);
             this.gpb_datos_cita.TabIndex = 170;
             this.gpb_datos_cita.TabStop = false;
             this.gpb_datos_cita.Text = "Informacion General";
@@ -112,7 +102,7 @@
             // cbo_estado_cita
             // 
             this.cbo_estado_cita.FormattingEnabled = true;
-            this.cbo_estado_cita.Location = new System.Drawing.Point(155, 164);
+            this.cbo_estado_cita.Location = new System.Drawing.Point(147, 172);
             this.cbo_estado_cita.Name = "cbo_estado_cita";
             this.cbo_estado_cita.Size = new System.Drawing.Size(171, 24);
             this.cbo_estado_cita.TabIndex = 158;
@@ -121,33 +111,19 @@
             // 
             this.lbl_estado_cita.AutoSize = true;
             this.lbl_estado_cita.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lbl_estado_cita.Location = new System.Drawing.Point(9, 164);
+            this.lbl_estado_cita.Location = new System.Drawing.Point(9, 172);
             this.lbl_estado_cita.Name = "lbl_estado_cita";
             this.lbl_estado_cita.Size = new System.Drawing.Size(62, 20);
             this.lbl_estado_cita.TabIndex = 156;
             this.lbl_estado_cita.Text = "Estado:";
             // 
-            // txt_id_cita
-            // 
-            this.txt_id_cita.Location = new System.Drawing.Point(119, 19);
-            this.txt_id_cita.Name = "txt_id_cita";
-            this.txt_id_cita.Size = new System.Drawing.Size(174, 23);
-            this.txt_id_cita.TabIndex = 155;
-            // 
             // txt_hora_cita
             // 
-            this.txt_hora_cita.Location = new System.Drawing.Point(119, 77);
+            this.txt_hora_cita.Location = new System.Drawing.Point(81, 53);
             this.txt_hora_cita.Name = "txt_hora_cita";
             this.txt_hora_cita.PasswordChar = '*';
-            this.txt_hora_cita.Size = new System.Drawing.Size(208, 23);
+            this.txt_hora_cita.Size = new System.Drawing.Size(237, 23);
             this.txt_hora_cita.TabIndex = 145;
-            // 
-            // txt_id_emp_user
-            // 
-            this.txt_id_emp_user.Location = new System.Drawing.Point(155, 106);
-            this.txt_id_emp_user.Name = "txt_id_emp_user";
-            this.txt_id_emp_user.Size = new System.Drawing.Size(170, 23);
-            this.txt_id_emp_user.TabIndex = 145;
             // 
             // lbl_id_cita
             // 
@@ -155,23 +131,14 @@
             this.lbl_id_cita.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_id_cita.Location = new System.Drawing.Point(9, 19);
             this.lbl_id_cita.Name = "lbl_id_cita";
-            this.lbl_id_cita.Size = new System.Drawing.Size(62, 20);
+            this.lbl_id_cita.Size = new System.Drawing.Size(0, 20);
             this.lbl_id_cita.TabIndex = 152;
-            this.lbl_id_cita.Text = "Id Cita:";
-            // 
-            // txt_fecha_cita
-            // 
-            this.txt_fecha_cita.Location = new System.Drawing.Point(118, 48);
-            this.txt_fecha_cita.Name = "txt_fecha_cita";
-            this.txt_fecha_cita.Size = new System.Drawing.Size(207, 23);
-            this.txt_fecha_cita.TabIndex = 143;
-            this.txt_fecha_cita.TextChanged += new System.EventHandler(this.txt_fecha_cita_TextChanged);
             // 
             // Lbl_id_lab_user
             // 
             this.Lbl_id_lab_user.AutoSize = true;
             this.Lbl_id_lab_user.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_id_lab_user.Location = new System.Drawing.Point(9, 135);
+            this.Lbl_id_lab_user.Location = new System.Drawing.Point(9, 133);
             this.Lbl_id_lab_user.Name = "Lbl_id_lab_user";
             this.Lbl_id_lab_user.Size = new System.Drawing.Size(141, 20);
             this.Lbl_id_lab_user.TabIndex = 149;
@@ -181,35 +148,28 @@
             // 
             this.Lbl_fecha_cita.AutoSize = true;
             this.Lbl_fecha_cita.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_fecha_cita.Location = new System.Drawing.Point(9, 48);
+            this.Lbl_fecha_cita.Location = new System.Drawing.Point(9, 19);
             this.Lbl_fecha_cita.Name = "Lbl_fecha_cita";
             this.Lbl_fecha_cita.Size = new System.Drawing.Size(59, 20);
             this.Lbl_fecha_cita.TabIndex = 144;
             this.Lbl_fecha_cita.Text = "Fecha:";
             this.Lbl_fecha_cita.Click += new System.EventHandler(this.Lbl_fecha_cita_Click);
             // 
-            // txt_id_lab_user
-            // 
-            this.txt_id_lab_user.Location = new System.Drawing.Point(156, 135);
-            this.txt_id_lab_user.Name = "txt_id_lab_user";
-            this.txt_id_lab_user.Size = new System.Drawing.Size(170, 23);
-            this.txt_id_lab_user.TabIndex = 150;
-            // 
             // lbl_hora_cita
             // 
             this.lbl_hora_cita.AutoSize = true;
             this.lbl_hora_cita.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lbl_hora_cita.Location = new System.Drawing.Point(9, 77);
+            this.lbl_hora_cita.Location = new System.Drawing.Point(9, 53);
             this.lbl_hora_cita.Name = "lbl_hora_cita";
-            this.lbl_hora_cita.Size = new System.Drawing.Size(99, 20);
+            this.lbl_hora_cita.Size = new System.Drawing.Size(66, 20);
             this.lbl_hora_cita.TabIndex = 146;
-            this.lbl_hora_cita.Text = "Contraseña:";
+            this.lbl_hora_cita.Text = "Horario:";
             // 
             // Lbl_id_emp_user
             // 
             this.Lbl_id_emp_user.AutoSize = true;
             this.Lbl_id_emp_user.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_id_emp_user.Location = new System.Drawing.Point(9, 106);
+            this.Lbl_id_emp_user.Location = new System.Drawing.Point(9, 91);
             this.Lbl_id_emp_user.Name = "Lbl_id_emp_user";
             this.Lbl_id_emp_user.Size = new System.Drawing.Size(130, 20);
             this.Lbl_id_emp_user.TabIndex = 146;
@@ -312,6 +272,7 @@
             this.btn_guardar_cita.Text = "GUARDAR";
             this.btn_guardar_cita.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_cita.UseVisualStyleBackColor = true;
+            this.btn_guardar_cita.Click += new System.EventHandler(this.btn_guardar_cita_Click);
             // 
             // lbl_cita
             // 
@@ -325,51 +286,34 @@
             this.lbl_cita.TabIndex = 161;
             this.lbl_cita.Text = "Citas de Pacientes";
             // 
-            // gpb_labs_cita
+            // cbo_id_emp
             // 
-            this.gpb_labs_cita.Controls.Add(this.dgv_labs_cita);
-            this.gpb_labs_cita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_labs_cita.Location = new System.Drawing.Point(415, 327);
-            this.gpb_labs_cita.Name = "gpb_labs_cita";
-            this.gpb_labs_cita.Size = new System.Drawing.Size(378, 126);
-            this.gpb_labs_cita.TabIndex = 173;
-            this.gpb_labs_cita.TabStop = false;
-            this.gpb_labs_cita.Text = "Laboratorios";
+            this.cbo_id_emp.FormattingEnabled = true;
+            this.cbo_id_emp.Location = new System.Drawing.Point(148, 91);
+            this.cbo_id_emp.Name = "cbo_id_emp";
+            this.cbo_id_emp.Size = new System.Drawing.Size(170, 24);
+            this.cbo_id_emp.TabIndex = 159;
             // 
-            // dgv_labs_cita
+            // cbo_id_lab
             // 
-            this.dgv_labs_cita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_labs_cita.Location = new System.Drawing.Point(6, 19);
-            this.dgv_labs_cita.Name = "dgv_labs_cita";
-            this.dgv_labs_cita.Size = new System.Drawing.Size(366, 101);
-            this.dgv_labs_cita.TabIndex = 0;
+            this.cbo_id_lab.FormattingEnabled = true;
+            this.cbo_id_lab.Location = new System.Drawing.Point(148, 133);
+            this.cbo_id_lab.Name = "cbo_id_lab";
+            this.cbo_id_lab.Size = new System.Drawing.Size(170, 24);
+            this.cbo_id_lab.TabIndex = 160;
             // 
-            // gpb_emps_cita
+            // dtp_fecha
             // 
-            this.gpb_emps_cita.Controls.Add(this.dgv_emps_cita);
-            this.gpb_emps_cita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_emps_cita.Location = new System.Drawing.Point(12, 321);
-            this.gpb_emps_cita.Name = "gpb_emps_cita";
-            this.gpb_emps_cita.Size = new System.Drawing.Size(397, 132);
-            this.gpb_emps_cita.TabIndex = 172;
-            this.gpb_emps_cita.TabStop = false;
-            this.gpb_emps_cita.Text = "Empleados";
-            // 
-            // dgv_emps_cita
-            // 
-            this.dgv_emps_cita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_emps_cita.Location = new System.Drawing.Point(6, 19);
-            this.dgv_emps_cita.Name = "dgv_emps_cita";
-            this.dgv_emps_cita.Size = new System.Drawing.Size(385, 107);
-            this.dgv_emps_cita.TabIndex = 0;
+            this.dtp_fecha.Location = new System.Drawing.Point(81, 22);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(237, 23);
+            this.dtp_fecha.TabIndex = 161;
             // 
             // Citas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 461);
-            this.Controls.Add(this.gpb_labs_cita);
-            this.Controls.Add(this.gpb_emps_cita);
+            this.ClientSize = new System.Drawing.Size(800, 353);
             this.Controls.Add(this.gpb_vista_cita);
             this.Controls.Add(this.gpb_datos_cita);
             this.Controls.Add(this.btn_rnv_cita);
@@ -390,10 +334,6 @@
             this.gpb_datos_cita.ResumeLayout(false);
             this.gpb_datos_cita.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pl_lab_cita)).EndInit();
-            this.gpb_labs_cita.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_labs_cita)).EndInit();
-            this.gpb_emps_cita.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_emps_cita)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,14 +346,10 @@
         private System.Windows.Forms.GroupBox gpb_datos_cita;
         private System.Windows.Forms.ComboBox cbo_estado_cita;
         internal System.Windows.Forms.Label lbl_estado_cita;
-        internal System.Windows.Forms.TextBox txt_id_cita;
         internal System.Windows.Forms.TextBox txt_hora_cita;
-        internal System.Windows.Forms.TextBox txt_id_emp_user;
         internal System.Windows.Forms.Label lbl_id_cita;
-        internal System.Windows.Forms.TextBox txt_fecha_cita;
         internal System.Windows.Forms.Label Lbl_id_lab_user;
         internal System.Windows.Forms.Label Lbl_fecha_cita;
-        internal System.Windows.Forms.TextBox txt_id_lab_user;
         internal System.Windows.Forms.Label lbl_hora_cita;
         internal System.Windows.Forms.Label Lbl_id_emp_user;
         private System.Windows.Forms.Button btn_rnv_cita;
@@ -425,9 +361,8 @@
         private System.Windows.Forms.Button btn_actlz_cita;
         private System.Windows.Forms.Button btn_guardar_cita;
         private System.Windows.Forms.Label lbl_cita;
-        private System.Windows.Forms.GroupBox gpb_labs_cita;
-        private System.Windows.Forms.DataGridView dgv_labs_cita;
-        private System.Windows.Forms.GroupBox gpb_emps_cita;
-        private System.Windows.Forms.DataGridView dgv_emps_cita;
+        private System.Windows.Forms.ComboBox cbo_id_lab;
+        private System.Windows.Forms.ComboBox cbo_id_emp;
+        private System.Windows.Forms.DateTimePicker dtp_fecha;
     }
 }
