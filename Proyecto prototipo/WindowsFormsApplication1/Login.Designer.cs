@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.llbl_recuperar_contraseña = new System.Windows.Forms.LinkLabel();
             this.Btn_Inicio_secion = new System.Windows.Forms.Button();
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.Lbl_contraseña = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             // Panel1
             // 
             this.Panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Panel1.Controls.Add(this.llbl_recuperar_contraseña);
             this.Panel1.Controls.Add(this.Btn_Inicio_secion);
             this.Panel1.Controls.Add(this.txt_pass);
             this.Panel1.Controls.Add(this.Lbl_contraseña);
@@ -61,22 +59,6 @@
             this.Panel1.Size = new System.Drawing.Size(465, 491);
             this.Panel1.TabIndex = 7;
             this.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
-            // 
-            // llbl_recuperar_contraseña
-            // 
-            this.llbl_recuperar_contraseña.ActiveLinkColor = System.Drawing.Color.Teal;
-            this.llbl_recuperar_contraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.llbl_recuperar_contraseña.AutoSize = true;
-            this.llbl_recuperar_contraseña.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llbl_recuperar_contraseña.LinkColor = System.Drawing.SystemColors.HotTrack;
-            this.llbl_recuperar_contraseña.Location = new System.Drawing.Point(197, 330);
-            this.llbl_recuperar_contraseña.Name = "llbl_recuperar_contraseña";
-            this.llbl_recuperar_contraseña.Size = new System.Drawing.Size(177, 20);
-            this.llbl_recuperar_contraseña.TabIndex = 12;
-            this.llbl_recuperar_contraseña.TabStop = true;
-            this.llbl_recuperar_contraseña.Text = "Recuperar Contrasena";
             // 
             // Btn_Inicio_secion
             // 
@@ -199,7 +181,6 @@
         #endregion
 
         internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.LinkLabel llbl_recuperar_contraseña;
         internal System.Windows.Forms.Button Btn_Inicio_secion;
         internal System.Windows.Forms.TextBox txt_pass;
         internal System.Windows.Forms.Label Lbl_contraseña;

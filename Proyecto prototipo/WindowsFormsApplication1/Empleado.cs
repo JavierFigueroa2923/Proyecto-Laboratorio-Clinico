@@ -214,7 +214,7 @@ namespace WindowsFormsApplication1
         }
     }
 
-    public static bool valida (string seMailAComprobar)
+    /*public static bool valida (string seMailAComprobar)
     {
         String sFormato;
         sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
@@ -237,6 +237,6 @@ namespace WindowsFormsApplication1
 
 
 
-    }
+    }*/
 
 }

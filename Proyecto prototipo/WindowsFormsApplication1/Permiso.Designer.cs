@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
             this.grb_vista_per = new System.Windows.Forms.GroupBox();
             this.dgv_busc_per = new System.Windows.Forms.DataGridView();
             this.grb_datos1_per = new System.Windows.Forms.GroupBox();
+            this.cbo_nombre_per = new System.Windows.Forms.ComboBox();
             this.cbo_id_carg_emp_per = new System.Windows.Forms.ComboBox();
             this.btn_busc_id_carg_emp_per = new System.Windows.Forms.Button();
             this.Lbl_id_carg_emp_per = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@ namespace WindowsFormsApplication1
             this.btn_elim_per = new System.Windows.Forms.Button();
             this.btn_actlz_per = new System.Windows.Forms.Button();
             this.btn_guardar_per = new System.Windows.Forms.Button();
-            this.cbo_nombre_per = new System.Windows.Forms.ComboBox();
             this.grb_vista_per.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_per)).BeginInit();
             this.grb_datos1_per.SuspendLayout();
@@ -113,6 +113,39 @@ namespace WindowsFormsApplication1
             this.grb_datos1_per.TabStop = false;
             this.grb_datos1_per.Text = "Datos de Rol";
             this.grb_datos1_per.Enter += new System.EventHandler(this.grb_datos1_per_Enter);
+            // 
+            // cbo_nombre_per
+            // 
+            this.cbo_nombre_per.FormattingEnabled = true;
+            this.cbo_nombre_per.Items.AddRange(new object[] {
+            "Actualizar Cliente",
+            "Actualizar Empleado",
+            "Actualizar Examenes",
+            "Actualizar Pagos",
+            "Actualizar Aseguradora",
+            "Actualizar Laboratorio",
+            "Actualizar Inventario",
+            "Citas",
+            "Roles",
+            "Etiquetas",
+            "Area Laboratorio",
+            "Membrecia",
+            "Cargo Empleado",
+            "Inventario De Suministros",
+            "Tipo De Examen",
+            "Reporte de pagos",
+            "Reporte de suministros",
+            "Reporte de facturas",
+            "Reporte de resultado de examenes",
+            "Creacion titulo empleado",
+            "Creacion tipo de muestra",
+            "Creacion de muestra",
+            "Creacion de cotizacion",
+            "Todo"});
+            this.cbo_nombre_per.Location = new System.Drawing.Point(102, 30);
+            this.cbo_nombre_per.Name = "cbo_nombre_per";
+            this.cbo_nombre_per.Size = new System.Drawing.Size(403, 24);
+            this.cbo_nombre_per.TabIndex = 171;
             // 
             // cbo_id_carg_emp_per
             // 
@@ -272,30 +305,6 @@ namespace WindowsFormsApplication1
             this.btn_guardar_per.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_guardar_per.UseVisualStyleBackColor = true;
             this.btn_guardar_per.Click += new System.EventHandler(this.btn_guardar_per_Click);
-            // 
-            // cbo_nombre_per
-            // 
-            this.cbo_nombre_per.FormattingEnabled = true;
-            this.cbo_nombre_per.Items.AddRange(new object[] {
-            "Actualizar Cliente",
-            "Actualizar Empleado",
-            "Actualizar Examenes",
-            "Actualizar Pagos",
-            "Actualizar Aseguradora",
-            "Actualizar Laboratorio",
-            "Actualizar Inventario",
-            "Citas",
-            "Roles",
-            "Etiquetas",
-            "Area Laboratorio",
-            "Membrecia",
-            "Cargo Empleado",
-            "Inventario De Suministros",
-            "Tipo De Examen"});
-            this.cbo_nombre_per.Location = new System.Drawing.Point(102, 30);
-            this.cbo_nombre_per.Name = "cbo_nombre_per";
-            this.cbo_nombre_per.Size = new System.Drawing.Size(403, 24);
-            this.cbo_nombre_per.TabIndex = 171;
             // 
             // frm_permiso
             // 

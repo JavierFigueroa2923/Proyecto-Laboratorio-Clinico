@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_cita_Click(object sender, EventArgs e)
         {
-            try
+           /* try
             {
                 if (txt_hora_cita.Text == "" || dtp_fecha.Text == "")
                 {
@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
             catch
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            }*/
         }
     }
 }

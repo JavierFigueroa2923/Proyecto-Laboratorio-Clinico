@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
                 //MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=192.168.30.10; database=proyecto_laboratorio; uid=Otto; pwd=090113290;");
 
                 MySqlCommand cmd = dbConn.CreateCommand();
-                cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo FROM cargo_empleado, empleado,permiso WHERE empleado.usuario='"+usuario+"' AND empleado.contrasenia = '"+pass+"' AND empleado.pk_id_emp = cargo_empleado.pk_id_emp";
+                cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo FROM empleado WHERE empleado.usuario='"+usuario+"' AND empleado.contrasenia = '"+pass+"'";
 
                 try
                 {
@@ -99,7 +99,7 @@ namespace WindowsFormsApplication1
                             cant_permisos = reader1.GetInt32(0);
                             if (cant_permisos == 0)
                             {
-                                MessageBox.Show("Su usuario aun no posee permisos asignados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Su usuario no posee permisos, comuníquese con el administrador para solucionar este problema.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 LimpiarCajaTexto();
                             }
                             else

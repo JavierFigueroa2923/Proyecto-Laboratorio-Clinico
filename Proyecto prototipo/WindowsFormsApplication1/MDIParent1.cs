@@ -152,6 +152,16 @@ namespace WindowsFormsApplication1
             inventarioDeSuministrosToolStripMenuItem.Visible = false;
             tipoDeExamenToolStripMenuItem.Visible = false;
 
+            pagosToolStripMenuItem.Visible = false;
+            reporteDeSuministrosToolStripMenuItem.Visible = false;
+            facturasToolStripMenuItem.Visible = false;
+            resultadoExamenesToolStripMenuItem.Visible = false;
+
+            tituloEmpleadoToolStripMenuItem.Visible = false;
+            tipoMuestraToolStripMenuItem.Visible = false;
+            muestraToolStripMenuItem.Visible = false;
+            cotizacionToolStripMenuItem.Visible = false;
+
 
             MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
             //MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=192.168.30.10; database=proyecto_laboratorio; uid=Otto; pwd=090113290;");
@@ -219,6 +229,32 @@ namespace WindowsFormsApplication1
                     case "Tipo De Examen":
                         tipoDeExamenToolStripMenuItem.Visible = true;
                         break;
+
+                    case "Reporte de pagos":
+                        pagosToolStripMenuItem.Visible = true;
+                        break;
+                    case "Reporte de suministros":
+                        reporteDeSuministrosToolStripMenuItem.Visible = true;
+                        break;
+                    case "Reporte de facturas":
+                        facturasToolStripMenuItem.Visible = true;
+                        break;
+                    case "Reporte de resultado de examenes":
+                        resultadoExamenesToolStripMenuItem.Visible = true;
+                        break;
+                        
+                    case "Creacion titulo empleado":
+                        tituloEmpleadoToolStripMenuItem.Visible = true;
+                        break;
+                    case "Creacion tipo de muestra":
+                        tipoMuestraToolStripMenuItem.Visible = true;
+                        break;
+                    case "Creacion de muestra":
+                        muestraToolStripMenuItem.Visible = true;
+                        break;
+                    case "Creacion de cotizacion":
+                        cotizacionToolStripMenuItem.Visible = true;
+                        break;
                     case "Todo":
                         actualizarClienteToolStripMenuItem.Visible = true;
                         actualizarToolStripMenuItem.Visible = true;
@@ -235,6 +271,16 @@ namespace WindowsFormsApplication1
                         cargoEmpleadoToolStripMenuItem1.Visible = true;
                         inventarioDeSuministrosToolStripMenuItem.Visible = true;
                         tipoDeExamenToolStripMenuItem.Visible = true;
+
+                        pagosToolStripMenuItem.Visible = true;
+                        reporteDeSuministrosToolStripMenuItem.Visible = true;
+                        facturasToolStripMenuItem.Visible = true;
+                        resultadoExamenesToolStripMenuItem.Visible = true;
+
+                        tituloEmpleadoToolStripMenuItem.Visible = true;
+                        tipoMuestraToolStripMenuItem.Visible = true;
+                        muestraToolStripMenuItem.Visible = true;
+                        cotizacionToolStripMenuItem.Visible = true;
                         break;
                     default:
                         
