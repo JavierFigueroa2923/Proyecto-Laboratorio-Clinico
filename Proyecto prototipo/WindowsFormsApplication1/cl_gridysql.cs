@@ -158,5 +158,22 @@ namespace WindowsFormsApplication1
             //Nos desconectamos de la base de datos....
             Conexionmysql.Desconectar();
         }
+
+        public static void ActualizarGridBusquedaIdCita(DataGridView dg, String Query)
+        {
+            //Conectarnos a la base de datos
+            Conexionmysql.ObtenerConexion();
+            //Crear DataSet
+            System.Data.DataSet MiDataSet = new System.Data.DataSet();
+            //Crear Adaptador de datos
+            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //Llenar el DataSet
+            MiDataAdapter.Fill(MiDataSet, "cita");
+            //Asignarle el valor al cuadro a las propiedades del DataGrid
+            dg.DataSource = MiDataSet;
+            dg.DataMember = "cita";
+            //Nos desconectamos de la base de datos....
+            Conexionmysql.Desconectar();
+        }
     }
 }

@@ -24,18 +24,19 @@ namespace WindowsFormsApplication1
         }
         public void LimpiarCajasTexto()
         {
-            cbo_buscar.Text = "";
-            txt_id_clt.Text = "";
+            txt_busc_mem.Text = "";
+            cbo_id_clt_mem.Text = "";
            // txt_membresia.Text = "";
-            txt_beneficio.Text = "";
-            txt_fecha_exp.Text = "";
-            txt_fec_expirar.Text = "";
+            txt_beneficio_mem.Text = "";
+            dtp_fec_crea_mem.Text = "";
+            dtp_fec_expir_mem.Text = "";
 
 
         }
         private void txt_fecha_expir_Load(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_membresia, "SELECT * FROM membresia");
+            ActualizarGrid(this.dgv_busc_membresia, "SELECT * FROM membresia");
+            llenarCboClienteMembresia();
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
@@ -65,7 +66,7 @@ namespace WindowsFormsApplication1
         private void btn_guardar_membresia_Click(object sender, EventArgs e)
         {
             try {
-                if (txt_beneficio.Text == "" || txt_id_clt.Text == "" || txt_fec_expirar.Text == "" || txt_fecha_exp.Text == "")
+                if (txt_beneficio_mem.Text == "" || cbo_id_clt_mem.Text == "" || dtp_fec_crea_mem.Text == "" || dtp_fec_expir_mem.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -74,20 +75,26 @@ namespace WindowsFormsApplication1
                     if (Editar)
                     {
                         Conexionmysql.ObtenerConexion();
-                        String query2 = "UPDATE membresia SET beneficios='" + txt_beneficio.Text + "', fecha_expendicion_mem='" + txt_fecha_exp.Text + "', fecha_expiracion_mem = '" + txt_fec_expirar.Text + "' WHERE pk_id_mem='" + Codigo + "';";
+                        string selectedItem = cbo_id_clt_mem.SelectedValue.ToString();
+                        string theDate = dtp_fec_crea_mem.Value.ToString("yyyy-MM-dd");
+                        string theDate2 = dtp_fec_expir_mem.Value.ToString("yyyy-MM-dd");
+                        String query2 = "UPDATE membresia SET beneficios='" + txt_beneficio_mem.Text + "', fecha_expendicion_mem='" + theDate + "', fecha_expiracion_mem = '" + theDate2 + "', pk_id_clt = '" + selectedItem + "' WHERE pk_id_mem ='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_membresia, "SELECT * FROM membresia");
+                        ActualizarGrid(this.dgv_busc_membresia, "SELECT * FROM membresia");
                         Editar = false;
                     }
                     else
                     {
                         Conexionmysql.ObtenerConexion();
-                        String Query = "INSERT INTO membresia (beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + txt_beneficio.Text + "','" + txt_fecha_exp.Text + "','" + txt_fec_expirar.Text + "', '" + Convert.ToDouble(txt_id_clt.Text) + "') ";
+                        string selectedItem = cbo_id_clt_mem.SelectedValue.ToString();
+                        string theDate = dtp_fec_crea_mem.Value.ToString("yyyy-MM-dd");
+                        string theDate2 = dtp_fec_expir_mem.Value.ToString("yyyy-MM-dd");
+                        String Query = "INSERT INTO membresia (beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + txt_beneficio_mem.Text + "','" + theDate + "','" + theDate2 + "', '" + Convert.ToDouble(selectedItem) + "') ";
                         cl_gridysql.EjecutarMySql(Query);
-                        ActualizarGrid(this.dgv_membresia, "select * from membresia;");
+                        ActualizarGrid(this.dgv_busc_membresia, "select * from membresia;");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
                     }
@@ -102,7 +109,7 @@ namespace WindowsFormsApplication1
         private void btn_elim_membresia_Click(object sender, EventArgs e)
         {
             try {
-                Codigo = this.dgv_membresia.CurrentRow.Cells[0].Value.ToString();
+                Codigo = this.dgv_busc_membresia.CurrentRow.Cells[0].Value.ToString();
                 //2. preguntar al usuario si realmente quiere borrar el resgistro
                 var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 //3.PROCEDER AVALUAR EL RESULTADO
@@ -114,13 +121,13 @@ namespace WindowsFormsApplication1
                     Conexionmysql.ObtenerConexion();
 
                     //2. armar la query
-                    String Query = "delete from membresia where pk_id_mem= '" + Codigo + "';";
+                    String Query = "delete from membresia where pk_id_mem = '" + Codigo + "';";
 
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
 
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_membresia, "select * from membresia;");
+                    ActualizarGrid(this.dgv_busc_membresia, "select * from membresia;");
 
 
                     //5.desconectar en base de datos
@@ -137,11 +144,11 @@ namespace WindowsFormsApplication1
         {
             try {
                 Editar = true;
-                Codigo = this.dgv_membresia.CurrentRow.Cells[0].Value.ToString();
-                txt_beneficio.Text = this.dgv_membresia.CurrentRow.Cells[1].Value.ToString();
-                txt_fecha_exp.Text = this.dgv_membresia.CurrentRow.Cells[2].Value.ToString();
-                txt_fec_expirar.Text = this.dgv_membresia.CurrentRow.Cells[3].Value.ToString();
-                txt_id_clt.Text = this.dgv_membresia.CurrentRow.Cells[4].Value.ToString();
+                Codigo = this.dgv_busc_membresia.CurrentRow.Cells[0].Value.ToString();
+                txt_beneficio_mem.Text = this.dgv_busc_membresia.CurrentRow.Cells[1].Value.ToString();
+                dtp_fec_crea_mem.Enabled = false;
+                dtp_fec_expir_mem.Enabled = true;
+                cbo_id_clt_mem.Text = this.dgv_busc_membresia.CurrentRow.Cells[4].Value.ToString();
             }
             catch
             {
@@ -157,21 +164,56 @@ namespace WindowsFormsApplication1
         private void btn_busc_memb_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select * from membresia where pk_id_clt = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
+            String Query = ("select * from membresia where pk_id_clt = '" + Convert.ToDouble(txt_busc_mem.Text) + "%'; ");
             //ManipularDato.Busqueda(Query);
-            ActualizarGrid(this.dgv_membresia, Query);
+            ActualizarGrid(this.dgv_busc_membresia, Query);
             Conexionmysql.Desconectar();
-            cbo_buscar.Text = "";
+            cbo_id_clt_mem.Text = "";
         }
 
         private void btn_act_datos_Click(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_membresia, "SELECT * FROM membresia;");
+            ActualizarGrid(this.dgv_busc_membresia, "SELECT * FROM membresia;");
         }
 
         private void txt_id_clt_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpb_ingreso_datos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbo_id_clt_mem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void llenarCboClienteMembresia()
+        {
+            //se realiza la conexión a la base de datos
+            Conexionmysql.ObtenerConexion();
+            //se inicia un DataSet
+            DataSet ds = new DataSet();
+            //se indica la consulta en sql
+            String Query = "select pk_id_clt, nombre_clt from cliente;";
+            MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //se indica con quu tabla se llena
+            dad.Fill(ds, "cliente");
+            cbo_id_clt_mem.DataSource = ds.Tables[0].DefaultView;
+            //indicamos el valor de los miembros
+            cbo_id_clt_mem.ValueMember = ("pk_id_clt");
+            //se indica el valor a desplegar en el combobox
+            cbo_id_clt_mem.DisplayMember = ("nombre_clt");
+        }
+
+
     }
 }

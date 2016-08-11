@@ -112,6 +112,7 @@
             this.cbo_id_mst_busc_eti.Name = "cbo_id_mst_busc_eti";
             this.cbo_id_mst_busc_eti.Size = new System.Drawing.Size(115, 24);
             this.cbo_id_mst_busc_eti.TabIndex = 1;
+            this.cbo_id_mst_busc_eti.SelectedIndexChanged += new System.EventHandler(this.cbo_id_mst_busc_eti_SelectedIndexChanged);
             // 
             // btn_id_mst_busc_eti
             // 
