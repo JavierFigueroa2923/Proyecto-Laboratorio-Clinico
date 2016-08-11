@@ -37,11 +37,10 @@ namespace WindowsFormsApplication1
         }
         public void LimpiarCajasTexto()
         {
-            
+
             txt_descrip_area.Text = "";
             //txt_id_area_lab.Text = "";
             txt_id_lab.Text = "";
-            txt_ubicacion.Text = "";
 
         }
         public void ActualizarGrid(DataGridView dg, String Query)
@@ -62,8 +61,9 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_area_Click(object sender, EventArgs e)
         {
-            try {
-                if (txt_ubicacion.Text == "" || txt_descrip_area.Text == "" || txt_id_lab.Text == "")
+            try
+            {
+                if (txt_descrip_area.Text == "" || txt_id_lab.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -72,7 +72,7 @@ namespace WindowsFormsApplication1
                     if (Editar)
                     {
                         Conexionmysql.ObtenerConexion();
-                        String query2 = "UPDATE area_laboratorio SET ubicacion='" + txt_ubicacion.Text + "', des='" + txt_descrip_area.Text + "' WHERE pk_id_area_lab='" + Codigo + "';";
+                        String query2 = "UPDATE area_laboratorio SET descripcion_ar_lab='" + txt_descrip_area.Text + "' WHERE pk_id_area_lab='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         Conexionmysql.ObtenerConexion();
-                        String Query = "INSERT INTO area_laboratorio (pk_id_lab,ubicacion,des) VALUES ('" + Convert.ToDouble(txt_id_lab.Text) + "','" + txt_ubicacion.Text + "','" + txt_descrip_area.Text + "') ";
+                        String Query = "INSERT INTO area_laboratorio (pk_id_lab,descripcion_ar_lab) VALUES ('" + Convert.ToDouble(txt_id_lab.Text) + "','" + txt_descrip_area.Text + "') ";
                         cl_gridysql.EjecutarMySql(Query);
                         ActualizarGrid(this.dgv_area_labs, "select * from area_laboratorio;");
                         this.LimpiarCajasTexto();
@@ -143,9 +143,8 @@ namespace WindowsFormsApplication1
             try {
                 Editar = true;
                 Codigo = this.dgv_area_labs.CurrentRow.Cells[0].Value.ToString();
-                txt_id_lab.Text = this.dgv_area_labs.CurrentRow.Cells[1].Value.ToString();
-                txt_ubicacion.Text = this.dgv_area_labs.CurrentRow.Cells[2].Value.ToString();
-                txt_descrip_area.Text = this.dgv_area_labs.CurrentRow.Cells[3].Value.ToString();
+                txt_id_lab.Text = this.dgv_area_labs.CurrentRow.Cells[2].Value.ToString();
+                txt_descrip_area.Text = this.dgv_area_labs.CurrentRow.Cells[1].Value.ToString();
             }
             catch
             {

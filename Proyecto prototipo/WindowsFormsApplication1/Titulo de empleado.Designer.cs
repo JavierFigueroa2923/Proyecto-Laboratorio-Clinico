@@ -37,7 +37,6 @@
             this.lbl_id_lab = new System.Windows.Forms.Label();
             this.lbl_id_empleado = new System.Windows.Forms.Label();
             this.txt_decrip_titulo_emp = new System.Windows.Forms.TextBox();
-            this.txt_fecha_obt_titulo = new System.Windows.Forms.TextBox();
             this.txt_nom_titulo = new System.Windows.Forms.TextBox();
             this.txt_id_lab = new System.Windows.Forms.TextBox();
             this.txt_id_emp = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.btn_guardar_titulo_emp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbo_buscar = new System.Windows.Forms.ComboBox();
+            this.dtp_fecha_title = new System.Windows.Forms.DateTimePicker();
             this.gpb_ingre_datos_titulo_emp.SuspendLayout();
             this.gpb_busqueda_empleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busqueda_datos_empleado)).BeginInit();
@@ -69,13 +69,13 @@
             // 
             // gpb_ingre_datos_titulo_emp
             // 
+            this.gpb_ingre_datos_titulo_emp.Controls.Add(this.dtp_fecha_title);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_descrip_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_fecha_obt_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_nombre_titulo_emp);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_id_lab);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.lbl_id_empleado);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_decrip_titulo_emp);
-            this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_fecha_obt_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_nom_titulo);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_id_lab);
             this.gpb_ingre_datos_titulo_emp.Controls.Add(this.txt_id_emp);
@@ -139,13 +139,6 @@
             this.txt_decrip_titulo_emp.Name = "txt_decrip_titulo_emp";
             this.txt_decrip_titulo_emp.Size = new System.Drawing.Size(348, 100);
             this.txt_decrip_titulo_emp.TabIndex = 5;
-            // 
-            // txt_fecha_obt_titulo
-            // 
-            this.txt_fecha_obt_titulo.Location = new System.Drawing.Point(6, 189);
-            this.txt_fecha_obt_titulo.Name = "txt_fecha_obt_titulo";
-            this.txt_fecha_obt_titulo.Size = new System.Drawing.Size(348, 24);
-            this.txt_fecha_obt_titulo.TabIndex = 4;
             // 
             // txt_nom_titulo
             // 
@@ -289,6 +282,13 @@
             this.cbo_buscar.Size = new System.Drawing.Size(206, 21);
             this.cbo_buscar.TabIndex = 168;
             // 
+            // dtp_fecha_title
+            // 
+            this.dtp_fecha_title.Location = new System.Drawing.Point(6, 189);
+            this.dtp_fecha_title.Name = "dtp_fecha_title";
+            this.dtp_fecha_title.Size = new System.Drawing.Size(345, 24);
+            this.dtp_fecha_title.TabIndex = 74;
+            // 
             // Titulo_de_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,7 +330,6 @@
         private System.Windows.Forms.Label lbl_id_lab;
         private System.Windows.Forms.Label lbl_id_empleado;
         private System.Windows.Forms.TextBox txt_decrip_titulo_emp;
-        private System.Windows.Forms.TextBox txt_fecha_obt_titulo;
         private System.Windows.Forms.TextBox txt_nom_titulo;
         private System.Windows.Forms.TextBox txt_id_lab;
         private System.Windows.Forms.TextBox txt_id_emp;
@@ -342,5 +341,6 @@
         private System.Windows.Forms.Button btn_elim_titulo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbo_buscar;
+        private System.Windows.Forms.DateTimePicker dtp_fecha_title;
     }
 }

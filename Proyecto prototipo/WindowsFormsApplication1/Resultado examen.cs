@@ -33,10 +33,10 @@ namespace WindowsFormsApplication1
             //Crear Adaptador de datos
             MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenar el DataSet
-            MiDataAdapter.Fill(MiDataSet, "area_laboratorio");
+            MiDataAdapter.Fill(MiDataSet, "resultado_examen");
             //Asignarle el valor adecuado a las propiedades del DataGrid
             dg.DataSource = MiDataSet;
-            dg.DataMember = "area_laboratorio";
+            dg.DataMember = "resultado_examen";
             //nos desconectamos de la base de datos...
             Conexionmysql.Desconectar();
         }

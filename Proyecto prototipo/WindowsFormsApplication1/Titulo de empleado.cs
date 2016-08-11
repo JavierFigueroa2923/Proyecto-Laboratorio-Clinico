@@ -29,7 +29,6 @@ namespace WindowsFormsApplication1
             //txt_id_titulo_emp.Text = "";
             txt_nom_titulo.Text = "";
             txt_decrip_titulo_emp.Text = "";
-            txt_fecha_obt_titulo.Text = "";
 
         }
         private void actualizar_titulo_emp_Click(object sender, EventArgs e)
@@ -75,7 +74,9 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_titulo_emp_Click(object sender, EventArgs e)
         {
-            try {
+            dtp_fecha_title.Enabled = true;
+            try
+            {
                 if (txt_decrip_titulo_emp.Text == "" || txt_id_lab.Text == "" || txt_nom_titulo.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,7 +98,8 @@ namespace WindowsFormsApplication1
                     else
                     {
                         Conexionmysql.ObtenerConexion();
-                        String Query = "INSERT INTO titulo_empleado (descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + txt_fecha_obt_titulo.Text + "', '" + Convert.ToDouble(txt_id_emp.Text) + "', '" + Convert.ToDouble(txt_id_lab.Text) + "') ";
+                        string fecha = dtp_fecha_title.Value.ToString("yyyy-MM-dd");
+                        String Query = "INSERT INTO titulo_empleado (descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + fecha + "', '" + Convert.ToDouble(txt_id_emp.Text) + "', '" + Convert.ToDouble(txt_id_lab.Text) + "') ";
                         cl_gridysql.EjecutarMySql(Query);
                         ActualizarGrid(this.dgv_busqueda_datos_empleado, "select * from titulo_empleado;");
                         this.LimpiarCajasTexto();
@@ -152,6 +154,7 @@ namespace WindowsFormsApplication1
                 //txt_fecha_obt_titulo.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[3].Value.ToString();
                 txt_id_emp.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[4].Value.ToString();
                 txt_id_lab.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[5].Value.ToString();
+                dtp_fecha_title.Enabled = false;
             }
             catch
             {
@@ -173,6 +176,31 @@ namespace WindowsFormsApplication1
             cbo_buscar.Text = "";
         }
 
-        
+        private void txt_id_lab_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_nom_titulo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_decrip_titulo_emp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
     }
  }

@@ -31,11 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Area_de_laboratorio));
             this.lbl_area_laboratorio = new System.Windows.Forms.Label();
             this.gpb_datos_area_lab = new System.Windows.Forms.GroupBox();
-            this.txt_descrip_area = new System.Windows.Forms.TextBox();
-            this.txt_ubicacion = new System.Windows.Forms.TextBox();
             this.txt_id_lab = new System.Windows.Forms.TextBox();
             this.lbl_descrip_area_lab = new System.Windows.Forms.Label();
-            this.lbl_ubicacion_area_lab = new System.Windows.Forms.Label();
             this.lbl_id_lab = new System.Windows.Forms.Label();
             this.gpb_vista_labs = new System.Windows.Forms.GroupBox();
             this.dgv_area_labs = new System.Windows.Forms.DataGridView();
@@ -47,6 +44,7 @@
             this.btn_guardar_area = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbo_buscar = new System.Windows.Forms.ComboBox();
+            this.txt_descrip_area = new System.Windows.Forms.TextBox();
             this.gpb_datos_area_lab.SuspendLayout();
             this.gpb_vista_labs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_area_labs)).BeginInit();
@@ -67,10 +65,8 @@
             // gpb_datos_area_lab
             // 
             this.gpb_datos_area_lab.Controls.Add(this.txt_descrip_area);
-            this.gpb_datos_area_lab.Controls.Add(this.txt_ubicacion);
             this.gpb_datos_area_lab.Controls.Add(this.txt_id_lab);
             this.gpb_datos_area_lab.Controls.Add(this.lbl_descrip_area_lab);
-            this.gpb_datos_area_lab.Controls.Add(this.lbl_ubicacion_area_lab);
             this.gpb_datos_area_lab.Controls.Add(this.lbl_id_lab);
             this.gpb_datos_area_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_datos_area_lab.Location = new System.Drawing.Point(12, 167);
@@ -79,21 +75,6 @@
             this.gpb_datos_area_lab.TabIndex = 152;
             this.gpb_datos_area_lab.TabStop = false;
             this.gpb_datos_area_lab.Text = "Ingreso de datos";
-            // 
-            // txt_descrip_area
-            // 
-            this.txt_descrip_area.Location = new System.Drawing.Point(6, 152);
-            this.txt_descrip_area.Multiline = true;
-            this.txt_descrip_area.Name = "txt_descrip_area";
-            this.txt_descrip_area.Size = new System.Drawing.Size(315, 100);
-            this.txt_descrip_area.TabIndex = 7;
-            // 
-            // txt_ubicacion
-            // 
-            this.txt_ubicacion.Location = new System.Drawing.Point(6, 92);
-            this.txt_ubicacion.Name = "txt_ubicacion";
-            this.txt_ubicacion.Size = new System.Drawing.Size(315, 24);
-            this.txt_ubicacion.TabIndex = 6;
             // 
             // txt_id_lab
             // 
@@ -106,20 +87,11 @@
             // lbl_descrip_area_lab
             // 
             this.lbl_descrip_area_lab.AutoSize = true;
-            this.lbl_descrip_area_lab.Location = new System.Drawing.Point(6, 119);
+            this.lbl_descrip_area_lab.Location = new System.Drawing.Point(6, 71);
             this.lbl_descrip_area_lab.Name = "lbl_descrip_area_lab";
             this.lbl_descrip_area_lab.Size = new System.Drawing.Size(143, 18);
             this.lbl_descrip_area_lab.TabIndex = 3;
             this.lbl_descrip_area_lab.Text = "Descripción del área";
-            // 
-            // lbl_ubicacion_area_lab
-            // 
-            this.lbl_ubicacion_area_lab.AutoSize = true;
-            this.lbl_ubicacion_area_lab.Location = new System.Drawing.Point(6, 71);
-            this.lbl_ubicacion_area_lab.Name = "lbl_ubicacion_area_lab";
-            this.lbl_ubicacion_area_lab.Size = new System.Drawing.Size(74, 18);
-            this.lbl_ubicacion_area_lab.TabIndex = 2;
-            this.lbl_ubicacion_area_lab.Text = "Ubicación";
             // 
             // lbl_id_lab
             // 
@@ -247,6 +219,14 @@
             this.cbo_buscar.Size = new System.Drawing.Size(240, 21);
             this.cbo_buscar.TabIndex = 160;
             // 
+            // txt_descrip_area
+            // 
+            this.txt_descrip_area.Location = new System.Drawing.Point(9, 92);
+            this.txt_descrip_area.Multiline = true;
+            this.txt_descrip_area.Name = "txt_descrip_area";
+            this.txt_descrip_area.Size = new System.Drawing.Size(315, 100);
+            this.txt_descrip_area.TabIndex = 8;
+            // 
             // Area_de_laboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,11 +264,8 @@
         private System.Windows.Forms.Button btn_actlz_area;
         private System.Windows.Forms.Button btn_elim_area;
         private System.Windows.Forms.GroupBox gpb_datos_area_lab;
-        private System.Windows.Forms.TextBox txt_descrip_area;
-        private System.Windows.Forms.TextBox txt_ubicacion;
         private System.Windows.Forms.TextBox txt_id_lab;
         private System.Windows.Forms.Label lbl_descrip_area_lab;
-        private System.Windows.Forms.Label lbl_ubicacion_area_lab;
         private System.Windows.Forms.Label lbl_id_lab;
         private System.Windows.Forms.GroupBox gpb_vista_labs;
         private System.Windows.Forms.Button btn_act_data;
@@ -297,5 +274,6 @@
         private System.Windows.Forms.DataGridView dgv_area_labs;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbo_buscar;
+        private System.Windows.Forms.TextBox txt_descrip_area;
     }
 }
