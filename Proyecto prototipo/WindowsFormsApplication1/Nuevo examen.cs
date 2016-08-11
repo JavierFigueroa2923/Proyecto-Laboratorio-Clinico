@@ -28,10 +28,10 @@ namespace WindowsFormsApplication1
             //Creamos un nuevo adaptador de datos
             MySqlDataAdapter newDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //LLenamos el DataSet
-            newDataAdapter.Fill(newDataSet, "Nuevo examen");
+            newDataAdapter.Fill(newDataSet, "Examen");
             //Asignando valores al DataGrid
             dgv.DataSource = newDataSet;
-            dgv.DataMember = "Nuevo examen";
+            dgv.DataMember = "Examen";
             Conexionmysql.Desconectar();
         }
 
@@ -44,7 +44,8 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string consulta = "insert into TIPO_EXAMEN values ('" + txt_id_exm + "','" + txt_nombre + "','" + txt_descripcion + "');";
+                string consulta = "insert into Examen values ='" + txt_fecha.Text + "','"  + txt_observacion.Text + "','" + txt_precio + "');";
+
                 MySqlCommand man = new MySqlCommand(consulta, Conexionmysql.ObtenerConexion());
                 MySqlDataReader re;
                 Conexionmysql.ObtenerConexion();
@@ -60,6 +61,11 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txt_id_exm_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
