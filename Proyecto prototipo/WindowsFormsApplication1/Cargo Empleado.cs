@@ -38,44 +38,85 @@ namespace WindowsFormsApplication1
         private void Cargo_Empleado_Load(object sender, EventArgs e)
         {
             grid_cargos();
-            grid_empleados();
-            grid_labs();
+            llenarCboIdLab();
+            llenarCboIdEmp();
         }
-        private void grid_empleados()
+        
+        public void llenarCboIdLab()
         {
-            string query = String.Format("SELECT * FROM {0}", "empleado");
+            //se realiza la conexión a la base de datos
             Conexionmysql.ObtenerConexion();
-            MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-            DataTable data = new DataTable();
-            adapter.Fill(data);
-            dgv_emps_cargo_emp.DataSource = data;
-            Conexionmysql.Desconectar();
+            //se inicia un DataSet
+            DataSet ds = new DataSet();
+            //se indica la consulta en sql
+            //String Query = "select DISTINCT cargo_empleado.pk_id_cargo_emp, cargo_empleado.nombre_cargo_emp, empleado.nombre_emp from cargo_empleado, empleado WHERE cargo_empleado.pk_id_emp = empleado.pk_id_emp";
+            String Query = "select DISTINCT pk_id_lab, nombre_lab from laboratorio";
+            MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //se indica con quu tabla se llena
+            dad.Fill(ds, "laboratorio");
+            cbo_id_lab.DataSource = ds.Tables[0].DefaultView;
+            //indicamos el valor de los miembros
+            cbo_id_lab.ValueMember = ("pk_id_lab");
+            //se indica el valor a desplegar en el combobox
+            string cb = "nombre_lab, nombre_lab";
+
+            DataTable dt = ds.Tables[0];
+            dt.Columns.Add("NewColumn", typeof(string));
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["nombre_lab"] = dr["pk_id_lab"].ToString() + " " + dr["nombre_lab"].ToString();
+            }
+            cbo_id_lab.DataSource = dt;
+
+
+            cbo_id_lab.DisplayMember = "nombre_lab";
         }
-        private void grid_labs()
+        public void llenarCboIdEmp()
         {
-            string query = String.Format("SELECT * FROM {0}", "laboratorio");
+            //se realiza la conexión a la base de datos
             Conexionmysql.ObtenerConexion();
-            MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-            DataTable data = new DataTable(); adapter.Fill(data);
-            dgv_labs_cargo_emp.DataSource = data;
-            Conexionmysql.Desconectar();
+            //se inicia un DataSet
+            DataSet ds = new DataSet();
+            //se indica la consulta en sql
+            //String Query = "select DISTINCT cargo_empleado.pk_id_cargo_emp, cargo_empleado.nombre_cargo_emp, empleado.nombre_emp from cargo_empleado, empleado WHERE cargo_empleado.pk_id_emp = empleado.pk_id_emp";
+            String Query = "select DISTINCT pk_id_emp, nombre_emp from empleado";
+            MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //se indica con quu tabla se llena
+            dad.Fill(ds, "empleado");
+            cbo_id_emp.DataSource = ds.Tables[0].DefaultView;
+            //indicamos el valor de los miembros
+            cbo_id_emp.ValueMember = ("pk_id_emp");
+            //se indica el valor a desplegar en el combobox
+            string cb = "nombre_emp, nombre_emp";
+
+            DataTable dt = ds.Tables[0];
+            dt.Columns.Add("NewColumn", typeof(string));
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["nombre_emp"] = dr["pk_id_emp"].ToString() + " " + dr["nombre_emp"].ToString();
+            }
+            cbo_id_emp.DataSource = dt;
+
+
+            cbo_id_emp.DisplayMember = "nombre_emp";
         }
         private void grid_cargos()
         {
-            string query = String.Format("SELECT * FROM {0}", "cargo_emleado");
+            string query = String.Format("SELECT * FROM {0}", "cargo_empleado");
             Conexionmysql.ObtenerConexion();
             MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-            DataTable data = new DataTable(); adapter.Fill(data);
+            DataTable data = new DataTable(); 
+            adapter.Fill(data);
             dgv_cargo_emp.DataSource = data;
             Conexionmysql.Desconectar();
         }
 
         private void btn_guardar_cargo_emp_Click(object sender, EventArgs e)
         {
-            if (txt_nombre_cargo_emp.Text == "" || txt_descp_cargo_emp.Text == "" || txt_fecha_contrat_cargo_emp.Text == "" || txt_id_emp_cargo_emp.Text == "" || txt_dpi.Text == "")
+            if (txt_nombre_cargo_emp.Text == "" || txt_descp_cargo_emp.Text == "" || txt_fecha_contrat_cargo_emp.Text == "" )
             {
                 MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -85,11 +126,9 @@ namespace WindowsFormsApplication1
                 {
                     Conexionmysql.ObtenerConexion();
                     int NumVal = Int32.Parse(codigo);
-                    String Query = "update cargo_emleado set pk_id_emp = " + txt_id_emp_cargo_emp.Text + ", pk_id_lab = '" + txt_dpi.Text + "', nombre_cargo_emp = " + txt_nombre_cargo_emp.Text + ", descripcion_cargo_emp = " + txt_descp_cargo_emp.Text + ", fecha_contratacion = " + txt_fecha_contrat_cargo_emp.Text + " where pk_id_cargo_emp = " + NumVal + ";";
+                    String Query = "update cargo_empleado set nombre_cargo_emp = '" + txt_nombre_cargo_emp.Text + "', descripcion_cargo_emp = '" + txt_descp_cargo_emp.Text + "', fecha_contratacion = '" + txt_fecha_contrat_cargo_emp.Text + "', pk_id_emp = " + cbo_id_emp.SelectedValue + ", pk_id_lab = " + cbo_id_lab.SelectedValue + " where pk_id_cargo_emp = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
                     grid_cargos();
-                    grid_empleados();
-                    grid_labs();
                     Conexionmysql.Desconectar();
                     Editar = false;
                     limpiar();
@@ -99,7 +138,7 @@ namespace WindowsFormsApplication1
 
                     try
                     {
-                        String Query = "insert into cargo_emleado(pk_id_cargo_emp, pk_id_emp, pk_id_lab, nombre_cargo_emp, descripcion_cargo_emp, fecha_contratacion)values(" + txt_id_cargo_emp.Text + "," + txt_id_emp_cargo_emp.Text + "," + txt_dpi.Text + ",'" + txt_nombre_cargo_emp.Text + "','" + txt_descp_cargo_emp.Text + "','" + txt_fecha_contrat_cargo_emp.Text + "');";
+                        String Query = "insert into cargo_empleado(nombre_cargo_emp, descripcion_cargo_emp, fecha_contratacion,pk_id_emp,pk_id_lab)values('" + txt_nombre_cargo_emp.Text + "','" + txt_descp_cargo_emp.Text + "','" + txt_fecha_contrat_cargo_emp.Text + "'," + cbo_id_emp.SelectedValue + "," + cbo_id_lab.SelectedValue + ");";
                         MySqlCommand MyCommand2 = new MySqlCommand(Query, Conexionmysql.ObtenerConexion());
                         MySqlDataReader MyReader2;
                         Conexionmysql.ObtenerConexion();
@@ -121,20 +160,20 @@ namespace WindowsFormsApplication1
         {
             Editar = true;
             codigo = this.dgv_cargo_emp.CurrentRow.Cells[0].Value.ToString();
-            txt_nombre_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[3].Value.ToString();
-            txt_descp_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[4].Value.ToString();
-            txt_fecha_contrat_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[5].Value.ToString();
-            txt_id_emp_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[1].Value.ToString();
-            txt_dpi.Text = this.dgv_cargo_emp.CurrentRow.Cells[2].Value.ToString();
+            txt_nombre_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[1].Value.ToString();
+            txt_descp_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[2].Value.ToString();
+            txt_fecha_contrat_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[3].Value.ToString();
+            //string theDate = dgv_cargo_emp.CurrentRow.Cells[3].Value.ToString("yyyy-MM-dd");
+            cbo_id_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[4].Value.ToString();
+            cbo_id_lab.Text = this.dgv_cargo_emp.CurrentRow.Cells[5].Value.ToString();
             
         }
         private void limpiar() {
-            txt_id_cargo_emp.Text = "";
             txt_nombre_cargo_emp.Text = "";
             txt_descp_cargo_emp.Text = "";
             txt_fecha_contrat_cargo_emp.Text = "";
-            txt_id_emp_cargo_emp.Text = "";
-            txt_dpi.Text = "";
+            cbo_id_emp.Text = "";
+            cbo_id_lab.Text = "";
         }
 
         private void btn_elim_cargo_emp_Click(object sender, EventArgs e)
@@ -156,7 +195,7 @@ namespace WindowsFormsApplication1
                     Conexionmysql.ObtenerConexion();
                     //armar query...
                     int NumVal = Int32.Parse(codigo);
-                    String Query = "delete from cargo_emleado where pk_id_cargo_emp = " + NumVal + ";";
+                    String Query = "delete from cargo_empleado where pk_id_cargo_emp = " + NumVal + ";";
                     //ejecutar query
                     cl_gridysql.EjecutarMySql(Query);
                     grid_cargos();
@@ -180,7 +219,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                cl_gridysql.ActualizarGridMuestra(this.dgv_cargo_emp, "select * from cargo_emleado where pk_id_cargo_emp like '" + txt_busc_cargo_emp.Text + "%';");
+                cl_gridysql.ActualizarGridMuestra(this.dgv_cargo_emp, "select * from cargo_empleado where pk_id_cargo_emp like '" + txt_busc_cargo_emp.Text + "%';");
             }
         }
 

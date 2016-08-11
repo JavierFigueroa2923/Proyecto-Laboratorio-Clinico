@@ -35,14 +35,10 @@
             this.btn_guardar_cargo_emp = new System.Windows.Forms.Button();
             this.pl_lab_cargo_emp = new System.Windows.Forms.PictureBox();
             this.gpb_datos_cargo_emp = new System.Windows.Forms.GroupBox();
-            this.txt_id_cargo_emp = new System.Windows.Forms.TextBox();
             this.txt_descp_cargo_emp = new System.Windows.Forms.TextBox();
-            this.txt_id_emp_cargo_emp = new System.Windows.Forms.TextBox();
-            this.lbl_id_cargo_emp = new System.Windows.Forms.Label();
             this.txt_nombre_cargo_emp = new System.Windows.Forms.TextBox();
             this.Lbl_id_lab_cargo_emp = new System.Windows.Forms.Label();
             this.Lbl_nombre_cargo_emp = new System.Windows.Forms.Label();
-            this.txt_dpi = new System.Windows.Forms.TextBox();
             this.lbl_descrp_cargo_emp = new System.Windows.Forms.Label();
             this.txt_fecha_contrat_cargo_emp = new System.Windows.Forms.TextBox();
             this.Lbl_id_emp_cargo_emp = new System.Windows.Forms.Label();
@@ -53,18 +49,12 @@
             this.btn_busc_cargo_emp = new System.Windows.Forms.Button();
             this.txt_busc_cargo_emp = new System.Windows.Forms.TextBox();
             this.lbl_busca_cargo_emp = new System.Windows.Forms.Label();
-            this.dgv_emps_cargo_emp = new System.Windows.Forms.DataGridView();
-            this.gpb_emps_cargo_emp = new System.Windows.Forms.GroupBox();
-            this.dgv_labs_cargo_emp = new System.Windows.Forms.DataGridView();
-            this.gpb_labs_cargo_emp = new System.Windows.Forms.GroupBox();
+            this.cbo_id_emp = new System.Windows.Forms.ComboBox();
+            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pl_lab_cargo_emp)).BeginInit();
             this.gpb_datos_cargo_emp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cargo_emp)).BeginInit();
             this.grb_vista_emp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_emps_cargo_emp)).BeginInit();
-            this.gpb_emps_cargo_emp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_labs_cargo_emp)).BeginInit();
-            this.gpb_labs_cargo_emp.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_cargo_emp
@@ -131,14 +121,12 @@
             // 
             // gpb_datos_cargo_emp
             // 
-            this.gpb_datos_cargo_emp.Controls.Add(this.txt_id_cargo_emp);
+            this.gpb_datos_cargo_emp.Controls.Add(this.cbo_id_lab);
+            this.gpb_datos_cargo_emp.Controls.Add(this.cbo_id_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.txt_descp_cargo_emp);
-            this.gpb_datos_cargo_emp.Controls.Add(this.txt_id_emp_cargo_emp);
-            this.gpb_datos_cargo_emp.Controls.Add(this.lbl_id_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.txt_nombre_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.Lbl_id_lab_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.Lbl_nombre_cargo_emp);
-            this.gpb_datos_cargo_emp.Controls.Add(this.txt_dpi);
             this.gpb_datos_cargo_emp.Controls.Add(this.lbl_descrp_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.txt_fecha_contrat_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.Lbl_id_emp_cargo_emp);
@@ -146,17 +134,10 @@
             this.gpb_datos_cargo_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_datos_cargo_emp.Location = new System.Drawing.Point(13, 120);
             this.gpb_datos_cargo_emp.Name = "gpb_datos_cargo_emp";
-            this.gpb_datos_cargo_emp.Size = new System.Drawing.Size(385, 230);
+            this.gpb_datos_cargo_emp.Size = new System.Drawing.Size(385, 329);
             this.gpb_datos_cargo_emp.TabIndex = 142;
             this.gpb_datos_cargo_emp.TabStop = false;
             this.gpb_datos_cargo_emp.Text = "Informacion General";
-            // 
-            // txt_id_cargo_emp
-            // 
-            this.txt_id_cargo_emp.Location = new System.Drawing.Point(119, 19);
-            this.txt_id_cargo_emp.Name = "txt_id_cargo_emp";
-            this.txt_id_cargo_emp.Size = new System.Drawing.Size(174, 23);
-            this.txt_id_cargo_emp.TabIndex = 155;
             // 
             // txt_descp_cargo_emp
             // 
@@ -165,23 +146,6 @@
             this.txt_descp_cargo_emp.Name = "txt_descp_cargo_emp";
             this.txt_descp_cargo_emp.Size = new System.Drawing.Size(256, 55);
             this.txt_descp_cargo_emp.TabIndex = 145;
-            // 
-            // txt_id_emp_cargo_emp
-            // 
-            this.txt_id_emp_cargo_emp.Location = new System.Drawing.Point(172, 165);
-            this.txt_id_emp_cargo_emp.Name = "txt_id_emp_cargo_emp";
-            this.txt_id_emp_cargo_emp.Size = new System.Drawing.Size(202, 23);
-            this.txt_id_emp_cargo_emp.TabIndex = 145;
-            // 
-            // lbl_id_cargo_emp
-            // 
-            this.lbl_id_cargo_emp.AutoSize = true;
-            this.lbl_id_cargo_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_id_cargo_emp.Location = new System.Drawing.Point(9, 19);
-            this.lbl_id_cargo_emp.Name = "lbl_id_cargo_emp";
-            this.lbl_id_cargo_emp.Size = new System.Drawing.Size(79, 20);
-            this.lbl_id_cargo_emp.TabIndex = 152;
-            this.lbl_id_cargo_emp.Text = "Id Cargo:";
             // 
             // txt_nombre_cargo_emp
             // 
@@ -209,13 +173,6 @@
             this.Lbl_nombre_cargo_emp.Size = new System.Drawing.Size(72, 20);
             this.Lbl_nombre_cargo_emp.TabIndex = 144;
             this.Lbl_nombre_cargo_emp.Text = "Nombre:";
-            // 
-            // txt_dpi
-            // 
-            this.txt_dpi.Location = new System.Drawing.Point(172, 194);
-            this.txt_dpi.Name = "txt_dpi";
-            this.txt_dpi.Size = new System.Drawing.Size(202, 23);
-            this.txt_dpi.TabIndex = 150;
             // 
             // lbl_descrp_cargo_emp
             // 
@@ -259,7 +216,7 @@
             this.dgv_cargo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_cargo_emp.Location = new System.Drawing.Point(6, 19);
             this.dgv_cargo_emp.Name = "dgv_cargo_emp";
-            this.dgv_cargo_emp.Size = new System.Drawing.Size(486, 205);
+            this.dgv_cargo_emp.Size = new System.Drawing.Size(486, 310);
             this.dgv_cargo_emp.TabIndex = 0;
             // 
             // grb_vista_emp
@@ -268,7 +225,7 @@
             this.grb_vista_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_vista_emp.Location = new System.Drawing.Point(404, 120);
             this.grb_vista_emp.Name = "grb_vista_emp";
-            this.grb_vista_emp.Size = new System.Drawing.Size(498, 230);
+            this.grb_vista_emp.Size = new System.Drawing.Size(498, 329);
             this.grb_vista_emp.TabIndex = 143;
             this.grb_vista_emp.TabStop = false;
             this.grb_vista_emp.Text = "Cargos de Empleados";
@@ -319,51 +276,27 @@
             this.lbl_busca_cargo_emp.TabIndex = 146;
             this.lbl_busca_cargo_emp.Text = "Buscar:";
             // 
-            // dgv_emps_cargo_emp
+            // cbo_id_emp
             // 
-            this.dgv_emps_cargo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_emps_cargo_emp.Location = new System.Drawing.Point(6, 22);
-            this.dgv_emps_cargo_emp.Name = "dgv_emps_cargo_emp";
-            this.dgv_emps_cargo_emp.Size = new System.Drawing.Size(434, 94);
-            this.dgv_emps_cargo_emp.TabIndex = 0;
+            this.cbo_id_emp.FormattingEnabled = true;
+            this.cbo_id_emp.Location = new System.Drawing.Point(172, 165);
+            this.cbo_id_emp.Name = "cbo_id_emp";
+            this.cbo_id_emp.Size = new System.Drawing.Size(152, 24);
+            this.cbo_id_emp.TabIndex = 151;
             // 
-            // gpb_emps_cargo_emp
+            // cbo_id_lab
             // 
-            this.gpb_emps_cargo_emp.Controls.Add(this.dgv_emps_cargo_emp);
-            this.gpb_emps_cargo_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_emps_cargo_emp.Location = new System.Drawing.Point(13, 356);
-            this.gpb_emps_cargo_emp.Name = "gpb_emps_cargo_emp";
-            this.gpb_emps_cargo_emp.Size = new System.Drawing.Size(446, 122);
-            this.gpb_emps_cargo_emp.TabIndex = 144;
-            this.gpb_emps_cargo_emp.TabStop = false;
-            this.gpb_emps_cargo_emp.Text = "Empleados";
-            // 
-            // dgv_labs_cargo_emp
-            // 
-            this.dgv_labs_cargo_emp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_labs_cargo_emp.Location = new System.Drawing.Point(6, 19);
-            this.dgv_labs_cargo_emp.Name = "dgv_labs_cargo_emp";
-            this.dgv_labs_cargo_emp.Size = new System.Drawing.Size(424, 94);
-            this.dgv_labs_cargo_emp.TabIndex = 0;
-            // 
-            // gpb_labs_cargo_emp
-            // 
-            this.gpb_labs_cargo_emp.Controls.Add(this.dgv_labs_cargo_emp);
-            this.gpb_labs_cargo_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_labs_cargo_emp.Location = new System.Drawing.Point(465, 356);
-            this.gpb_labs_cargo_emp.Name = "gpb_labs_cargo_emp";
-            this.gpb_labs_cargo_emp.Size = new System.Drawing.Size(437, 122);
-            this.gpb_labs_cargo_emp.TabIndex = 145;
-            this.gpb_labs_cargo_emp.TabStop = false;
-            this.gpb_labs_cargo_emp.Text = "Laboratorios";
+            this.cbo_id_lab.FormattingEnabled = true;
+            this.cbo_id_lab.Location = new System.Drawing.Point(172, 194);
+            this.cbo_id_lab.Name = "cbo_id_lab";
+            this.cbo_id_lab.Size = new System.Drawing.Size(152, 24);
+            this.cbo_id_lab.TabIndex = 152;
             // 
             // Cargo_Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 481);
-            this.Controls.Add(this.gpb_labs_cargo_emp);
-            this.Controls.Add(this.gpb_emps_cargo_emp);
             this.Controls.Add(this.btn_rnv_cargo_emp);
             this.Controls.Add(this.btn_busc_cargo_emp);
             this.Controls.Add(this.txt_busc_cargo_emp);
@@ -385,10 +318,6 @@
             this.gpb_datos_cargo_emp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cargo_emp)).EndInit();
             this.grb_vista_emp.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_emps_cargo_emp)).EndInit();
-            this.gpb_emps_cargo_emp.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_labs_cargo_emp)).EndInit();
-            this.gpb_labs_cargo_emp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,14 +331,10 @@
         private System.Windows.Forms.Button btn_guardar_cargo_emp;
         internal System.Windows.Forms.PictureBox pl_lab_cargo_emp;
         private System.Windows.Forms.GroupBox gpb_datos_cargo_emp;
-        internal System.Windows.Forms.TextBox txt_id_cargo_emp;
         internal System.Windows.Forms.TextBox txt_descp_cargo_emp;
-        internal System.Windows.Forms.TextBox txt_id_emp_cargo_emp;
-        internal System.Windows.Forms.Label lbl_id_cargo_emp;
         internal System.Windows.Forms.TextBox txt_nombre_cargo_emp;
         internal System.Windows.Forms.Label Lbl_id_lab_cargo_emp;
         internal System.Windows.Forms.Label Lbl_nombre_cargo_emp;
-        internal System.Windows.Forms.TextBox txt_dpi;
         internal System.Windows.Forms.Label lbl_descrp_cargo_emp;
         internal System.Windows.Forms.TextBox txt_fecha_contrat_cargo_emp;
         internal System.Windows.Forms.Label Lbl_id_emp_cargo_emp;
@@ -420,9 +345,7 @@
         private System.Windows.Forms.Button btn_busc_cargo_emp;
         internal System.Windows.Forms.TextBox txt_busc_cargo_emp;
         internal System.Windows.Forms.Label lbl_busca_cargo_emp;
-        private System.Windows.Forms.DataGridView dgv_emps_cargo_emp;
-        private System.Windows.Forms.GroupBox gpb_emps_cargo_emp;
-        private System.Windows.Forms.DataGridView dgv_labs_cargo_emp;
-        private System.Windows.Forms.GroupBox gpb_labs_cargo_emp;
+        private System.Windows.Forms.ComboBox cbo_id_lab;
+        private System.Windows.Forms.ComboBox cbo_id_emp;
     }
 }
