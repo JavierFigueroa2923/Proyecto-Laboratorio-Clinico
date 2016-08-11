@@ -60,6 +60,8 @@
             this.cbo_tip_sang_pcnt = new System.Windows.Forms.ComboBox();
             this.cbo_sexo_pcnt = new System.Windows.Forms.ComboBox();
             this.grb_datos3_pnct = new System.Windows.Forms.GroupBox();
+            this.cbo_lab_pcnt = new System.Windows.Forms.ComboBox();
+            this.lbl_lab_pcnt = new System.Windows.Forms.Label();
             this.grb_vista_pcnt = new System.Windows.Forms.GroupBox();
             this.dgv_list_pcnt = new System.Windows.Forms.DataGridView();
             this.txt_busc_pcnt = new System.Windows.Forms.TextBox();
@@ -69,8 +71,6 @@
             this.btn_guardar_pcnt = new System.Windows.Forms.Button();
             this.btn_elim_pcnt = new System.Windows.Forms.Button();
             this.btn_renov_pcnt = new System.Windows.Forms.Button();
-            this.lbl_lab_pcnt = new System.Windows.Forms.Label();
-            this.cbo_lab_pcnt = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.grb_datos1_pcnt.SuspendLayout();
             this.grb_datos2_pcnt.SuspendLayout();
@@ -407,6 +407,7 @@
             this.cbo_sexo_pcnt.Name = "cbo_sexo_pcnt";
             this.cbo_sexo_pcnt.Size = new System.Drawing.Size(177, 24);
             this.cbo_sexo_pcnt.TabIndex = 126;
+            this.cbo_sexo_pcnt.SelectedIndexChanged += new System.EventHandler(this.cbo_sexo_pcnt_SelectedIndexChanged);
             // 
             // grb_datos3_pnct
             // 
@@ -421,6 +422,25 @@
             this.grb_datos3_pnct.TabIndex = 127;
             this.grb_datos3_pnct.TabStop = false;
             this.grb_datos3_pnct.Text = "Referencia y Expediente";
+            // 
+            // cbo_lab_pcnt
+            // 
+            this.cbo_lab_pcnt.FormattingEnabled = true;
+            this.cbo_lab_pcnt.Location = new System.Drawing.Point(594, 21);
+            this.cbo_lab_pcnt.Name = "cbo_lab_pcnt";
+            this.cbo_lab_pcnt.Size = new System.Drawing.Size(152, 24);
+            this.cbo_lab_pcnt.TabIndex = 129;
+            // 
+            // lbl_lab_pcnt
+            // 
+            this.lbl_lab_pcnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_lab_pcnt.AutoSize = true;
+            this.lbl_lab_pcnt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_lab_pcnt.Location = new System.Drawing.Point(427, 22);
+            this.lbl_lab_pcnt.Name = "lbl_lab_pcnt";
+            this.lbl_lab_pcnt.Size = new System.Drawing.Size(170, 20);
+            this.lbl_lab_pcnt.TabIndex = 128;
+            this.lbl_lab_pcnt.Text = "Laboratorio asignado:";
             // 
             // grb_vista_pcnt
             // 
@@ -536,25 +556,6 @@
             this.btn_renov_pcnt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_renov_pcnt.UseVisualStyleBackColor = true;
             this.btn_renov_pcnt.Click += new System.EventHandler(this.btn_renov_pcnt_Click);
-            // 
-            // lbl_lab_pcnt
-            // 
-            this.lbl_lab_pcnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_lab_pcnt.AutoSize = true;
-            this.lbl_lab_pcnt.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lab_pcnt.Location = new System.Drawing.Point(427, 22);
-            this.lbl_lab_pcnt.Name = "lbl_lab_pcnt";
-            this.lbl_lab_pcnt.Size = new System.Drawing.Size(170, 20);
-            this.lbl_lab_pcnt.TabIndex = 128;
-            this.lbl_lab_pcnt.Text = "Laboratorio asignado:";
-            // 
-            // cbo_lab_pcnt
-            // 
-            this.cbo_lab_pcnt.FormattingEnabled = true;
-            this.cbo_lab_pcnt.Location = new System.Drawing.Point(594, 21);
-            this.cbo_lab_pcnt.Name = "cbo_lab_pcnt";
-            this.cbo_lab_pcnt.Size = new System.Drawing.Size(152, 24);
-            this.cbo_lab_pcnt.TabIndex = 129;
             // 
             // frm_act_cliente
             // 

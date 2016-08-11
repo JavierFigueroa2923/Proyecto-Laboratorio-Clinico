@@ -75,10 +75,9 @@ namespace WindowsFormsApplication1
             txt_nombre.Text = "";
             txt_peso_pcnt.Text = "";
             txt_referido.Text = "";
-            txt_telefono.Text = "";
-
-
+            txt_telefono.Text = "";       
         }
+
         public void ActualizarGrid(DataGridView dg, String Query)
         {
             Conexionmysql.ObtenerConexion();
@@ -503,6 +502,10 @@ namespace WindowsFormsApplication1
                 return dt;
         }
 
+        private void cbo_sexo_pcnt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 } 
     

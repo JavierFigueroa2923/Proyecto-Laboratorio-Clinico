@@ -65,6 +65,7 @@
             this.btn_busc_emp = new System.Windows.Forms.Button();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
+            this.lbl_date_formato = new System.Windows.Forms.Label();
             this.grb_datos_emp.SuspendLayout();
             this.grb_datosp_emp.SuspendLayout();
             this.grb_vista_emp.SuspendLayout();
@@ -76,11 +77,12 @@
             // 
             this.Lbl_cargo.AutoSize = true;
             this.Lbl_cargo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_cargo.Location = new System.Drawing.Point(2, 50);
+            this.Lbl_cargo.Location = new System.Drawing.Point(26, 70);
             this.Lbl_cargo.Name = "Lbl_cargo";
             this.Lbl_cargo.Size = new System.Drawing.Size(60, 20);
             this.Lbl_cargo.TabIndex = 74;
             this.Lbl_cargo.Text = "Cargo:";
+            this.Lbl_cargo.Click += new System.EventHandler(this.Lbl_cargo_Click);
             // 
             // Lbl_apellido
             // 
@@ -140,9 +142,9 @@
             // txt_telefono
             // 
             this.txt_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_telefono.Location = new System.Drawing.Point(83, 166);
+            this.txt_telefono.Location = new System.Drawing.Point(92, 209);
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(223, 23);
+            this.txt_telefono.Size = new System.Drawing.Size(214, 23);
             this.txt_telefono.TabIndex = 12;
             this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             // 
@@ -151,7 +153,7 @@
             this.Lbl_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_telefono.AutoSize = true;
             this.Lbl_telefono.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_telefono.Location = new System.Drawing.Point(2, 169);
+            this.Lbl_telefono.Location = new System.Drawing.Point(2, 212);
             this.Lbl_telefono.Name = "Lbl_telefono";
             this.Lbl_telefono.Size = new System.Drawing.Size(75, 20);
             this.Lbl_telefono.TabIndex = 59;
@@ -163,7 +165,7 @@
             this.Lbl_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_direccion.AutoSize = true;
             this.Lbl_direccion.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_direccion.Location = new System.Drawing.Point(2, 140);
+            this.Lbl_direccion.Location = new System.Drawing.Point(2, 160);
             this.Lbl_direccion.Name = "Lbl_direccion";
             this.Lbl_direccion.Size = new System.Drawing.Size(84, 20);
             this.Lbl_direccion.TabIndex = 58;
@@ -172,10 +174,10 @@
             // txt_direccion
             // 
             this.txt_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_direccion.Location = new System.Drawing.Point(92, 136);
+            this.txt_direccion.Location = new System.Drawing.Point(92, 156);
             this.txt_direccion.Multiline = true;
             this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(214, 24);
+            this.txt_direccion.Size = new System.Drawing.Size(214, 47);
             this.txt_direccion.TabIndex = 11;
             // 
             // Lbl_nombre
@@ -288,6 +290,7 @@
             // 
             // grb_datosp_emp
             // 
+            this.grb_datosp_emp.Controls.Add(this.lbl_date_formato);
             this.grb_datosp_emp.Controls.Add(this.txt_correo);
             this.grb_datosp_emp.Controls.Add(this.lbl_correo);
             this.grb_datosp_emp.Controls.Add(this.cbo_sexo_emp);
@@ -311,9 +314,9 @@
             // txt_correo
             // 
             this.txt_correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_correo.Location = new System.Drawing.Point(82, 109);
+            this.txt_correo.Location = new System.Drawing.Point(92, 129);
             this.txt_correo.Name = "txt_correo";
-            this.txt_correo.Size = new System.Drawing.Size(224, 23);
+            this.txt_correo.Size = new System.Drawing.Size(214, 23);
             this.txt_correo.TabIndex = 10;
             // 
             // lbl_correo
@@ -321,7 +324,7 @@
             this.lbl_correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_correo.AutoSize = true;
             this.lbl_correo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lbl_correo.Location = new System.Drawing.Point(2, 112);
+            this.lbl_correo.Location = new System.Drawing.Point(21, 132);
             this.lbl_correo.Name = "lbl_correo";
             this.lbl_correo.Size = new System.Drawing.Size(65, 20);
             this.lbl_correo.TabIndex = 114;
@@ -329,13 +332,14 @@
             // 
             // cbo_sexo_emp
             // 
+            this.cbo_sexo_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_sexo_emp.FormattingEnabled = true;
             this.cbo_sexo_emp.Items.AddRange(new object[] {
             "Femenino",
             "Masculino"});
-            this.cbo_sexo_emp.Location = new System.Drawing.Point(83, 80);
+            this.cbo_sexo_emp.Location = new System.Drawing.Point(92, 100);
             this.cbo_sexo_emp.Name = "cbo_sexo_emp";
-            this.cbo_sexo_emp.Size = new System.Drawing.Size(223, 24);
+            this.cbo_sexo_emp.Size = new System.Drawing.Size(214, 24);
             this.cbo_sexo_emp.TabIndex = 9;
             this.cbo_sexo_emp.SelectedIndexChanged += new System.EventHandler(this.cbo_sexo_emp_SelectedIndexChanged);
             // 
@@ -344,7 +348,7 @@
             this.Lbl_sexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_sexo.AutoSize = true;
             this.Lbl_sexo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_sexo.Location = new System.Drawing.Point(2, 84);
+            this.Lbl_sexo.Location = new System.Drawing.Point(39, 102);
             this.Lbl_sexo.Name = "Lbl_sexo";
             this.Lbl_sexo.Size = new System.Drawing.Size(47, 20);
             this.Lbl_sexo.TabIndex = 112;
@@ -352,10 +356,11 @@
             // 
             // cbo_carg_emp
             // 
-            this.cbo_carg_emp.FormattingEnabled = true;
-            this.cbo_carg_emp.Location = new System.Drawing.Point(82, 50);
+            this.cbo_carg_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_carg_emp.Enabled = false;
+            this.cbo_carg_emp.Location = new System.Drawing.Point(92, 70);
             this.cbo_carg_emp.Name = "cbo_carg_emp";
-            this.cbo_carg_emp.Size = new System.Drawing.Size(224, 24);
+            this.cbo_carg_emp.Size = new System.Drawing.Size(214, 24);
             this.cbo_carg_emp.TabIndex = 8;
             // 
             // grb_vista_emp
@@ -460,6 +465,16 @@
             this.txt_buscar.Size = new System.Drawing.Size(226, 20);
             this.txt_buscar.TabIndex = 138;
             // 
+            // lbl_date_formato
+            // 
+            this.lbl_date_formato.AutoSize = true;
+            this.lbl_date_formato.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lbl_date_formato.Location = new System.Drawing.Point(190, 47);
+            this.lbl_date_formato.Name = "lbl_date_formato";
+            this.lbl_date_formato.Size = new System.Drawing.Size(97, 20);
+            this.lbl_date_formato.TabIndex = 115;
+            this.lbl_date_formato.Text = "yyyy-mm-dd";
+            // 
             // frm_act_emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,8 +541,9 @@
         private System.Windows.Forms.TextBox txt_buscar;
         internal System.Windows.Forms.TextBox txt_correo;
         internal System.Windows.Forms.Label lbl_correo;
-        private System.Windows.Forms.ComboBox cbo_sexo_emp;
         private System.Windows.Forms.ComboBox cbo_id_lab;
         internal System.Windows.Forms.Label label4;
+        protected System.Windows.Forms.ComboBox cbo_sexo_emp;
+        internal System.Windows.Forms.Label lbl_date_formato;
     }
 }

@@ -19,9 +19,32 @@ namespace WindowsFormsApplication1
         }
         string codigo = "";
         Boolean Editar;
+        String tipos_de_examenes = "select pk_id_tp_exm as ID, nombre_tp_exm as Nombre, descripcion_tp_exm as Descripcion from tipo_examen";
         private void Lbl_titulo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void LimpiarCajasTexto()
+        {
+            txt_nombre.Text = "";
+            txt_direccion.Text = "";
+        }
+
+        public void ActualizarGrid(DataGridView dg, String Query)
+        {
+            Conexionmysql.ObtenerConexion();
+            //crear DataSet
+            System.Data.DataSet MiDataSet = new System.Data.DataSet();
+            //Crear Adaptador de datos
+            MySqlDataAdapter MiDataAdapter = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //LLenar el DataSet
+            MiDataAdapter.Fill(MiDataSet, "tipo_examen");
+            //Asignarle el valor adecuado a las propiedades del DataGrid
+            dg.DataSource = MiDataSet;
+            dg.DataMember = "tipo_examen";
+            //nos desconectamos de la base de datos...
+            Conexionmysql.Desconectar();
         }
 
         private void btn_guardar_aseg_Click(object sender, EventArgs e)
@@ -45,23 +68,21 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-
                     try
                     {
-                        String Query = "insert into tipo_examen(pk_id_tp_exm, nombre_tp_exm, descripcion_tp_exm)values(" + txt_id_xmn.Text + "," + txt_nombre.Text + ",'" + txt_direccion.Text + "');";
-                        MySqlCommand MyCommand2 = new MySqlCommand(Query, Conexionmysql.ObtenerConexion());
-                        MySqlDataReader MyReader2;
                         Conexionmysql.ObtenerConexion();
-                        MyReader2 = MyCommand2.ExecuteReader();
-                        MessageBox.Show("Registro ingresado exitosamente");
-                        Conexionmysql.Desconectar();
-                        grid();
-                        limipiar();
+                        String Query1 = "INSERT INTO tipo_examen(nombre_tp_exm, descripcion_tp_exm) values('"+ txt_nombre.Text + "','" + txt_direccion.Text + "');";
+                        cl_gridysql.EjecutarMySql(Query1);
 
+                            ActualizarGrid(this.dgv_vist_tips_exam, tipos_de_examenes);
+                            this.LimpiarCajasTexto();
+                            Conexionmysql.Desconectar();
+                            MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
+                    catch
+                   {
+                        MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -85,7 +106,7 @@ namespace WindowsFormsApplication1
 
             txt_nombre.Text = "";
             txt_direccion.Text = "";
-            txt_id_xmn.Text = "";
+            
         }
 
         private void btn_actlz_aseg_Click(object sender, EventArgs e)

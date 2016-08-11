@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
             int FilasAfectadas = MiComando.ExecuteNonQuery();
             if (FilasAfectadas > 0)
             {
-                MessageBox.Show("Operacion Realizada Exitosamente", "La base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Operacion Realizada Exitosamente", "La base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

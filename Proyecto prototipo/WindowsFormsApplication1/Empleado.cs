@@ -38,6 +38,23 @@ namespace WindowsFormsApplication1
             Conexionmysql.Desconectar();
         }
 
+        public void LimpiarCajasTexto()
+        {
+            txt_nombre.Text = "";
+            txt_apellido.Text = "";
+            txt_usuario.Text = "";
+            txt_contraseña.Text = "";
+            txt_contraseña2.Text = "";
+            txt_fecha_nacimiento.Text = "";
+            txt_direccion.Text = "";
+            cbo_carg_emp.SelectedText = "";
+            cbo_id_lab.SelectedText = "";
+            cbo_sexo_emp.SelectedText = "";
+            txt_correo.Text = "";
+            txt_nombre.Text = "";
+            txt_telefono.Text = "";
+        }
+
         private void Label2_Click(object sender, EventArgs e)
         {
 
@@ -72,15 +89,6 @@ namespace WindowsFormsApplication1
         }
 
 
-        public void LimpiarTextBox()
-        {
-
-            txt_nombre.Text = "";
-            txt_direccion.Text = "";
-            txt_telefono.Text = "";
-            txt_correo.Text = "";
-            txt_buscar.Text = "";
-        }
 
         private void btn_guardar_emp_Click(object sender, EventArgs e)
         {
@@ -98,8 +106,9 @@ namespace WindowsFormsApplication1
                         String Query = "UPDATE empleado SET nombre_emp ='" + txt_nombre.Text + "' WHERE pk_id_emp ='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(Query);
                         Conexionmysql.Desconectar();
+                        MessageBox.Show("Operacion Realizada Exitosamente", "La base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //6.limpiar cajas de texto
-                        this.LimpiarTextBox();
+                        this.LimpiarCajasTexto();
                         cl_gridysql.ActualizarGridEmpleadoUsuario(this.dgv_empleads, "select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado");
                         Editar = false;
                     }
@@ -120,18 +129,10 @@ namespace WindowsFormsApplication1
 
                             String Query4 = "INSERT INTO telefono (telefono,pk_id_emp) VALUES ('" + txt_telefono.Text + "',(select MAX(pk_id_emp) FROM empleado))";
                             cl_gridysql.EjecutarMySql(Query4);
-                            this.LimpiarTextBox();
+                            this.LimpiarCajasTexto();
                             Conexionmysql.Desconectar();
                             cl_gridysql.ActualizarGridEmpleadoUsuario(this.dgv_empleads, "select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado");
-                            /*
-                            string selectedItem2 = cbo_carg_emp.SelectedValue.ToString();
-                            String Query5 = "INSERT INTO cargo_empleado (Nombre_cargo_empleado) VALUES ('" + selectedItem2 + "')";
-                            cl_gridysql.EjecutarMySql(Query5);
-
-                            GridViewActualizar(this.dgv_empleads, "select E.nombre_emp, D.direccion, T.telefono, C.correo_e from empleado E, direccion D, telefono T, correo_e C where E.pk_id_emp = D.pk_id_emp and E.pk_id_emp = T.pk_id_emp and E.pk_id_emp = C.pk_id_emp;");
-                            this.LimpiarTextBox();
-                            Conexionmysql.Desconectar();
-                            MessageBox.Show("Operación realizada exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                            MessageBox.Show("Operacion Realizada Exitosamente", "La base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else {
                             MessageBox.Show("Contraseñas ingresadas no coinciden.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -165,6 +166,7 @@ namespace WindowsFormsApplication1
             txt_contraseña.Text = this.dgv_empleads.CurrentRow.Cells[6].Value.ToString();
             txt_contraseña2.Text = this.dgv_empleads.CurrentRow.Cells[6].Value.ToString();
             txt_fecha_nacimiento.Text = this.dgv_empleads.CurrentRow.Cells[7].Value.ToString();
+            //cbo_carg_emp.Text = this.dgv_empleads.CurrentRow.Cells[7].Value.ToString();
         }
 
         private void btn_elim_emp_Click(object sender, EventArgs e)
@@ -288,6 +290,11 @@ namespace WindowsFormsApplication1
 
 
             cbo_id_lab.DisplayMember = "nombre_lab";
+        }
+
+        private void Lbl_cargo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

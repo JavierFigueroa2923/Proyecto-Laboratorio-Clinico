@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_examenes));
-            this.Lbl_id_examen = new System.Windows.Forms.Label();
             this.Lbl_descripcion = new System.Windows.Forms.Label();
             this.txt_direccion = new System.Windows.Forms.TextBox();
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_id_xmn = new System.Windows.Forms.TextBox();
             this.gpb_tip_exam = new System.Windows.Forms.GroupBox();
             this.gpb_vista_tips_exam = new System.Windows.Forms.GroupBox();
             this.dgv_vist_tips_exam = new System.Windows.Forms.DataGridView();
@@ -50,16 +48,6 @@
             this.gpb_vista_tips_exam.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vist_tips_exam)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Lbl_id_examen
-            // 
-            this.Lbl_id_examen.AutoSize = true;
-            this.Lbl_id_examen.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_examen.Location = new System.Drawing.Point(21, 19);
-            this.Lbl_id_examen.Name = "Lbl_id_examen";
-            this.Lbl_id_examen.Size = new System.Drawing.Size(91, 20);
-            this.Lbl_id_examen.TabIndex = 48;
-            this.Lbl_id_examen.Text = "Id examen:";
             // 
             // Lbl_descripcion
             // 
@@ -83,7 +71,7 @@
             // 
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(40, 48);
+            this.Lbl_nombre.Location = new System.Drawing.Point(40, 31);
             this.Lbl_nombre.Name = "Lbl_nombre";
             this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
             this.Lbl_nombre.TabIndex = 44;
@@ -91,7 +79,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(118, 48);
+            this.txt_nombre.Location = new System.Drawing.Point(118, 31);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(278, 23);
             this.txt_nombre.TabIndex = 43;
@@ -117,17 +105,8 @@
             this.PictureBox1.TabIndex = 42;
             this.PictureBox1.TabStop = false;
             // 
-            // txt_id_xmn
-            // 
-            this.txt_id_xmn.Location = new System.Drawing.Point(118, 19);
-            this.txt_id_xmn.Name = "txt_id_xmn";
-            this.txt_id_xmn.Size = new System.Drawing.Size(191, 23);
-            this.txt_id_xmn.TabIndex = 49;
-            // 
             // gpb_tip_exam
             // 
-            this.gpb_tip_exam.Controls.Add(this.Lbl_id_examen);
-            this.gpb_tip_exam.Controls.Add(this.txt_id_xmn);
             this.gpb_tip_exam.Controls.Add(this.txt_nombre);
             this.gpb_tip_exam.Controls.Add(this.Lbl_nombre);
             this.gpb_tip_exam.Controls.Add(this.Lbl_descripcion);
@@ -249,15 +228,12 @@
         }
 
         #endregion
-
-        internal System.Windows.Forms.Label Lbl_id_examen;
         internal System.Windows.Forms.Label Lbl_descripcion;
         internal System.Windows.Forms.TextBox txt_direccion;
         internal System.Windows.Forms.Label Lbl_nombre;
         internal System.Windows.Forms.TextBox txt_nombre;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Label Lbl_titulo;
-        internal System.Windows.Forms.TextBox txt_id_xmn;
         private System.Windows.Forms.GroupBox gpb_tip_exam;
         private System.Windows.Forms.GroupBox gpb_vista_tips_exam;
         private System.Windows.Forms.DataGridView dgv_vist_tips_exam;
