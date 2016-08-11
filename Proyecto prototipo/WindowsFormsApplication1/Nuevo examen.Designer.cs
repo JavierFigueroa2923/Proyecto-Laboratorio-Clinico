@@ -29,73 +29,79 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_nuevo_examen));
+            this.txt_id_exm = new System.Windows.Forms.TextBox();
             this.Lbl_id_examen = new System.Windows.Forms.Label();
-            this.txt_apellido = new System.Windows.Forms.TextBox();
             this.Lbl_descripcion = new System.Windows.Forms.Label();
-            this.txt_direccion = new System.Windows.Forms.TextBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.Lbl_nombre = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_guardar_mst = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txt_id_exm
+            // 
+            this.txt_id_exm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_id_exm.Location = new System.Drawing.Point(33, 305);
+            this.txt_id_exm.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_id_exm.Name = "txt_id_exm";
+            this.txt_id_exm.Size = new System.Drawing.Size(616, 22);
+            this.txt_id_exm.TabIndex = 55;
             // 
             // Lbl_id_examen
             // 
             this.Lbl_id_examen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_id_examen.AutoSize = true;
             this.Lbl_id_examen.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_examen.Location = new System.Drawing.Point(22, 189);
+            this.Lbl_id_examen.Location = new System.Drawing.Point(29, 280);
+            this.Lbl_id_examen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_id_examen.Name = "Lbl_id_examen";
-            this.Lbl_id_examen.Size = new System.Drawing.Size(91, 20);
+            this.Lbl_id_examen.Size = new System.Drawing.Size(113, 22);
             this.Lbl_id_examen.TabIndex = 56;
             this.Lbl_id_examen.Text = "Id examen:";
-            // 
-            // txt_apellido
-            // 
-            this.txt_apellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_apellido.Location = new System.Drawing.Point(25, 210);
-            this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(454, 20);
-            this.txt_apellido.TabIndex = 55;
             // 
             // Lbl_descripcion
             // 
             this.Lbl_descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_descripcion.AutoSize = true;
             this.Lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_descripcion.Location = new System.Drawing.Point(23, 276);
+            this.Lbl_descripcion.Location = new System.Drawing.Point(31, 387);
+            this.Lbl_descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_descripcion.Name = "Lbl_descripcion";
-            this.Lbl_descripcion.Size = new System.Drawing.Size(100, 20);
+            this.Lbl_descripcion.Size = new System.Drawing.Size(121, 22);
             this.Lbl_descripcion.TabIndex = 54;
             this.Lbl_descripcion.Text = "Descripcion:";
             // 
-            // txt_direccion
+            // txt_descripcion
             // 
-            this.txt_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_direccion.Location = new System.Drawing.Point(26, 298);
-            this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(454, 20);
-            this.txt_direccion.TabIndex = 53;
+            this.txt_descripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_descripcion.Location = new System.Drawing.Point(35, 414);
+            this.txt_descripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(616, 22);
+            this.txt_descripcion.TabIndex = 53;
             // 
             // Lbl_nombre
             // 
             this.Lbl_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(23, 233);
+            this.Lbl_nombre.Location = new System.Drawing.Point(31, 334);
+            this.Lbl_nombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
+            this.Lbl_nombre.Size = new System.Drawing.Size(89, 22);
             this.Lbl_nombre.TabIndex = 52;
             this.Lbl_nombre.Text = "Nombre:";
             // 
             // txt_nombre
             // 
             this.txt_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_nombre.Location = new System.Drawing.Point(26, 254);
+            this.txt_nombre.Location = new System.Drawing.Point(35, 360);
+            this.txt_nombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(454, 20);
+            this.txt_nombre.Size = new System.Drawing.Size(616, 22);
             this.txt_nombre.TabIndex = 51;
             // 
             // Lbl_titulo
@@ -104,9 +110,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(120, 37);
+            this.Lbl_titulo.Location = new System.Drawing.Point(176, 48);
+            this.Lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(271, 34);
+            this.Lbl_titulo.Size = new System.Drawing.Size(336, 42);
             this.Lbl_titulo.TabIndex = 49;
             this.Lbl_titulo.Text = "Actualizar examen";
             // 
@@ -115,40 +122,47 @@
             this.PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox1.Image")));
-            this.PictureBox1.Location = new System.Drawing.Point(209, 74);
+            this.PictureBox1.Location = new System.Drawing.Point(294, 111);
+            this.PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.PictureBox1.Size = new System.Drawing.Size(101, 104);
             this.PictureBox1.TabIndex = 50;
             this.PictureBox1.TabStop = false;
             // 
-            // button1
+            // btn_guardar_mst
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Save_icon;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(431, 329);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 52);
-            this.button1.TabIndex = 57;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_guardar_mst.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar_mst.Image = global::WindowsFormsApplication1.Properties.Resources.Save_icon1;
+            this.btn_guardar_mst.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_guardar_mst.Location = new System.Drawing.Point(520, 474);
+            this.btn_guardar_mst.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_guardar_mst.Name = "btn_guardar_mst";
+            this.btn_guardar_mst.Size = new System.Drawing.Size(109, 73);
+            this.btn_guardar_mst.TabIndex = 162;
+            this.btn_guardar_mst.Text = "GUARDAR";
+            this.btn_guardar_mst.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_guardar_mst.UseVisualStyleBackColor = true;
+            this.btn_guardar_mst.Click += new System.EventHandler(this.btn_guardar_mst_Click);
             // 
             // frm_nuevo_examen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 393);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(721, 578);
+            this.Controls.Add(this.btn_guardar_mst);
             this.Controls.Add(this.Lbl_id_examen);
-            this.Controls.Add(this.txt_apellido);
+            this.Controls.Add(this.txt_id_exm);
             this.Controls.Add(this.Lbl_descripcion);
-            this.Controls.Add(this.txt_direccion);
+            this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.Lbl_nombre);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Lbl_titulo);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_nuevo_examen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo_examen";
+            this.Load += new System.EventHandler(this.frm_nuevo_examen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,13 +172,13 @@
         #endregion
 
         internal System.Windows.Forms.Label Lbl_id_examen;
-        internal System.Windows.Forms.TextBox txt_apellido;
         internal System.Windows.Forms.Label Lbl_descripcion;
-        internal System.Windows.Forms.TextBox txt_direccion;
+        internal System.Windows.Forms.TextBox txt_descripcion;
         internal System.Windows.Forms.Label Lbl_nombre;
         internal System.Windows.Forms.TextBox txt_nombre;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Label Lbl_titulo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_guardar_mst;
+        private System.Windows.Forms.TextBox txt_id_exm;
     }
 }
