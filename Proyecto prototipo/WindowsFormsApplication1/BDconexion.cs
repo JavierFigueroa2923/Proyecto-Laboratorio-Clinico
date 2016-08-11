@@ -14,6 +14,7 @@ namespace WindowsFormsApplication1
         public void obtener_conexion()
         {
             conectar = new MySqlConnection("server=127.0.0.1; database=proyecto_laboratorio; uid=root; pwd=;");
+            //conectar = new MySqlConnection("server=192.168.30.10; database=proyecto_laboratorio; uid=Otto; pwd=090113290;");
             conectar.Open();
 
         }

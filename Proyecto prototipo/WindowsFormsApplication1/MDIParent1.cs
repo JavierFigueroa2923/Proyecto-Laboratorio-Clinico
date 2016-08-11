@@ -154,6 +154,7 @@ namespace WindowsFormsApplication1
 
 
             MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
+            //MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=192.168.30.10; database=proyecto_laboratorio; uid=Otto; pwd=090113290;");
 
             MySqlCommand cmd = dbConn.CreateCommand();
             cmd.CommandText = "SELECT permiso.nombre_prm, empleado.usuario FROM cargo_empleado, empleado, permiso WHERE empleado.pk_id_emp = cargo_empleado.pk_id_emp AND cargo_empleado.pk_id_cargo_emp = permiso.pk_id_cargo_emp AND empleado.pk_id_emp = "+ MiIdUsuario +"";

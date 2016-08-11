@@ -37,6 +37,7 @@ namespace WindowsFormsApplication1
                 string usuario = txt_user.Text;
                 string pass = txt_pass.Text;
                 MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
+                //MySql.Data.MySqlClient.MySqlConnection dbConn = new MySql.Data.MySqlClient.MySqlConnection("server=192.168.30.10; database=proyecto_laboratorio; uid=Otto; pwd=090113290;");
 
                 MySqlCommand cmd = dbConn.CreateCommand();
                 cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo FROM cargo_empleado, empleado,permiso WHERE empleado.usuario='"+usuario+"' AND empleado.contrasenia = '"+pass+"' AND empleado.pk_id_emp = cargo_empleado.pk_id_emp";
@@ -74,6 +75,7 @@ namespace WindowsFormsApplication1
                 if(contador>0)
                 {
                     MySql.Data.MySqlClient.MySqlConnection dbConn1 = new MySql.Data.MySqlClient.MySqlConnection("server=localhost; database=proyecto_laboratorio; uid=root; pwd=;");
+                    //MySql.Data.MySqlClient.MySqlConnection dbConn1 = new MySql.Data.MySqlClient.MySqlConnection("server=192.168.30.10; database=proyecto_laboratorio; uid=Otto; pwd=090113290;");
                     MySqlCommand cmd1 = dbConn1.CreateCommand();
                     cmd1.CommandText = "SELECT COUNT(permiso.pk_id_perm),empleado.usuario, empleado.pk_id_emp FROM cargo_empleado, empleado,permiso WHERE empleado.usuario='" + usuario + "' AND empleado.contrasenia = '" + pass + "' AND empleado.pk_id_emp = cargo_empleado.pk_id_emp AND permiso.pk_id_cargo_emp = cargo_empleado.pk_id_cargo_emp";
                             try
