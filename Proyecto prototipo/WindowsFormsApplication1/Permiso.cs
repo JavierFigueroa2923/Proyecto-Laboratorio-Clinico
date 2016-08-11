@@ -197,7 +197,7 @@ namespace WindowsFormsApplication1
             String Query = "select DISTINCT cargo_empleado.pk_id_cargo_emp, cargo_empleado.nombre_cargo_emp, empleado.nombre_emp from cargo_empleado, empleado WHERE cargo_empleado.pk_id_emp = empleado.pk_id_emp";
             MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
             //se indica con quu tabla se llena
-            dad.Fill(ds, "cargo_emleado");
+            dad.Fill(ds, "cargo_empleado");
             cbo_id_carg_emp_per.DataSource = ds.Tables[0].DefaultView;
             //indicamos el valor de los miembros
             cbo_id_carg_emp_per.ValueMember = ("pk_id_cargo_emp");

@@ -44,6 +44,8 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.grb_datos_emp = new System.Windows.Forms.GroupBox();
+            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txt_contraseña2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_contraseña = new System.Windows.Forms.TextBox();
@@ -51,6 +53,7 @@
             this.grb_datosp_emp = new System.Windows.Forms.GroupBox();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.lbl_correo = new System.Windows.Forms.Label();
+            this.cbo_sexo_emp = new System.Windows.Forms.ComboBox();
             this.Lbl_sexo = new System.Windows.Forms.Label();
             this.cbo_carg_emp = new System.Windows.Forms.ComboBox();
             this.grb_vista_emp = new System.Windows.Forms.GroupBox();
@@ -62,7 +65,6 @@
             this.btn_busc_emp = new System.Windows.Forms.Button();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.cbo_sexo_emp = new System.Windows.Forms.ComboBox();
             this.grb_datos_emp.SuspendLayout();
             this.grb_datosp_emp.SuspendLayout();
             this.grb_vista_emp.SuspendLayout();
@@ -74,7 +76,7 @@
             // 
             this.Lbl_cargo.AutoSize = true;
             this.Lbl_cargo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_cargo.Location = new System.Drawing.Point(5, 50);
+            this.Lbl_cargo.Location = new System.Drawing.Point(2, 50);
             this.Lbl_cargo.Name = "Lbl_cargo";
             this.Lbl_cargo.Size = new System.Drawing.Size(60, 20);
             this.Lbl_cargo.TabIndex = 74;
@@ -97,7 +99,7 @@
             this.txt_apellido.Location = new System.Drawing.Point(111, 56);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(264, 23);
-            this.txt_apellido.TabIndex = 70;
+            this.txt_apellido.TabIndex = 2;
             // 
             // txt_usuario
             // 
@@ -105,7 +107,7 @@
             this.txt_usuario.Location = new System.Drawing.Point(110, 86);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(265, 23);
-            this.txt_usuario.TabIndex = 67;
+            this.txt_usuario.TabIndex = 3;
             // 
             // Lbl_email_emp
             // 
@@ -120,28 +122,28 @@
             // 
             // txt_fecha_nacimiento
             // 
-            this.txt_fecha_nacimiento.Location = new System.Drawing.Point(73, 21);
+            this.txt_fecha_nacimiento.Location = new System.Drawing.Point(177, 21);
             this.txt_fecha_nacimiento.Name = "txt_fecha_nacimiento";
-            this.txt_fecha_nacimiento.Size = new System.Drawing.Size(233, 23);
-            this.txt_fecha_nacimiento.TabIndex = 65;
+            this.txt_fecha_nacimiento.Size = new System.Drawing.Size(129, 23);
+            this.txt_fecha_nacimiento.TabIndex = 7;
             // 
             // Lbl_fecha_nacimiento
             // 
             this.Lbl_fecha_nacimiento.AutoSize = true;
             this.Lbl_fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_fecha_nacimiento.Location = new System.Drawing.Point(14, 21);
+            this.Lbl_fecha_nacimiento.Location = new System.Drawing.Point(2, 24);
             this.Lbl_fecha_nacimiento.Name = "Lbl_fecha_nacimiento";
-            this.Lbl_fecha_nacimiento.Size = new System.Drawing.Size(51, 20);
+            this.Lbl_fecha_nacimiento.Size = new System.Drawing.Size(169, 20);
             this.Lbl_fecha_nacimiento.TabIndex = 63;
-            this.Lbl_fecha_nacimiento.Text = "Edad:";
+            this.Lbl_fecha_nacimiento.Text = "Fecha de nacimiento:";
             // 
             // txt_telefono
             // 
             this.txt_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_telefono.Location = new System.Drawing.Point(82, 166);
+            this.txt_telefono.Location = new System.Drawing.Point(83, 166);
             this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(224, 23);
-            this.txt_telefono.TabIndex = 61;
+            this.txt_telefono.Size = new System.Drawing.Size(223, 23);
+            this.txt_telefono.TabIndex = 12;
             this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             // 
             // Lbl_telefono
@@ -161,7 +163,7 @@
             this.Lbl_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_direccion.AutoSize = true;
             this.Lbl_direccion.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_direccion.Location = new System.Drawing.Point(5, 140);
+            this.Lbl_direccion.Location = new System.Drawing.Point(2, 140);
             this.Lbl_direccion.Name = "Lbl_direccion";
             this.Lbl_direccion.Size = new System.Drawing.Size(84, 20);
             this.Lbl_direccion.TabIndex = 58;
@@ -174,7 +176,7 @@
             this.txt_direccion.Multiline = true;
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(214, 24);
-            this.txt_direccion.TabIndex = 57;
+            this.txt_direccion.TabIndex = 11;
             // 
             // Lbl_nombre
             // 
@@ -193,7 +195,7 @@
             this.txt_nombre.Location = new System.Drawing.Point(111, 21);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(264, 23);
-            this.txt_nombre.TabIndex = 55;
+            this.txt_nombre.TabIndex = 1;
             // 
             // Label2
             // 
@@ -208,6 +210,8 @@
             // 
             // grb_datos_emp
             // 
+            this.grb_datos_emp.Controls.Add(this.cbo_id_lab);
+            this.grb_datos_emp.Controls.Add(this.label4);
             this.grb_datos_emp.Controls.Add(this.txt_contraseña2);
             this.grb_datos_emp.Controls.Add(this.label3);
             this.grb_datos_emp.Controls.Add(this.txt_contraseña);
@@ -226,13 +230,31 @@
             this.grb_datos_emp.TabStop = false;
             this.grb_datos_emp.Text = "Datos Generales";
             // 
+            // cbo_id_lab
+            // 
+            this.cbo_id_lab.FormattingEnabled = true;
+            this.cbo_id_lab.Location = new System.Drawing.Point(129, 205);
+            this.cbo_id_lab.Name = "cbo_id_lab";
+            this.cbo_id_lab.Size = new System.Drawing.Size(152, 24);
+            this.cbo_id_lab.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.label4.Location = new System.Drawing.Point(6, 206);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 20);
+            this.label4.TabIndex = 82;
+            this.label4.Text = "Id Laboratorio:";
+            // 
             // txt_contraseña2
             // 
             this.txt_contraseña2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_contraseña2.Location = new System.Drawing.Point(110, 144);
             this.txt_contraseña2.Name = "txt_contraseña2";
             this.txt_contraseña2.Size = new System.Drawing.Size(265, 23);
-            this.txt_contraseña2.TabIndex = 75;
+            this.txt_contraseña2.TabIndex = 5;
             // 
             // label3
             // 
@@ -251,7 +273,7 @@
             this.txt_contraseña.Location = new System.Drawing.Point(110, 115);
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.Size = new System.Drawing.Size(265, 23);
-            this.txt_contraseña.TabIndex = 73;
+            this.txt_contraseña.TabIndex = 4;
             // 
             // label1
             // 
@@ -292,7 +314,7 @@
             this.txt_correo.Location = new System.Drawing.Point(82, 109);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(224, 23);
-            this.txt_correo.TabIndex = 115;
+            this.txt_correo.TabIndex = 10;
             // 
             // lbl_correo
             // 
@@ -305,12 +327,24 @@
             this.lbl_correo.TabIndex = 114;
             this.lbl_correo.Text = "Correo:";
             // 
+            // cbo_sexo_emp
+            // 
+            this.cbo_sexo_emp.FormattingEnabled = true;
+            this.cbo_sexo_emp.Items.AddRange(new object[] {
+            "Femenino",
+            "Masculino"});
+            this.cbo_sexo_emp.Location = new System.Drawing.Point(83, 80);
+            this.cbo_sexo_emp.Name = "cbo_sexo_emp";
+            this.cbo_sexo_emp.Size = new System.Drawing.Size(223, 24);
+            this.cbo_sexo_emp.TabIndex = 9;
+            this.cbo_sexo_emp.SelectedIndexChanged += new System.EventHandler(this.cbo_sexo_emp_SelectedIndexChanged);
+            // 
             // Lbl_sexo
             // 
             this.Lbl_sexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_sexo.AutoSize = true;
             this.Lbl_sexo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_sexo.Location = new System.Drawing.Point(20, 80);
+            this.Lbl_sexo.Location = new System.Drawing.Point(2, 84);
             this.Lbl_sexo.Name = "Lbl_sexo";
             this.Lbl_sexo.Size = new System.Drawing.Size(47, 20);
             this.Lbl_sexo.TabIndex = 112;
@@ -319,10 +353,10 @@
             // cbo_carg_emp
             // 
             this.cbo_carg_emp.FormattingEnabled = true;
-            this.cbo_carg_emp.Location = new System.Drawing.Point(73, 50);
+            this.cbo_carg_emp.Location = new System.Drawing.Point(82, 50);
             this.cbo_carg_emp.Name = "cbo_carg_emp";
-            this.cbo_carg_emp.Size = new System.Drawing.Size(233, 24);
-            this.cbo_carg_emp.TabIndex = 81;
+            this.cbo_carg_emp.Size = new System.Drawing.Size(224, 24);
+            this.cbo_carg_emp.TabIndex = 8;
             // 
             // grb_vista_emp
             // 
@@ -426,18 +460,6 @@
             this.txt_buscar.Size = new System.Drawing.Size(226, 20);
             this.txt_buscar.TabIndex = 138;
             // 
-            // cbo_sexo_emp
-            // 
-            this.cbo_sexo_emp.FormattingEnabled = true;
-            this.cbo_sexo_emp.Items.AddRange(new object[] {
-            "F",
-            "M"});
-            this.cbo_sexo_emp.Location = new System.Drawing.Point(73, 80);
-            this.cbo_sexo_emp.Name = "cbo_sexo_emp";
-            this.cbo_sexo_emp.Size = new System.Drawing.Size(233, 24);
-            this.cbo_sexo_emp.TabIndex = 113;
-            this.cbo_sexo_emp.SelectedIndexChanged += new System.EventHandler(this.cbo_sexo_emp_SelectedIndexChanged);
-            // 
             // frm_act_emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +479,7 @@
             this.Name = "frm_act_emp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar datos de empleado";
+            this.Load += new System.EventHandler(this.frm_act_emp_Load);
             this.grb_datos_emp.ResumeLayout(false);
             this.grb_datos_emp.PerformLayout();
             this.grb_datosp_emp.ResumeLayout(false);
@@ -504,5 +527,7 @@
         internal System.Windows.Forms.TextBox txt_correo;
         internal System.Windows.Forms.Label lbl_correo;
         private System.Windows.Forms.ComboBox cbo_sexo_emp;
+        private System.Windows.Forms.ComboBox cbo_id_lab;
+        internal System.Windows.Forms.Label label4;
     }
 }
