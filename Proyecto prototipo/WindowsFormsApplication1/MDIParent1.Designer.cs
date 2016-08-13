@@ -166,49 +166,49 @@
             // 
             this.actualizarClienteToolStripMenuItem.Name = "actualizarClienteToolStripMenuItem";
             this.actualizarClienteToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.actualizarClienteToolStripMenuItem.Text = "Actualizar Cliente";
+            this.actualizarClienteToolStripMenuItem.Text = "Cliente";
             this.actualizarClienteToolStripMenuItem.Click += new System.EventHandler(this.actualizarClienteToolStripMenuItem_Click);
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
             this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.actualizarToolStripMenuItem.Text = "Actualizar Empleado";
+            this.actualizarToolStripMenuItem.Text = "Empleado";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // actualizarExamenesToolStripMenuItem
             // 
             this.actualizarExamenesToolStripMenuItem.Name = "actualizarExamenesToolStripMenuItem";
             this.actualizarExamenesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.actualizarExamenesToolStripMenuItem.Text = "Actualizar Examenes";
+            this.actualizarExamenesToolStripMenuItem.Text = "Examenes";
             this.actualizarExamenesToolStripMenuItem.Click += new System.EventHandler(this.actualizarExamenesToolStripMenuItem_Click);
             // 
             // actualizarPagosToolStripMenuItem
             // 
             this.actualizarPagosToolStripMenuItem.Name = "actualizarPagosToolStripMenuItem";
             this.actualizarPagosToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.actualizarPagosToolStripMenuItem.Text = "Actualizar Pagos";
+            this.actualizarPagosToolStripMenuItem.Text = "Pagos";
             this.actualizarPagosToolStripMenuItem.Click += new System.EventHandler(this.actualizarPagosToolStripMenuItem_Click);
             // 
             // actualizarAseguradoraToolStripMenuItem
             // 
             this.actualizarAseguradoraToolStripMenuItem.Name = "actualizarAseguradoraToolStripMenuItem";
             this.actualizarAseguradoraToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.actualizarAseguradoraToolStripMenuItem.Text = "Actualizar Aseguradora";
+            this.actualizarAseguradoraToolStripMenuItem.Text = "Aseguradora";
             this.actualizarAseguradoraToolStripMenuItem.Click += new System.EventHandler(this.actualizarAseguradoraToolStripMenuItem_Click);
             // 
             // actualizarLaboratorioToolStripMenuItem
             // 
             this.actualizarLaboratorioToolStripMenuItem.Name = "actualizarLaboratorioToolStripMenuItem";
             this.actualizarLaboratorioToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.actualizarLaboratorioToolStripMenuItem.Text = "Actualizar Laboratorio";
+            this.actualizarLaboratorioToolStripMenuItem.Text = "Laboratorio";
             this.actualizarLaboratorioToolStripMenuItem.Click += new System.EventHandler(this.actualizarLaboratorioToolStripMenuItem_Click);
             // 
             // actualizarInventarioToolStripMenuItem
             // 
             this.actualizarInventarioToolStripMenuItem.Name = "actualizarInventarioToolStripMenuItem";
             this.actualizarInventarioToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.actualizarInventarioToolStripMenuItem.Text = "Actualizar Inventario";
+            this.actualizarInventarioToolStripMenuItem.Text = "Inventario";
             this.actualizarInventarioToolStripMenuItem.Click += new System.EventHandler(this.actualizarInventarioToolStripMenuItem_Click);
             // 
             // citasToolStripMenuItem

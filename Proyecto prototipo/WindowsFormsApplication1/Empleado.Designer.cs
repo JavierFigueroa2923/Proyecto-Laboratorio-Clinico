@@ -51,6 +51,7 @@
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grb_datosp_emp = new System.Windows.Forms.GroupBox();
+            this.lbl_date_formato = new System.Windows.Forms.Label();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.lbl_correo = new System.Windows.Forms.Label();
             this.cbo_sexo_emp = new System.Windows.Forms.ComboBox();
@@ -65,7 +66,6 @@
             this.btn_busc_emp = new System.Windows.Forms.Button();
             this.Pic_logo = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new System.Windows.Forms.TextBox();
-            this.lbl_date_formato = new System.Windows.Forms.Label();
             this.grb_datos_emp.SuspendLayout();
             this.grb_datosp_emp.SuspendLayout();
             this.grb_vista_emp.SuspendLayout();
@@ -255,6 +255,7 @@
             this.txt_contraseña2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_contraseña2.Location = new System.Drawing.Point(110, 144);
             this.txt_contraseña2.Name = "txt_contraseña2";
+            this.txt_contraseña2.PasswordChar = '*';
             this.txt_contraseña2.Size = new System.Drawing.Size(265, 23);
             this.txt_contraseña2.TabIndex = 5;
             // 
@@ -274,6 +275,7 @@
             this.txt_contraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txt_contraseña.Location = new System.Drawing.Point(110, 115);
             this.txt_contraseña.Name = "txt_contraseña";
+            this.txt_contraseña.PasswordChar = '*';
             this.txt_contraseña.Size = new System.Drawing.Size(265, 23);
             this.txt_contraseña.TabIndex = 4;
             // 
@@ -310,6 +312,16 @@
             this.grb_datosp_emp.TabIndex = 79;
             this.grb_datosp_emp.TabStop = false;
             this.grb_datosp_emp.Text = "Datos Personales";
+            // 
+            // lbl_date_formato
+            // 
+            this.lbl_date_formato.AutoSize = true;
+            this.lbl_date_formato.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lbl_date_formato.Location = new System.Drawing.Point(190, 47);
+            this.lbl_date_formato.Name = "lbl_date_formato";
+            this.lbl_date_formato.Size = new System.Drawing.Size(97, 20);
+            this.lbl_date_formato.TabIndex = 115;
+            this.lbl_date_formato.Text = "yyyy-mm-dd";
             // 
             // txt_correo
             // 
@@ -464,16 +476,6 @@
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(226, 20);
             this.txt_buscar.TabIndex = 138;
-            // 
-            // lbl_date_formato
-            // 
-            this.lbl_date_formato.AutoSize = true;
-            this.lbl_date_formato.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lbl_date_formato.Location = new System.Drawing.Point(190, 47);
-            this.lbl_date_formato.Name = "lbl_date_formato";
-            this.lbl_date_formato.Size = new System.Drawing.Size(97, 20);
-            this.lbl_date_formato.TabIndex = 115;
-            this.lbl_date_formato.Text = "yyyy-mm-dd";
             // 
             // frm_act_emp
             // 
