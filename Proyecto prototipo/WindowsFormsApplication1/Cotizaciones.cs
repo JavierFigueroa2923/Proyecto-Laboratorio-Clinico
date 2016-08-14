@@ -37,7 +37,39 @@ using MySql.Data.MySqlClient;
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
+        }
 
+        public void LimpiarCajasTexto()
+        {
+            cbo_id_clnt.Text = "";
+            cbo_id_lab.Text = "";
+            txt_cliente.Text = "";
+            txt_fecha.Text = "";
+            txt_total.Text = "";
+            txt_descuento.Text = "";
+        }
+
+        public void InhabilitarTexto()
+        {
+            cbo_id_clnt.Enabled = false;
+            cbo_id_lab.Enabled = false;
+            txt_cliente.Enabled = false;
+            txt_fecha.Enabled = false;
+            txt_total.Enabled = false;
+            txt_descuento.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            cbo_id_clnt.Enabled = true;
+            cbo_id_lab.Enabled = true;
+            txt_cliente.Enabled = true;
+            txt_fecha.Enabled = true;
+            txt_total.Enabled = true;
+            txt_descuento.Enabled = true;
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
@@ -71,12 +103,14 @@ using MySql.Data.MySqlClient;
                 while (re.Read())
                 { }
                 Conexionmysql.Desconectar();
+                LimpiarCajasTexto();
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            InhabilitarTexto();
         }
 
         private void btn_actlz_aseg_Click(object sender, EventArgs e)
@@ -94,12 +128,13 @@ using MySql.Data.MySqlClient;
                 while (re.Read())
                 { }
                 Conexionmysql.Desconectar();
+                LimpiarCajasTexto();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        
+            
     }
 
         private void btn_elim_inv_sumin_Click(object sender, EventArgs e)
@@ -163,6 +198,19 @@ using MySql.Data.MySqlClient;
             cbo_id_lab.ValueMember = ("pk_id_clt");
             //se indica el valor a desplegar en el combobox
             cbo_id_lab.DisplayMember = ("nombre_clt");
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_pcnt_Click(object sender, EventArgs e)
+        {
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

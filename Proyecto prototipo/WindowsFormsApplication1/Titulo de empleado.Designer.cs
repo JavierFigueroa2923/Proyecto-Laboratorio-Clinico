@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Titulo_de_empleado));
             this.lbl_empleado = new System.Windows.Forms.Label();
             this.gpb_ingre_datos_titulo_emp = new System.Windows.Forms.GroupBox();
+            this.dtp_fecha_title = new System.Windows.Forms.DateTimePicker();
             this.lbl_descrip_titulo = new System.Windows.Forms.Label();
             this.lbl_fecha_obt_titulo = new System.Windows.Forms.Label();
             this.lbl_nombre_titulo_emp = new System.Windows.Forms.Label();
@@ -50,7 +52,17 @@
             this.btn_guardar_titulo_emp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbo_buscar = new System.Windows.Forms.ComboBox();
-            this.dtp_fecha_title = new System.Windows.Forms.DateTimePicker();
+            this.btn_nuevo_pcnt = new System.Windows.Forms.Button();
+            this.btn_acept = new System.Windows.Forms.Button();
+            this.btn_cancl = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
             this.gpb_ingre_datos_titulo_emp.SuspendLayout();
             this.gpb_busqueda_empleado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busqueda_datos_empleado)).BeginInit();
@@ -86,6 +98,13 @@
             this.gpb_ingre_datos_titulo_emp.TabIndex = 57;
             this.gpb_ingre_datos_titulo_emp.TabStop = false;
             this.gpb_ingre_datos_titulo_emp.Text = "Ingreso de datos";
+            // 
+            // dtp_fecha_title
+            // 
+            this.dtp_fecha_title.Location = new System.Drawing.Point(6, 189);
+            this.dtp_fecha_title.Name = "dtp_fecha_title";
+            this.dtp_fecha_title.Size = new System.Drawing.Size(345, 24);
+            this.dtp_fecha_title.TabIndex = 74;
             // 
             // lbl_descrip_titulo
             // 
@@ -187,7 +206,7 @@
             // 
             this.buscar_emp.AutoSize = true;
             this.buscar_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buscar_emp.Location = new System.Drawing.Point(405, 143);
+            this.buscar_emp.Location = new System.Drawing.Point(409, 163);
             this.buscar_emp.Name = "buscar_emp";
             this.buscar_emp.Size = new System.Drawing.Size(55, 18);
             this.buscar_emp.TabIndex = 157;
@@ -195,72 +214,92 @@
             // 
             // btn_elim_titulo
             // 
+            this.btn_elim_titulo.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_Delete_icon;
+            this.btn_elim_titulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_elim_titulo.FlatAppearance.BorderSize = 0;
+            this.btn_elim_titulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_elim_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elim_titulo.Image = global::WindowsFormsApplication1.Properties.Resources.Delete_;
             this.btn_elim_titulo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_elim_titulo.Location = new System.Drawing.Point(212, 88);
+            this.btn_elim_titulo.Location = new System.Drawing.Point(225, 74);
             this.btn_elim_titulo.Name = "btn_elim_titulo";
-            this.btn_elim_titulo.Size = new System.Drawing.Size(94, 54);
+            this.btn_elim_titulo.Size = new System.Drawing.Size(65, 65);
             this.btn_elim_titulo.TabIndex = 159;
-            this.btn_elim_titulo.Text = "ELIMINAR";
+            this.btn_elim_titulo.Text = " ";
             this.btn_elim_titulo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip4.SetToolTip(this.btn_elim_titulo, "Eliminar");
             this.btn_elim_titulo.UseVisualStyleBackColor = true;
             this.btn_elim_titulo.Click += new System.EventHandler(this.btn_elim_titulo_Click);
             // 
             // btn_busc_emp
             // 
             this.btn_busc_emp.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_busc_emp.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Zoom_icon;
+            this.btn_busc_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_busc_emp.FlatAppearance.BorderSize = 0;
+            this.btn_busc_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_busc_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busc_emp.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
             this.btn_busc_emp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_busc_emp.Location = new System.Drawing.Point(688, 128);
+            this.btn_busc_emp.Location = new System.Drawing.Point(296, 74);
             this.btn_busc_emp.Name = "btn_busc_emp";
-            this.btn_busc_emp.Size = new System.Drawing.Size(65, 52);
+            this.btn_busc_emp.Size = new System.Drawing.Size(65, 65);
             this.btn_busc_emp.TabIndex = 156;
-            this.btn_busc_emp.Text = "BUSCAR";
+            this.btn_busc_emp.Text = " ";
             this.btn_busc_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip5.SetToolTip(this.btn_busc_emp, "Buscar");
             this.btn_busc_emp.UseVisualStyleBackColor = true;
             this.btn_busc_emp.Click += new System.EventHandler(this.btn_busc_emp_Click);
             // 
             // actualizar_titulo_emp
             // 
+            this.actualizar_titulo_emp.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Button_Refresh_icon;
+            this.actualizar_titulo_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.actualizar_titulo_emp.FlatAppearance.BorderSize = 0;
+            this.actualizar_titulo_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.actualizar_titulo_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualizar_titulo_emp.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
             this.actualizar_titulo_emp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.actualizar_titulo_emp.Location = new System.Drawing.Point(759, 126);
+            this.actualizar_titulo_emp.Location = new System.Drawing.Point(509, 74);
             this.actualizar_titulo_emp.Name = "actualizar_titulo_emp";
-            this.actualizar_titulo_emp.Size = new System.Drawing.Size(65, 54);
+            this.actualizar_titulo_emp.Size = new System.Drawing.Size(65, 65);
             this.actualizar_titulo_emp.TabIndex = 155;
-            this.actualizar_titulo_emp.Text = "RENOVAR";
+            this.actualizar_titulo_emp.Text = " ";
             this.actualizar_titulo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip8.SetToolTip(this.actualizar_titulo_emp, "Actualizar");
             this.actualizar_titulo_emp.UseVisualStyleBackColor = true;
             this.actualizar_titulo_emp.Click += new System.EventHandler(this.actualizar_titulo_emp_Click);
             // 
             // btn_actlz_titulo_emp
             // 
+            this.btn_actlz_titulo_emp.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Edit_Document_icon;
+            this.btn_actlz_titulo_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_actlz_titulo_emp.FlatAppearance.BorderSize = 0;
+            this.btn_actlz_titulo_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actlz_titulo_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actlz_titulo_emp.Image = global::WindowsFormsApplication1.Properties.Resources.Refresh;
             this.btn_actlz_titulo_emp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_actlz_titulo_emp.Location = new System.Drawing.Point(112, 88);
+            this.btn_actlz_titulo_emp.Location = new System.Drawing.Point(154, 74);
             this.btn_actlz_titulo_emp.Name = "btn_actlz_titulo_emp";
-            this.btn_actlz_titulo_emp.Size = new System.Drawing.Size(94, 54);
+            this.btn_actlz_titulo_emp.Size = new System.Drawing.Size(65, 65);
             this.btn_actlz_titulo_emp.TabIndex = 69;
-            this.btn_actlz_titulo_emp.Text = "ACTUALIZAR";
+            this.btn_actlz_titulo_emp.Text = " ";
             this.btn_actlz_titulo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip3.SetToolTip(this.btn_actlz_titulo_emp, "Modificar");
             this.btn_actlz_titulo_emp.UseVisualStyleBackColor = true;
             this.btn_actlz_titulo_emp.Click += new System.EventHandler(this.btn_actlz_titulo_emp_Click);
             // 
             // btn_guardar_titulo_emp
             // 
+            this.btn_guardar_titulo_emp.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Save_icon;
+            this.btn_guardar_titulo_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_guardar_titulo_emp.FlatAppearance.BorderSize = 0;
+            this.btn_guardar_titulo_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar_titulo_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar_titulo_emp.Image = global::WindowsFormsApplication1.Properties.Resources.Save_icon1;
             this.btn_guardar_titulo_emp.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_guardar_titulo_emp.Location = new System.Drawing.Point(12, 88);
+            this.btn_guardar_titulo_emp.Location = new System.Drawing.Point(83, 74);
             this.btn_guardar_titulo_emp.Name = "btn_guardar_titulo_emp";
-            this.btn_guardar_titulo_emp.Size = new System.Drawing.Size(94, 54);
+            this.btn_guardar_titulo_emp.Size = new System.Drawing.Size(65, 65);
             this.btn_guardar_titulo_emp.TabIndex = 68;
-            this.btn_guardar_titulo_emp.Text = "GUARDAR";
+            this.btn_guardar_titulo_emp.Text = " ";
             this.btn_guardar_titulo_emp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip2.SetToolTip(this.btn_guardar_titulo_emp, "Guardar");
             this.btn_guardar_titulo_emp.UseVisualStyleBackColor = true;
             this.btn_guardar_titulo_emp.Click += new System.EventHandler(this.btn_guardar_titulo_emp_Click);
             // 
@@ -277,23 +316,65 @@
             // cbo_buscar
             // 
             this.cbo_buscar.FormattingEnabled = true;
-            this.cbo_buscar.Location = new System.Drawing.Point(476, 139);
+            this.cbo_buscar.Location = new System.Drawing.Point(480, 159);
             this.cbo_buscar.Name = "cbo_buscar";
             this.cbo_buscar.Size = new System.Drawing.Size(206, 21);
             this.cbo_buscar.TabIndex = 168;
             // 
-            // dtp_fecha_title
+            // btn_nuevo_pcnt
             // 
-            this.dtp_fecha_title.Location = new System.Drawing.Point(6, 189);
-            this.dtp_fecha_title.Name = "dtp_fecha_title";
-            this.dtp_fecha_title.Size = new System.Drawing.Size(345, 24);
-            this.dtp_fecha_title.TabIndex = 74;
+            this.btn_nuevo_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_New_icon;
+            this.btn_nuevo_pcnt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_nuevo_pcnt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo_pcnt.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo_pcnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo_pcnt.Location = new System.Drawing.Point(12, 74);
+            this.btn_nuevo_pcnt.Name = "btn_nuevo_pcnt";
+            this.btn_nuevo_pcnt.Size = new System.Drawing.Size(65, 65);
+            this.btn_nuevo_pcnt.TabIndex = 169;
+            this.toolTip1.SetToolTip(this.btn_nuevo_pcnt, "Nuevo");
+            this.btn_nuevo_pcnt.UseVisualStyleBackColor = true;
+            this.btn_nuevo_pcnt.Click += new System.EventHandler(this.btn_nuevo_pcnt_Click);
+            // 
+            // btn_acept
+            // 
+            this.btn_acept.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.check_icon;
+            this.btn_acept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_acept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_acept.Enabled = false;
+            this.btn_acept.FlatAppearance.BorderSize = 0;
+            this.btn_acept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_acept.Location = new System.Drawing.Point(438, 74);
+            this.btn_acept.Name = "btn_acept";
+            this.btn_acept.Size = new System.Drawing.Size(65, 65);
+            this.btn_acept.TabIndex = 171;
+            this.toolTip7.SetToolTip(this.btn_acept, "Aceptar");
+            this.btn_acept.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancl
+            // 
+            this.btn_cancl.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.delete_icon;
+            this.btn_cancl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_cancl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancl.Enabled = false;
+            this.btn_cancl.FlatAppearance.BorderSize = 0;
+            this.btn_cancl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancl.Location = new System.Drawing.Point(367, 74);
+            this.btn_cancl.Name = "btn_cancl";
+            this.btn_cancl.Size = new System.Drawing.Size(65, 65);
+            this.btn_cancl.TabIndex = 170;
+            this.toolTip6.SetToolTip(this.btn_cancl, "Cancelar");
+            this.btn_cancl.UseVisualStyleBackColor = true;
+            this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_Click);
             // 
             // Titulo_de_empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 579);
+            this.Controls.Add(this.btn_acept);
+            this.Controls.Add(this.btn_cancl);
+            this.Controls.Add(this.btn_nuevo_pcnt);
             this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_elim_titulo);
@@ -309,6 +390,7 @@
             this.Name = "Titulo_de_empleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Titulo de empleado";
+            this.Load += new System.EventHandler(this.Titulo_de_empleado_Load);
             this.gpb_ingre_datos_titulo_emp.ResumeLayout(false);
             this.gpb_ingre_datos_titulo_emp.PerformLayout();
             this.gpb_busqueda_empleado.ResumeLayout(false);
@@ -342,5 +424,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbo_buscar;
         private System.Windows.Forms.DateTimePicker dtp_fecha_title;
+        private System.Windows.Forms.Button btn_nuevo_pcnt;
+        private System.Windows.Forms.Button btn_acept;
+        private System.Windows.Forms.Button btn_cancl;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip8;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip7;
+        private System.Windows.Forms.ToolTip toolTip6;
     }
 }

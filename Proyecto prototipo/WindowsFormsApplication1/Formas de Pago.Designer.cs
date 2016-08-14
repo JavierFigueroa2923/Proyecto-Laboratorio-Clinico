@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_pago));
             this.label4 = new System.Windows.Forms.Label();
             this.txt_id_fm_pg = new System.Windows.Forms.TextBox();
@@ -47,6 +48,17 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbo_buscar = new System.Windows.Forms.ComboBox();
+            this.btn_nuevo_pcnt = new System.Windows.Forms.Button();
+            this.btn_acept = new System.Windows.Forms.Button();
+            this.btn_cancl = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
             this.gpb_datos_frm_pg.SuspendLayout();
             this.gpb_vista_labs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -131,7 +143,7 @@
             this.gpb_datos_frm_pg.Controls.Add(this.label3);
             this.gpb_datos_frm_pg.Controls.Add(this.txt_nombre);
             this.gpb_datos_frm_pg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_datos_frm_pg.Location = new System.Drawing.Point(12, 116);
+            this.gpb_datos_frm_pg.Location = new System.Drawing.Point(5, 169);
             this.gpb_datos_frm_pg.Name = "gpb_datos_frm_pg";
             this.gpb_datos_frm_pg.Size = new System.Drawing.Size(361, 224);
             this.gpb_datos_frm_pg.TabIndex = 59;
@@ -140,30 +152,38 @@
             // 
             // btn_renovar
             // 
+            this.btn_renovar.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Button_Refresh_icon;
+            this.btn_renovar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_renovar.FlatAppearance.BorderSize = 0;
+            this.btn_renovar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_renovar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_renovar.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
             this.btn_renovar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_renovar.Location = new System.Drawing.Point(695, 56);
+            this.btn_renovar.Location = new System.Drawing.Point(502, 61);
             this.btn_renovar.Name = "btn_renovar";
-            this.btn_renovar.Size = new System.Drawing.Size(65, 54);
+            this.btn_renovar.Size = new System.Drawing.Size(65, 65);
             this.btn_renovar.TabIndex = 154;
-            this.btn_renovar.Text = "RENOVAR";
+            this.btn_renovar.Text = " ";
             this.btn_renovar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip8.SetToolTip(this.btn_renovar, "Actualizar");
             this.btn_renovar.UseVisualStyleBackColor = true;
             this.btn_renovar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_busc_lab
             // 
             this.btn_busc_lab.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_busc_lab.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Zoom_icon;
+            this.btn_busc_lab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_busc_lab.FlatAppearance.BorderSize = 0;
+            this.btn_busc_lab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_busc_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busc_lab.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
             this.btn_busc_lab.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_busc_lab.Location = new System.Drawing.Point(624, 56);
+            this.btn_busc_lab.Location = new System.Drawing.Point(289, 61);
             this.btn_busc_lab.Name = "btn_busc_lab";
-            this.btn_busc_lab.Size = new System.Drawing.Size(65, 52);
+            this.btn_busc_lab.Size = new System.Drawing.Size(65, 65);
             this.btn_busc_lab.TabIndex = 153;
-            this.btn_busc_lab.Text = "BUSCAR";
+            this.btn_busc_lab.Text = " ";
             this.btn_busc_lab.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip5.SetToolTip(this.btn_busc_lab, "Buscar");
             this.btn_busc_lab.UseVisualStyleBackColor = true;
             this.btn_busc_lab.Click += new System.EventHandler(this.btn_busc_lab_Click);
             // 
@@ -171,7 +191,7 @@
             // 
             this.lbl_busca_lab.AutoSize = true;
             this.lbl_busca_lab.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_busca_lab.Location = new System.Drawing.Point(381, 65);
+            this.lbl_busca_lab.Location = new System.Drawing.Point(393, 143);
             this.lbl_busca_lab.Name = "lbl_busca_lab";
             this.lbl_busca_lab.Size = new System.Drawing.Size(161, 20);
             this.lbl_busca_lab.TabIndex = 151;
@@ -179,43 +199,55 @@
             // 
             // btn_elim_pcnt
             // 
+            this.btn_elim_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_Delete_icon;
+            this.btn_elim_pcnt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_elim_pcnt.FlatAppearance.BorderSize = 0;
+            this.btn_elim_pcnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_elim_pcnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elim_pcnt.Image = global::WindowsFormsApplication1.Properties.Resources.Delete_;
             this.btn_elim_pcnt.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_elim_pcnt.Location = new System.Drawing.Point(212, 62);
+            this.btn_elim_pcnt.Location = new System.Drawing.Point(218, 61);
             this.btn_elim_pcnt.Name = "btn_elim_pcnt";
-            this.btn_elim_pcnt.Size = new System.Drawing.Size(94, 54);
+            this.btn_elim_pcnt.Size = new System.Drawing.Size(65, 65);
             this.btn_elim_pcnt.TabIndex = 150;
-            this.btn_elim_pcnt.Text = "ELIMINAR";
+            this.btn_elim_pcnt.Text = " ";
             this.btn_elim_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip4.SetToolTip(this.btn_elim_pcnt, "Eliminar");
             this.btn_elim_pcnt.UseVisualStyleBackColor = true;
             this.btn_elim_pcnt.Click += new System.EventHandler(this.btn_elim_pcnt_Click);
             // 
             // btn_actlz_pcnt
             // 
+            this.btn_actlz_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Edit_Document_icon;
+            this.btn_actlz_pcnt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_actlz_pcnt.FlatAppearance.BorderSize = 0;
+            this.btn_actlz_pcnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actlz_pcnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actlz_pcnt.Image = global::WindowsFormsApplication1.Properties.Resources.Refresh;
             this.btn_actlz_pcnt.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_actlz_pcnt.Location = new System.Drawing.Point(112, 62);
+            this.btn_actlz_pcnt.Location = new System.Drawing.Point(147, 61);
             this.btn_actlz_pcnt.Name = "btn_actlz_pcnt";
-            this.btn_actlz_pcnt.Size = new System.Drawing.Size(94, 54);
+            this.btn_actlz_pcnt.Size = new System.Drawing.Size(65, 65);
             this.btn_actlz_pcnt.TabIndex = 149;
-            this.btn_actlz_pcnt.Text = "ACTUALIZAR";
+            this.btn_actlz_pcnt.Text = " ";
             this.btn_actlz_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip3.SetToolTip(this.btn_actlz_pcnt, "Modificar");
             this.btn_actlz_pcnt.UseVisualStyleBackColor = true;
             this.btn_actlz_pcnt.Click += new System.EventHandler(this.btn_actlz_pcnt_Click);
             // 
             // btn_guardar_pcnt
             // 
+            this.btn_guardar_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Save_icon;
+            this.btn_guardar_pcnt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_guardar_pcnt.FlatAppearance.BorderSize = 0;
+            this.btn_guardar_pcnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar_pcnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar_pcnt.Image = global::WindowsFormsApplication1.Properties.Resources.Save_icon1;
             this.btn_guardar_pcnt.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_guardar_pcnt.Location = new System.Drawing.Point(12, 62);
+            this.btn_guardar_pcnt.Location = new System.Drawing.Point(76, 61);
             this.btn_guardar_pcnt.Name = "btn_guardar_pcnt";
-            this.btn_guardar_pcnt.Size = new System.Drawing.Size(94, 54);
+            this.btn_guardar_pcnt.Size = new System.Drawing.Size(65, 65);
             this.btn_guardar_pcnt.TabIndex = 148;
-            this.btn_guardar_pcnt.Text = "GUARDAR";
+            this.btn_guardar_pcnt.Text = " ";
             this.btn_guardar_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip2.SetToolTip(this.btn_guardar_pcnt, "Guardar");
             this.btn_guardar_pcnt.UseVisualStyleBackColor = true;
             this.btn_guardar_pcnt.Click += new System.EventHandler(this.btn_guardar_pcnt_Click);
             // 
@@ -223,7 +255,7 @@
             // 
             this.gpb_vista_labs.Controls.Add(this.dataGridView1);
             this.gpb_vista_labs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_vista_labs.Location = new System.Drawing.Point(379, 116);
+            this.gpb_vista_labs.Location = new System.Drawing.Point(372, 169);
             this.gpb_vista_labs.Name = "gpb_vista_labs";
             this.gpb_vista_labs.Size = new System.Drawing.Size(505, 224);
             this.gpb_vista_labs.TabIndex = 147;
@@ -252,16 +284,65 @@
             // cbo_buscar
             // 
             this.cbo_buscar.FormattingEnabled = true;
-            this.cbo_buscar.Location = new System.Drawing.Point(385, 90);
+            this.cbo_buscar.Location = new System.Drawing.Point(560, 144);
             this.cbo_buscar.Name = "cbo_buscar";
             this.cbo_buscar.Size = new System.Drawing.Size(233, 21);
             this.cbo_buscar.TabIndex = 155;
+            // 
+            // btn_nuevo_pcnt
+            // 
+            this.btn_nuevo_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_New_icon;
+            this.btn_nuevo_pcnt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_nuevo_pcnt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo_pcnt.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo_pcnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo_pcnt.Location = new System.Drawing.Point(5, 61);
+            this.btn_nuevo_pcnt.Name = "btn_nuevo_pcnt";
+            this.btn_nuevo_pcnt.Size = new System.Drawing.Size(65, 65);
+            this.btn_nuevo_pcnt.TabIndex = 156;
+            this.toolTip1.SetToolTip(this.btn_nuevo_pcnt, "Nuevo");
+            this.btn_nuevo_pcnt.UseVisualStyleBackColor = true;
+            this.btn_nuevo_pcnt.Click += new System.EventHandler(this.btn_nuevo_pcnt_Click);
+            // 
+            // btn_acept
+            // 
+            this.btn_acept.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.check_icon;
+            this.btn_acept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_acept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_acept.Enabled = false;
+            this.btn_acept.FlatAppearance.BorderSize = 0;
+            this.btn_acept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_acept.Location = new System.Drawing.Point(431, 61);
+            this.btn_acept.Name = "btn_acept";
+            this.btn_acept.Size = new System.Drawing.Size(65, 65);
+            this.btn_acept.TabIndex = 158;
+            this.toolTip7.SetToolTip(this.btn_acept, "Aceptar");
+            this.btn_acept.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancl
+            // 
+            this.btn_cancl.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.delete_icon;
+            this.btn_cancl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_cancl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancl.Enabled = false;
+            this.btn_cancl.FlatAppearance.BorderSize = 0;
+            this.btn_cancl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancl.Location = new System.Drawing.Point(360, 61);
+            this.btn_cancl.Name = "btn_cancl";
+            this.btn_cancl.Size = new System.Drawing.Size(65, 65);
+            this.btn_cancl.TabIndex = 157;
+            this.toolTip6.SetToolTip(this.btn_cancl, "Cancelar");
+            this.btn_cancl.UseVisualStyleBackColor = true;
+            this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_Click);
             // 
             // frm_act_pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 351);
+            this.ClientSize = new System.Drawing.Size(889, 405);
+            this.Controls.Add(this.btn_acept);
+            this.Controls.Add(this.btn_cancl);
+            this.Controls.Add(this.btn_nuevo_pcnt);
             this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.btn_renovar);
             this.Controls.Add(this.btn_busc_lab);
@@ -277,6 +358,7 @@
             this.Name = "frm_act_pago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formas de Pagos";
+            this.Load += new System.EventHandler(this.frm_act_pago_Load);
             this.gpb_datos_frm_pg.ResumeLayout(false);
             this.gpb_datos_frm_pg.PerformLayout();
             this.gpb_vista_labs.ResumeLayout(false);
@@ -306,5 +388,16 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbo_buscar;
+        private System.Windows.Forms.Button btn_nuevo_pcnt;
+        private System.Windows.Forms.Button btn_acept;
+        private System.Windows.Forms.Button btn_cancl;
+        private System.Windows.Forms.ToolTip toolTip8;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip7;
+        private System.Windows.Forms.ToolTip toolTip6;
     }
 }

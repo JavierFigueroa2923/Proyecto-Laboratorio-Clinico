@@ -58,6 +58,7 @@ namespace WindowsFormsApplication1
 
         private void frm_act_cliente_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
             cbo_lab_pcnt.DataSource = Cargar();
             cbo_lab_pcnt.DisplayMember = "pk_id_lab";
             cbo_lab_pcnt.ValueMember = "pk_id_lab";
@@ -76,6 +77,50 @@ namespace WindowsFormsApplication1
             txt_peso_pcnt.Text = "";
             txt_referido.Text = "";
             txt_telefono.Text = "";       
+        }
+
+        public void InhabilitarTexto()
+        {
+            //Editor:Javier Figueroa
+            //Fecha 14/08/2016
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
+            txt_nombre.Enabled = false;
+            txt_apellido.Enabled = false;
+            txt_direccion.Enabled = false;
+            txt_telefono.Enabled = false;
+            txt_nit.Enabled = false;
+            txt_email.Enabled = false;
+            txt_fecha_nacimiento.Enabled = false;
+            txt_dpi.Enabled = false;
+            txt_altura.Enabled = false;
+            txt_peso_pcnt.Enabled = false;
+            cbo_sexo_pcnt.Enabled = false;
+            cbo_lab_pcnt.Enabled = false;
+            cbo_tip_sang_pcnt.Enabled = false;
+            txt_referido.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            //Editor:Javier Figueroa
+            //Fecha 14/08/2016
+            btn_cancl.Enabled = true;
+            btn_acept.Enabled = true;
+            txt_nombre.Enabled = true;
+            txt_apellido.Enabled = true;
+            txt_direccion.Enabled = true;
+            txt_telefono.Enabled = true;
+            txt_nit.Enabled = true;
+            txt_email.Enabled = true;
+            txt_fecha_nacimiento.Enabled = true;
+            txt_dpi.Enabled = true;
+            txt_altura.Enabled = true;
+            txt_peso_pcnt.Enabled = true;
+            cbo_sexo_pcnt.Enabled = true;
+            cbo_lab_pcnt.Enabled = true;
+            cbo_tip_sang_pcnt.Enabled = true;
+            txt_referido.Enabled = true;
         }
 
         public void ActualizarGrid(DataGridView dg, String Query)
@@ -154,6 +199,8 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
 
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -460,6 +507,8 @@ namespace WindowsFormsApplication1
         {
             try
             {
+                HabilitarTexto();
+                btn_cancl.Enabled = true;
                 Editar = true;
                 Codigo = this.dgv_list_pcnt.CurrentRow.Cells[0].Value.ToString();
                 txt_nombre.Text = this.dgv_list_pcnt.CurrentRow.Cells[1].Value.ToString();
@@ -505,6 +554,20 @@ namespace WindowsFormsApplication1
         private void cbo_sexo_pcnt_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_pcnt_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 } 

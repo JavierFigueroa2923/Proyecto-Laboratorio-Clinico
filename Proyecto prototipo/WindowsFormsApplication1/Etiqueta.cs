@@ -34,6 +34,18 @@ namespace WindowsFormsApplication1
             cbo_id_mst_busc_eti.Text = "";
         }
 
+        public void InhabilitarTexto()
+        {
+            cbo_id_mst_busc_eti.Enabled = false;
+            txt_descr_eti.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            cbo_id_mst_busc_eti.Enabled = true;
+            txt_descr_eti.Enabled = true;
+        }
+
         private void btn_elim_eti_Click(object sender, EventArgs e)
         {
             try
@@ -120,10 +132,13 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            InhabilitarTexto();
         }
 
         private void btn_actlz_eti_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             try
             {
                 Editar = true;
@@ -140,6 +155,9 @@ namespace WindowsFormsApplication1
 
         private void frm_etiqueta_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_acept.Enabled = false;
+            btn_cancl.Enabled = false;
             cl_gridysql.ActualizarGridEtiqueta(this.dgv_busc_eti, "select pk_id_etqt as Identificador, descripcion_etqt as Descripcion, pk_id_mst as Muestra from etiquetas");
             llenarCboMuestraEtiqueta();
             btn_id_mst_busc_eti.Visible = false;
@@ -209,6 +227,20 @@ namespace WindowsFormsApplication1
             }
             cbo_id_mst_busc_eti.DataSource = dt;
             cbo_id_mst_busc_eti.DisplayMember = "nombre_clt";
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajaTextoEtiqueta();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

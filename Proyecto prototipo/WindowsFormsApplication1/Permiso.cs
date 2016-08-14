@@ -33,7 +33,22 @@ namespace WindowsFormsApplication1
             cbo_nombre_per.Text = "";
         }
 
-        
+        public void InhabilitarTexto()
+        {
+            cbo_nombre_per.Enabled = false;
+            txt_descr_per.Enabled = false;
+            cbo_id_carg_emp_per.Enabled = false;
+            btn_busc_id_carg_emp_per.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            cbo_nombre_per.Enabled = true;
+            txt_descr_per.Enabled = true;
+            cbo_id_carg_emp_per.Enabled = true;
+            btn_busc_id_carg_emp_per.Enabled = true;
+        }
+
 
         private void btn_guardar_per_Click(object sender, EventArgs e)
         {
@@ -77,10 +92,13 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            InhabilitarTexto();
         }
 
         private void btn_actlz_per_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             Editar = true;
             try
             {
@@ -167,6 +185,9 @@ namespace WindowsFormsApplication1
 
         private void frm_permiso_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             cl_gridysql.ActualizarGridPermiso(this.dgv_busc_per, "select pk_id_perm as Identificador, nombre_prm as Nombre, descripcion_perm as Descripcion, pk_id_cargo_emp as id_cargo_empleado from permiso;");
             llenarCboIdCargo();
             btn_busc_id_carg_emp_per.Visible = false;
@@ -274,6 +295,20 @@ namespace WindowsFormsApplication1
         private void grb_datos1_per_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajaTextoPermiso();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

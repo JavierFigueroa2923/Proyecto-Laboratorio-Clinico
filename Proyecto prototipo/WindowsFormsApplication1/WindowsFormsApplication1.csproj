@@ -456,6 +456,21 @@
   <ItemGroup>
     <None Include="Resources\Clinica.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit-Document-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -37,6 +37,9 @@ namespace WindowsFormsApplication1
 
         private void Cargo_Empleado_Load(object sender, EventArgs e)
         {
+            InhabilitarText();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             grid_cargos();
             llenarCboIdLab();
             llenarCboIdEmp();
@@ -154,10 +157,13 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+            InhabilitarText();
         }
 
         private void btn_actlz_cargo_emp_Click(object sender, EventArgs e)
         {
+            HabilitarText();
+            btn_cancl.Enabled = true;
             Editar = true;
             codigo = this.dgv_cargo_emp.CurrentRow.Cells[0].Value.ToString();
             txt_nombre_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[1].Value.ToString();
@@ -174,6 +180,24 @@ namespace WindowsFormsApplication1
             txt_fecha_contrat_cargo_emp.Text = "";
             cbo_id_emp.Text = "";
             cbo_id_lab.Text = "";
+        }
+
+        public void InhabilitarText()
+        {
+            txt_nombre_cargo_emp.Enabled = false;
+            txt_descp_cargo_emp.Enabled = false;
+            txt_fecha_contrat_cargo_emp.Enabled = false;
+            cbo_id_emp.Enabled = false;
+            cbo_id_lab.Enabled = false;
+        }
+
+        public void HabilitarText()
+        {
+            txt_nombre_cargo_emp.Enabled = true;
+            txt_descp_cargo_emp.Enabled = true;
+            txt_fecha_contrat_cargo_emp.Enabled = true;
+            cbo_id_emp.Enabled = true;
+            cbo_id_lab.Enabled = true;
         }
 
         private void btn_elim_cargo_emp_Click(object sender, EventArgs e)
@@ -226,6 +250,20 @@ namespace WindowsFormsApplication1
         private void btn_rnv_cargo_emp_Click(object sender, EventArgs e)
         {
             grid_cargos();
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarText();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_pcnt_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            limpiar();
+            InhabilitarText();
+            btn_cancl.Enabled = false;
         }
     }
 }

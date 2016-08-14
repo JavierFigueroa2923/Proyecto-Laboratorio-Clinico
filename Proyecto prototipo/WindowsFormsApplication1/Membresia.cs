@@ -30,11 +30,30 @@ namespace WindowsFormsApplication1
             txt_beneficio_mem.Text = "";
             dtp_fec_crea_mem.Text = "";
             dtp_fec_expir_mem.Text = "";
-
-
+    
         }
+
+        public void InhabilitarTexto()
+        {
+            cbo_id_clt_mem.Enabled = false;
+            txt_beneficio_mem.Enabled = false;
+            dtp_fec_crea_mem.Enabled = false;
+            dtp_fec_expir_mem.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            cbo_id_clt_mem.Enabled = true;
+            txt_beneficio_mem.Enabled = true;
+            dtp_fec_crea_mem.Enabled = true;
+            dtp_fec_expir_mem.Enabled = true;
+        }
+
         private void txt_fecha_expir_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             ActualizarGrid(this.dgv_busc_membresia, "SELECT * FROM membresia");
             llenarCboClienteMembresia();
         }
@@ -104,6 +123,7 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            InhabilitarTexto();
         }
 
         private void btn_elim_membresia_Click(object sender, EventArgs e)
@@ -142,6 +162,8 @@ namespace WindowsFormsApplication1
 
         private void btn_actlz_membresia_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             try {
                 Editar = true;
                 Codigo = this.dgv_busc_membresia.CurrentRow.Cells[0].Value.ToString();
@@ -214,6 +236,19 @@ namespace WindowsFormsApplication1
             cbo_id_clt_mem.DisplayMember = ("nombre_clt");
         }
 
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
 
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+        }
     }
 }

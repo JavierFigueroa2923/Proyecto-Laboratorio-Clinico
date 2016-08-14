@@ -28,13 +28,25 @@ namespace WindowsFormsApplication1
             txt_desc_aseg.Text = "";
             //txt_id__aseg.Text = "";
             txt_nom_aseg.Text = "";
-
-
-
-
         }
+
+        public void InhabilitarText()
+        {
+            txt_nom_aseg.Enabled = false;
+            txt_desc_aseg.Enabled = false;
+        }
+
+        public void HabilitarText()
+        {
+            txt_nom_aseg.Enabled = true;
+            txt_desc_aseg.Enabled = true;
+        }
+
         private void frm_act_aseg_Load(object sender, EventArgs e)
         {
+            btn_acept.Enabled = false;
+            btn_cancl.Enabled = false;
+            InhabilitarText();
             ActualizarGrid(this.dataGridView1, "select * from aseguradora;");
         }
         public void ActualizarGrid(DataGridView dg, String Query)
@@ -157,10 +169,13 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            InhabilitarText();
         }
 
         private void btn_actlz_aseg_Click_1(object sender, EventArgs e)
         {
+            btn_cancl.Enabled = true;
+            HabilitarText();
             try {
                 Editar = true;
                 Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -186,6 +201,20 @@ namespace WindowsFormsApplication1
         private void Lbl_nombre_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarText();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_pcnt_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarText();
+            btn_cancl.Enabled = false;
         }
     } 
    }

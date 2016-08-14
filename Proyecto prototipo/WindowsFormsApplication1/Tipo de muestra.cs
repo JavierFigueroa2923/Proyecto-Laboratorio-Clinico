@@ -24,6 +24,9 @@ namespace WindowsFormsApplication1
         Boolean Editar;
         private void Tipo_de_muestra_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             /// no real 
             ActualizarGrid(this.dgv_muestras, "select * from tipo_de_muestra;");
         }
@@ -37,6 +40,19 @@ namespace WindowsFormsApplication1
 
 
         }
+
+        public void InhabilitarTexto()
+        {
+            txt_nombre_tipo.Enabled = false;
+            txt_descp_muestra.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            txt_nombre_tipo.Enabled = true;
+            txt_descp_muestra.Enabled = true;
+        }
+
         public void ActualizarGrid(DataGridView dg, String Query)
         {
             Conexionmysql.ObtenerConexion();
@@ -88,10 +104,13 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            InhabilitarTexto();
         }
 
         private void btn_actlz_tipo_muestra_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             try {
                 manipular.obtener_conexion();
                 Editar = true;
@@ -173,6 +192,20 @@ namespace WindowsFormsApplication1
         private void btn_act_datos_Click(object sender, EventArgs e)
         {
             ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_muestra;");
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

@@ -23,6 +23,9 @@ namespace WindowsFormsApplication1
         Boolean Editar;
         private void Resultado_examen_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             ActualizarGrid(this.dgv_vist_result_exam, "SELECT * FROM resultado_examen;");
         }
         public void ActualizarGrid(DataGridView dg, String Query)
@@ -46,9 +49,23 @@ namespace WindowsFormsApplication1
             txt_descripcion.Text = "";
             //txt_id_area_lab.Text = "";
             txt_id_exm.Text = "";
-            
 
         }
+
+        public void InhabilitarTexto()
+        {
+            txt_id_exm.Enabled = false;
+            dtp_fecha_resul.Enabled = false;
+            txt_descripcion.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            txt_id_exm.Enabled = true;
+            dtp_fecha_resul.Enabled = true;
+            txt_descripcion.Enabled = true;
+        }
+
         private void btn_guardar_aseg_Click(object sender, EventArgs e)
         {
            try
@@ -94,6 +111,7 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            InhabilitarTexto();
         }
 
         private void btn_elim_resl_exam_Click(object sender, EventArgs e)
@@ -142,6 +160,8 @@ namespace WindowsFormsApplication1
 
         private void btn_actlz_aseg_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             try
             {
                 Editar = true;
@@ -160,6 +180,20 @@ namespace WindowsFormsApplication1
         private void btn_act_renov_Click(object sender, EventArgs e)
         {
             ActualizarGrid(this.dgv_vist_result_exam, "SELECT * FROM resultado_examen;");
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

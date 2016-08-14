@@ -20,10 +20,45 @@ namespace WindowsFormsApplication1
 
         string codigo = "";
         Boolean Editar;
+
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
+
+        public void LimpiarCajaTexto()
+        {
+            txt_id_inv_sumin.Text = "";
+            txt_nombre_sm.Text = "";
+            txt_direccion.Text = "";
+            txt_cantidad.Text = "";
+            txt_prec_comp_inv_sumin.Text = "";
+            txt_prec_vent_inv_sumin.Text = "";
+            cbo_id_laboratorio.Text = "";
+        }
+
+        public void InhabilitarTexto()
+        {
+            txt_id_inv_sumin.Enabled = false;
+            txt_nombre_sm.Enabled = false;
+            txt_direccion.Enabled = false;
+            txt_cantidad.Enabled = false;
+            txt_prec_comp_inv_sumin.Enabled = false;
+            txt_prec_vent_inv_sumin.Enabled = false;
+            cbo_id_laboratorio.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            txt_id_inv_sumin.Enabled = true;
+            txt_nombre_sm.Enabled = true;
+            txt_direccion.Enabled = true;
+            txt_cantidad.Enabled = true;
+            txt_prec_comp_inv_sumin.Enabled = true;
+            txt_prec_vent_inv_sumin.Enabled = true;
+            cbo_id_laboratorio.Enabled = true;
+        }
+
         private void grid() {
             string query = String.Format("SELECT * FROM {0}", "inventario_suministro");
             Conexionmysql.ObtenerConexion();
@@ -78,15 +113,22 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+            LimpiarCajaTexto();
+            InhabilitarTexto();
         }
 
         private void frm_act_inventario_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             grid();
         }
 
         private void btn_actlz_aseg_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             Editar = true;
             codigo = this.dgv_vista_inv_sumin.CurrentRow.Cells[0].Value.ToString();
             txt_id_inv_sumin.Text = this.dgv_vista_inv_sumin.CurrentRow.Cells[0].Value.ToString();
@@ -143,6 +185,20 @@ namespace WindowsFormsApplication1
             {
                 cl_gridysql.ActualizarGridMuestra(this.dgv_vista_inv_sumin, "select * from inventario_suministro where pk_id_simin like '" + txt_busc_tips_exam.Text + "%';");
             }
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajaTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

@@ -36,6 +36,34 @@ namespace WindowsFormsApplication1
             Conexionmysql.Desconectar();
         }
 
+        public void LimpiarCajasTexto()
+        {
+            cbo_id_cliente.Text = "";
+            cbo_id_muestra.Text = "";
+            txt_cant_mst.Text = "";
+            txt_descr_mst.Text = "";
+            cbo_tipo_mst.Text = "";
+
+        }
+
+        public void InhabilitarTexto()
+        {
+            cbo_id_cliente.Enabled = false;
+            cbo_id_muestra.Enabled = false;
+            txt_cant_mst.Enabled = false;
+            txt_descr_mst.Enabled = false;
+            cbo_tipo_mst.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            cbo_id_cliente.Enabled = true;
+            cbo_id_muestra.Enabled = true;
+            txt_cant_mst.Enabled = true;
+            txt_descr_mst.Enabled = true;
+            cbo_tipo_mst.Enabled = true;
+        }
+
         private void btn_guardar_mst_Click(object sender, EventArgs e)
         {
             try          
@@ -59,10 +87,12 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.Message);
             }
+            InhabilitarTexto();
         }
 
         private void btn_actlz_mst_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
             try
             {
                 string selectedItem = cbo_id_muestra.SelectedValue.ToString();
@@ -82,7 +112,7 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.Message);
             }
-
+            InhabilitarTexto();
         }
 
         private void btn_elim_mst_Click(object sender, EventArgs e)
@@ -155,6 +185,36 @@ namespace WindowsFormsApplication1
         private void dgv_busc_mst_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_acept_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_renov_pcnt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+        }
+
+        private void frm_muestra_Load(object sender, EventArgs e)
+        {
+            InhabilitarTexto();
+            btn_acept.Enabled = false;
+            btn_cancl.Enabled = false;
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
         }
     }
 }

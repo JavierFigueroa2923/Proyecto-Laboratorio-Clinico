@@ -33,6 +33,24 @@ namespace WindowsFormsApplication1
             txt_busc_lab.Text = "";
         }
 
+        public void InhabilitarTexto()
+        {
+            txt_id_labs.Enabled = false;
+            txt_nombre.Enabled = false;
+            txt_direccion.Enabled = false;
+            txt_telefono.Enabled = false;
+            txt_correo.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            txt_id_labs.Enabled = true;
+            txt_nombre.Enabled = true;
+            txt_direccion.Enabled = true;
+            txt_telefono.Enabled = true;
+            txt_correo.Enabled = true;
+        }
+
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
             //Establecemos la conexion
@@ -75,6 +93,9 @@ namespace WindowsFormsApplication1
 
         private void frm_act_lab_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
 
         }
 
@@ -140,7 +161,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("No se pudo realizar la modificación de la base de datos", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
+            InhabilitarTexto();
             
         }
 
@@ -186,6 +207,8 @@ namespace WindowsFormsApplication1
 
         private void btn_actlz_pcnt_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             Editar = true;
             Codigo = this.dgv_labs.CurrentRow.Cells[0].Value.ToString();
             txt_id_labs.Text = this.dgv_labs.CurrentRow.Cells[1].Value.ToString();
@@ -232,6 +255,20 @@ namespace WindowsFormsApplication1
             {
                 return false;
             }
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarTextBox();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

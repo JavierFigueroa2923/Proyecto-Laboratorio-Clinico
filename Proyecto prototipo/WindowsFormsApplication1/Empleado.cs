@@ -55,6 +55,40 @@ namespace WindowsFormsApplication1
             txt_telefono.Text = "";
         }
 
+        public void InhabilitarTexto()
+        {
+            txt_nombre.Enabled = false;
+            txt_apellido.Enabled = false;
+            txt_usuario.Enabled = false;
+            txt_contraseña.Enabled = false;
+            txt_contraseña2.Enabled = false;
+            txt_fecha_nacimiento.Enabled = false;
+            txt_direccion.Enabled = false;
+            cbo_carg_emp.Enabled = false;
+            cbo_id_lab.Enabled = false;
+            cbo_sexo_emp.Enabled = false;
+            txt_correo.Enabled = false;
+            txt_nombre.Enabled = false;
+            txt_telefono.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            txt_nombre.Enabled = true;
+            txt_apellido.Enabled = true;
+            txt_usuario.Enabled = true;
+            txt_contraseña.Enabled = true;
+            txt_contraseña2.Enabled = true;
+            txt_fecha_nacimiento.Enabled = true;
+            txt_direccion.Enabled = true;
+            cbo_carg_emp.Enabled = true;
+            cbo_id_lab.Enabled = true;
+            cbo_sexo_emp.Enabled = true;
+            txt_correo.Enabled = true;
+            txt_nombre.Enabled = true;
+            txt_telefono.Enabled = true;
+        }
+
         private void Label2_Click(object sender, EventArgs e)
         {
 
@@ -146,7 +180,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("No se pudo realizar la modificación de la base de datos", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
+            InhabilitarTexto();
         }
 
 
@@ -156,6 +190,8 @@ namespace WindowsFormsApplication1
 
         private void btn_actlz_emp_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             Editar = true;
             Codigo = this.dgv_empleads.CurrentRow.Cells[0].Value.ToString();
             cbo_id_lab.Text = this.dgv_empleads.CurrentRow.Cells[1].Value.ToString();
@@ -226,6 +262,9 @@ namespace WindowsFormsApplication1
 
         private void frm_act_emp_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             cl_gridysql.ActualizarGridEmpleadoUsuario(this.dgv_empleads, "select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado");
             llenarCboIdCargo();
             llenarCboIdLab();
@@ -295,6 +334,20 @@ namespace WindowsFormsApplication1
         private void Lbl_cargo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_pcnt_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 

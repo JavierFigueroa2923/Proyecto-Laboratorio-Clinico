@@ -48,6 +48,22 @@ namespace WindowsFormsApplication1
             cbo_id_lab_cit.Text = "";
         }
 
+        public void InhabilitarText()
+        {
+            cbo_hora1_cit.Enabled = false;
+            cbo_id_clt_cit.Enabled = false;
+            cbo_id_lab_cit.Enabled = false;
+            dtp_fec_cit.Enabled = false;
+        }
+
+        public void HabilitarText()
+        {
+            cbo_hora1_cit.Enabled = true;
+            cbo_id_clt_cit.Enabled = true;
+            cbo_id_lab_cit.Enabled = true;
+            dtp_fec_cit.Enabled = true;
+        }
+
         private void btn_guardar_cita_Click(object sender, EventArgs e)
         {
             //try
@@ -119,6 +135,7 @@ namespace WindowsFormsApplication1
                         }
                    }
                 }
+            InhabilitarText();
             //}
            /* catch
             {
@@ -164,6 +181,8 @@ namespace WindowsFormsApplication1
 
         private void Citas_Load(object sender, EventArgs e)
         {
+            InhabilitarText();
+            btn_cancl.Enabled = false;
             cl_gridysql.ActualizarGridBusquedaIdCita(this.dgv_vista_cita, "select pk_id_cita as Identificador, fecha_cita as Fecha, hora_cita as Hora, pk_id_lab as Laboratorio, pk_id_clt as Cliente from cita;");
             llenarCboCitaIdCliente();
             llenarCboCitaIdLaboratorio();
@@ -171,6 +190,8 @@ namespace WindowsFormsApplication1
 
         private void btn_actlz_cita_Click(object sender, EventArgs e)
         {
+            btn_cancl.Enabled = true;
+            HabilitarText();
             try
             {
                 Editar = true;
@@ -234,6 +255,21 @@ namespace WindowsFormsApplication1
         private void Txt_busquedacita_KeyUp(object sender, KeyEventArgs e)
         {
             cl_gridysql.ActualizarGridBusquedaIdCita(this.dgv_vista_cita, "select pk_id_cita as Identificador, fecha_cita as Fecha, hora_cita as Hora, pk_id_lab as Laboratorio, pk_id_clt as Cliente from cita where pk_id_cita like '" + txt_busc_cit.Text + "%'; ");
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarText();
+            btn_cancl.Enabled = true;
+
+        }
+
+        private void btn_cancl_pcnt_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarText();
+            btn_cancl.Enabled = false;
         }
     }
 }

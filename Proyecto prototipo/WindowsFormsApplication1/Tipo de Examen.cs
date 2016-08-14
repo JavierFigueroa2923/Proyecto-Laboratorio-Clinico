@@ -28,7 +28,20 @@ namespace WindowsFormsApplication1
         public void LimpiarCajasTexto()
         {
             txt_nombre.Text = "";
-            txt_direccion.Text = "";
+            txt_descripcion.Text = "";
+        }
+
+
+        public void InhabilitarTexto()
+        {
+            txt_nombre.Enabled = false;
+            txt_descripcion.Enabled = false;
+        }
+
+        public void HabilitarTexto()
+        {
+            txt_nombre.Enabled = true;
+            txt_descripcion.Enabled = true;
         }
 
         public void ActualizarGrid(DataGridView dg, String Query)
@@ -49,7 +62,7 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_aseg_Click(object sender, EventArgs e)
         {
-            if (txt_nombre.Text == "" || txt_direccion.Text == "")
+            if (txt_nombre.Text == "" || txt_descripcion.Text == "")
             {
                 MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -59,7 +72,7 @@ namespace WindowsFormsApplication1
                 {
                     Conexionmysql.ObtenerConexion();
                     int NumVal = Int32.Parse(codigo);
-                    String Query = "update tipo_examen set nombre_tp_exm = " + txt_nombre.Text + ", descripcion_tp_exm = " + txt_direccion.Text + " where pk_id_tp_exm = " + NumVal + ";";
+                    String Query = "update tipo_examen set nombre_tp_exm = " + txt_nombre.Text + ", descripcion_tp_exm = " + txt_descripcion.Text + " where pk_id_tp_exm = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
                     grid();
                     Conexionmysql.Desconectar();
@@ -71,7 +84,7 @@ namespace WindowsFormsApplication1
                     try
                     {
                         Conexionmysql.ObtenerConexion();
-                        String Query1 = "INSERT INTO tipo_examen(nombre_tp_exm, descripcion_tp_exm) values('"+ txt_nombre.Text + "','" + txt_direccion.Text + "');";
+                        String Query1 = "INSERT INTO tipo_examen(nombre_tp_exm, descripcion_tp_exm) values('"+ txt_nombre.Text + "','" + txt_descripcion.Text + "');";
                         cl_gridysql.EjecutarMySql(Query1);
 
                             ActualizarGrid(this.dgv_vist_tips_exam, tipos_de_examenes);
@@ -86,10 +99,14 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+            InhabilitarTexto();
         }
 
         private void frm_act_examenes_Load(object sender, EventArgs e)
         {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
             grid();
         }
         private void grid()
@@ -105,16 +122,18 @@ namespace WindowsFormsApplication1
         private void limipiar() {
 
             txt_nombre.Text = "";
-            txt_direccion.Text = "";
+            txt_descripcion.Text = "";
             
         }
 
         private void btn_actlz_aseg_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
             Editar = true;
             codigo = this.dgv_vist_tips_exam.CurrentRow.Cells[0].Value.ToString();
             txt_nombre.Text = this.dgv_vist_tips_exam.CurrentRow.Cells[0].Value.ToString();
-            txt_direccion.Text = this.dgv_vist_tips_exam.CurrentRow.Cells[2].Value.ToString();
+            txt_descripcion.Text = this.dgv_vist_tips_exam.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void btn_busc_tip_exam_Click(object sender, EventArgs e)
@@ -127,6 +146,20 @@ namespace WindowsFormsApplication1
             {
                 cl_gridysql.ActualizarGridMuestra(this.dgv_vist_tips_exam, "select * from tipo_examen where pk_id_tp_exm like '" + txt_busc_tips_exam.Text + "%';");
             }
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

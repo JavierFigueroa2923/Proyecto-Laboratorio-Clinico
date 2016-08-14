@@ -23,7 +23,10 @@ namespace WindowsFormsApplication1
         Boolean Editar;
         private void Area_de_laboratorio_Load(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_area_labs, "SELECT * FROM area_laboratorio;");
+            btn_acept.Enabled = false;
+            btn_cancl.Enabled = false;
+            ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio;");
+            InhabilitarText();
         }
         private void txt_id_area_lab_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -43,6 +46,19 @@ namespace WindowsFormsApplication1
             txt_id_lab.Text = "";
 
         }
+
+        public void InhabilitarText()
+        {
+            txt_id_lab.Enabled = false;
+            txt_descrip_area.Enabled = false;
+        }
+
+        public void HabilitarText()
+        {
+            txt_id_lab.Enabled = true;
+            txt_descrip_area.Enabled = true;
+        }
+
         public void ActualizarGrid(DataGridView dg, String Query)
         {
             Conexionmysql.ObtenerConexion();
@@ -77,7 +93,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_area_labs, "SELECT * FROM area_laboratorio");
+                        ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio");
                         Editar = false;
                     }
                     else
@@ -85,7 +101,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String Query = "INSERT INTO area_laboratorio (pk_id_lab,descripcion_ar_lab) VALUES ('" + Convert.ToDouble(txt_id_lab.Text) + "','" + txt_descrip_area.Text + "') ";
                         cl_gridysql.EjecutarMySql(Query);
-                        ActualizarGrid(this.dgv_area_labs, "select * from area_laboratorio;");
+                        ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
                     }
@@ -95,6 +111,7 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            InhabilitarText();
         }
 
         private void btn_elim_area_Click(object sender, EventArgs e)
@@ -132,7 +149,7 @@ namespace WindowsFormsApplication1
         private void btn_buscar_lab_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select * from area_laboratorio where ubicacion = '" + cbo_buscar.Text + "%'; ");
+            String Query = ("select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio where ubicacion = '" + cbo_buscar.Text + "%'; ");
             //ManipularDato.Busqueda(Query);
             ActualizarGrid(this.dgv_area_labs, Query);
             Conexionmysql.Desconectar();
@@ -140,6 +157,8 @@ namespace WindowsFormsApplication1
 
         private void btn_actlz_area_Click(object sender, EventArgs e)
         {
+            btn_cancl.Enabled = true;
+            HabilitarText();
             try {
                 Editar = true;
                 Codigo = this.dgv_area_labs.CurrentRow.Cells[0].Value.ToString();
@@ -150,6 +169,20 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Seleccione el Dato a Actualizar, Gracias", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarText();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_pcnt_Click(object sender, EventArgs e)
+        {
+            Editar = false;
+            LimpiarCajasTexto();
+            InhabilitarText();
+            btn_cancl.Enabled = false;
         }
     }
 }

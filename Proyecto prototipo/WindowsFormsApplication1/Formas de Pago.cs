@@ -34,135 +34,27 @@ namespace WindowsFormsApplication1
             Conexionmysql.Desconectar();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        public void LimpiarCajasTexto()
         {
-
+            txt_id_fm_pg.Text = "";
+            txt_descripcion.Text = "";
+            txt_nombre.Text = "";
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        public void InhabilitarTexto()
         {
-
+            txt_id_fm_pg.Enabled = false;
+            txt_descripcion.Enabled = false;
+            txt_nombre.Enabled = false;
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        public void HabilitarTexto()
         {
-
+            txt_id_fm_pg.Enabled = true;
+            txt_descripcion.Enabled = true;
+            txt_nombre.Enabled = true;
         }
 
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_imprimir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_regresar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_tipo_precio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_descuento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_referencia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_direccion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_telefono_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_nit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_paciente_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -193,10 +85,13 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.Message);
             }
+            LimpiarCajasTexto();
+            InhabilitarTexto();
         }
 
         private void btn_actlz_pcnt_Click(object sender, EventArgs e)
         {
+            HabilitarTexto();
             try
             {
                 string consulta2 = "update proyecto_laboratorio.FORMA_DE_PAGO set nombre_fm_pago='" + txt_nombre + "',descripcion_fm_pg='" + txt_descripcion + "' where pk_id_fm_pg ='" + txt_id_fm_pg + "';";
@@ -214,6 +109,7 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show(ex.Message);
             }
+            InhabilitarTexto();
         }
 
         private void btn_elim_pcnt_Click(object sender, EventArgs e)
@@ -244,6 +140,26 @@ namespace WindowsFormsApplication1
            // ManipularDato.Busqueda(Query);
             GridViewActualizar(this.dataGridView1, Query);
             Conexionmysql.Desconectar();
+        }
+
+        private void frm_act_pago_Load(object sender, EventArgs e)
+        {
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
+            btn_acept.Enabled = false;
+        }
+
+        private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
+        {
+            HabilitarTexto();
+            btn_cancl.Enabled = true;
+        }
+
+        private void btn_cancl_Click(object sender, EventArgs e)
+        {
+            LimpiarCajasTexto();
+            InhabilitarTexto();
+            btn_cancl.Enabled = false;
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tipo_de_muestra));
             this.lbl_tipo_muestra = new System.Windows.Forms.Label();
             this.gpb_ingr_datos = new System.Windows.Forms.GroupBox();
@@ -45,6 +46,17 @@
             this.lbl_busq_clt = new System.Windows.Forms.Label();
             this.btn_busc_memb = new System.Windows.Forms.Button();
             this.btn_act_datos = new System.Windows.Forms.Button();
+            this.btn_nuevo_pcnt = new System.Windows.Forms.Button();
+            this.btn_acept = new System.Windows.Forms.Button();
+            this.btn_cancl = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
             this.gpb_ingr_datos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpb_vista_tipos_mist.SuspendLayout();
@@ -110,43 +122,55 @@
             // 
             // btn_elim_tp_muestra
             // 
+            this.btn_elim_tp_muestra.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_Delete_icon;
+            this.btn_elim_tp_muestra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_elim_tp_muestra.FlatAppearance.BorderSize = 0;
+            this.btn_elim_tp_muestra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_elim_tp_muestra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elim_tp_muestra.Image = global::WindowsFormsApplication1.Properties.Resources.Delete_;
             this.btn_elim_tp_muestra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_elim_tp_muestra.Location = new System.Drawing.Point(212, 90);
+            this.btn_elim_tp_muestra.Location = new System.Drawing.Point(225, 67);
             this.btn_elim_tp_muestra.Name = "btn_elim_tp_muestra";
-            this.btn_elim_tp_muestra.Size = new System.Drawing.Size(94, 54);
+            this.btn_elim_tp_muestra.Size = new System.Drawing.Size(65, 65);
             this.btn_elim_tp_muestra.TabIndex = 161;
-            this.btn_elim_tp_muestra.Text = "ELIMINAR";
+            this.btn_elim_tp_muestra.Text = " ";
             this.btn_elim_tp_muestra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip4.SetToolTip(this.btn_elim_tp_muestra, "Eliminar");
             this.btn_elim_tp_muestra.UseVisualStyleBackColor = true;
             this.btn_elim_tp_muestra.Click += new System.EventHandler(this.btn_elim_tp_muestra_Click);
             // 
             // btn_actlz_tipo_muestra
             // 
+            this.btn_actlz_tipo_muestra.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Edit_Document_icon;
+            this.btn_actlz_tipo_muestra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_actlz_tipo_muestra.FlatAppearance.BorderSize = 0;
+            this.btn_actlz_tipo_muestra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actlz_tipo_muestra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actlz_tipo_muestra.Image = global::WindowsFormsApplication1.Properties.Resources.Refresh;
             this.btn_actlz_tipo_muestra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_actlz_tipo_muestra.Location = new System.Drawing.Point(112, 90);
+            this.btn_actlz_tipo_muestra.Location = new System.Drawing.Point(154, 67);
             this.btn_actlz_tipo_muestra.Name = "btn_actlz_tipo_muestra";
-            this.btn_actlz_tipo_muestra.Size = new System.Drawing.Size(94, 54);
+            this.btn_actlz_tipo_muestra.Size = new System.Drawing.Size(65, 65);
             this.btn_actlz_tipo_muestra.TabIndex = 72;
-            this.btn_actlz_tipo_muestra.Text = "ACTUALIZAR";
+            this.btn_actlz_tipo_muestra.Text = " ";
             this.btn_actlz_tipo_muestra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip3.SetToolTip(this.btn_actlz_tipo_muestra, "Modificar");
             this.btn_actlz_tipo_muestra.UseVisualStyleBackColor = true;
             this.btn_actlz_tipo_muestra.Click += new System.EventHandler(this.btn_actlz_tipo_muestra_Click);
             // 
             // btn_guardar_tipo_muestra
             // 
+            this.btn_guardar_tipo_muestra.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Save_icon;
+            this.btn_guardar_tipo_muestra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_guardar_tipo_muestra.FlatAppearance.BorderSize = 0;
+            this.btn_guardar_tipo_muestra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar_tipo_muestra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar_tipo_muestra.Image = global::WindowsFormsApplication1.Properties.Resources.Save_icon1;
             this.btn_guardar_tipo_muestra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_guardar_tipo_muestra.Location = new System.Drawing.Point(12, 90);
+            this.btn_guardar_tipo_muestra.Location = new System.Drawing.Point(83, 67);
             this.btn_guardar_tipo_muestra.Name = "btn_guardar_tipo_muestra";
-            this.btn_guardar_tipo_muestra.Size = new System.Drawing.Size(94, 54);
+            this.btn_guardar_tipo_muestra.Size = new System.Drawing.Size(65, 65);
             this.btn_guardar_tipo_muestra.TabIndex = 70;
-            this.btn_guardar_tipo_muestra.Text = "GUARDAR";
+            this.btn_guardar_tipo_muestra.Text = " ";
             this.btn_guardar_tipo_muestra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip2.SetToolTip(this.btn_guardar_tipo_muestra, "Guardar");
             this.btn_guardar_tipo_muestra.UseVisualStyleBackColor = true;
             this.btn_guardar_tipo_muestra.Click += new System.EventHandler(this.btn_guardar_tipo_muestra_Click);
             // 
@@ -200,38 +224,94 @@
             // btn_busc_memb
             // 
             this.btn_busc_memb.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_busc_memb.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Zoom_icon;
+            this.btn_busc_memb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_busc_memb.FlatAppearance.BorderSize = 0;
+            this.btn_busc_memb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_busc_memb.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busc_memb.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
             this.btn_busc_memb.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_busc_memb.Location = new System.Drawing.Point(592, 120);
+            this.btn_busc_memb.Location = new System.Drawing.Point(296, 67);
             this.btn_busc_memb.Name = "btn_busc_memb";
-            this.btn_busc_memb.Size = new System.Drawing.Size(65, 52);
+            this.btn_busc_memb.Size = new System.Drawing.Size(65, 65);
             this.btn_busc_memb.TabIndex = 170;
-            this.btn_busc_memb.Text = "BUSCAR";
+            this.btn_busc_memb.Text = " ";
             this.btn_busc_memb.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip5.SetToolTip(this.btn_busc_memb, "Buscar");
             this.btn_busc_memb.UseVisualStyleBackColor = true;
             this.btn_busc_memb.Click += new System.EventHandler(this.btn_busc_memb_Click);
             // 
             // btn_act_datos
             // 
-            this.btn_act_datos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_act_datos.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Button_Refresh_icon;
+            this.btn_act_datos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_act_datos.FlatAppearance.BorderSize = 0;
+            this.btn_act_datos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_act_datos.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_act_datos.Image = global::WindowsFormsApplication1.Properties.Resources.Recargar;
             this.btn_act_datos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_act_datos.Location = new System.Drawing.Point(662, 120);
+            this.btn_act_datos.Location = new System.Drawing.Point(510, 67);
             this.btn_act_datos.Name = "btn_act_datos";
-            this.btn_act_datos.Size = new System.Drawing.Size(65, 52);
+            this.btn_act_datos.Size = new System.Drawing.Size(65, 65);
             this.btn_act_datos.TabIndex = 171;
-            this.btn_act_datos.Text = "RENOVAR";
+            this.btn_act_datos.Text = " ";
             this.btn_act_datos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip8.SetToolTip(this.btn_act_datos, "Actualizar");
             this.btn_act_datos.UseVisualStyleBackColor = true;
             this.btn_act_datos.Click += new System.EventHandler(this.btn_act_datos_Click);
+            // 
+            // btn_nuevo_pcnt
+            // 
+            this.btn_nuevo_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_New_icon;
+            this.btn_nuevo_pcnt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_nuevo_pcnt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo_pcnt.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo_pcnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo_pcnt.Location = new System.Drawing.Point(12, 67);
+            this.btn_nuevo_pcnt.Name = "btn_nuevo_pcnt";
+            this.btn_nuevo_pcnt.Size = new System.Drawing.Size(65, 65);
+            this.btn_nuevo_pcnt.TabIndex = 172;
+            this.toolTip1.SetToolTip(this.btn_nuevo_pcnt, "Nuevo");
+            this.btn_nuevo_pcnt.UseVisualStyleBackColor = true;
+            this.btn_nuevo_pcnt.Click += new System.EventHandler(this.btn_nuevo_pcnt_Click);
+            // 
+            // btn_acept
+            // 
+            this.btn_acept.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.check_icon;
+            this.btn_acept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_acept.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_acept.Enabled = false;
+            this.btn_acept.FlatAppearance.BorderSize = 0;
+            this.btn_acept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_acept.Location = new System.Drawing.Point(439, 67);
+            this.btn_acept.Name = "btn_acept";
+            this.btn_acept.Size = new System.Drawing.Size(65, 65);
+            this.btn_acept.TabIndex = 174;
+            this.toolTip7.SetToolTip(this.btn_acept, "Aceptar");
+            this.btn_acept.UseVisualStyleBackColor = true;
+            // 
+            // btn_cancl
+            // 
+            this.btn_cancl.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.delete_icon;
+            this.btn_cancl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_cancl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancl.Enabled = false;
+            this.btn_cancl.FlatAppearance.BorderSize = 0;
+            this.btn_cancl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancl.Location = new System.Drawing.Point(368, 67);
+            this.btn_cancl.Name = "btn_cancl";
+            this.btn_cancl.Size = new System.Drawing.Size(65, 65);
+            this.btn_cancl.TabIndex = 173;
+            this.toolTip6.SetToolTip(this.btn_cancl, "Cancelar");
+            this.btn_cancl.UseVisualStyleBackColor = true;
+            this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_Click);
             // 
             // Tipo_de_muestra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 492);
+            this.Controls.Add(this.btn_acept);
+            this.Controls.Add(this.btn_cancl);
+            this.Controls.Add(this.btn_nuevo_pcnt);
             this.Controls.Add(this.btn_act_datos);
             this.Controls.Add(this.btn_busc_memb);
             this.Controls.Add(this.lbl_busq_clt);
@@ -276,5 +356,16 @@
         private System.Windows.Forms.Label lbl_busq_clt;
         private System.Windows.Forms.Button btn_busc_memb;
         private System.Windows.Forms.Button btn_act_datos;
+        private System.Windows.Forms.Button btn_nuevo_pcnt;
+        private System.Windows.Forms.Button btn_acept;
+        private System.Windows.Forms.Button btn_cancl;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip8;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip7;
+        private System.Windows.Forms.ToolTip toolTip6;
     }
 }

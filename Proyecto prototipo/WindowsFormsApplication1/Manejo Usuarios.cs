@@ -34,6 +34,20 @@ namespace WindowsFormsApplication1
             txt_busc_emp_user.Text = "";
         }
 
+        public void InhabilitarTexto()
+        {
+            txt_id_user.Text = "";
+            txt_nombre_user.Text = "";
+            txt_id_lab_user.Text = "";
+            txt_id_emp_user.Text = "";
+            txt_contr_emp.Text = "";
+        }
+
+        public void HabilitarTexto()
+        {
+
+        }
+
         private void btn_busc_emp_user_click(object sender, EventArgs e)
         {
             if (txt_busc_emp_user.Text == "")
