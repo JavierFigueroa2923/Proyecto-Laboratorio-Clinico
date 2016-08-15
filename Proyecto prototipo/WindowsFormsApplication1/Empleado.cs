@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
             txt_usuario.Text = "";
             txt_contraseña.Text = "";
             txt_contraseña2.Text = "";
-            txt_fecha_nacimiento.Text = "";
+            dtp_fec_nac_emp.Text = "";
             txt_direccion.Text = "";
             cbo_carg_emp.SelectedText = "";
             cbo_id_lab.SelectedText = "";
@@ -62,7 +62,7 @@ namespace WindowsFormsApplication1
             txt_usuario.Enabled = false;
             txt_contraseña.Enabled = false;
             txt_contraseña2.Enabled = false;
-            txt_fecha_nacimiento.Enabled = false;
+            dtp_fec_nac_emp.Enabled = false;
             txt_direccion.Enabled = false;
             cbo_carg_emp.Enabled = false;
             cbo_id_lab.Enabled = false;
@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
             txt_usuario.Enabled = true;
             txt_contraseña.Enabled = true;
             txt_contraseña2.Enabled = true;
-            txt_fecha_nacimiento.Enabled = true;
+            dtp_fec_nac_emp.Enabled = true;
             txt_direccion.Enabled = true;
             cbo_carg_emp.Enabled = true;
             cbo_id_lab.Enabled = true;
@@ -151,7 +151,8 @@ namespace WindowsFormsApplication1
                         if (txt_contraseña.Text == txt_contraseña2.Text)
                         {
                             Conexionmysql.ObtenerConexion();
-                            String Query1 = "INSERT INTO empleado (pk_id_lab,genero,nombre_emp,apellido_emp,usuario,contrasenia,fecha_nacimiento_emp ) VALUES (" + cbo_id_lab.SelectedValue + ",'" + cbo_sexo_emp.Text + "','" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_usuario.Text + "', '" + txt_contraseña.Text + "','" + txt_fecha_nacimiento.Text + "')";
+                            string theDate = dtp_fec_nac_emp.Value.ToString("yyyy-MM-dd");
+                            String Query1 = "INSERT INTO empleado (pk_id_lab,genero,nombre_emp,apellido_emp,usuario,contrasenia,fecha_nacimiento_emp ) VALUES (" + cbo_id_lab.SelectedValue + ",'" + cbo_sexo_emp.Text + "','" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_usuario.Text + "', '" + txt_contraseña.Text + "','" + theDate + "')";
                             cl_gridysql.EjecutarMySql(Query1);
 
                             String Query2 = "INSERT INTO correo_e (correo_e,pk_id_emp) VALUES ('" + txt_correo.Text + "',(select MAX(pk_id_emp) FROM empleado))";
@@ -201,7 +202,7 @@ namespace WindowsFormsApplication1
             txt_usuario.Text = this.dgv_empleads.CurrentRow.Cells[5].Value.ToString();
             txt_contraseña.Text = this.dgv_empleads.CurrentRow.Cells[6].Value.ToString();
             txt_contraseña2.Text = this.dgv_empleads.CurrentRow.Cells[6].Value.ToString();
-            txt_fecha_nacimiento.Text = this.dgv_empleads.CurrentRow.Cells[7].Value.ToString();
+            dtp_fec_nac_emp.Text = this.dgv_empleads.CurrentRow.Cells[7].Value.ToString();
             //cbo_carg_emp.Text = this.dgv_empleads.CurrentRow.Cells[7].Value.ToString();
         }
 
@@ -248,7 +249,7 @@ namespace WindowsFormsApplication1
         private void btn_busc_emp_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado WHERE empleado.nombre_emp like '%" + txt_buscar.Text + "%'");
+            String Query = ("select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado WHERE empleado.nombre_emp like '%" + txt_buscar.Text + "%';");
             
             //ManipularDato.Busqueda(Query);
             GridViewActualizar(this.dgv_empleads, Query);
@@ -348,6 +349,16 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_buscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            Conexionmysql.ObtenerConexion();
+            String Query = ("select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado WHERE empleado.nombre_emp like '%" + txt_buscar.Text + "%'");
+
+            //ManipularDato.Busqueda(Query);
+            GridViewActualizar(this.dgv_empleads, Query);
+            Conexionmysql.Desconectar();
         }
     }
 

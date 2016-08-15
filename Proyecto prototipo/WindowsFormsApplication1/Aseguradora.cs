@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         Boolean Editar;
         public void LimpiarCajasTexto()
         {
-            cbo_buscar.Text = "";
+            txt_buscar.Text = "";
             txt_desc_aseg.Text = "";
             //txt_id__aseg.Text = "";
             txt_nom_aseg.Text = "";
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
             btn_acept.Enabled = false;
             btn_cancl.Enabled = false;
             InhabilitarText();
-            ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
+            ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
@@ -78,13 +78,10 @@ namespace WindowsFormsApplication1
 
         private void btn_busc_aseg_Click(object sender, EventArgs e)
         {
-            Conexionmysql.ObtenerConexion();
-            String Query = ("select * from aseguradora where nombre_aseg = '" + cbo_buscar.Text + "%'; ");
-            //ManipularDato.Busqueda(Query);
-            ActualizarGrid(this.dgv_aseg, Query);
-            Conexionmysql.Desconectar();
-            cbo_buscar.Text = "";
+            ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora where nombre_aseg like '" + txt_buscar.Text + "%'; ");
+            txt_buscar.Text = "";
         }
+
 
         private void txt_id__aseg_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -120,7 +117,8 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
+                    ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
+                    LimpiarCajasTexto();
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();
                 }
@@ -150,7 +148,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
+                        ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
                         Editar = false;
                     }
                     else
@@ -160,7 +158,7 @@ namespace WindowsFormsApplication1
                         String query = "INSERT INTO aseguradora (nombre_aseg,descripcion_aseg) VALUES('" + txt_nom_aseg.Text + "', '" + txt_desc_aseg.Text + "') ";
                         cl_gridysql.EjecutarMySql(query);
                         LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
+                        ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
                         this.LimpiarCajasTexto();
                     }
                 }
@@ -215,6 +213,11 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarText();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_buscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora where nombre_aseg like '" + txt_buscar.Text+ "%'; ");
         }
     } 
    }

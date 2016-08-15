@@ -299,6 +299,7 @@
             this.txt_busc_mem.Name = "txt_busc_mem";
             this.txt_busc_mem.Size = new System.Drawing.Size(254, 20);
             this.txt_busc_mem.TabIndex = 6;
+            this.txt_busc_mem.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busc_mem_KeyUp);
             // 
             // btn_nuevo_pcnt
             // 

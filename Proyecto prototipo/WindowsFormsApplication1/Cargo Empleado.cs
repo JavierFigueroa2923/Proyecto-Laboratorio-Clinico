@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1
         }
         private void grid_cargos()
         {
-            string query = String.Format("SELECT * FROM {0}", "cargo_empleado");
+            string query = String.Format("SELECT pk_id_cargo_emp as identificador, nombre_cargo_emp as nombre, descripcion_cargo_emp as Descripcion, fecha_contratacion as contratacion, pk_id_emp as empleado, pk_id_lab as laboratorio FROM {0}", "cargo_empleado");
             Conexionmysql.ObtenerConexion();
             MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
@@ -119,7 +119,7 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_cargo_emp_Click(object sender, EventArgs e)
         {
-            if (txt_nombre_cargo_emp.Text == "" || txt_descp_cargo_emp.Text == "" || txt_fecha_contrat_cargo_emp.Text == "" )
+            if (txt_nombre_cargo_emp.Text == "" || txt_descp_cargo_emp.Text == "" || dtp_fec_contr_carg_emp.Text == "" )
             {
                 MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -129,7 +129,8 @@ namespace WindowsFormsApplication1
                 {
                     Conexionmysql.ObtenerConexion();
                     int NumVal = Int32.Parse(codigo);
-                    String Query = "update cargo_empleado set nombre_cargo_emp = '" + txt_nombre_cargo_emp.Text + "', descripcion_cargo_emp = '" + txt_descp_cargo_emp.Text + "', fecha_contratacion = '" + txt_fecha_contrat_cargo_emp.Text + "', pk_id_emp = " + cbo_id_emp.SelectedValue + ", pk_id_lab = " + cbo_id_lab.SelectedValue + " where pk_id_cargo_emp = " + NumVal + ";";
+                    string theDate = dtp_fec_contr_carg_emp.Value.ToString("yyyy-MM-dd");
+                    String Query = "update cargo_empleado set nombre_cargo_emp = '" + txt_nombre_cargo_emp.Text + "', descripcion_cargo_emp = '" + txt_descp_cargo_emp.Text + "', fecha_contratacion = '" + theDate+ "', pk_id_emp = " + cbo_id_emp.SelectedValue + ", pk_id_lab = " + cbo_id_lab.SelectedValue + " where pk_id_cargo_emp = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
                     grid_cargos();
                     Conexionmysql.Desconectar();
@@ -141,7 +142,8 @@ namespace WindowsFormsApplication1
 
                     try
                     {
-                        String Query = "insert into cargo_empleado(nombre_cargo_emp, descripcion_cargo_emp, fecha_contratacion,pk_id_emp,pk_id_lab)values('" + txt_nombre_cargo_emp.Text + "','" + txt_descp_cargo_emp.Text + "','" + txt_fecha_contrat_cargo_emp.Text + "'," + cbo_id_emp.SelectedValue + "," + cbo_id_lab.SelectedValue + ");";
+                        string theDate = dtp_fec_contr_carg_emp.Value.ToString("yyyy-MM-dd");
+                        String Query = "insert into cargo_empleado(nombre_cargo_emp, descripcion_cargo_emp, fecha_contratacion,pk_id_emp,pk_id_lab)values('" + txt_nombre_cargo_emp.Text + "','" + txt_descp_cargo_emp.Text + "','" + theDate + "'," + cbo_id_emp.SelectedValue + "," + cbo_id_lab.SelectedValue + ");";
                         MySqlCommand MyCommand2 = new MySqlCommand(Query, Conexionmysql.ObtenerConexion());
                         MySqlDataReader MyReader2;
                         Conexionmysql.ObtenerConexion();
@@ -168,7 +170,7 @@ namespace WindowsFormsApplication1
             codigo = this.dgv_cargo_emp.CurrentRow.Cells[0].Value.ToString();
             txt_nombre_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[1].Value.ToString();
             txt_descp_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[2].Value.ToString();
-            txt_fecha_contrat_cargo_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[3].Value.ToString();
+            dtp_fec_contr_carg_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[3].Value.ToString();
             //string theDate = dgv_cargo_emp.CurrentRow.Cells[3].Value.ToString("yyyy-MM-dd");
             cbo_id_emp.Text = this.dgv_cargo_emp.CurrentRow.Cells[4].Value.ToString();
             cbo_id_lab.Text = this.dgv_cargo_emp.CurrentRow.Cells[5].Value.ToString();
@@ -177,7 +179,7 @@ namespace WindowsFormsApplication1
         private void limpiar() {
             txt_nombre_cargo_emp.Text = "";
             txt_descp_cargo_emp.Text = "";
-            txt_fecha_contrat_cargo_emp.Text = "";
+            dtp_fec_contr_carg_emp.Text = "";
             cbo_id_emp.Text = "";
             cbo_id_lab.Text = "";
         }
@@ -186,7 +188,7 @@ namespace WindowsFormsApplication1
         {
             txt_nombre_cargo_emp.Enabled = false;
             txt_descp_cargo_emp.Enabled = false;
-            txt_fecha_contrat_cargo_emp.Enabled = false;
+            dtp_fec_contr_carg_emp.Enabled = false;
             cbo_id_emp.Enabled = false;
             cbo_id_lab.Enabled = false;
         }
@@ -195,7 +197,7 @@ namespace WindowsFormsApplication1
         {
             txt_nombre_cargo_emp.Enabled = true;
             txt_descp_cargo_emp.Enabled = true;
-            txt_fecha_contrat_cargo_emp.Enabled = true;
+            dtp_fec_contr_carg_emp.Enabled = true;
             cbo_id_emp.Enabled = true;
             cbo_id_lab.Enabled = true;
         }
@@ -243,7 +245,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                cl_gridysql.ActualizarGridMuestra(this.dgv_cargo_emp, "select * from cargo_empleado where pk_id_cargo_emp like '" + txt_busc_cargo_emp.Text + "%';");
+                cl_gridysql.ActualizarGridMuestra(this.dgv_cargo_emp, "SELECT pk_id_cargo_emp as identificador, nombre_cargo_emp as nombre, descripcion_cargo_emp as Descripcion, fecha_contratacion as contratacion, pk_id_emp as empleado, pk_id_lab as laboratorio from cargo_empleado where pk_id_cargo_emp like '" + txt_busc_cargo_emp.Text + "%';");
             }
         }
 
@@ -264,6 +266,11 @@ namespace WindowsFormsApplication1
             limpiar();
             InhabilitarText();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_busc_cargo_emp_KeyUp(object sender, KeyEventArgs e)
+        {
+            cl_gridysql.ActualizarGridMuestra(this.dgv_cargo_emp, "SELECT pk_id_cargo_emp as identificador, nombre_cargo_emp as nombre, descripcion_cargo_emp as Descripcion, fecha_contratacion as contratacion, pk_id_emp as empleado, pk_id_lab as laboratorio from cargo_empleado where pk_id_cargo_emp like '" + txt_busc_cargo_emp.Text + "%';");
         }
     }
 }

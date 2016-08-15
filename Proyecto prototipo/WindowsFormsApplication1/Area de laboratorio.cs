@@ -25,7 +25,8 @@ namespace WindowsFormsApplication1
         {
             btn_acept.Enabled = false;
             btn_cancl.Enabled = false;
-            ActualizarGrid(this.dgv_area_labs, "SELECT pk_id_area_lab as Identificador, descripcion_ar_lab as Descripcion, pk_id_lab as Laboratorio FROM area_laboratorio;");
+            ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio;");
+            llenaridlab();
             InhabilitarText();
         }
         private void txt_id_area_lab_KeyPress(object sender, KeyPressEventArgs e)
@@ -43,19 +44,19 @@ namespace WindowsFormsApplication1
 
             txt_descrip_area.Text = "";
             //txt_id_area_lab.Text = "";
-            txt_id_lab.Text = "";
+           cbo_id_lab.Text = "";
 
         }
 
         public void InhabilitarText()
         {
-            txt_id_lab.Enabled = false;
+            cbo_id_lab.Enabled = false;
             txt_descrip_area.Enabled = false;
         }
 
         public void HabilitarText()
         {
-            txt_id_lab.Enabled = true;
+            cbo_id_lab.Enabled = true;
             txt_descrip_area.Enabled = true;
         }
 
@@ -79,7 +80,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                if (txt_descrip_area.Text == "" || txt_id_lab.Text == "")
+                if (txt_descrip_area.Text == "" || cbo_id_lab.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -88,20 +89,22 @@ namespace WindowsFormsApplication1
                     if (Editar)
                     {
                         Conexionmysql.ObtenerConexion();
-                        String query2 = "UPDATE area_laboratorio SET descripcion_ar_lab='" + txt_descrip_area.Text + "' WHERE pk_id_area_lab='" + Codigo + "';";
+                        string selectedItem = cbo_id_lab.SelectedValue.ToString();
+                        String query2 = "UPDATE area_laboratorio SET descripcion_ar_lab='" + txt_descrip_area.Text + "', pk_id_lab = '" + selectedItem + "' WHERE pk_id_area_lab='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_area_labs, "SELECT pk_id_area_lab as Identificador, descripcion_ar_lab as Descripcion, pk_id_lab as Laboratorio FROM area_laboratorio;");
+                        ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio");
                         Editar = false;
                     }
                     else
                     {
                         Conexionmysql.ObtenerConexion();
-                        String Query = "INSERT INTO area_laboratorio (pk_id_lab,descripcion_ar_lab) VALUES ('" + Convert.ToDouble(txt_id_lab.Text) + "','" + txt_descrip_area.Text + "') ";
+                        string selectedItem = cbo_id_lab.SelectedValue.ToString();
+                        String Query = "INSERT INTO area_laboratorio (pk_id_lab,descripcion_ar_lab) VALUES ('" + selectedItem + "','" + txt_descrip_area.Text + "') ";
                         cl_gridysql.EjecutarMySql(Query);
-                        ActualizarGrid(this.dgv_area_labs, "SELECT pk_id_area_lab as Identificador, descripcion_ar_lab as Descripcion, pk_id_lab as Laboratorio FROM area_laboratorio;");
+                        ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
                     }
@@ -131,7 +134,7 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_area_labs, "SELECT pk_id_area_lab as Identificador, descripcion_ar_lab as Descripcion, pk_id_lab as Laboratorio FROM area_laboratorio;");
+                    ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio;");
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();
                 }//cerrar el if
@@ -149,11 +152,12 @@ namespace WindowsFormsApplication1
         private void btn_buscar_lab_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select pk_id_area_lab as Identificador, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio where pk_id_lab= '" + cbo_buscar.Text + "%'; ");
+            String Query = ("select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio where pk_id_area_lab like '" + txt_busc_are_lab.Text + "%'; ");
             //ManipularDato.Busqueda(Query);
             ActualizarGrid(this.dgv_area_labs, Query);
             Conexionmysql.Desconectar();
         }
+
 
         private void btn_actlz_area_Click(object sender, EventArgs e)
         {
@@ -162,7 +166,7 @@ namespace WindowsFormsApplication1
             try {
                 Editar = true;
                 Codigo = this.dgv_area_labs.CurrentRow.Cells[0].Value.ToString();
-                txt_id_lab.Text = this.dgv_area_labs.CurrentRow.Cells[2].Value.ToString();
+                cbo_id_lab.Text = this.dgv_area_labs.CurrentRow.Cells[2].Value.ToString();
                 txt_descrip_area.Text = this.dgv_area_labs.CurrentRow.Cells[1].Value.ToString();
             }
             catch
@@ -183,6 +187,35 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarText();
             btn_cancl.Enabled = false;
+        }
+
+        private void llenaridlab()
+        {
+
+            //se realiza la conexión a la base de datos
+            Conexionmysql.ObtenerConexion();
+           //se inicia un DataSet
+            DataSet ds = new DataSet();
+            //se indica la consulta en sql
+            String Query = "select pk_id_lab, nombre_lab from laboratorio;";
+            MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //se indica con quu tabla se llena
+            dad.Fill(ds, "laboratorio");
+            cbo_id_lab.DataSource = ds.Tables[0].DefaultView;
+            //indicamos el valor de los miembros
+            cbo_id_lab.ValueMember = ("pk_id_lab");
+            //se indica el valor a desplegar en el combobox
+            cbo_id_lab.DisplayMember = ("nombre_lab");
+        }
+
+        private void txt_busc_are_lab_KeyUp(object sender, KeyEventArgs e)
+        {
+            ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio where pk_id_area_lab like '" + txt_busc_are_lab.Text + "%'; ");
+        }
+
+        private void btn_act_data_Click(object sender, EventArgs e)
+        {
+            ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio;");
         }
     }
 }

@@ -36,6 +36,7 @@
             this.btn_guardar_cargo_emp = new System.Windows.Forms.Button();
             this.pl_lab_cargo_emp = new System.Windows.Forms.PictureBox();
             this.gpb_datos_cargo_emp = new System.Windows.Forms.GroupBox();
+            this.dtp_fec_contr_carg_emp = new System.Windows.Forms.DateTimePicker();
             this.cbo_id_lab = new System.Windows.Forms.ComboBox();
             this.cbo_id_emp = new System.Windows.Forms.ComboBox();
             this.txt_descp_cargo_emp = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.Lbl_id_lab_cargo_emp = new System.Windows.Forms.Label();
             this.Lbl_nombre_cargo_emp = new System.Windows.Forms.Label();
             this.lbl_descrp_cargo_emp = new System.Windows.Forms.Label();
-            this.txt_fecha_contrat_cargo_emp = new System.Windows.Forms.TextBox();
             this.Lbl_id_emp_cargo_emp = new System.Windows.Forms.Label();
             this.Lbl_fecha_contrat_cargo_emp = new System.Windows.Forms.Label();
             this.dgv_cargo_emp = new System.Windows.Forms.DataGridView();
@@ -142,6 +142,7 @@
             // 
             // gpb_datos_cargo_emp
             // 
+            this.gpb_datos_cargo_emp.Controls.Add(this.dtp_fec_contr_carg_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.cbo_id_lab);
             this.gpb_datos_cargo_emp.Controls.Add(this.cbo_id_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.txt_descp_cargo_emp);
@@ -149,7 +150,6 @@
             this.gpb_datos_cargo_emp.Controls.Add(this.Lbl_id_lab_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.Lbl_nombre_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.lbl_descrp_cargo_emp);
-            this.gpb_datos_cargo_emp.Controls.Add(this.txt_fecha_contrat_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.Lbl_id_emp_cargo_emp);
             this.gpb_datos_cargo_emp.Controls.Add(this.Lbl_fecha_contrat_cargo_emp);
             this.gpb_datos_cargo_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,10 +160,17 @@
             this.gpb_datos_cargo_emp.TabStop = false;
             this.gpb_datos_cargo_emp.Text = "Informacion General";
             // 
+            // dtp_fec_contr_carg_emp
+            // 
+            this.dtp_fec_contr_carg_emp.Location = new System.Drawing.Point(118, 159);
+            this.dtp_fec_contr_carg_emp.Name = "dtp_fec_contr_carg_emp";
+            this.dtp_fec_contr_carg_emp.Size = new System.Drawing.Size(254, 23);
+            this.dtp_fec_contr_carg_emp.TabIndex = 153;
+            // 
             // cbo_id_lab
             // 
             this.cbo_id_lab.FormattingEnabled = true;
-            this.cbo_id_lab.Location = new System.Drawing.Point(172, 194);
+            this.cbo_id_lab.Location = new System.Drawing.Point(172, 222);
             this.cbo_id_lab.Name = "cbo_id_lab";
             this.cbo_id_lab.Size = new System.Drawing.Size(152, 24);
             this.cbo_id_lab.TabIndex = 152;
@@ -171,7 +178,7 @@
             // cbo_id_emp
             // 
             this.cbo_id_emp.FormattingEnabled = true;
-            this.cbo_id_emp.Location = new System.Drawing.Point(172, 165);
+            this.cbo_id_emp.Location = new System.Drawing.Point(172, 191);
             this.cbo_id_emp.Name = "cbo_id_emp";
             this.cbo_id_emp.Size = new System.Drawing.Size(152, 24);
             this.cbo_id_emp.TabIndex = 151;
@@ -195,7 +202,7 @@
             // 
             this.Lbl_id_lab_cargo_emp.AutoSize = true;
             this.Lbl_id_lab_cargo_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_id_lab_cargo_emp.Location = new System.Drawing.Point(9, 194);
+            this.Lbl_id_lab_cargo_emp.Location = new System.Drawing.Point(9, 223);
             this.Lbl_id_lab_cargo_emp.Name = "Lbl_id_lab_cargo_emp";
             this.Lbl_id_lab_cargo_emp.Size = new System.Drawing.Size(141, 20);
             this.Lbl_id_lab_cargo_emp.TabIndex = 149;
@@ -221,18 +228,11 @@
             this.lbl_descrp_cargo_emp.TabIndex = 146;
             this.lbl_descrp_cargo_emp.Text = "Descripción:";
             // 
-            // txt_fecha_contrat_cargo_emp
-            // 
-            this.txt_fecha_contrat_cargo_emp.Location = new System.Drawing.Point(172, 136);
-            this.txt_fecha_contrat_cargo_emp.Name = "txt_fecha_contrat_cargo_emp";
-            this.txt_fecha_contrat_cargo_emp.Size = new System.Drawing.Size(202, 23);
-            this.txt_fecha_contrat_cargo_emp.TabIndex = 148;
-            // 
             // Lbl_id_emp_cargo_emp
             // 
             this.Lbl_id_emp_cargo_emp.AutoSize = true;
             this.Lbl_id_emp_cargo_emp.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_id_emp_cargo_emp.Location = new System.Drawing.Point(9, 165);
+            this.Lbl_id_emp_cargo_emp.Location = new System.Drawing.Point(19, 195);
             this.Lbl_id_emp_cargo_emp.Name = "Lbl_id_emp_cargo_emp";
             this.Lbl_id_emp_cargo_emp.Size = new System.Drawing.Size(130, 20);
             this.Lbl_id_emp_cargo_emp.TabIndex = 146;
@@ -311,6 +311,7 @@
             this.txt_busc_cargo_emp.Name = "txt_busc_cargo_emp";
             this.txt_busc_cargo_emp.Size = new System.Drawing.Size(264, 20);
             this.txt_busc_cargo_emp.TabIndex = 147;
+            this.txt_busc_cargo_emp.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busc_cargo_emp_KeyUp);
             // 
             // lbl_busca_cargo_emp
             // 
@@ -415,7 +416,6 @@
         internal System.Windows.Forms.Label Lbl_id_lab_cargo_emp;
         internal System.Windows.Forms.Label Lbl_nombre_cargo_emp;
         internal System.Windows.Forms.Label lbl_descrp_cargo_emp;
-        internal System.Windows.Forms.TextBox txt_fecha_contrat_cargo_emp;
         internal System.Windows.Forms.Label Lbl_id_emp_cargo_emp;
         internal System.Windows.Forms.Label Lbl_fecha_contrat_cargo_emp;
         private System.Windows.Forms.DataGridView dgv_cargo_emp;
@@ -437,5 +437,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.DateTimePicker dtp_fec_contr_carg_emp;
     }
 }

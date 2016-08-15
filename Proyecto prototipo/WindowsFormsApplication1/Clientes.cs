@@ -169,8 +169,8 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    try
-                    {
+                    //try
+                    //{
                         Conexionmysql.ObtenerConexion();
                         String Query1 = "INSERT INTO cliente (nombre_clt, apellido_clt, nit, edad_clt, dpi, altura_clt, peso_clt, sexo_clt, tipo_sangre_clt, referido_clt, pk_id_lab) VALUES ('" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_nit.Text + "','" + txt_fecha_nacimiento.Text + "','" + txt_dpi.Text + "','" + txt_altura.Text + "','" + txt_peso_pcnt.Text + "','" + cbo_sexo_pcnt.Text + "','" + cbo_tip_sang_pcnt.Text + "','" + txt_referido.Text + "', "+cbo_lab_pcnt.Text +" )";
                         cl_gridysql.EjecutarMySql(Query1);
@@ -192,11 +192,11 @@ namespace WindowsFormsApplication1
                             Conexionmysql.Desconectar();
                             MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                    }
+                   /* }
                     catch
                     {
                         MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    }*/
                 }
             }
             InhabilitarTexto();

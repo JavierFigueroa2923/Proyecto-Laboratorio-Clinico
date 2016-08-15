@@ -33,7 +33,6 @@
             this.lbl_area_laboratorio = new System.Windows.Forms.Label();
             this.gpb_datos_area_lab = new System.Windows.Forms.GroupBox();
             this.txt_descrip_area = new System.Windows.Forms.TextBox();
-            this.txt_id_lab = new System.Windows.Forms.TextBox();
             this.lbl_descrip_area_lab = new System.Windows.Forms.Label();
             this.lbl_id_lab = new System.Windows.Forms.Label();
             this.gpb_vista_labs = new System.Windows.Forms.GroupBox();
@@ -45,7 +44,6 @@
             this.btn_actlz_area = new System.Windows.Forms.Button();
             this.btn_guardar_area = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.btn_nuevo_pcnt = new System.Windows.Forms.Button();
             this.btn_acept = new System.Windows.Forms.Button();
             this.btn_cancl = new System.Windows.Forms.Button();
@@ -57,6 +55,8 @@
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
+            this.txt_busc_are_lab = new System.Windows.Forms.TextBox();
             this.gpb_datos_area_lab.SuspendLayout();
             this.gpb_vista_labs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_area_labs)).BeginInit();
@@ -76,8 +76,8 @@
             // 
             // gpb_datos_area_lab
             // 
+            this.gpb_datos_area_lab.Controls.Add(this.cbo_id_lab);
             this.gpb_datos_area_lab.Controls.Add(this.txt_descrip_area);
-            this.gpb_datos_area_lab.Controls.Add(this.txt_id_lab);
             this.gpb_datos_area_lab.Controls.Add(this.lbl_descrip_area_lab);
             this.gpb_datos_area_lab.Controls.Add(this.lbl_id_lab);
             this.gpb_datos_area_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -95,14 +95,6 @@
             this.txt_descrip_area.Name = "txt_descrip_area";
             this.txt_descrip_area.Size = new System.Drawing.Size(315, 100);
             this.txt_descrip_area.TabIndex = 8;
-            // 
-            // txt_id_lab
-            // 
-            this.txt_id_lab.Location = new System.Drawing.Point(6, 44);
-            this.txt_id_lab.Name = "txt_id_lab";
-            this.txt_id_lab.Size = new System.Drawing.Size(315, 24);
-            this.txt_id_lab.TabIndex = 5;
-            this.txt_id_lab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_lab_KeyPress);
             // 
             // lbl_descrip_area_lab
             // 
@@ -184,6 +176,7 @@
             this.btn_act_data.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip8.SetToolTip(this.btn_act_data, "Actualizar");
             this.btn_act_data.UseVisualStyleBackColor = true;
+            this.btn_act_data.Click += new System.EventHandler(this.btn_act_data_Click);
             // 
             // btn_elim_area
             // 
@@ -246,14 +239,6 @@
             this.pictureBox1.TabIndex = 159;
             this.pictureBox1.TabStop = false;
             // 
-            // cbo_buscar
-            // 
-            this.cbo_buscar.FormattingEnabled = true;
-            this.cbo_buscar.Location = new System.Drawing.Point(446, 140);
-            this.cbo_buscar.Name = "cbo_buscar";
-            this.cbo_buscar.Size = new System.Drawing.Size(240, 21);
-            this.cbo_buscar.TabIndex = 160;
-            // 
             // btn_nuevo_pcnt
             // 
             this.btn_nuevo_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_New_icon;
@@ -300,15 +285,31 @@
             this.btn_cancl.UseVisualStyleBackColor = true;
             this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_pcnt_Click);
             // 
+            // cbo_id_lab
+            // 
+            this.cbo_id_lab.FormattingEnabled = true;
+            this.cbo_id_lab.Location = new System.Drawing.Point(9, 47);
+            this.cbo_id_lab.Name = "cbo_id_lab";
+            this.cbo_id_lab.Size = new System.Drawing.Size(315, 26);
+            this.cbo_id_lab.TabIndex = 9;
+            // 
+            // txt_busc_are_lab
+            // 
+            this.txt_busc_are_lab.Location = new System.Drawing.Point(446, 142);
+            this.txt_busc_are_lab.Name = "txt_busc_are_lab";
+            this.txt_busc_are_lab.Size = new System.Drawing.Size(353, 20);
+            this.txt_busc_are_lab.TabIndex = 164;
+            this.txt_busc_are_lab.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busc_are_lab_KeyUp);
+            // 
             // Area_de_laboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 496);
+            this.Controls.Add(this.txt_busc_are_lab);
             this.Controls.Add(this.btn_acept);
             this.Controls.Add(this.btn_cancl);
             this.Controls.Add(this.btn_nuevo_pcnt);
-            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_busq);
             this.Controls.Add(this.btn_buscar_lab);
@@ -340,7 +341,6 @@
         private System.Windows.Forms.Button btn_actlz_area;
         private System.Windows.Forms.Button btn_elim_area;
         private System.Windows.Forms.GroupBox gpb_datos_area_lab;
-        private System.Windows.Forms.TextBox txt_id_lab;
         private System.Windows.Forms.Label lbl_descrip_area_lab;
         private System.Windows.Forms.Label lbl_id_lab;
         private System.Windows.Forms.GroupBox gpb_vista_labs;
@@ -349,7 +349,6 @@
         private System.Windows.Forms.Label lbl_busq;
         private System.Windows.Forms.DataGridView dgv_area_labs;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cbo_buscar;
         private System.Windows.Forms.TextBox txt_descrip_area;
         private System.Windows.Forms.Button btn_nuevo_pcnt;
         private System.Windows.Forms.Button btn_acept;
@@ -362,5 +361,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.ComboBox cbo_id_lab;
+        private System.Windows.Forms.TextBox txt_busc_are_lab;
     }
 }

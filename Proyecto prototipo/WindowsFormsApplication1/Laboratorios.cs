@@ -96,12 +96,17 @@ namespace WindowsFormsApplication1
             InhabilitarTexto();
             btn_cancl.Enabled = false;
             btn_acept.Enabled = false;
-
+            GridViewActualizar(this.dgv_labs, "select distinct L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
         }
 
         private void txt_id_labs_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_telefono_TextChanged(object sender, EventArgs e)
+        {
+            txt_telefono.MaxLength = 8;
         }
 
         private void btn_guardar_pcnt_Click(object sender, EventArgs e)
@@ -122,7 +127,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarTextBox();
-                        GridViewActualizar(this.dgv_labs, "select L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
+                        GridViewActualizar(this.dgv_labs, "select distinct L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
                         Editar = false;
                     }
                     else
@@ -149,7 +154,7 @@ namespace WindowsFormsApplication1
                         String Query4 = "INSERT INTO telefono (telefono, pk_id_lab) VALUES ('" + txt_telefono.Text + "','" + Convert.ToInt32(txt_id_labs.Text) + "')";
                         cl_gridysql.EjecutarMySql(Query4);
 
-                        GridViewActualizar(this.dgv_labs, "select L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
+                        GridViewActualizar(this.dgv_labs, "select distinct L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
                         this.LimpiarTextBox();
                         Conexionmysql.Desconectar();
                         MessageBox.Show("Operación realizada exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -207,12 +212,19 @@ namespace WindowsFormsApplication1
 
         private void btn_actlz_pcnt_Click(object sender, EventArgs e)
         {
-            HabilitarTexto();
-            btn_cancl.Enabled = true;
-            Editar = true;
-            Codigo = this.dgv_labs.CurrentRow.Cells[0].Value.ToString();
-            txt_id_labs.Text = this.dgv_labs.CurrentRow.Cells[1].Value.ToString();
-            txt_nombre.Text = this.dgv_labs.CurrentRow.Cells[2].Value.ToString();
+            try
+            {
+                HabilitarTexto();
+                btn_cancl.Enabled = true;
+                Editar = true;
+                Codigo = this.dgv_labs.CurrentRow.Cells[0].Value.ToString();
+                txt_id_labs.Text = this.dgv_labs.CurrentRow.Cells[1].Value.ToString();
+                txt_nombre.Text = this.dgv_labs.CurrentRow.Cells[2].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("No se ha seleccionado el registro a actualizar", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgv_labs_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -271,9 +283,6 @@ namespace WindowsFormsApplication1
             btn_cancl.Enabled = false;
         }
 
-        private void txt_telefono_TextChanged(object sender, EventArgs e)
-        {
-            txt_telefono.MaxLength = 8;
-        }
+        
     }
 }

@@ -44,7 +44,6 @@
             this.Pic_logo = new System.Windows.Forms.PictureBox();
             this.lbl_busc_aseg = new System.Windows.Forms.Label();
             this.btn_elim_aseg = new System.Windows.Forms.Button();
-            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.btn_nuevo_pcnt = new System.Windows.Forms.Button();
             this.btn_acept = new System.Windows.Forms.Button();
             this.btn_cancl = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.txt_buscar = new System.Windows.Forms.TextBox();
             this.grb_ing_datos_aseg.SuspendLayout();
             this.grb_datos_aseg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_aseg)).BeginInit();
@@ -244,14 +244,6 @@
             this.btn_elim_aseg.UseVisualStyleBackColor = true;
             this.btn_elim_aseg.Click += new System.EventHandler(this.btn_elim_aseg_Click);
             // 
-            // cbo_buscar
-            // 
-            this.cbo_buscar.FormattingEnabled = true;
-            this.cbo_buscar.Location = new System.Drawing.Point(248, 328);
-            this.cbo_buscar.Name = "cbo_buscar";
-            this.cbo_buscar.Size = new System.Drawing.Size(246, 21);
-            this.cbo_buscar.TabIndex = 162;
-            // 
             // btn_nuevo_pcnt
             // 
             this.btn_nuevo_pcnt.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.File_New_icon;
@@ -298,15 +290,23 @@
             this.btn_cancl.UseVisualStyleBackColor = true;
             this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_pcnt_Click);
             // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Location = new System.Drawing.Point(250, 327);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(331, 20);
+            this.txt_buscar.TabIndex = 166;
+            this.txt_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyUp);
+            // 
             // frm_act_aseg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 570);
+            this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.btn_acept);
             this.Controls.Add(this.btn_cancl);
             this.Controls.Add(this.btn_nuevo_pcnt);
-            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.btn_elim_aseg);
             this.Controls.Add(this.lbl_busc_aseg);
             this.Controls.Add(this.btn_busc_aseg);
@@ -345,7 +345,6 @@
         private System.Windows.Forms.Button btn_busc_aseg;
         internal System.Windows.Forms.Label lbl_busc_aseg;
         private System.Windows.Forms.Button btn_elim_aseg;
-        private System.Windows.Forms.ComboBox cbo_buscar;
         private System.Windows.Forms.Label lbl_desc_aseg;
         private System.Windows.Forms.TextBox txt_desc_aseg;
         private System.Windows.Forms.Button btn_nuevo_pcnt;
@@ -358,5 +357,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.TextBox txt_buscar;
     }
 }

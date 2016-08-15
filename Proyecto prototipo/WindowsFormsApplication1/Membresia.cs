@@ -170,6 +170,8 @@ namespace WindowsFormsApplication1
                 txt_beneficio_mem.Text = this.dgv_busc_membresia.CurrentRow.Cells[1].Value.ToString();
                 dtp_fec_crea_mem.Enabled = false;
                 dtp_fec_expir_mem.Enabled = true;
+                dtp_fec_crea_mem.Text = this.dgv_busc_membresia.CurrentRow.Cells[2].Value.ToString();
+                dtp_fec_expir_mem.Text = this.dgv_busc_membresia.CurrentRow.Cells[3].Value.ToString();
                 cbo_id_clt_mem.Text = this.dgv_busc_membresia.CurrentRow.Cells[4].Value.ToString();
             }
             catch
@@ -186,11 +188,10 @@ namespace WindowsFormsApplication1
         private void btn_busc_memb_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select * from membresia where pk_id_clt = '" + Convert.ToDouble(txt_busc_mem.Text) + "%'; ");
+            String Query = ("select SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente from membresia where pk_id_clt = '" + Convert.ToDouble(txt_busc_mem.Text) + "%'; ");
             //ManipularDato.Busqueda(Query);
             ActualizarGrid(this.dgv_busc_membresia, Query);
             Conexionmysql.Desconectar();
-            cbo_id_clt_mem.Text = "";
         }
 
         private void btn_act_datos_Click(object sender, EventArgs e)
@@ -249,6 +250,15 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_busc_mem_KeyUp(object sender, KeyEventArgs e)
+        {
+            Conexionmysql.ObtenerConexion();
+            String Query = ("SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente from membresia where pk_id_clt like '" + txt_busc_mem.Text + "%'; ");
+            //ManipularDato.Busqueda(Query);
+            ActualizarGrid(this.dgv_busc_membresia, Query);
+            Conexionmysql.Desconectar();
         }
     }
 }

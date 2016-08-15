@@ -35,7 +35,6 @@
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.Lbl_email_emp = new System.Windows.Forms.Label();
-            this.txt_fecha_nacimiento = new System.Windows.Forms.TextBox();
             this.Lbl_fecha_nacimiento = new System.Windows.Forms.Label();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.Lbl_telefono = new System.Windows.Forms.Label();
@@ -52,7 +51,7 @@
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.grb_datosp_emp = new System.Windows.Forms.GroupBox();
-            this.lbl_date_formato = new System.Windows.Forms.Label();
+            this.dtp_fec_nac_emp = new System.Windows.Forms.DateTimePicker();
             this.txt_correo = new System.Windows.Forms.TextBox();
             this.lbl_correo = new System.Windows.Forms.Label();
             this.cbo_sexo_emp = new System.Windows.Forms.ComboBox();
@@ -133,18 +132,11 @@
             this.Lbl_email_emp.TabIndex = 66;
             this.Lbl_email_emp.Text = "Usuario:";
             // 
-            // txt_fecha_nacimiento
-            // 
-            this.txt_fecha_nacimiento.Location = new System.Drawing.Point(177, 21);
-            this.txt_fecha_nacimiento.Name = "txt_fecha_nacimiento";
-            this.txt_fecha_nacimiento.Size = new System.Drawing.Size(129, 23);
-            this.txt_fecha_nacimiento.TabIndex = 7;
-            // 
             // Lbl_fecha_nacimiento
             // 
             this.Lbl_fecha_nacimiento.AutoSize = true;
             this.Lbl_fecha_nacimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_fecha_nacimiento.Location = new System.Drawing.Point(2, 24);
+            this.Lbl_fecha_nacimiento.Location = new System.Drawing.Point(2, 18);
             this.Lbl_fecha_nacimiento.Name = "Lbl_fecha_nacimiento";
             this.Lbl_fecha_nacimiento.Size = new System.Drawing.Size(169, 20);
             this.Lbl_fecha_nacimiento.TabIndex = 63;
@@ -303,14 +295,13 @@
             // 
             // grb_datosp_emp
             // 
-            this.grb_datosp_emp.Controls.Add(this.lbl_date_formato);
+            this.grb_datosp_emp.Controls.Add(this.dtp_fec_nac_emp);
             this.grb_datosp_emp.Controls.Add(this.txt_correo);
             this.grb_datosp_emp.Controls.Add(this.lbl_correo);
             this.grb_datosp_emp.Controls.Add(this.cbo_sexo_emp);
             this.grb_datosp_emp.Controls.Add(this.Lbl_sexo);
             this.grb_datosp_emp.Controls.Add(this.cbo_carg_emp);
             this.grb_datosp_emp.Controls.Add(this.Lbl_fecha_nacimiento);
-            this.grb_datosp_emp.Controls.Add(this.txt_fecha_nacimiento);
             this.grb_datosp_emp.Controls.Add(this.Lbl_cargo);
             this.grb_datosp_emp.Controls.Add(this.txt_direccion);
             this.grb_datosp_emp.Controls.Add(this.Lbl_direccion);
@@ -324,15 +315,12 @@
             this.grb_datosp_emp.TabStop = false;
             this.grb_datosp_emp.Text = "Datos Personales";
             // 
-            // lbl_date_formato
+            // dtp_fec_nac_emp
             // 
-            this.lbl_date_formato.AutoSize = true;
-            this.lbl_date_formato.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lbl_date_formato.Location = new System.Drawing.Point(190, 47);
-            this.lbl_date_formato.Name = "lbl_date_formato";
-            this.lbl_date_formato.Size = new System.Drawing.Size(97, 20);
-            this.lbl_date_formato.TabIndex = 115;
-            this.lbl_date_formato.Text = "yyyy-mm-dd";
+            this.dtp_fec_nac_emp.Location = new System.Drawing.Point(53, 40);
+            this.dtp_fec_nac_emp.Name = "dtp_fec_nac_emp";
+            this.dtp_fec_nac_emp.Size = new System.Drawing.Size(253, 23);
+            this.dtp_fec_nac_emp.TabIndex = 115;
             // 
             // txt_correo
             // 
@@ -500,6 +488,7 @@
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(304, 20);
             this.txt_buscar.TabIndex = 138;
+            this.txt_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_buscar_KeyUp);
             // 
             // btn_nuevo_pcnt
             // 
@@ -589,7 +578,6 @@
         internal System.Windows.Forms.TextBox txt_apellido;
         internal System.Windows.Forms.TextBox txt_usuario;
         internal System.Windows.Forms.Label Lbl_email_emp;
-        internal System.Windows.Forms.TextBox txt_fecha_nacimiento;
         internal System.Windows.Forms.Label Lbl_fecha_nacimiento;
         internal System.Windows.Forms.TextBox txt_telefono;
         internal System.Windows.Forms.Label Lbl_telefono;
@@ -620,7 +608,6 @@
         private System.Windows.Forms.ComboBox cbo_id_lab;
         internal System.Windows.Forms.Label label4;
         protected System.Windows.Forms.ComboBox cbo_sexo_emp;
-        internal System.Windows.Forms.Label lbl_date_formato;
         private System.Windows.Forms.Button btn_nuevo_pcnt;
         private System.Windows.Forms.Button btn_acept;
         private System.Windows.Forms.Button btn_cancl;
@@ -631,5 +618,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.DateTimePicker dtp_fec_nac_emp;
     }
 }
