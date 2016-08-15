@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
             InhabilitarTexto();
             btn_cancl.Enabled = false;
             btn_acept.Enabled = false;
-            ActualizarGrid(this.dgv_busc_membresia, "SELECT * FROM membresia");
+            ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
             llenarCboClienteMembresia();
         }
         public void ActualizarGrid(DataGridView dg, String Query)
@@ -102,7 +102,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_busc_membresia, "SELECT * FROM membresia");
+                        ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
                         Editar = false;
                     }
                     else
@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1
                         string theDate2 = dtp_fec_expir_mem.Value.ToString("yyyy-MM-dd");
                         String Query = "INSERT INTO membresia (beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + txt_beneficio_mem.Text + "','" + theDate + "','" + theDate2 + "', '" + Convert.ToDouble(selectedItem) + "') ";
                         cl_gridysql.EjecutarMySql(Query);
-                        ActualizarGrid(this.dgv_busc_membresia, "select * from membresia;");
+                        ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
                     }
@@ -147,7 +147,7 @@ namespace WindowsFormsApplication1
                     cl_gridysql.EjecutarMySql(Query);
 
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_busc_membresia, "select * from membresia;");
+                    ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
 
 
                     //5.desconectar en base de datos
@@ -195,7 +195,7 @@ namespace WindowsFormsApplication1
 
         private void btn_act_datos_Click(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_busc_membresia, "SELECT * FROM membresia;");
+            ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
         }
 
         private void txt_id_clt_TextChanged(object sender, EventArgs e)

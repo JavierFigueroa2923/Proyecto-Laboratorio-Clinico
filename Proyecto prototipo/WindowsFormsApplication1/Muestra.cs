@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         
 }
-
+        Validaciones validar = new Validaciones();
         BDconexion ManipularDato = new BDconexion();
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
@@ -215,6 +215,29 @@ namespace WindowsFormsApplication1
         {
             HabilitarTexto();
             btn_cancl.Enabled = true;
+        }
+
+        private void txt_cant_mst_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.validacion_solonumeros(e);
+        }
+
+        private void txt_cant_mst_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_descr_mst_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
         }
     }
 }

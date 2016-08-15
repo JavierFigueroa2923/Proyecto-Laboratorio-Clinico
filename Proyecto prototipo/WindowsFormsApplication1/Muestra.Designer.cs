@@ -261,6 +261,7 @@
             this.txt_descr_mst.Name = "txt_descr_mst";
             this.txt_descr_mst.Size = new System.Drawing.Size(310, 20);
             this.txt_descr_mst.TabIndex = 82;
+            this.txt_descr_mst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_descr_mst_KeyDown);
             // 
             // Lbl_cantidad_mst
             // 
@@ -278,6 +279,8 @@
             this.txt_cant_mst.Name = "txt_cant_mst";
             this.txt_cant_mst.Size = new System.Drawing.Size(310, 23);
             this.txt_cant_mst.TabIndex = 80;
+            this.txt_cant_mst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_cant_mst_KeyDown);
+            this.txt_cant_mst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cant_mst_KeyPress);
             // 
             // Lbl_muestra
             // 

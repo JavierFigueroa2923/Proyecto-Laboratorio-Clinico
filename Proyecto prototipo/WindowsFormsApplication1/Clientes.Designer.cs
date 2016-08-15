@@ -179,6 +179,7 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(173, 23);
             this.txt_telefono.TabIndex = 4;
+            this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             this.txt_telefono.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_telefono_KeyDown);
             this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
@@ -247,6 +248,7 @@
             this.txt_peso_pcnt.Name = "txt_peso_pcnt";
             this.txt_peso_pcnt.Size = new System.Drawing.Size(191, 23);
             this.txt_peso_pcnt.TabIndex = 10;
+            this.txt_peso_pcnt.TextChanged += new System.EventHandler(this.txt_peso_pcnt_TextChanged);
             this.txt_peso_pcnt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_peso_pcnt_KeyDown);
             this.txt_peso_pcnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_peso_pcnt_KeyPress);
             // 
@@ -305,6 +307,7 @@
             this.txt_dpi.Name = "txt_dpi";
             this.txt_dpi.Size = new System.Drawing.Size(191, 23);
             this.txt_dpi.TabIndex = 8;
+            this.txt_dpi.TextChanged += new System.EventHandler(this.txt_dpi_TextChanged);
             this.txt_dpi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_dpi_KeyDown);
             this.txt_dpi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dpi_KeyPress);
             // 
@@ -334,6 +337,7 @@
             this.txt_fecha_nacimiento.Name = "txt_fecha_nacimiento";
             this.txt_fecha_nacimiento.Size = new System.Drawing.Size(127, 23);
             this.txt_fecha_nacimiento.TabIndex = 7;
+            this.txt_fecha_nacimiento.TextChanged += new System.EventHandler(this.txt_fecha_nacimiento_TextChanged);
             this.txt_fecha_nacimiento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_fecha_nacimiento_KeyDown);
             this.txt_fecha_nacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_fecha_nacimiento_KeyPress);
             // 

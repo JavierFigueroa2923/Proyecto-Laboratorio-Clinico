@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
 
         private void actualizar_titulo_emp_Click(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_busqueda_datos_empleado, "select * from titulo_empleado;");
+            ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
@@ -111,7 +111,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "SELECT * FROM titulo_empleado");
+                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
                         Editar = false;
                     }
                     else
@@ -120,7 +120,7 @@ namespace WindowsFormsApplication1
                         string fecha = dtp_fecha_title.Value.ToString("yyyy-MM-dd");
                         String Query = "INSERT INTO titulo_empleado (descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + fecha + "', '" + Convert.ToDouble(txt_id_emp.Text) + "', '" + Convert.ToDouble(txt_id_lab.Text) + "') ";
                         cl_gridysql.EjecutarMySql(Query);
-                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "select * from titulo_empleado;");
+                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
                     }
@@ -153,7 +153,7 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_busqueda_datos_empleado, "select * from titulo_empleado;");
+                    ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();
                 }
@@ -244,6 +244,56 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_id_emp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_id_lab_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_id_lab_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_nom_titulo_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void dtp_fecha_title_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_decrip_titulo_emp_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
         }
     }
  }

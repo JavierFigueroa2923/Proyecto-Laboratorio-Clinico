@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
 
         string codigo = "";
         Boolean Editar;
-
+        Validaciones validar = new Validaciones();
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -199,6 +199,11 @@ namespace WindowsFormsApplication1
             LimpiarCajaTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.validacion_solonumeros(e);
         }
     }
 }

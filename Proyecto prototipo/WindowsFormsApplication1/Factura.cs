@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-
+        Validaciones validar = new Validaciones();
         public void LimpiarCajasTexto()
         {
             txt_id_clt.Text = "";
@@ -58,6 +58,25 @@ namespace WindowsFormsApplication1
             InhabilitarTexto();
             btn_cancl.Enabled = false;
             btn_acept.Enabled = false;
+        }
+
+        private void txt_nit_TextChanged(object sender, EventArgs e)
+        {
+            txt_nit.MaxLength = 9;
+        }
+
+        private void txt_id_clt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txt_id_clt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.validacion_solonumeros(e);
         }
     }
 }

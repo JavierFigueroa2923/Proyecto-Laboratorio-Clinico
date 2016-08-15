@@ -270,5 +270,10 @@ namespace WindowsFormsApplication1
             InhabilitarTexto();
             btn_cancl.Enabled = false;
         }
+
+        private void txt_telefono_TextChanged(object sender, EventArgs e)
+        {
+            txt_telefono.MaxLength = 8;
+        }
     }
 }

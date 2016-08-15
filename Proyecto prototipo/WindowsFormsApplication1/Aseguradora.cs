@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
             btn_acept.Enabled = false;
             btn_cancl.Enabled = false;
             InhabilitarText();
-            ActualizarGrid(this.dataGridView1, "select * from aseguradora;");
+            ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
@@ -79,9 +79,9 @@ namespace WindowsFormsApplication1
         private void btn_busc_aseg_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select * from aseguradora where nombre_aseg = '" + Convert.ToDouble(cbo_buscar) + "%'; ");
+            String Query = ("select * from aseguradora where nombre_aseg = '" + cbo_buscar.Text + "%'; ");
             //ManipularDato.Busqueda(Query);
-            ActualizarGrid(this.dataGridView1, Query);
+            ActualizarGrid(this.dgv_aseg, Query);
             Conexionmysql.Desconectar();
             cbo_buscar.Text = "";
         }
@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
         private void btn_elim_aseg_Click(object sender, EventArgs e)
         {
             try {
-                Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                Codigo = this.dgv_aseg.CurrentRow.Cells[0].Value.ToString();
 
                 //2. preguntar al usuario si realmente quiere borrar el resgistro
                 var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -120,7 +120,7 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dataGridView1, "select * from aseguradora;");
+                    ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();
                 }
@@ -150,7 +150,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dataGridView1, "SELECT * FROM aseguradora");
+                        ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
                         Editar = false;
                     }
                     else
@@ -160,7 +160,7 @@ namespace WindowsFormsApplication1
                         String query = "INSERT INTO aseguradora (nombre_aseg,descripcion_aseg) VALUES('" + txt_nom_aseg.Text + "', '" + txt_desc_aseg.Text + "') ";
                         cl_gridysql.EjecutarMySql(query);
                         LimpiarCajasTexto();
-                        ActualizarGrid(this.dataGridView1, "select * from  aseguradora");
+                        ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as Identificador, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
                         this.LimpiarCajasTexto();
                     }
                 }
@@ -178,9 +178,9 @@ namespace WindowsFormsApplication1
             HabilitarText();
             try {
                 Editar = true;
-                Codigo = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                txt_nom_aseg.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                txt_desc_aseg.Text = this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                Codigo = this.dgv_aseg.CurrentRow.Cells[0].Value.ToString();
+                txt_nom_aseg.Text = this.dgv_aseg.CurrentRow.Cells[1].Value.ToString();
+                txt_desc_aseg.Text = this.dgv_aseg.CurrentRow.Cells[2].Value.ToString();
             }
             catch
             {

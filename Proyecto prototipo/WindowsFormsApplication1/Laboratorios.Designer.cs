@@ -86,6 +86,7 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(195, 23);
             this.txt_telefono.TabIndex = 24;
+            this.txt_telefono.TextChanged += new System.EventHandler(this.txt_telefono_TextChanged);
             this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // txt_correo

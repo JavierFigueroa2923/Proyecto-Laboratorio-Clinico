@@ -105,6 +105,7 @@
             this.dtp_fecha_title.Name = "dtp_fecha_title";
             this.dtp_fecha_title.Size = new System.Drawing.Size(345, 24);
             this.dtp_fecha_title.TabIndex = 74;
+            this.dtp_fecha_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtp_fecha_title_KeyDown);
             // 
             // lbl_descrip_titulo
             // 
@@ -158,6 +159,7 @@
             this.txt_decrip_titulo_emp.Name = "txt_decrip_titulo_emp";
             this.txt_decrip_titulo_emp.Size = new System.Drawing.Size(348, 100);
             this.txt_decrip_titulo_emp.TabIndex = 5;
+            this.txt_decrip_titulo_emp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_decrip_titulo_emp_KeyDown_1);
             // 
             // txt_nom_titulo
             // 
@@ -165,6 +167,7 @@
             this.txt_nom_titulo.Name = "txt_nom_titulo";
             this.txt_nom_titulo.Size = new System.Drawing.Size(348, 24);
             this.txt_nom_titulo.TabIndex = 3;
+            this.txt_nom_titulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_nom_titulo_KeyDown_1);
             this.txt_nom_titulo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nom_titulo_KeyPress);
             // 
             // txt_id_lab
@@ -173,6 +176,8 @@
             this.txt_id_lab.Name = "txt_id_lab";
             this.txt_id_lab.Size = new System.Drawing.Size(348, 24);
             this.txt_id_lab.TabIndex = 2;
+            this.txt_id_lab.TextChanged += new System.EventHandler(this.txt_id_lab_TextChanged);
+            this.txt_id_lab.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_lab_KeyDown_1);
             this.txt_id_lab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_lab_KeyPress);
             // 
             // txt_id_emp
@@ -181,6 +186,7 @@
             this.txt_id_emp.Name = "txt_id_emp";
             this.txt_id_emp.Size = new System.Drawing.Size(348, 24);
             this.txt_id_emp.TabIndex = 1;
+            this.txt_id_emp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_emp_KeyDown);
             this.txt_id_emp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_emp_KeyPress);
             // 
             // gpb_busqueda_empleado

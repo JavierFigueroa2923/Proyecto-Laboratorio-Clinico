@@ -101,7 +101,7 @@ namespace WindowsFormsApplication1
 
         private void txt_telefono_TextChanged(object sender, EventArgs e)
         {
-
+            txt_telefono.MaxLength = 8;
         }
 
         public void llenarCbocargoemp()

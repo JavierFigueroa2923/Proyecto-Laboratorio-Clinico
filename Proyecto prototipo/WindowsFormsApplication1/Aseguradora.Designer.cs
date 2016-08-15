@@ -37,7 +37,7 @@
             this.lbl_desc_aseg = new System.Windows.Forms.Label();
             this.txt_desc_aseg = new System.Windows.Forms.TextBox();
             this.grb_datos_aseg = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_aseg = new System.Windows.Forms.DataGridView();
             this.btn_busc_aseg = new System.Windows.Forms.Button();
             this.btn_actlz_aseg = new System.Windows.Forms.Button();
             this.btn_guardar_aseg = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.grb_ing_datos_aseg.SuspendLayout();
             this.grb_datos_aseg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_aseg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +134,7 @@
             // 
             this.grb_datos_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grb_datos_aseg.Controls.Add(this.dataGridView1);
+            this.grb_datos_aseg.Controls.Add(this.dgv_aseg);
             this.grb_datos_aseg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_datos_aseg.Location = new System.Drawing.Point(12, 353);
             this.grb_datos_aseg.Name = "grb_datos_aseg";
@@ -143,15 +143,15 @@
             this.grb_datos_aseg.TabStop = false;
             this.grb_datos_aseg.Text = "Datos Actuales";
             // 
-            // dataGridView1
+            // dgv_aseg
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgv_aseg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(575, 179);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_aseg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_aseg.Location = new System.Drawing.Point(7, 20);
+            this.dgv_aseg.Name = "dgv_aseg";
+            this.dgv_aseg.Size = new System.Drawing.Size(575, 179);
+            this.dgv_aseg.TabIndex = 0;
             // 
             // btn_busc_aseg
             // 
@@ -325,7 +325,7 @@
             this.grb_ing_datos_aseg.ResumeLayout(false);
             this.grb_ing_datos_aseg.PerformLayout();
             this.grb_datos_aseg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_aseg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -339,7 +339,7 @@
         internal System.Windows.Forms.Label lbl_aseguradora;
         private System.Windows.Forms.GroupBox grb_ing_datos_aseg;
         private System.Windows.Forms.GroupBox grb_datos_aseg;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_aseg;
         private System.Windows.Forms.Button btn_guardar_aseg;
         private System.Windows.Forms.Button btn_actlz_aseg;
         private System.Windows.Forms.Button btn_busc_aseg;

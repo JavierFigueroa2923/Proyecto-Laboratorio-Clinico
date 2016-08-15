@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
             InhabilitarTexto();
             btn_cancl.Enabled = false;
             btn_acept.Enabled = false;
-            ActualizarGrid(this.dgv_vist_result_exam, "SELECT * FROM resultado_examen;");
+            ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
@@ -84,7 +84,7 @@ namespace WindowsFormsApplication1
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_vist_result_exam, "SELECT * FROM resultado_examen");
+                        ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
                         Editar = false;
                         dtp_fecha_resul.Enabled = true;
                     }
@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
                         {
                             String Query = "INSERT INTO resultado_examen (fecha_entrega_result_exm,descripcion_result_exm, pk_id_exm) VALUES ('" + fecha + "','" + txt_descripcion.Text + "','" + Convert.ToDouble(txt_id_exm.Text) + "') ";
                             cl_gridysql.EjecutarMySql(Query);
-                            ActualizarGrid(this.dgv_vist_result_exam, "select * from resultado_examen;");
+                            ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
                             this.LimpiarCajasTexto();
                             Conexionmysql.Desconectar();
                         } else
@@ -133,7 +133,7 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_vist_result_exam, "select * from resulta_examen;");
+                    ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();
                 }//cerrar el if
@@ -179,7 +179,7 @@ namespace WindowsFormsApplication1
 
         private void btn_act_renov_Click(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_vist_result_exam, "SELECT * FROM resultado_examen;");
+            ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
         }
 
         private void btn_nuevo_pcnt_Click(object sender, EventArgs e)

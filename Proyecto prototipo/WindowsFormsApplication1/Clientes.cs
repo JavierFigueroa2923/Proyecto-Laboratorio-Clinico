@@ -221,7 +221,7 @@ namespace WindowsFormsApplication1
 
         private void txt_nit_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validar.validacion_solonumeros(e);
+            
 
         }
 
@@ -343,7 +343,7 @@ namespace WindowsFormsApplication1
 
         private void txt_nit_TextChanged(object sender, EventArgs e)
         {
-         
+            txt_nit.MaxLength = 9;
         }
 
         private void txt_email_TextChanged(object sender, EventArgs e)
@@ -389,7 +389,7 @@ namespace WindowsFormsApplication1
 
         private void txt_altura_TextChanged(object sender, EventArgs e)
         {
-
+            txt_altura.MaxLength = 4;
         }
 
         private void txt_altura_KeyDown(object sender, KeyEventArgs e)
@@ -568,6 +568,26 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_telefono_TextChanged(object sender, EventArgs e)
+        {
+            txt_telefono.MaxLength = 8;
+        }
+
+        private void txt_dpi_TextChanged(object sender, EventArgs e)
+        {
+            txt_dpi.MaxLength = 13;
+        }
+
+        private void txt_peso_pcnt_TextChanged(object sender, EventArgs e)
+        {
+            txt_peso_pcnt.MaxLength = 6;
+        }
+
+        private void txt_fecha_nacimiento_TextChanged(object sender, EventArgs e)
+        {
+            txt_fecha_nacimiento.MaxLength = 2;
         }
     }
 } 

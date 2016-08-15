@@ -235,6 +235,7 @@
             this.txt_nit.Name = "txt_nit";
             this.txt_nit.Size = new System.Drawing.Size(297, 23);
             this.txt_nit.TabIndex = 67;
+            this.txt_nit.TextChanged += new System.EventHandler(this.txt_nit_TextChanged);
             // 
             // label1
             // 
@@ -252,6 +253,8 @@
             this.txt_id_clt.Name = "txt_id_clt";
             this.txt_id_clt.Size = new System.Drawing.Size(242, 23);
             this.txt_id_clt.TabIndex = 59;
+            this.txt_id_clt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_clt_KeyDown);
+            this.txt_id_clt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_clt_KeyPress);
             // 
             // lbl_nom_sumin
             // 

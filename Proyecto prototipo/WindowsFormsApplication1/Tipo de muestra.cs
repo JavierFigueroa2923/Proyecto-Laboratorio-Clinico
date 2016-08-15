@@ -28,7 +28,8 @@ namespace WindowsFormsApplication1
             btn_cancl.Enabled = false;
             btn_acept.Enabled = false;
             /// no real 
-            ActualizarGrid(this.dgv_muestras, "select * from tipo_de_muestra;");
+
+            ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
         }
 
         public void LimpiarCajasTexto()
@@ -86,7 +87,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra");
+
+                        ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
                         Editar = false;
                     }
                     else
@@ -95,7 +97,8 @@ namespace WindowsFormsApplication1
                         String query = "INSERT INTO tipo_de_muestra(descripcion_tip_mst,nombre_tipo) Values('" + txt_nombre_tipo.Text + "','" + txt_descp_muestra.Text + "') ";
                         cl_gridysql.EjecutarMySql(query);
                         LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_muestras, "select * from  tipo_de_muestra");
+
+                        ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
                         this.LimpiarCajasTexto();
                     }
                 }
@@ -150,7 +153,8 @@ namespace WindowsFormsApplication1
                     cl_gridysql.EjecutarMySql(Query);
 
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_de_muestra;");
+
+                    ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
 
 
                     //5.desconectar en base de datos
@@ -180,7 +184,7 @@ namespace WindowsFormsApplication1
         private void btn_busc_memb_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select * from membresia where pk_id_tip_mst = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
+            String Query = ("select * from tipo_muestra where pk_id_tip_mst = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
 
             //ManipularDato.Busqueda(Query);
 
@@ -191,7 +195,8 @@ namespace WindowsFormsApplication1
 
         private void btn_act_datos_Click(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_muestras, "SELECT * FROM tipo_muestra;");
+
+            ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
         }
 
         private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
