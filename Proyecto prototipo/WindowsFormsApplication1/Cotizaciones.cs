@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
+//using iTextSharp.text.pdf;
+//using iTextSharp.text;
 using System.IO;
 
 namespace WindowsFormsApplication1

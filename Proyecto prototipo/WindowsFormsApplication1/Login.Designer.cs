@@ -38,6 +38,7 @@
             this.Lbl_usuario = new System.Windows.Forms.Label();
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.Label2 = new System.Windows.Forms.Label();
+            this.btn_ayuda_login = new System.Windows.Forms.Button();
             this.Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // Panel1
             // 
             this.Panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Panel1.Controls.Add(this.btn_ayuda_login);
             this.Panel1.Controls.Add(this.Btn_Inicio_secion);
             this.Panel1.Controls.Add(this.txt_pass);
             this.Panel1.Controls.Add(this.Lbl_contraseña);
@@ -161,12 +163,26 @@
             this.Label2.TabIndex = 1;
             this.Label2.Text = "Bienvenido";
             // 
+            // btn_ayuda_login
+            // 
+            this.btn_ayuda_login.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Button_Help_icon;
+            this.btn_ayuda_login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ayuda_login.FlatAppearance.BorderSize = 0;
+            this.btn_ayuda_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ayuda_login.Location = new System.Drawing.Point(413, 12);
+            this.btn_ayuda_login.Name = "btn_ayuda_login";
+            this.btn_ayuda_login.Size = new System.Drawing.Size(40, 40);
+            this.btn_ayuda_login.TabIndex = 12;
+            this.btn_ayuda_login.UseVisualStyleBackColor = true;
+            this.btn_ayuda_login.Click += new System.EventHandler(this.btn_ayuda_login_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 491);
             this.Controls.Add(this.Panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -190,5 +206,6 @@
         internal System.Windows.Forms.Label Lbl_usuario;
         internal System.Windows.Forms.PictureBox pic_logo;
         internal System.Windows.Forms.Label Label2;
+        private System.Windows.Forms.Button btn_ayuda_login;
     }
 }

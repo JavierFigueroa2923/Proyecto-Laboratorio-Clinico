@@ -56,6 +56,10 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        private const string ayudaCHM = "Ayuda-Sistema-Laboratorio-Clínico.chm";
+        private const string indiceCHM = "ndice.html";
+        private const string acercasistema = "acercadelsistema.html";
+
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -793,6 +797,26 @@ namespace WindowsFormsApplication1
         void frm_act_examenessClosed(object sender, EventArgs e)
         {
             frm_act_exameness = null;
+        }
+
+        private void contentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, Application.StartupPath + @"\" + ayudaCHM);
+        }
+
+        private void indexToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, ayudaCHM, HelpNavigator.Topic, indiceCHM);
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, ayudaCHM, HelpNavigator.Find, "");
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, ayudaCHM, HelpNavigator.Topic, acercasistema);
         }
     }
 }

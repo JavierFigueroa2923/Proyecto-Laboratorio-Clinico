@@ -25,6 +25,8 @@ namespace WindowsFormsApplication1
 
         }
 
+        private const string ayudaCHM = "Ayuda-Sistema-Laboratorio-Clínico.chm";
+
         private void Btn_Inicio_secion_Click(object sender, EventArgs e)
         {
             if (txt_user.Text == "" || txt_pass.Text == "")
@@ -136,5 +138,9 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void btn_ayuda_login_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, Application.StartupPath + @"\" + ayudaCHM);
+        }
     }
 }
