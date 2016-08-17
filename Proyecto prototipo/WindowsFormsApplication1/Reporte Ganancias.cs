@@ -16,7 +16,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         private void button1_Click(object sender, EventArgs e)
         {
 

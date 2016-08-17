@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -22,6 +23,8 @@ namespace WindowsFormsApplication1
         BDconexion manipular = new BDconexion();
         String Codigo;
         Boolean Editar;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         public void LimpiarCajasTexto()
         {
             txt_buscar.Text = "";
@@ -40,6 +43,21 @@ namespace WindowsFormsApplication1
         {
             txt_nom_aseg.Enabled = true;
             txt_desc_aseg.Enabled = true;
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         private void frm_act_aseg_Load(object sender, EventArgs e)
@@ -117,6 +135,8 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'aseguradora'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
                     LimpiarCajasTexto();
                     //5.desconectar en base de datos
@@ -145,6 +165,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String query2 = "UPDATE aseguradora SET nombre_aseg='" + txt_nom_aseg.Text + "', descripcion_aseg='" + txt_desc_aseg.Text + "' WHERE pk_id_asgd='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'aseguradora'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
@@ -157,6 +179,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String query = "INSERT INTO aseguradora (nombre_aseg,descripcion_aseg) VALUES('" + txt_nom_aseg.Text + "', '" + txt_desc_aseg.Text + "') ";
                         cl_gridysql.EjecutarMySql(query);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'aseguradora'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         LimpiarCajasTexto();
                         ActualizarGrid(this.dgv_aseg, "select pk_id_asgd as ID, nombre_aseg as Nombre, descripcion_aseg as Descripcion from aseguradora;");
                         this.LimpiarCajasTexto();

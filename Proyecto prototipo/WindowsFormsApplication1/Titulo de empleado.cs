@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -21,6 +22,8 @@ namespace WindowsFormsApplication1
         BDconexion manipular = new BDconexion();
         String Codigo;
         Boolean Editar;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         public void LimpiarCajasTexto()
         {
             cbo_buscar.Text = "";
@@ -30,6 +33,21 @@ namespace WindowsFormsApplication1
             txt_nom_titulo.Text = "";
             txt_decrip_titulo_emp.Text = "";
 
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void InhabilitarTexto()
@@ -108,6 +126,8 @@ namespace WindowsFormsApplication1
                         String query2 = "UPDATE titulo_empleado SET descripcion_titl_emp='" + txt_decrip_titulo_emp.Text + "', nombre_titl_emp='" + txt_nom_titulo.Text + "', pk_id_lab ='" + Convert.ToDouble(txt_id_lab.Text) + "' WHERE pk_id_titl_emp='" + Codigo + "';";
                         //String query2 = "UPDATE titulo_empleado SET descripcion_titl_emp='" + txt_decrip_titulo_emp.Text + "', nombre_titl_emp ='" + txt_nom_titulo.Text + "', fecha_obten_titl_emp = '" + txt_fecha_obt_titulo.Text + "', pk_id_lab = '" +Convert.ToDouble(txt_id_lab.Text) + "' WHERE pk_id_titl_emp='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'titulo_empleado'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.ObtenerConexion();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
@@ -120,6 +140,8 @@ namespace WindowsFormsApplication1
                         string fecha = dtp_fecha_title.Value.ToString("yyyy-MM-dd");
                         String Query = "INSERT INTO titulo_empleado (descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + fecha + "', '" + Convert.ToDouble(txt_id_emp.Text) + "', '" + Convert.ToDouble(txt_id_lab.Text) + "') ";
                         cl_gridysql.EjecutarMySql(Query);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'titulo_empleado'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
@@ -155,6 +177,9 @@ namespace WindowsFormsApplication1
                     //4.Actualizar grid..
                     ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
                     //5.desconectar en base de datos
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
+
                     Conexionmysql.Desconectar();
                 }
             }

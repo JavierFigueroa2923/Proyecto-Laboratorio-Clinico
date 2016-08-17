@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         Validaciones validar = new Validaciones();
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         public void LimpiarCajasTexto()
         {
             txt_id_clt.Text = "";
@@ -25,6 +28,21 @@ namespace WindowsFormsApplication1
             txt_direccion.Text = "";
             txt_fecha.Text = "";
             txt_id_fm_pg.Text = "";
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void InhabilitarTexto()
@@ -77,6 +95,16 @@ namespace WindowsFormsApplication1
         private void txt_id_clt_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.validacion_solonumeros(e);
+        }
+
+        private void btn_guardar_aseg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_elim_inv_sumin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

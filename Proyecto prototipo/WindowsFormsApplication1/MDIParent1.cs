@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,6 +50,7 @@ namespace WindowsFormsApplication1
 
         public String MiPropiedad { get; set; }
         public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
 
 
         public MDIParent1()
@@ -133,6 +135,21 @@ namespace WindowsFormsApplication1
             {
                 childForm.Close();
             }
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
 
@@ -321,6 +338,8 @@ namespace WindowsFormsApplication1
             if (rep_pag == null)
             {
                 rep_pag = new Reporte_pagos();
+                rep_pag.Usuario = Usuario;
+                rep_pag.MiIdUsuario = MiIdUsuario;
                 rep_pag.MdiParent = this;
                 rep_pag.FormClosed += new FormClosedEventHandler(rep_pago_FormClosed);
                 rep_pag.Show();
@@ -382,6 +401,8 @@ namespace WindowsFormsApplication1
             if (act_cliente == null)
             {
                 act_cliente = new frm_act_cliente();
+                act_cliente.Usuario = Usuario;
+                act_cliente.MiIdUsuario = MiIdUsuario;
                 act_cliente.MdiParent = this;
                 act_cliente.FormClosed += new FormClosedEventHandler(rep_act_cliente_FormClosed);
                 act_cliente.Show();
@@ -400,6 +421,8 @@ namespace WindowsFormsApplication1
             if (act_exam == null)
             {
                 act_exam = new frm_act_examenes();
+                act_exam.Usuario = Usuario;
+                act_exam.MiIdUsuario = MiIdUsuario;
                 act_exam.MdiParent = this;
                 act_exam.FormClosed += new FormClosedEventHandler(act_exam_FormClosed);
                 act_exam.Show();
@@ -417,6 +440,8 @@ namespace WindowsFormsApplication1
             if ( act_pago == null)
             {
                 act_pago = new frm_act_pago();
+                act_pago.Usuario = Usuario;
+                act_pago.MiIdUsuario = MiIdUsuario;
                 act_pago.MdiParent = this;
                 act_pago.FormClosed += new FormClosedEventHandler(act_pago_FormClosed);
                 act_pago.Show();
@@ -434,6 +459,8 @@ namespace WindowsFormsApplication1
             if (act_aseg == null)
             {
                 act_aseg = new frm_act_aseg();
+                act_aseg.Usuario = Usuario;
+                act_aseg.MiIdUsuario = MiIdUsuario;
                 act_aseg.MdiParent = this;
                 act_aseg.FormClosed += new FormClosedEventHandler(act_aseg_FormClosed);
                 act_aseg.Show();
@@ -449,6 +476,8 @@ namespace WindowsFormsApplication1
             if (frm_actlab == null)
             {
                 frm_actlab = new frm_act_lab();
+                frm_actlab.Usuario = Usuario;
+                frm_actlab.MiIdUsuario = MiIdUsuario;
                 frm_actlab.MdiParent = this;
                 frm_actlab.FormClosed += new FormClosedEventHandler(frm_actlab_FormClosed);
                 frm_actlab.Show();
@@ -472,6 +501,8 @@ namespace WindowsFormsApplication1
             if (act_emp == null)
             {
                 act_emp = new frm_act_emp();
+                act_emp.Usuario = Usuario;
+                act_emp.MiIdUsuario = MiIdUsuario;
                 act_emp.MdiParent = this;
                 act_emp.FormClosed += new FormClosedEventHandler(act_emp_FormClosed);
                 act_emp.Show();
@@ -503,6 +534,8 @@ namespace WindowsFormsApplication1
             if (rep_sum == null)
             {
                 rep_sum = new Reporte_de_suministros();
+                rep_sum.Usuario = Usuario;
+                rep_sum.MiIdUsuario = MiIdUsuario;
                 rep_sum.MdiParent = this;
                 rep_sum.FormClosed += new FormClosedEventHandler(rep_sum_FormClosed);
                 rep_sum.Show();
@@ -518,6 +551,8 @@ namespace WindowsFormsApplication1
             if (act_inv == null)
             {
                 act_inv = new frm_act_inventario();
+                act_inv.Usuario = Usuario;
+                act_inv.MiIdUsuario = MiIdUsuario;
                 act_inv.MdiParent = this;
                 act_inv.FormClosed += new FormClosedEventHandler(act_inv_FormClosed);
                 act_inv.Show();
@@ -584,6 +619,8 @@ namespace WindowsFormsApplication1
             if (frm_citas == null)
             {
                 frm_citas = new Citas();
+                frm_citas.Usuario = Usuario;
+                frm_citas.MiIdUsuario = MiIdUsuario;
                 frm_citas.MdiParent = this;
                 frm_citas.FormClosed += new FormClosedEventHandler(frm_citas_FormClosed);
                 frm_citas.Show();
@@ -599,6 +636,8 @@ namespace WindowsFormsApplication1
             if(frm_per == null)
             {
                 frm_per = new frm_permiso();
+                frm_per.Usuario = Usuario;
+                frm_per.MiIdUsuario = MiIdUsuario;
                 frm_per.MdiParent = this;
                 frm_per.FormClosed += new FormClosedEventHandler(frm_per_FormClosed);
                 frm_per.Show();
@@ -614,6 +653,8 @@ namespace WindowsFormsApplication1
             if(frm_etiquet == null)
             {
                 frm_etiquet = new frm_etiqueta();
+                frm_etiquet.Usuario = Usuario;
+                frm_etiquet.MiIdUsuario = MiIdUsuario;
                 frm_etiquet.MdiParent = this;
                 frm_etiquet.FormClosed += new FormClosedEventHandler(frm_etiquet_FormClosed);
                 frm_etiquet.Show();
@@ -630,6 +671,8 @@ namespace WindowsFormsApplication1
             if (frm_area_lab == null)
             {
                 frm_area_lab = new Area_de_laboratorio();
+                frm_area_lab.Usuario = Usuario;
+                frm_area_lab.MiIdUsuario = MiIdUsuario;
                 frm_area_lab.MdiParent = this;
                 frm_area_lab.FormClosed += new FormClosedEventHandler(frm_area_lab_FormClosed);
                 frm_area_lab.Show();
@@ -645,6 +688,8 @@ namespace WindowsFormsApplication1
             if (frm_mem == null)
             {
                 frm_mem = new Membresia();
+                frm_mem.Usuario = Usuario;
+                frm_mem.MiIdUsuario = MiIdUsuario;
                 frm_mem.MdiParent = this;
                 frm_mem.FormClosed += new FormClosedEventHandler(frm_mem_lab_FormClosed);
                 frm_mem.Show();
@@ -661,6 +706,8 @@ namespace WindowsFormsApplication1
             if (frm_tit_emp == null)
             {
                 frm_tit_emp = new Titulo_de_empleado();
+                frm_tit_emp.Usuario = Usuario;
+                frm_tit_emp.MiIdUsuario = MiIdUsuario;
                 frm_tit_emp.MdiParent = this;
                 frm_tit_emp.FormClosed += new FormClosedEventHandler(frm_tit_emp_lab_FormClosed);
                 frm_tit_emp.Show();
@@ -676,6 +723,8 @@ namespace WindowsFormsApplication1
             if (frm_cargo_emp == null)
             {
                 frm_cargo_emp = new Cargo_Empleado();
+                frm_cargo_emp.Usuario = Usuario;
+                frm_cargo_emp.MiIdUsuario = MiIdUsuario;
                 frm_cargo_emp.MdiParent = this;
                 frm_cargo_emp.FormClosed += new FormClosedEventHandler(frm_cargo_emp_lab_FormClosed);
                 frm_cargo_emp.Show();
@@ -691,6 +740,8 @@ namespace WindowsFormsApplication1
             if (frm_tip_must == null)
             {
                 frm_tip_must = new Tipo_de_muestra();
+                frm_tip_must.Usuario = Usuario;
+                frm_tip_must.MiIdUsuario = MiIdUsuario;
                 frm_tip_must.MdiParent = this;
                 frm_tip_must.FormClosed += new FormClosedEventHandler(frm_tip_must_lab_FormClosed);
                 frm_tip_must.Show();
@@ -706,6 +757,8 @@ namespace WindowsFormsApplication1
             if (frm_muestras == null)
             {
                 frm_muestras = new frm_muestra();
+                frm_muestras.Usuario = Usuario;
+                frm_muestras.MiIdUsuario = MiIdUsuario;
                 frm_muestras.MdiParent = this;
                 frm_muestras.FormClosed += new FormClosedEventHandler(frm_muestras_FormClosed);
                 frm_muestras.Show();
@@ -721,6 +774,8 @@ namespace WindowsFormsApplication1
             if (frm_fact == null)
             {
                 frm_fact = new Factura();
+                frm_fact.Usuario = Usuario;
+                frm_fact.MiIdUsuario = MiIdUsuario;
                 frm_fact.MdiParent = this;
                 frm_fact.FormClosed += new FormClosedEventHandler(frm_factFormClosed);
                 frm_fact.Show();
@@ -736,6 +791,8 @@ namespace WindowsFormsApplication1
             if (frm_rest_exam == null)
             {
                 frm_rest_exam = new Resultado_examen();
+                frm_rest_exam.Usuario = Usuario;
+                frm_rest_exam.MiIdUsuario = MiIdUsuario;
                 frm_rest_exam.MdiParent = this;
                 frm_rest_exam.FormClosed += new FormClosedEventHandler(frm_rest_exam_FormClosed);
                 frm_rest_exam.Show();
@@ -751,6 +808,8 @@ namespace WindowsFormsApplication1
             if (frm_cotiz == null)
             {
                 frm_cotiz = new Cotizacion();
+                frm_cotiz.Usuario = Usuario;
+                frm_cotiz.MiIdUsuario = MiIdUsuario;
                 frm_cotiz.MdiParent = this;
                 frm_cotiz.FormClosed += new FormClosedEventHandler(frm_cotiz_FormClosed);
                 frm_cotiz.Show();
@@ -764,7 +823,8 @@ namespace WindowsFormsApplication1
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             Login frm2 = new Login();
-
+            String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Logout','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
+            cl_gridysql.EjecutarMySql(bitacora);
             frm2.Show();
             this.Hide();
         }
@@ -774,6 +834,8 @@ namespace WindowsFormsApplication1
             if (frm_act_inventarios == null)
             {
                 frm_act_inventarios = new frm_act_inventario();
+                frm_act_inventarios.Usuario = Usuario;
+                frm_act_inventarios.MiIdUsuario = MiIdUsuario;
                 frm_act_inventarios.MdiParent = this;
                 frm_act_inventarios.FormClosed += new FormClosedEventHandler(frm_act_inventariosClosed);
                 frm_act_inventarios.Show();
@@ -789,6 +851,8 @@ namespace WindowsFormsApplication1
             if (frm_act_exameness == null)
             {
                 frm_act_exameness = new frm_act_examenes();
+                frm_act_exameness.Usuario = Usuario;
+                frm_act_exameness.MiIdUsuario = MiIdUsuario;
                 frm_act_exameness.MdiParent = this;
                 frm_act_exameness.FormClosed += new FormClosedEventHandler(frm_act_examenessClosed);
                 frm_act_exameness.Show();
@@ -817,6 +881,12 @@ namespace WindowsFormsApplication1
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, ayudaCHM, HelpNavigator.Topic, acercasistema);
+        }
+
+        private void MDIParent1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc,id_usuario_activo) VALUE (NOW(), 'Logout','" + Usuario + "','" + obtenerIP() + "'," + MiIdUsuario + ") ";
+            cl_gridysql.EjecutarMySql(bitacora);
         }
     }
 }

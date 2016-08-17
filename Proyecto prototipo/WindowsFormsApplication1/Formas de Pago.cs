@@ -8,17 +8,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
     public partial class frm_act_pago : Form
     {
         String Codigo;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         Boolean Editar;
         public frm_act_pago()
         {
             InitializeComponent();
         }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
+        }
+
         BDconexion ManipularDato = new BDconexion();
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
@@ -79,6 +98,8 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Los datos han sido actualizados exitosamente");
                     while (re.Read())
                     { }
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'forma_de_pago'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     Conexionmysql.Desconectar();
                     GridViewActualizar(this.dgv_for_pag, "select pk_id_fm_pg as Identificador, nombre_fm_pago as Nombre, descripcion_fm_pg as Descripcion from forma_de_pago where nombre_fm_pago like '%" + txt_busc.Text + "%' ");
                     Editar = false;
@@ -93,6 +114,8 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Los datos han sido insertados exitosamente");
                     while (re.Read())
                     { }
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'forma_de_pago'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     Conexionmysql.Desconectar();
                 }
             }
@@ -131,6 +154,8 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Los datos han sido eliminados exitosamente");
                     while (re.Read())
                     { }
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'forma_de_pago'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     Conexionmysql.Desconectar();
                     GridViewActualizar(this.dgv_for_pag, "select pk_id_fm_pg as Identificador, nombre_fm_pago as Nombre, descripcion_fm_pg as Descripcion from forma_de_pago where nombre_fm_pago like '%" + txt_busc.Text + "%' ");
 

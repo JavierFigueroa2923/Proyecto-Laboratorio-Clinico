@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,9 +21,27 @@ namespace WindowsFormsApplication1
 
         string codigo = "";
         Boolean Editar;
+
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         private void Lbl_titulo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         private void cbo_titl_emp_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,6 +151,8 @@ namespace WindowsFormsApplication1
                     string theDate = dtp_fec_contr_carg_emp.Value.ToString("yyyy-MM-dd");
                     String Query = "update cargo_empleado set nombre_cargo_emp = '" + txt_nombre_cargo_emp.Text + "', descripcion_cargo_emp = '" + txt_descp_cargo_emp.Text + "', fecha_contratacion = '" + theDate+ "', pk_id_emp = " + cbo_id_emp.SelectedValue + ", pk_id_lab = " + cbo_id_lab.SelectedValue + " where pk_id_cargo_emp = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'cargo_empleado'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     grid_cargos();
                     Conexionmysql.Desconectar();
                     Editar = false;
@@ -146,6 +167,8 @@ namespace WindowsFormsApplication1
                         String Query = "insert into cargo_empleado(nombre_cargo_emp, descripcion_cargo_emp, fecha_contratacion,pk_id_emp,pk_id_lab)values('" + txt_nombre_cargo_emp.Text + "','" + txt_descp_cargo_emp.Text + "','" + theDate + "'," + cbo_id_emp.SelectedValue + "," + cbo_id_lab.SelectedValue + ");";
                         MySqlCommand MyCommand2 = new MySqlCommand(Query, Conexionmysql.ObtenerConexion());
                         MySqlDataReader MyReader2;
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingresar','" + Usuario + "','" + obtenerIP() + "', 'cargo_empleado'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.ObtenerConexion();
                         MyReader2 = MyCommand2.ExecuteReader();
                         MessageBox.Show("Registro ingresado exitosamente");
@@ -224,6 +247,8 @@ namespace WindowsFormsApplication1
                     String Query = "delete from cargo_empleado where pk_id_cargo_emp = " + NumVal + ";";
                     //ejecutar query
                     cl_gridysql.EjecutarMySql(Query);
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'cargo_empleado'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     grid_cargos();
                     limpiar();
                     //desconectamos de la base de datos

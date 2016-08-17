@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Area_de_laboratorio));
             this.lbl_area_laboratorio = new System.Windows.Forms.Label();
             this.gpb_datos_area_lab = new System.Windows.Forms.GroupBox();
+            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
             this.txt_descrip_area = new System.Windows.Forms.TextBox();
             this.lbl_descrip_area_lab = new System.Windows.Forms.Label();
             this.lbl_id_lab = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
-            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
             this.txt_busc_are_lab = new System.Windows.Forms.TextBox();
             this.gpb_datos_area_lab.SuspendLayout();
             this.gpb_vista_labs.SuspendLayout();
@@ -87,6 +87,14 @@
             this.gpb_datos_area_lab.TabIndex = 152;
             this.gpb_datos_area_lab.TabStop = false;
             this.gpb_datos_area_lab.Text = "Ingreso de datos";
+            // 
+            // cbo_id_lab
+            // 
+            this.cbo_id_lab.FormattingEnabled = true;
+            this.cbo_id_lab.Location = new System.Drawing.Point(9, 47);
+            this.cbo_id_lab.Name = "cbo_id_lab";
+            this.cbo_id_lab.Size = new System.Drawing.Size(315, 26);
+            this.cbo_id_lab.TabIndex = 9;
             // 
             // txt_descrip_area
             // 
@@ -284,14 +292,6 @@
             this.toolTip6.SetToolTip(this.btn_cancl, "Cancelar");
             this.btn_cancl.UseVisualStyleBackColor = true;
             this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_pcnt_Click);
-            // 
-            // cbo_id_lab
-            // 
-            this.cbo_id_lab.FormattingEnabled = true;
-            this.cbo_id_lab.Location = new System.Drawing.Point(9, 47);
-            this.cbo_id_lab.Name = "cbo_id_lab";
-            this.cbo_id_lab.Size = new System.Drawing.Size(315, 26);
-            this.cbo_id_lab.TabIndex = 9;
             // 
             // txt_busc_are_lab
             // 

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,9 +22,26 @@ namespace WindowsFormsApplication1
         string codigo = "";
         Boolean Editar;
         Validaciones validar = new Validaciones();
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void LimpiarCajaTexto()
@@ -87,6 +105,8 @@ namespace WindowsFormsApplication1
                     int NumVal = Int32.Parse(codigo);
                     String Query = "update inventario_suministro set pk_id_simin = " + txt_id_inv_sumin.Text + ", existencia_sumin = " + txt_cantidad.Text + ", nombre_sumin = '" + txt_nombre_sm.Text + "', costo_por_unidad_inv_sumin = " + txt_prec_comp_inv_sumin.Text + ", precio_venta_unidad_inv_sumin = " + txt_prec_vent_inv_sumin.Text + ", detalle_sumin = " + txt_direccion.Text + ", pk_id_lab = " + cbo_id_laboratorio.Text + " where pk_id_simin = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'inventario_suministro'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     grid();
                     Conexionmysql.Desconectar();
                     //this.LimpiarCajaTextoEtiqueta();
@@ -103,6 +123,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         MyReader2 = MyCommand2.ExecuteReader();
                         MessageBox.Show("Registro ingresado exitosamente");
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'inventario_suministro'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         grid();
 
@@ -165,6 +187,8 @@ namespace WindowsFormsApplication1
                     //Actualize la grid
                     grid();
                     //desconectamos de la base de datos
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'inventario_suministro'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     Conexionmysql.Desconectar();
                 }
                 else

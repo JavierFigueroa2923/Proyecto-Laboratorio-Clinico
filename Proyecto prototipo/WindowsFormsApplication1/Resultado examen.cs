@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -21,6 +22,8 @@ namespace WindowsFormsApplication1
         Conexionmysql ManipularDato = new Conexionmysql();
         String Codigo;
         Boolean Editar;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         private void Resultado_examen_Load(object sender, EventArgs e)
         {
             InhabilitarTexto();
@@ -28,6 +31,22 @@ namespace WindowsFormsApplication1
             btn_acept.Enabled = false;
             ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
         }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
+        }
+
         public void ActualizarGrid(DataGridView dg, String Query)
         {
             Conexionmysql.ObtenerConexion();
@@ -81,6 +100,9 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String query2 = "UPDATE resultado_examen SET descripcion_result_exm='" + txt_descripcion.Text + "' WHERE pk_id_result_exm='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
+
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'resultado_examen'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
@@ -97,6 +119,8 @@ namespace WindowsFormsApplication1
                         {
                             String Query = "INSERT INTO resultado_examen (fecha_entrega_result_exm,descripcion_result_exm, pk_id_exm) VALUES ('" + fecha + "','" + txt_descripcion.Text + "','" + Convert.ToDouble(txt_id_exm.Text) + "') ";
                             cl_gridysql.EjecutarMySql(Query);
+                            String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'resultado_examen'," + MiIdUsuario + ") ";
+                            cl_gridysql.EjecutarMySql(bitacora);
                             ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
                             this.LimpiarCajasTexto();
                             Conexionmysql.Desconectar();
@@ -135,6 +159,9 @@ namespace WindowsFormsApplication1
                     //4.Actualizar grid..
                     ActualizarGrid(this.dgv_vist_result_exam, "SELECT pk_id_result_exm as Identificador, fecha_entrega_result_exm as Fecha_Entrega, descripcion_result_exm as Descripcion, pk_id_exm as Examen FROM resultado_examen;");
                     //5.desconectar en base de datos
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'resultado_examen'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
+
                     Conexionmysql.Desconectar();
                 }//cerrar el if
                 else

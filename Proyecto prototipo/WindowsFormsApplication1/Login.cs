@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Web;
 using System.Security.Cryptography;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -23,6 +24,21 @@ namespace WindowsFormsApplication1
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         private const string ayudaCHM = "Ayuda-Sistema-Laboratorio-Clínico.chm";
@@ -43,6 +59,8 @@ namespace WindowsFormsApplication1
 
                 MySqlCommand cmd = dbConn.CreateCommand();
                 cmd.CommandText = "SELECT COUNT(empleado.usuario) as conteo FROM empleado WHERE empleado.usuario='"+usuario+"' AND empleado.contrasenia = '"+pass+"'";
+
+
 
                 try
                 {
@@ -114,7 +132,10 @@ namespace WindowsFormsApplication1
                                 MDIParent1 frm2 = new MDIParent1();
                                 frm2.MiPropiedad = "Bienvenido " + a1;
                                 frm2.MiIdUsuario = b2;
-                                frm2.Show();
+                                frm2.Usuario = a1;
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc,id_usuario_activo) VALUE (NOW(), 'Login','" + a1 + "','" + obtenerIP() + "'," + b2 + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
+                        frm2.Show();
                                 this.Hide();
                             }
                                 

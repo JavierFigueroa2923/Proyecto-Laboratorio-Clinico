@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -22,6 +23,8 @@ namespace WindowsFormsApplication1
         BDconexion ManipularDato = new BDconexion();
         String Codigo;
         Boolean Editar;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
 
         public void LimpiarTextBox()
         {
@@ -31,6 +34,21 @@ namespace WindowsFormsApplication1
             txt_telefono.Text = "";
             txt_correo.Text = "";
             txt_busc_lab.Text = "";
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void InhabilitarTexto()
@@ -124,6 +142,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String Query = "UPDATE laboratorio SET nombre_lab ='" + txt_nombre.Text + "' WHERE pk_id_lab ='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(Query);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'laboratorio'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarTextBox();
@@ -156,6 +176,8 @@ namespace WindowsFormsApplication1
 
                         GridViewActualizar(this.dgv_labs, "select distinct L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
                         this.LimpiarTextBox();
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingreso','" + Usuario + "','" + obtenerIP() + "', 'laboratorio'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         MessageBox.Show("Operación realizada exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -195,6 +217,8 @@ namespace WindowsFormsApplication1
                 //4.Actualizar grid..
                 GridViewActualizar(this.dgv_labs, "select L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
 
+                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'laboratorio'," + MiIdUsuario + ") ";
+                cl_gridysql.EjecutarMySql(bitacora);
 
                 //5.desconectar en base de datos
                 Conexionmysql.Desconectar();

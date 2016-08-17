@@ -304,6 +304,7 @@
             this.btn_elim_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip4.SetToolTip(this.btn_elim_pcnt, "Eliminar");
             this.btn_elim_pcnt.UseVisualStyleBackColor = true;
+            this.btn_elim_pcnt.Click += new System.EventHandler(this.btn_elim_pcnt_Click);
             // 
             // frm_act_examenes
             // 

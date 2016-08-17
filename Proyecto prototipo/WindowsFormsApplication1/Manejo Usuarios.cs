@@ -20,7 +20,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
 
         public void LimpiarCajaTextoUsuario()
         {

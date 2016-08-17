@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -21,6 +22,8 @@ namespace WindowsFormsApplication1
         Validaciones validar = new Validaciones();
         BDconexion manipular = new BDconexion();
         String Codigo;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         Boolean Editar;
         private void Tipo_de_muestra_Load(object sender, EventArgs e)
         {
@@ -30,6 +33,21 @@ namespace WindowsFormsApplication1
             /// no real 
 
             ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void LimpiarCajasTexto()
@@ -84,6 +102,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String query2 = "UPDATE tipo_de_muestra SET descripcion_tip_mst='" + txt_descp_muestra.Text + "', nombre_tipo='" + txt_nombre_tipo.Text + "' WHERE pk_id_tip_mst='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'tipo_de_muestra'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
@@ -96,6 +116,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String query = "INSERT INTO tipo_de_muestra(descripcion_tip_mst,nombre_tipo) Values('" + txt_nombre_tipo.Text + "','" + txt_descp_muestra.Text + "') ";
                         cl_gridysql.EjecutarMySql(query);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'tipo_de_muestra'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         LimpiarCajasTexto();
 
                         ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
@@ -156,6 +178,8 @@ namespace WindowsFormsApplication1
 
                     ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
 
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'tipo_de_muestra'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
 
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();

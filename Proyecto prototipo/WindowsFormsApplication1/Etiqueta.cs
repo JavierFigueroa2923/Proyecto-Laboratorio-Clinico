@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -16,6 +17,8 @@ namespace WindowsFormsApplication1
     {
         string codigo = "";
         Boolean Editar;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         public frm_etiqueta()
         {
             InitializeComponent();
@@ -24,6 +27,21 @@ namespace WindowsFormsApplication1
         private void txt_busc_mst_eti_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void LimpiarCajaTextoEtiqueta()
@@ -73,6 +91,8 @@ namespace WindowsFormsApplication1
                         //Actualize la grid
                         cl_gridysql.ActualizarGridEtiqueta(this.dgv_busc_eti, "select pk_id_etqt as Identificador, descripcion_etqt as Descripcion, pk_id_mst as Muestra from etiquetas;");
                         //desconectamos de la base de datos
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'etiquetas'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                     }
                     else
@@ -106,7 +126,9 @@ namespace WindowsFormsApplication1
                     int NumVal = Int32.Parse(codigo);
                     String Query = "update etiquetas set descripcion_etqt = '" + txt_descr_eti.Text + "', pk_id_mst = '" + cbo_id_mst_busc_eti.SelectedValue + "'where pk_id_etqt = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
-                    cl_gridysql.ActualizarGridEtiqueta(this.dgv_busc_eti, "select pk_id_etqt as Identificador, descripcion_etqt as Descripcion, pk_id_mst as Muestra from etiquetas;");
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'etiquetas'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
+                        cl_gridysql.ActualizarGridEtiqueta(this.dgv_busc_eti, "select pk_id_etqt as Identificador, descripcion_etqt as Descripcion, pk_id_mst as Muestra from etiquetas;");
                     Conexionmysql.ObtenerConexion();
                     this.LimpiarCajaTextoEtiqueta();
                     Editar = false;
@@ -119,8 +141,10 @@ namespace WindowsFormsApplication1
                     String Query = "insert into etiquetas(descripcion_etqt,pk_id_mst)values('" + txt_descr_eti.Text + "'," + cbo_id_mst_busc_eti.SelectedValue + ");";
                     //Ejecutar Query
                     cl_gridysql.EjecutarMySql(Query);
-                    //Actualizar el DataGrid
-                    cl_gridysql.ActualizarGridEtiqueta(this.dgv_busc_eti, "select pk_id_etqt as Identificador, descripcion_etqt as Descripcion, pk_id_mst as Muestra from etiquetas;");
+                        //Actualizar el DataGrid
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'etiquetas'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
+                        cl_gridysql.ActualizarGridEtiqueta(this.dgv_busc_eti, "select pk_id_etqt as Identificador, descripcion_etqt as Descripcion, pk_id_mst as Muestra from etiquetas;");
                     //Desconectarse de la Base de Datos
                     Conexionmysql.Desconectar();
                     //Limpiar cajas de texto

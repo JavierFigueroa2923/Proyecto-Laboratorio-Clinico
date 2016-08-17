@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -20,6 +21,8 @@ namespace WindowsFormsApplication1
 }
         Validaciones validar = new Validaciones();
         BDconexion ManipularDato = new BDconexion();
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
             //Establecemos la conexion
@@ -34,6 +37,21 @@ namespace WindowsFormsApplication1
             dgv.DataSource = newDataSet;
             dgv.DataMember = "Cotizacion";
             Conexionmysql.Desconectar();
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void LimpiarCajasTexto()
@@ -80,6 +98,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Los datos han sido insertados exitosamente");
                 while (re.Read())
                 { }
+                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'muestra'," + MiIdUsuario + ") ";
+                cl_gridysql.EjecutarMySql(bitacora);
                 Conexionmysql.Desconectar();
             }
 
@@ -106,6 +126,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Los datos han sido actualizados exitosamente");
                 while (re.Read())
                 { }
+                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'muestra'," + MiIdUsuario + ") ";
+                cl_gridysql.EjecutarMySql(bitacora);
                 Conexionmysql.Desconectar();
             }
             catch (Exception ex)
@@ -130,6 +152,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Los datos han sido eliminados exitosamente");
                 while (re.Read())
                 { }
+                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'muestra'," + MiIdUsuario + ") ";
+                cl_gridysql.EjecutarMySql(bitacora);
                 Conexionmysql.Desconectar();
             }
             catch (Exception ex)

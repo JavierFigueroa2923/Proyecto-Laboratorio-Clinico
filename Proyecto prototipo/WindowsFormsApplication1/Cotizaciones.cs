@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 //using iTextSharp.text.pdf;
 //using iTextSharp.text;
 using System.IO;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -24,6 +25,24 @@ namespace WindowsFormsApplication1
         }
 
         BDconexion ManipularDato = new BDconexion();
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
+        }
+
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
             //Establecemos la conexion
@@ -140,6 +159,8 @@ namespace WindowsFormsApplication1
                     string theDate = dtp_fec_cotz.Value.ToString("yyyy-MM-dd");
                     string consulta2 = "update proyecto_laboratorio.COTIZACION set fecha_de_creacion_ctzn='" + theDate + "',monto_total_ctzn='" + txt_total.Text + "' , descuento_cztn= '" + txt_descuento.Text + "','" + selectedItem1 + "','" + selectedItem + "');";
                     MySqlCommand man = new MySqlCommand(consulta2, Conexionmysql.ObtenerConexion());
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'cotizacion'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     MySqlDataReader re;
                     Conexionmysql.ObtenerConexion();
                     re = man.ExecuteReader();
@@ -158,6 +179,8 @@ namespace WindowsFormsApplication1
                     string theDate = dtp_fec_cotz.Value.ToString("yyyy-MM-dd");
                     string consulta = "insert into COTIZACION (fecha_de_creacion_ctzn,monto_total_ctzn,descuento_ctzn,pk_id_lab,pk_id_clt)values('" + theDate + "','" + txt_total.Text + "','" + txt_descuento.Text + "','" + selectedItem1 + "','" + selectedItem + "');";
                     MySqlCommand man = new MySqlCommand(consulta, Conexionmysql.ObtenerConexion());
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingreso','" + Usuario + "','" + obtenerIP() + "', 'cotizacion'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     MySqlDataReader re;
                     Conexionmysql.ObtenerConexion();
                     re = man.ExecuteReader();
@@ -199,6 +222,8 @@ namespace WindowsFormsApplication1
                 Codigo = this.dgv_vista_ctzn.CurrentRow.Cells[0].Value.ToString();
                 string consulta3 = "DELETE from COTIZACION where pk_id_ctzn ='" + Codigo + "';";
                 MySqlCommand man = new MySqlCommand(consulta3, Conexionmysql.ObtenerConexion());
+                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'cotizacion'," + MiIdUsuario + ") ";
+                cl_gridysql.EjecutarMySql(bitacora);
                 MySqlDataReader re;
                 Conexionmysql.ObtenerConexion();
                 re = man.ExecuteReader();

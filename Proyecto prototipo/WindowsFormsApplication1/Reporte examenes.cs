@@ -17,6 +17,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         private void rdb_mes_CheckedChanged(object sender, EventArgs e)
         {
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -17,6 +18,8 @@ namespace WindowsFormsApplication1
         BDconexion manipular = new BDconexion();
         String Codigo;
         Boolean Editar;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
 
         public Membresia()
         {
@@ -31,6 +34,21 @@ namespace WindowsFormsApplication1
             dtp_fec_crea_mem.Text = "";
             dtp_fec_expir_mem.Text = "";
     
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void InhabilitarTexto()
@@ -99,6 +117,8 @@ namespace WindowsFormsApplication1
                         string theDate2 = dtp_fec_expir_mem.Value.ToString("yyyy-MM-dd");
                         String query2 = "UPDATE membresia SET beneficios='" + txt_beneficio_mem.Text + "', fecha_expendicion_mem='" + theDate + "', fecha_expiracion_mem = '" + theDate2 + "', pk_id_clt = '" + selectedItem + "' WHERE pk_id_mem ='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'membresia'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
@@ -113,6 +133,8 @@ namespace WindowsFormsApplication1
                         string theDate2 = dtp_fec_expir_mem.Value.ToString("yyyy-MM-dd");
                         String Query = "INSERT INTO membresia (beneficios,fecha_expendicion_mem,fecha_expiracion_mem,pk_id_clt) VALUES ('" + txt_beneficio_mem.Text + "','" + theDate + "','" + theDate2 + "', '" + Convert.ToDouble(selectedItem) + "') ";
                         cl_gridysql.EjecutarMySql(Query);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'membresia'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
@@ -149,6 +171,8 @@ namespace WindowsFormsApplication1
                     //4.Actualizar grid..
                     ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
 
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'membresia'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
 
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();

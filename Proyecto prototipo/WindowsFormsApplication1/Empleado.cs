@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -21,6 +22,8 @@ namespace WindowsFormsApplication1
         Validaciones validar = new Validaciones();
         String Codigo;
         Boolean Editar;
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
         BDconexion ManipularDato = new BDconexion();
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
@@ -36,6 +39,21 @@ namespace WindowsFormsApplication1
             dgv.DataSource = newDataSet;
             dgv.DataMember = "Empleado";
             Conexionmysql.Desconectar();
+        }
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
         public void LimpiarCajasTexto()
@@ -139,6 +157,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String Query = "UPDATE empleado SET nombre_emp ='" + txt_nombre.Text + "' WHERE pk_id_emp ='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(Query);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'empleado'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         MessageBox.Show("Operacion Realizada Exitosamente", "La base de datos ha sido modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //6.limpiar cajas de texto
@@ -164,6 +184,8 @@ namespace WindowsFormsApplication1
 
                             String Query4 = "INSERT INTO telefono (telefono,pk_id_emp) VALUES ('" + txt_telefono.Text + "',(select MAX(pk_id_emp) FROM empleado))";
                             cl_gridysql.EjecutarMySql(Query4);
+                            String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'empleado'," + MiIdUsuario + ") ";
+                            cl_gridysql.EjecutarMySql(bitacora);
                             this.LimpiarCajasTexto();
                             Conexionmysql.Desconectar();
                             cl_gridysql.ActualizarGridEmpleadoUsuario(this.dgv_empleads, "select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado");
@@ -231,6 +253,8 @@ namespace WindowsFormsApplication1
                 //4.Actualizar grid..
                 cl_gridysql.ActualizarGridEmpleadoUsuario(this.dgv_empleads, "select pk_id_emp as Identificador, pk_id_lab as Laboratorio, genero as Genero, nombre_emp as Nombre, apellido_emp as Apellido, usuario as Usuario, contrasenia as Password, fecha_nacimiento_emp as Fecha_nacimiento from empleado");
 
+                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'empleado'," + MiIdUsuario + ") ";
+                cl_gridysql.EjecutarMySql(bitacora);
 
                 //5.desconectar en base de datos
                 Conexionmysql.Desconectar();

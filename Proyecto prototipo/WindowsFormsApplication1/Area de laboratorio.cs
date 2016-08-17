@@ -8,6 +8,7 @@ using MySql.Data.MySqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -21,6 +22,10 @@ namespace WindowsFormsApplication1
         BDconexion ManipularDato = new BDconexion();
         String Codigo;
         Boolean Editar;
+
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
+
         private void Area_de_laboratorio_Load(object sender, EventArgs e)
         {
             btn_acept.Enabled = false;
@@ -32,6 +37,23 @@ namespace WindowsFormsApplication1
         private void txt_id_area_lab_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.validacion_solonumeros(e);
+        }
+
+
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
         }
 
 
@@ -92,6 +114,8 @@ namespace WindowsFormsApplication1
                         string selectedItem = cbo_id_lab.SelectedValue.ToString();
                         String query2 = "UPDATE area_laboratorio SET descripcion_ar_lab='" + txt_descrip_area.Text + "', pk_id_lab = '" + selectedItem + "' WHERE pk_id_area_lab='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
@@ -104,6 +128,8 @@ namespace WindowsFormsApplication1
                         string selectedItem = cbo_id_lab.SelectedValue.ToString();
                         String Query = "INSERT INTO area_laboratorio (pk_id_lab,descripcion_ar_lab) VALUES ('" + selectedItem + "','" + txt_descrip_area.Text + "') ";
                         cl_gridysql.EjecutarMySql(Query);
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingresar','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
@@ -134,6 +160,8 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
                     ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio;");
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();
@@ -217,5 +245,7 @@ namespace WindowsFormsApplication1
         {
             ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio;");
         }
+
+
     }
 }
