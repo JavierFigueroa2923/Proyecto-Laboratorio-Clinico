@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-//using iTextSharp.text.pdf;
-//using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 using System.IO;
 using System.Net;
 
@@ -157,7 +157,7 @@ namespace WindowsFormsApplication1
                     string selectedItem = cbo_id_clnt.SelectedValue.ToString();
                     string selectedItem1 = cbo_id_lab.SelectedValue.ToString();
                     string theDate = dtp_fec_cotz.Value.ToString("yyyy-MM-dd");
-                    string consulta2 = "update proyecto_laboratorio.COTIZACION set fecha_de_creacion_ctzn='" + theDate + "',monto_total_ctzn='" + txt_total.Text + "' , descuento_cztn= '" + txt_descuento.Text + "','" + selectedItem1 + "','" + selectedItem + "');";
+                    string consulta2 = "update proyecto_laboratorio.COTIZACION set fecha_de_creacion_ctzn='" + theDate + "',monto_total_ctzn='" + txt_total.Text + "' , descuento_ctzn= '" + txt_descuento.Text + "', pk_id_lab= '" + selectedItem1 + "', pk_id_clt= '" + selectedItem + "';";
                     MySqlCommand man = new MySqlCommand(consulta2, Conexionmysql.ObtenerConexion());
                     String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'cotizacion'," + MiIdUsuario + ") ";
                     cl_gridysql.EjecutarMySql(bitacora);
@@ -217,21 +217,27 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string selectedItem = cbo_id_clnt.SelectedValue.ToString();
-                string selectedItem1 = cbo_id_lab.SelectedValue.ToString();
-                Codigo = this.dgv_vista_ctzn.CurrentRow.Cells[0].Value.ToString();
-                string consulta3 = "DELETE from COTIZACION where pk_id_ctzn ='" + Codigo + "';";
-                MySqlCommand man = new MySqlCommand(consulta3, Conexionmysql.ObtenerConexion());
-                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'cotizacion'," + MiIdUsuario + ") ";
-                cl_gridysql.EjecutarMySql(bitacora);
-                MySqlDataReader re;
-                Conexionmysql.ObtenerConexion();
-                re = man.ExecuteReader();
-                MessageBox.Show("Los datos han sido eliminados exitosamente");
-                while (re.Read())
-                { }
-                Conexionmysql.Desconectar();
-                cl_gridysql.ActualizarGridEmpleadoUsuario(this.dgv_vista_ctzn, "select pk_id_ctzn as Identificador, fecha_de_creacion_ctzn as Creacion, monto_total_ctzn as Monto, descuento_ctzn as Descuento, pk_id_lab as Laboratorio, pk_id_clt as Cliente from cotizacion;");
+                var resultado = MessageBox.Show("DESEA BORRAR EL REGISTRO SELECCIONADO", "CONFIRME SU ACCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)// si el usuario hizo click en si
+                {
+                    string selectedItem = cbo_id_clnt.SelectedValue.ToString();
+                    string selectedItem1 = cbo_id_lab.SelectedValue.ToString();
+                    Codigo = this.dgv_vista_ctzn.CurrentRow.Cells[0].Value.ToString();
+                    string consulta3 = "DELETE from cotizacion where pk_id_ctzn ='" + Codigo + "';";
+                    MySqlCommand man = new MySqlCommand(consulta3, Conexionmysql.ObtenerConexion());
+                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'cotizacion'," + MiIdUsuario + ") ";
+                    cl_gridysql.EjecutarMySql(bitacora);
+                    MySqlDataReader re;
+                    Conexionmysql.ObtenerConexion();
+                    re = man.ExecuteReader();
+                    MessageBox.Show("Los datos han sido eliminados exitosamente");
+                    while (re.Read())
+                    { }
+                    Conexionmysql.Desconectar();
+                    cl_gridysql.ActualizarGridEmpleadoUsuario(this.dgv_vista_ctzn, "select pk_id_ctzn as Identificador, fecha_de_creacion_ctzn as Creacion, monto_total_ctzn as Monto, descuento_ctzn as Descuento, pk_id_lab as Laboratorio, pk_id_clt as Cliente from cotizacion;");
+                }
+                else
+                    return;
             }
             catch (Exception ex)
             {
@@ -279,6 +285,7 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl_cotz.Enabled = false;
+            Editar = false;
         }
 
         private void btn_acept_cotz_Click(object sender, EventArgs e)

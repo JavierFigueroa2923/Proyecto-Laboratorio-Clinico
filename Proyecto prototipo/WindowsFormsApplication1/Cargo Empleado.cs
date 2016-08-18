@@ -5,10 +5,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -24,24 +24,10 @@ namespace WindowsFormsApplication1
 
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
+
         private void Lbl_titulo_Click(object sender, EventArgs e)
         {
 
-        }
-
-        public string obtenerIP()
-        {
-            IPHostEntry host;
-            string localIP = "";
-            host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily.ToString() == "InterNetwork")
-                {
-                    localIP = ip.ToString();
-                }
-            }
-            return localIP;
         }
 
         private void cbo_titl_emp_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,7 +49,24 @@ namespace WindowsFormsApplication1
             llenarCboIdLab();
             llenarCboIdEmp();
         }
-        
+
+
+        public string obtenerIP()
+        {
+            IPHostEntry host;
+            string localIP = "";
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    localIP = ip.ToString();
+                }
+            }
+            return localIP;
+        }
+
+
         public void llenarCboIdLab()
         {
             //se realiza la conexión a la base de datos
@@ -167,11 +170,11 @@ namespace WindowsFormsApplication1
                         String Query = "insert into cargo_empleado(nombre_cargo_emp, descripcion_cargo_emp, fecha_contratacion,pk_id_emp,pk_id_lab)values('" + txt_nombre_cargo_emp.Text + "','" + txt_descp_cargo_emp.Text + "','" + theDate + "'," + cbo_id_emp.SelectedValue + "," + cbo_id_lab.SelectedValue + ");";
                         MySqlCommand MyCommand2 = new MySqlCommand(Query, Conexionmysql.ObtenerConexion());
                         MySqlDataReader MyReader2;
-                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingresar','" + Usuario + "','" + obtenerIP() + "', 'cargo_empleado'," + MiIdUsuario + ") ";
-                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.ObtenerConexion();
                         MyReader2 = MyCommand2.ExecuteReader();
                         MessageBox.Show("Registro ingresado exitosamente");
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingresar','" + Usuario + "','" + obtenerIP() + "', 'cargo_empleado'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         grid_cargos();
                         limpiar();

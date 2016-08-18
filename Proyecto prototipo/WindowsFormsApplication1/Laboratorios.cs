@@ -23,6 +23,7 @@ namespace WindowsFormsApplication1
         BDconexion ManipularDato = new BDconexion();
         String Codigo;
         Boolean Editar;
+
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
 
@@ -35,7 +36,6 @@ namespace WindowsFormsApplication1
             txt_correo.Text = "";
             txt_busc_lab.Text = "";
         }
-
         public string obtenerIP()
         {
             IPHostEntry host;
@@ -216,7 +216,6 @@ namespace WindowsFormsApplication1
 
                 //4.Actualizar grid..
                 GridViewActualizar(this.dgv_labs, "select L.nombre_lab, D.direccion, T.telefono, C.correo_e from laboratorio L, direccion D, telefono T, correo_e C where L.pk_id_lab = D.pk_id_lab and L.pk_id_lab = T.pk_id_lab and L.pk_id_lab = C.pk_id_lab;");
-
                 String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'laboratorio'," + MiIdUsuario + ") ";
                 cl_gridysql.EjecutarMySql(bitacora);
 

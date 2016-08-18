@@ -353,6 +353,8 @@
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Lbl_titulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Resultado_examen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resultado_examen";

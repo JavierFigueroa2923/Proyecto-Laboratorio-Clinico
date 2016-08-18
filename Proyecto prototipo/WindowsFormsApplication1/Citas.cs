@@ -19,11 +19,6 @@ namespace WindowsFormsApplication1
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
 
-        public Citas()
-        {
-            InitializeComponent();
-        }
-
         public string obtenerIP()
         {
             IPHostEntry host;
@@ -37,6 +32,11 @@ namespace WindowsFormsApplication1
                 }
             }
             return localIP;
+        }
+
+        public Citas()
+        {
+            InitializeComponent();
         }
 
         private void Lbl_fecha_cita_Click(object sender, EventArgs e)
@@ -85,8 +85,8 @@ namespace WindowsFormsApplication1
 
         private void btn_guardar_cita_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (cbo_hora1_cit.Text == "" || cbo_id_clt_cit.Text == "" || cbo_id_lab_cit.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -108,8 +108,8 @@ namespace WindowsFormsApplication1
                             {
                                 String query2 = "UPDATE cita SET fecha_cita='" + theDate + "', hora_cita ='" + cbo_hora1_cit.Text + "', pk_id_lab = '" + selectedItem1 + "', pk_id_clt = '" + selectedItem + "' WHERE pk_id_cita ='" + Codigo + "';";
                                 cl_gridysql.EjecutarMySql(query2);
-                            String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'cita'," + MiIdUsuario + ") ";
-                            cl_gridysql.EjecutarMySql(bitacora);
+                                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'cita'," + MiIdUsuario + ") ";
+                                cl_gridysql.EjecutarMySql(bitacora);
                                 Conexionmysql.Desconectar();
                                 //6.limpiar cajas de texto
                                 this.LimpiarCajasTexto();
@@ -141,9 +141,9 @@ namespace WindowsFormsApplication1
                             {
                                 String Query = "INSERT INTO cita (fecha_cita,hora_cita,pk_id_lab,pk_id_clt) VALUES ('" + theDate + "','" + cbo_hora1_cit.Text + "','" + Convert.ToDouble(selectedItem1) + "', '" + Convert.ToDouble(selectedItem) + "');";
                                 cl_gridysql.EjecutarMySql(Query);
-                            String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingresar','" + Usuario + "','" + obtenerIP() + "', 'cita'," + MiIdUsuario + ") ";
-                            cl_gridysql.EjecutarMySql(bitacora);
-                            cl_gridysql.ActualizarGridBusquedaIdCita(this.dgv_vista_cita, "select pk_id_cita as Identificador, fecha_cita as Fecha, hora_cita as Hora, pk_id_lab as Laboratorio, pk_id_clt as Cliente from cita;");
+                                String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingresar','" + Usuario + "','" + obtenerIP() + "', 'cita'," + MiIdUsuario + ") ";
+                                cl_gridysql.EjecutarMySql(bitacora);
+                                cl_gridysql.ActualizarGridBusquedaIdCita(this.dgv_vista_cita, "select pk_id_cita as Identificador, fecha_cita as Fecha, hora_cita as Hora, pk_id_lab as Laboratorio, pk_id_clt as Cliente from cita;");
                                 this.LimpiarCajasTexto();
                                 Conexionmysql.Desconectar();
                             }
@@ -157,13 +157,13 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Fecha, Hora o laboratorio no disponible", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                    }
-                }
+              }
             InhabilitarText();
-            //}
-           /* catch
+            }
+            catch
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }*/
+            }
         }
 
         public void llenarCboCitaIdCliente()
@@ -249,7 +249,6 @@ namespace WindowsFormsApplication1
 
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
-
                     String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'cita'," + MiIdUsuario + ") ";
                     cl_gridysql.EjecutarMySql(bitacora);
 
@@ -260,6 +259,8 @@ namespace WindowsFormsApplication1
                     //5.desconectar en base de datos
                     Conexionmysql.Desconectar();
                 }
+                else
+                    return;
             }
             catch
             {

@@ -23,6 +23,7 @@ namespace WindowsFormsApplication1
 
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
+
         public string obtenerIP()
         {
             IPHostEntry host;
@@ -42,7 +43,6 @@ namespace WindowsFormsApplication1
         BDconexion ManipularDato = new BDconexion();
         String Codigo;
         Boolean Editar;
-
         String Selecionar_pacientes = "select C.pk_id_clt as ID, C.nombre_clt as Nombre, C.apellido_clt as Apellido, C.sexo_clt as Sexo, C.dpi as DPI, C.edad_clt as Edad, C.tipo_sangre_clt as Tipo_de_Sangre, C.altura_clt as Altura, C.peso_clt as Peso, D.direccion as Direccion, T.telefono as Telefono, E.correo_e as Correo, C.nit AS NIT, C.referido_clt as Referencia, L.pk_id_lab as Laboratorio from cliente C, direccion D, telefono T, correo_e E, laboratorio L where C.pk_id_clt = D.pk_id_clt and C.pk_id_clt = T.pk_id_clt and C.pk_id_clt = E.pk_id_clt and C.pk_id_lab = L.pk_id_lab";
         private void Label2_Click(object sender, EventArgs e)
         {
@@ -190,37 +190,36 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    //try
-                    //{
-                        
+                     try
+                     {
+                        Conexionmysql.ObtenerConexion();
+                        String Query1 = "INSERT INTO cliente (nombre_clt, apellido_clt, nit, edad_clt, dpi, altura_clt, peso_clt, sexo_clt, tipo_sangre_clt, referido_clt, pk_id_lab) VALUES ('" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_nit.Text + "','" + txt_fecha_nacimiento.Text + "','" + txt_dpi.Text + "','" + txt_altura.Text + "','" + txt_peso_pcnt.Text + "','" + cbo_sexo_pcnt.Text + "','" + cbo_tip_sang_pcnt.Text + "','" + txt_referido.Text + "', "+cbo_lab_pcnt.Text +" )";
+                        cl_gridysql.EjecutarMySql(Query1);
 
                         if (ComprobarFormatoEmail(txt_email.Text) == false)
                         {
-                            MessageBox.Show("Error en la sintaxis del Correo Electronico", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("No se pudo realizar la modificación de la base de datos", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
-                        Conexionmysql.ObtenerConexion();
-                        String Query1 = "INSERT INTO cliente (nombre_clt, apellido_clt, nit, edad_clt, dpi, altura_clt, peso_clt, sexo_clt, tipo_sangre_clt, referido_clt, pk_id_lab) VALUES ('" + txt_nombre.Text + "','" + txt_apellido.Text + "','" + txt_nit.Text + "','" + txt_fecha_nacimiento.Text + "','" + txt_dpi.Text + "','" + txt_altura.Text + "','" + txt_peso_pcnt.Text + "','" + cbo_sexo_pcnt.Text + "','" + cbo_tip_sang_pcnt.Text + "','" + txt_referido.Text + "', " + cbo_lab_pcnt.Text + " )";
-                        cl_gridysql.EjecutarMySql(Query1);
-                        String Query2 = "INSERT INTO correo_e (correo_e, pk_id_clt) VALUES ('" + txt_email.Text + "',(select MAX(pk_id_clt) FROM cliente))";
+                            String Query2 = "INSERT INTO correo_e (correo_e, pk_id_clt) VALUES ('" + txt_email.Text + "',(select MAX(pk_id_clt) FROM cliente))";
                             cl_gridysql.EjecutarMySql(Query2);
                             String Query3 = "INSERT INTO direccion (direccion, pk_id_clt) VALUES ('" + txt_direccion.Text + "',(select MAX(pk_id_clt) FROM cliente))";
                             cl_gridysql.EjecutarMySql(Query3);
                             String Query4 = "INSERT INTO telefono (telefono, pk_id_clt) VALUES ('" + txt_telefono.Text + "',(select MAX(pk_id_clt) FROM cliente))";
                             cl_gridysql.EjecutarMySql(Query4);
-                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingreso','" + Usuario + "','" + obtenerIP() + "', 'cliente'," + MiIdUsuario + ") ";
-                        cl_gridysql.EjecutarMySql(bitacora);
-                        ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
+                            String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Ingreso','" + Usuario + "','" + obtenerIP() + "', 'cliente'," + MiIdUsuario + ") ";
+                            cl_gridysql.EjecutarMySql(bitacora);
+                            ActualizarGrid(this.dgv_list_pcnt, Selecionar_pacientes);
                             this.LimpiarCajasTexto();
                             Conexionmysql.Desconectar();
                             MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                   /* }
+                    }
                     catch
                     {
                         MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }*/
+                    }
                 }
             }
             InhabilitarTexto();

@@ -22,9 +22,10 @@ namespace WindowsFormsApplication1
         Validaciones validar = new Validaciones();
         BDconexion manipular = new BDconexion();
         String Codigo;
+        Boolean Editar;
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
-        Boolean Editar;
+
         private void Tipo_de_muestra_Load(object sender, EventArgs e)
         {
             InhabilitarTexto();
@@ -52,7 +53,7 @@ namespace WindowsFormsApplication1
 
         public void LimpiarCajasTexto()
         {
-            cbo_buscar.Text = "";
+            txt_busc_tip_mst.Text = "";
             txt_descp_muestra.Text = "";
             txt_nombre_tipo.Text = "";
             //txt_tp_muestra.Text = "";
@@ -177,7 +178,6 @@ namespace WindowsFormsApplication1
                     //4.Actualizar grid..
 
                     ActualizarGrid(this.dgv_muestras, "select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra;");
-
                     String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'tipo_de_muestra'," + MiIdUsuario + ") ";
                     cl_gridysql.EjecutarMySql(bitacora);
 
@@ -208,13 +208,13 @@ namespace WindowsFormsApplication1
         private void btn_busc_memb_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select * from tipo_muestra where pk_id_tip_mst = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
+            String Query = ("select * from tipo_muestra where pk_id_tip_mst = '" + txt_busc_tip_mst.Text + "%'; ");
 
             //ManipularDato.Busqueda(Query);
 
             ActualizarGrid(this.dgv_muestras, Query);
             Conexionmysql.Desconectar();
-            cbo_buscar.Text = "";
+            txt_busc_tip_mst.Text = "";
         }
 
         private void btn_act_datos_Click(object sender, EventArgs e)
@@ -235,6 +235,18 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
+        }
+
+        private void txt_busc_tip_mst_KeyUp(object sender, KeyEventArgs e)
+        {
+            Conexionmysql.ObtenerConexion();
+            String Query = ("select pk_id_tip_mst as Identificador, descripcion_tip_mst as Descripcion, nombre_tipo as Nombre from tipo_de_muestra; where pk_id_tip_mst = '" + txt_busc_tip_mst.Text + "%'; ");
+
+            //ManipularDato.Busqueda(Query);
+
+            ActualizarGrid(this.dgv_muestras, Query);
+            Conexionmysql.Desconectar();
+            txt_busc_tip_mst.Text = "";
         }
     }
 }

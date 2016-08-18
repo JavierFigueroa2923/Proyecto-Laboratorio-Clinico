@@ -24,11 +24,12 @@ namespace WindowsFormsApplication1
         Boolean Editar;
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
+
         public void LimpiarCajasTexto()
         {
-            cbo_buscar.Text = "";
-            txt_id_emp.Text = "";
-            txt_id_lab.Text = "";
+            txt_busc_tit_emp.Text = "";
+            cbo_id_emp_tit_emp.Text = "";
+            cbo_id_lab_tit_emp.Text = "";
             //txt_id_titulo_emp.Text = "";
             txt_nom_titulo.Text = "";
             txt_decrip_titulo_emp.Text = "";
@@ -52,8 +53,8 @@ namespace WindowsFormsApplication1
 
         public void InhabilitarTexto()
         {
-            txt_id_emp.Enabled = false;
-            txt_id_lab.Enabled = false;
+            cbo_id_lab_tit_emp.Enabled = false;
+            cbo_id_emp_tit_emp.Enabled = false;
             txt_nom_titulo.Enabled = false;
             dtp_fecha_title.Enabled = false;
             txt_decrip_titulo_emp.Enabled = false;
@@ -61,8 +62,8 @@ namespace WindowsFormsApplication1
 
         public void HabilitarTexto()
         {
-            txt_id_emp.Enabled = true;
-            txt_id_lab.Enabled = true;
+            cbo_id_emp_tit_emp.Enabled = true;
+            cbo_id_lab_tit_emp.Enabled = true;
             txt_nom_titulo.Enabled = true;
             dtp_fecha_title.Enabled = true;
             txt_decrip_titulo_emp.Enabled = true;
@@ -70,7 +71,7 @@ namespace WindowsFormsApplication1
 
         private void actualizar_titulo_emp_Click(object sender, EventArgs e)
         {
-            ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
+            ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado, pk_id_lab as Laboratorio from titulo_empleado;");
         }
         public void ActualizarGrid(DataGridView dg, String Query)
         {
@@ -112,9 +113,9 @@ namespace WindowsFormsApplication1
         private void btn_guardar_titulo_emp_Click(object sender, EventArgs e)
         {
             dtp_fecha_title.Enabled = true;
-            try
-            {
-                if (txt_decrip_titulo_emp.Text == "" || txt_id_lab.Text == "" || txt_nom_titulo.Text == "")
+           // try
+            //{
+                if (txt_decrip_titulo_emp.Text == "" || cbo_id_lab_tit_emp.Text == "" || cbo_id_lab_tit_emp.Text == "" || txt_nom_titulo.Text == "")
                 {
                     MessageBox.Show("No se han llenado todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -123,36 +124,36 @@ namespace WindowsFormsApplication1
                     if (Editar)
                     {
                         Conexionmysql.ObtenerConexion();
-                        String query2 = "UPDATE titulo_empleado SET descripcion_titl_emp='" + txt_decrip_titulo_emp.Text + "', nombre_titl_emp='" + txt_nom_titulo.Text + "', pk_id_lab ='" + Convert.ToDouble(txt_id_lab.Text) + "' WHERE pk_id_titl_emp='" + Codigo + "';";
+                        String query2 = "UPDATE titulo_empleado SET descripcion_titl_emp='" + txt_decrip_titulo_emp.Text + "', nombre_titl_emp='" + txt_nom_titulo.Text + "', pk_id_lab ='" + cbo_id_lab_tit_emp.SelectedValue + "', pk_id_emp ='" + cbo_id_emp_tit_emp.SelectedValue + "' WHERE pk_id_titl_emp='" + Codigo + "';";
                         //String query2 = "UPDATE titulo_empleado SET descripcion_titl_emp='" + txt_decrip_titulo_emp.Text + "', nombre_titl_emp ='" + txt_nom_titulo.Text + "', fecha_obten_titl_emp = '" + txt_fecha_obt_titulo.Text + "', pk_id_lab = '" +Convert.ToDouble(txt_id_lab.Text) + "' WHERE pk_id_titl_emp='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
                         String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'titulo_empleado'," + MiIdUsuario + ") ";
                         cl_gridysql.EjecutarMySql(bitacora);
-                        Conexionmysql.ObtenerConexion();
+                        Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
-                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
+                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado, pk_id_lab as Laboratorio from titulo_empleado;");
                         Editar = false;
                     }
                     else
                     {
                         Conexionmysql.ObtenerConexion();
                         string fecha = dtp_fecha_title.Value.ToString("yyyy-MM-dd");
-                        String Query = "INSERT INTO titulo_empleado (descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + fecha + "', '" + Convert.ToDouble(txt_id_emp.Text) + "', '" + Convert.ToDouble(txt_id_lab.Text) + "') ";
+                        String Query = "INSERT INTO titulo_empleado (descripcion_titl_emp,nombre_titl_emp,fecha_obten_titl_emp, pk_id_emp, pk_id_lab) VALUES ('" + txt_decrip_titulo_emp.Text + "','" + txt_nom_titulo.Text + "','" + fecha + "', '" + cbo_id_emp_tit_emp.SelectedValue + "', '" + cbo_id_lab_tit_emp.SelectedValue + "');";
                         cl_gridysql.EjecutarMySql(Query);
                         String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'titulo_empleado'," + MiIdUsuario + ") ";
                         cl_gridysql.EjecutarMySql(bitacora);
-                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
+                        ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado, pk_id_lab as Laboratorio from titulo_empleado;");
                         this.LimpiarCajasTexto();
                         Conexionmysql.Desconectar();
                     }
                 }
-            }
+            /*}
             catch
             {
                 MessageBox.Show("Error en la Ejecucion...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            InhabilitarTexto();
+            InhabilitarTexto();*/
         }
 
         private void btn_elim_titulo_Click(object sender, EventArgs e)
@@ -175,11 +176,10 @@ namespace WindowsFormsApplication1
                     //3.ejecutar la query
                     cl_gridysql.EjecutarMySql(Query);
                     //4.Actualizar grid..
-                    ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado from titulo_empleado;");
+                    ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado, pk_id_lab as Laboratorio from titulo_empleado;");
                     //5.desconectar en base de datos
                     String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
                     cl_gridysql.EjecutarMySql(bitacora);
-
                     Conexionmysql.Desconectar();
                 }
             }
@@ -198,9 +198,9 @@ namespace WindowsFormsApplication1
                 Codigo = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[0].Value.ToString();
                 txt_decrip_titulo_emp.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[1].Value.ToString();
                 txt_nom_titulo.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[2].Value.ToString();
-                //txt_fecha_obt_titulo.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[3].Value.ToString();
-                txt_id_emp.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[4].Value.ToString();
-                txt_id_lab.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[5].Value.ToString();
+                //dtp_fecha_title.Text= this.dgv_busqueda_datos_empleado.CurrentRow.Cells[3].Value.ToString();
+                cbo_id_emp_tit_emp.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[4].Value.ToString();
+                cbo_id_lab_tit_emp.Text = this.dgv_busqueda_datos_empleado.CurrentRow.Cells[5].Value.ToString();
                 dtp_fecha_title.Enabled = false;
             }
             catch
@@ -212,15 +212,11 @@ namespace WindowsFormsApplication1
         private void btn_busc_emp_Click(object sender, EventArgs e)
         {
             Conexionmysql.ObtenerConexion();
-            String Query = ("select * from titulo_empleado where pk_id_titl_emp = '" + Convert.ToDouble(cbo_buscar.Text) + "%'; ");
-
+            String Query = ("select * from titulo_empleado where pk_id_titl_emp like '" + txt_busc_tit_emp.Text + "%'; ");
             //ManipularDato.Busqueda(Query);
-
             ActualizarGrid(this.dgv_busqueda_datos_empleado, Query);
-
-
             Conexionmysql.Desconectar();
-            cbo_buscar.Text = "";
+            txt_busc_tit_emp.Text = "";
         }
 
         private void txt_id_lab_KeyDown(object sender, KeyEventArgs e)
@@ -255,6 +251,9 @@ namespace WindowsFormsApplication1
             InhabilitarTexto();
             btn_cancl.Enabled = false;
             btn_acept.Enabled = false;
+            ActualizarGrid(this.dgv_busqueda_datos_empleado, "select pk_id_titl_emp as Identificador, descripcion_titl_emp as Descripcion, nombre_titl_emp as Nombre_Titulo, fecha_obten_titl_emp as Fecha_Obtencion, pk_id_emp as Empleado, pk_id_lab as Laboratorio from titulo_empleado;");
+            llenarCboIdLaboratorio();
+            llenarCboIdTituloEmpleado();
         }
 
         private void btn_nuevo_pcnt_Click(object sender, EventArgs e)
@@ -319,6 +318,75 @@ namespace WindowsFormsApplication1
                 e.SuppressKeyPress = true;
                 SelectNextControl(ActiveControl, true, true, true, true);
             }
+        }
+
+        public void llenarCboIdTituloEmpleado()
+        {
+            //se realiza la conexión a la base de datos
+            Conexionmysql.ObtenerConexion();
+            //se inicia un DataSet
+            DataSet ds = new DataSet();
+            //se indica la consulta en sql
+            String Query = "select  nombre_emp, pk_id_emp from empleado;";
+            MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //se indica con quu tabla se llena
+            dad.Fill(ds, "empleado");
+            cbo_id_emp_tit_emp.DataSource = ds.Tables[0].DefaultView;
+            //indicamos el valor de los miembros
+            cbo_id_emp_tit_emp.ValueMember = ("pk_id_emp");
+            //se indica el valor a desplegar en el combobox
+            string cb = "nombre_emp,nombre_emp";
+
+            DataTable dt = ds.Tables[0];
+            dt.Columns.Add("NewColumn", typeof(string));
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["nombre_emp"] = dr["pk_id_emp"].ToString() + " " + dr["nombre_emp"].ToString();
+            }
+            cbo_id_emp_tit_emp.DataSource = dt;
+
+
+            cbo_id_emp_tit_emp.DisplayMember = "nombre_emp";
+        }
+
+        public void llenarCboIdLaboratorio()
+        {
+            //se realiza la conexión a la base de datos
+            Conexionmysql.ObtenerConexion();
+            //se inicia un DataSet
+            DataSet ds = new DataSet();
+            //se indica la consulta en sql
+            String Query = "select  nombre_lab, pk_id_lab from laboratorio;";
+            MySqlDataAdapter dad = new MySqlDataAdapter(Query, Conexionmysql.ObtenerConexion());
+            //se indica con quu tabla se llena
+            dad.Fill(ds, "laboratorio");
+            cbo_id_lab_tit_emp.DataSource = ds.Tables[0].DefaultView;
+            //indicamos el valor de los miembros
+            cbo_id_lab_tit_emp.ValueMember = ("pk_id_lab");
+            //se indica el valor a desplegar en el combobox
+            string cb = "nombre_emp,nombre_emp";
+
+            DataTable dt = ds.Tables[0];
+            dt.Columns.Add("NewColumn", typeof(string));
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                dr["nombre_lab"] = dr["pk_id_lab"].ToString() + " " + dr["nombre_lab"].ToString();
+            }
+            cbo_id_lab_tit_emp.DataSource = dt;
+
+
+            cbo_id_lab_tit_emp.DisplayMember = "nombre_lab";
+        }
+
+        private void txt_busc_tit_emp_KeyUp(object sender, KeyEventArgs e)
+        {
+            Conexionmysql.ObtenerConexion();
+            String Query = ("select * from titulo_empleado where pk_id_titl_emp like '" + txt_busc_tit_emp.Text + "%'; ");
+            //ManipularDato.Busqueda(Query);
+            ActualizarGrid(this.dgv_busqueda_datos_empleado, Query);
+            Conexionmysql.Desconectar();
         }
     }
  }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_inventario));
             this.Lbl_descripcion = new System.Windows.Forms.Label();
-            this.txt_direccion = new System.Windows.Forms.TextBox();
+            this.txt_desc = new System.Windows.Forms.TextBox();
             this.Lbl_cant = new System.Windows.Forms.Label();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,8 +45,6 @@
             this.lbl_prec_vent_inv_sumin = new System.Windows.Forms.Label();
             this.txt_nombre_sm = new System.Windows.Forms.TextBox();
             this.lbl_nom_sumin = new System.Windows.Forms.Label();
-            this.txt_id_inv_sumin = new System.Windows.Forms.TextBox();
-            this.Lbl_id_inventario = new System.Windows.Forms.Label();
             this.gpb_vista_inv_sumin = new System.Windows.Forms.GroupBox();
             this.dgv_vista_inv_sumin = new System.Windows.Forms.DataGridView();
             this.lbl_busc_tip_exam = new System.Windows.Forms.Label();
@@ -83,13 +81,13 @@
             this.Lbl_descripcion.TabIndex = 56;
             this.Lbl_descripcion.Text = "Descripcion:";
             // 
-            // txt_direccion
+            // txt_desc
             // 
-            this.txt_direccion.Location = new System.Drawing.Point(114, 84);
-            this.txt_direccion.Multiline = true;
-            this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(297, 150);
-            this.txt_direccion.TabIndex = 55;
+            this.txt_desc.Location = new System.Drawing.Point(114, 84);
+            this.txt_desc.Multiline = true;
+            this.txt_desc.Name = "txt_desc";
+            this.txt_desc.Size = new System.Drawing.Size(297, 150);
+            this.txt_desc.TabIndex = 9;
             // 
             // Lbl_cant
             // 
@@ -106,7 +104,7 @@
             this.txt_cantidad.Location = new System.Drawing.Point(172, 240);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(79, 23);
-            this.txt_cantidad.TabIndex = 53;
+            this.txt_cantidad.TabIndex = 10;
             this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
             // 
             // PictureBox1
@@ -140,10 +138,8 @@
             this.gpb_datos_inv_sumin.Controls.Add(this.lbl_prec_vent_inv_sumin);
             this.gpb_datos_inv_sumin.Controls.Add(this.txt_nombre_sm);
             this.gpb_datos_inv_sumin.Controls.Add(this.lbl_nom_sumin);
-            this.gpb_datos_inv_sumin.Controls.Add(this.txt_id_inv_sumin);
-            this.gpb_datos_inv_sumin.Controls.Add(this.txt_direccion);
+            this.gpb_datos_inv_sumin.Controls.Add(this.txt_desc);
             this.gpb_datos_inv_sumin.Controls.Add(this.txt_cantidad);
-            this.gpb_datos_inv_sumin.Controls.Add(this.Lbl_id_inventario);
             this.gpb_datos_inv_sumin.Controls.Add(this.Lbl_cant);
             this.gpb_datos_inv_sumin.Controls.Add(this.Lbl_descripcion);
             this.gpb_datos_inv_sumin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,7 +157,7 @@
             this.cbo_id_laboratorio.Location = new System.Drawing.Point(136, 308);
             this.cbo_id_laboratorio.Name = "cbo_id_laboratorio";
             this.cbo_id_laboratorio.Size = new System.Drawing.Size(121, 24);
-            this.cbo_id_laboratorio.TabIndex = 66;
+            this.cbo_id_laboratorio.TabIndex = 13;
             // 
             // lbl_laboratorio
             // 
@@ -179,7 +175,7 @@
             this.txt_prec_vent_inv_sumin.Location = new System.Drawing.Point(363, 273);
             this.txt_prec_vent_inv_sumin.Name = "txt_prec_vent_inv_sumin";
             this.txt_prec_vent_inv_sumin.Size = new System.Drawing.Size(46, 23);
-            this.txt_prec_vent_inv_sumin.TabIndex = 63;
+            this.txt_prec_vent_inv_sumin.TabIndex = 12;
             // 
             // lbl
             // 
@@ -197,7 +193,7 @@
             this.txt_prec_comp_inv_sumin.Location = new System.Drawing.Point(136, 273);
             this.txt_prec_comp_inv_sumin.Name = "txt_prec_comp_inv_sumin";
             this.txt_prec_comp_inv_sumin.Size = new System.Drawing.Size(46, 23);
-            this.txt_prec_comp_inv_sumin.TabIndex = 61;
+            this.txt_prec_comp_inv_sumin.TabIndex = 11;
             // 
             // lbl_prec_vent_inv_sumin
             // 
@@ -214,7 +210,7 @@
             this.txt_nombre_sm.Location = new System.Drawing.Point(169, 55);
             this.txt_nombre_sm.Name = "txt_nombre_sm";
             this.txt_nombre_sm.Size = new System.Drawing.Size(242, 23);
-            this.txt_nombre_sm.TabIndex = 59;
+            this.txt_nombre_sm.TabIndex = 8;
             // 
             // lbl_nom_sumin
             // 
@@ -225,23 +221,6 @@
             this.lbl_nom_sumin.Size = new System.Drawing.Size(146, 20);
             this.lbl_nom_sumin.TabIndex = 60;
             this.lbl_nom_sumin.Text = "Nombre Suministro:";
-            // 
-            // txt_id_inv_sumin
-            // 
-            this.txt_id_inv_sumin.Location = new System.Drawing.Point(114, 26);
-            this.txt_id_inv_sumin.Name = "txt_id_inv_sumin";
-            this.txt_id_inv_sumin.Size = new System.Drawing.Size(195, 23);
-            this.txt_id_inv_sumin.TabIndex = 58;
-            // 
-            // Lbl_id_inventario
-            // 
-            this.Lbl_id_inventario.AutoSize = true;
-            this.Lbl_id_inventario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_inventario.Location = new System.Drawing.Point(2, 26);
-            this.Lbl_id_inventario.Name = "Lbl_id_inventario";
-            this.Lbl_id_inventario.Size = new System.Drawing.Size(106, 20);
-            this.Lbl_id_inventario.TabIndex = 57;
-            this.Lbl_id_inventario.Text = "Id inventario:";
             // 
             // gpb_vista_inv_sumin
             // 
@@ -284,7 +263,7 @@
             this.btn_busc_tip_exam.Location = new System.Drawing.Point(296, 59);
             this.btn_busc_tip_exam.Name = "btn_busc_tip_exam";
             this.btn_busc_tip_exam.Size = new System.Drawing.Size(65, 65);
-            this.btn_busc_tip_exam.TabIndex = 139;
+            this.btn_busc_tip_exam.TabIndex = 5;
             this.btn_busc_tip_exam.Text = " ";
             this.btn_busc_tip_exam.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip5.SetToolTip(this.btn_busc_tip_exam, "Buscar");
@@ -296,7 +275,8 @@
             this.txt_busc_tips_exam.Location = new System.Drawing.Point(655, 106);
             this.txt_busc_tips_exam.Name = "txt_busc_tips_exam";
             this.txt_busc_tips_exam.Size = new System.Drawing.Size(158, 20);
-            this.txt_busc_tips_exam.TabIndex = 136;
+            this.txt_busc_tips_exam.TabIndex = 14;
+            this.txt_busc_tips_exam.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busc_tips_exam_KeyUp);
             // 
             // btn_actlz_aseg
             // 
@@ -309,7 +289,7 @@
             this.btn_actlz_aseg.Location = new System.Drawing.Point(154, 59);
             this.btn_actlz_aseg.Name = "btn_actlz_aseg";
             this.btn_actlz_aseg.Size = new System.Drawing.Size(65, 65);
-            this.btn_actlz_aseg.TabIndex = 138;
+            this.btn_actlz_aseg.TabIndex = 3;
             this.btn_actlz_aseg.Text = " ";
             this.btn_actlz_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip3.SetToolTip(this.btn_actlz_aseg, "Modificar");
@@ -327,7 +307,7 @@
             this.btn_guardar_aseg.Location = new System.Drawing.Point(83, 59);
             this.btn_guardar_aseg.Name = "btn_guardar_aseg";
             this.btn_guardar_aseg.Size = new System.Drawing.Size(65, 65);
-            this.btn_guardar_aseg.TabIndex = 137;
+            this.btn_guardar_aseg.TabIndex = 2;
             this.btn_guardar_aseg.Text = " ";
             this.btn_guardar_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip2.SetToolTip(this.btn_guardar_aseg, "Guardar");
@@ -345,7 +325,7 @@
             this.btn_elim_inv_sumin.Location = new System.Drawing.Point(225, 59);
             this.btn_elim_inv_sumin.Name = "btn_elim_inv_sumin";
             this.btn_elim_inv_sumin.Size = new System.Drawing.Size(65, 65);
-            this.btn_elim_inv_sumin.TabIndex = 140;
+            this.btn_elim_inv_sumin.TabIndex = 4;
             this.btn_elim_inv_sumin.Text = " ";
             this.btn_elim_inv_sumin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip4.SetToolTip(this.btn_elim_inv_sumin, "Eliminar");
@@ -362,7 +342,7 @@
             this.btn_nuevo_pcnt.Location = new System.Drawing.Point(12, 59);
             this.btn_nuevo_pcnt.Name = "btn_nuevo_pcnt";
             this.btn_nuevo_pcnt.Size = new System.Drawing.Size(65, 65);
-            this.btn_nuevo_pcnt.TabIndex = 141;
+            this.btn_nuevo_pcnt.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btn_nuevo_pcnt, "Nuevo");
             this.btn_nuevo_pcnt.UseVisualStyleBackColor = true;
             this.btn_nuevo_pcnt.Click += new System.EventHandler(this.btn_nuevo_pcnt_Click);
@@ -393,7 +373,7 @@
             this.btn_cancl.Location = new System.Drawing.Point(367, 59);
             this.btn_cancl.Name = "btn_cancl";
             this.btn_cancl.Size = new System.Drawing.Size(65, 65);
-            this.btn_cancl.TabIndex = 144;
+            this.btn_cancl.TabIndex = 6;
             this.toolTip6.SetToolTip(this.btn_cancl, "Cancelar");
             this.btn_cancl.UseVisualStyleBackColor = true;
             this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_Click);
@@ -411,10 +391,11 @@
             this.btn_renov_pcnt.Location = new System.Drawing.Point(508, 59);
             this.btn_renov_pcnt.Name = "btn_renov_pcnt";
             this.btn_renov_pcnt.Size = new System.Drawing.Size(65, 65);
-            this.btn_renov_pcnt.TabIndex = 143;
+            this.btn_renov_pcnt.TabIndex = 7;
             this.btn_renov_pcnt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip8.SetToolTip(this.btn_renov_pcnt, "Actualizar");
             this.btn_renov_pcnt.UseVisualStyleBackColor = true;
+            this.btn_renov_pcnt.Click += new System.EventHandler(this.btn_renov_pcnt_Click);
             // 
             // frm_act_inventario
             // 
@@ -436,6 +417,8 @@
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Lbl_titulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_act_inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suministros";
@@ -453,7 +436,7 @@
         #endregion
 
         internal System.Windows.Forms.Label Lbl_descripcion;
-        internal System.Windows.Forms.TextBox txt_direccion;
+        internal System.Windows.Forms.TextBox txt_desc;
         internal System.Windows.Forms.Label Lbl_cant;
         internal System.Windows.Forms.TextBox txt_cantidad;
         internal System.Windows.Forms.PictureBox PictureBox1;
@@ -475,8 +458,6 @@
         private System.Windows.Forms.Button btn_elim_inv_sumin;
         private System.Windows.Forms.ComboBox cbo_id_laboratorio;
         private System.Windows.Forms.Label lbl_laboratorio;
-        internal System.Windows.Forms.TextBox txt_id_inv_sumin;
-        internal System.Windows.Forms.Label Lbl_id_inventario;
         private System.Windows.Forms.Button btn_nuevo_pcnt;
         private System.Windows.Forms.Button btn_acept;
         private System.Windows.Forms.Button btn_cancl;

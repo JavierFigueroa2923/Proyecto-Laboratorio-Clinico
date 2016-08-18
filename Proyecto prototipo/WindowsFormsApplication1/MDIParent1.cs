@@ -45,6 +45,7 @@ namespace WindowsFormsApplication1
         Cotizacion frm_cotiz;
         frm_act_inventario frm_act_inventarios;
         frm_act_examenes frm_act_exameness;
+        Bitacora frm_bitacora;
 
         private int childFormNumber = 0;
 
@@ -887,6 +888,22 @@ namespace WindowsFormsApplication1
         {
             String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc,id_usuario_activo) VALUE (NOW(), 'Logout','" + Usuario + "','" + obtenerIP() + "'," + MiIdUsuario + ") ";
             cl_gridysql.EjecutarMySql(bitacora);
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_bitacora == null)
+            {
+                frm_bitacora = new Bitacora();
+                frm_bitacora.MdiParent = this;
+                frm_bitacora.FormClosed += new FormClosedEventHandler(frm_bitacoraClosed);
+                frm_bitacora.Show();
+            }
+        }
+
+        void frm_bitacoraClosed(object sender, EventArgs e)
+        {
+            frm_bitacora = null;
         }
     }
 }

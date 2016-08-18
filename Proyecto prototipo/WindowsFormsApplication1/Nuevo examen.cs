@@ -19,8 +19,6 @@ namespace WindowsFormsApplication1
 
         }
         BDconexion ManipularDato = new BDconexion();
-        public int MiIdUsuario { get; set; }
-        public String Usuario { get; set; }
         public void GridViewActualizar(DataGridView dgv, String Query)
         {
             //Establecemos la conexion

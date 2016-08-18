@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_emp));
-            this.Lbl_cargo = new System.Windows.Forms.Label();
             this.Lbl_apellido = new System.Windows.Forms.Label();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
@@ -56,7 +55,6 @@
             this.lbl_correo = new System.Windows.Forms.Label();
             this.cbo_sexo_emp = new System.Windows.Forms.ComboBox();
             this.Lbl_sexo = new System.Windows.Forms.Label();
-            this.cbo_carg_emp = new System.Windows.Forms.ComboBox();
             this.grb_vista_emp = new System.Windows.Forms.GroupBox();
             this.dgv_empleads = new System.Windows.Forms.DataGridView();
             this.lbl_busca_emp = new System.Windows.Forms.Label();
@@ -76,23 +74,14 @@
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_renov_emp = new System.Windows.Forms.Button();
+            this.Tlt_actualizar = new System.Windows.Forms.ToolTip(this.components);
             this.grb_datos_emp.SuspendLayout();
             this.grb_datosp_emp.SuspendLayout();
             this.grb_vista_emp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Lbl_cargo
-            // 
-            this.Lbl_cargo.AutoSize = true;
-            this.Lbl_cargo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_cargo.Location = new System.Drawing.Point(26, 70);
-            this.Lbl_cargo.Name = "Lbl_cargo";
-            this.Lbl_cargo.Size = new System.Drawing.Size(60, 20);
-            this.Lbl_cargo.TabIndex = 74;
-            this.Lbl_cargo.Text = "Cargo:";
-            this.Lbl_cargo.Click += new System.EventHandler(this.Lbl_cargo_Click);
             // 
             // Lbl_apellido
             // 
@@ -145,7 +134,7 @@
             // txt_telefono
             // 
             this.txt_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_telefono.Location = new System.Drawing.Point(92, 209);
+            this.txt_telefono.Location = new System.Drawing.Point(92, 184);
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(214, 23);
             this.txt_telefono.TabIndex = 12;
@@ -156,7 +145,7 @@
             this.Lbl_telefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_telefono.AutoSize = true;
             this.Lbl_telefono.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_telefono.Location = new System.Drawing.Point(2, 212);
+            this.Lbl_telefono.Location = new System.Drawing.Point(12, 183);
             this.Lbl_telefono.Name = "Lbl_telefono";
             this.Lbl_telefono.Size = new System.Drawing.Size(75, 20);
             this.Lbl_telefono.TabIndex = 59;
@@ -168,7 +157,7 @@
             this.Lbl_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Lbl_direccion.AutoSize = true;
             this.Lbl_direccion.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.Lbl_direccion.Location = new System.Drawing.Point(2, 160);
+            this.Lbl_direccion.Location = new System.Drawing.Point(3, 129);
             this.Lbl_direccion.Name = "Lbl_direccion";
             this.Lbl_direccion.Size = new System.Drawing.Size(84, 20);
             this.Lbl_direccion.TabIndex = 58;
@@ -177,7 +166,7 @@
             // txt_direccion
             // 
             this.txt_direccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_direccion.Location = new System.Drawing.Point(92, 156);
+            this.txt_direccion.Location = new System.Drawing.Point(92, 130);
             this.txt_direccion.Multiline = true;
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(214, 47);
@@ -300,9 +289,7 @@
             this.grb_datosp_emp.Controls.Add(this.lbl_correo);
             this.grb_datosp_emp.Controls.Add(this.cbo_sexo_emp);
             this.grb_datosp_emp.Controls.Add(this.Lbl_sexo);
-            this.grb_datosp_emp.Controls.Add(this.cbo_carg_emp);
             this.grb_datosp_emp.Controls.Add(this.Lbl_fecha_nacimiento);
-            this.grb_datosp_emp.Controls.Add(this.Lbl_cargo);
             this.grb_datosp_emp.Controls.Add(this.txt_direccion);
             this.grb_datosp_emp.Controls.Add(this.Lbl_direccion);
             this.grb_datosp_emp.Controls.Add(this.txt_telefono);
@@ -325,7 +312,7 @@
             // txt_correo
             // 
             this.txt_correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_correo.Location = new System.Drawing.Point(92, 129);
+            this.txt_correo.Location = new System.Drawing.Point(92, 100);
             this.txt_correo.Name = "txt_correo";
             this.txt_correo.Size = new System.Drawing.Size(214, 23);
             this.txt_correo.TabIndex = 10;
@@ -335,7 +322,7 @@
             this.lbl_correo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_correo.AutoSize = true;
             this.lbl_correo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lbl_correo.Location = new System.Drawing.Point(21, 132);
+            this.lbl_correo.Location = new System.Drawing.Point(22, 95);
             this.lbl_correo.Name = "lbl_correo";
             this.lbl_correo.Size = new System.Drawing.Size(65, 20);
             this.lbl_correo.TabIndex = 114;
@@ -348,7 +335,7 @@
             this.cbo_sexo_emp.Items.AddRange(new object[] {
             "Femenino",
             "Masculino"});
-            this.cbo_sexo_emp.Location = new System.Drawing.Point(92, 100);
+            this.cbo_sexo_emp.Location = new System.Drawing.Point(92, 71);
             this.cbo_sexo_emp.Name = "cbo_sexo_emp";
             this.cbo_sexo_emp.Size = new System.Drawing.Size(214, 24);
             this.cbo_sexo_emp.TabIndex = 9;
@@ -359,20 +346,11 @@
             this.Lbl_sexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_sexo.AutoSize = true;
             this.Lbl_sexo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_sexo.Location = new System.Drawing.Point(39, 102);
+            this.Lbl_sexo.Location = new System.Drawing.Point(43, 72);
             this.Lbl_sexo.Name = "Lbl_sexo";
             this.Lbl_sexo.Size = new System.Drawing.Size(47, 20);
             this.Lbl_sexo.TabIndex = 112;
             this.Lbl_sexo.Text = "Sexo:";
-            // 
-            // cbo_carg_emp
-            // 
-            this.cbo_carg_emp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_carg_emp.Enabled = false;
-            this.cbo_carg_emp.Location = new System.Drawing.Point(92, 70);
-            this.cbo_carg_emp.Name = "cbo_carg_emp";
-            this.cbo_carg_emp.Size = new System.Drawing.Size(214, 24);
-            this.cbo_carg_emp.TabIndex = 8;
             // 
             // grb_vista_emp
             // 
@@ -536,11 +514,31 @@
             this.btn_cancl.UseVisualStyleBackColor = true;
             this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_pcnt_Click);
             // 
+            // btn_renov_emp
+            // 
+            this.btn_renov_emp.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_renov_emp.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Button_Refresh_icon;
+            this.btn_renov_emp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_renov_emp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_renov_emp.FlatAppearance.BorderSize = 0;
+            this.btn_renov_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_renov_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_renov_emp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_renov_emp.Location = new System.Drawing.Point(512, 49);
+            this.btn_renov_emp.Name = "btn_renov_emp";
+            this.btn_renov_emp.Size = new System.Drawing.Size(65, 65);
+            this.btn_renov_emp.TabIndex = 145;
+            this.btn_renov_emp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Tlt_actualizar.SetToolTip(this.btn_renov_emp, "Actualizar");
+            this.btn_renov_emp.UseVisualStyleBackColor = true;
+            this.btn_renov_emp.Click += new System.EventHandler(this.btn_renov_emp_Click);
+            // 
             // frm_act_emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 614);
+            this.Controls.Add(this.btn_renov_emp);
             this.Controls.Add(this.btn_acept);
             this.Controls.Add(this.btn_cancl);
             this.Controls.Add(this.btn_nuevo_pcnt);
@@ -556,6 +554,8 @@
             this.Controls.Add(this.Pic_logo);
             this.Controls.Add(this.Label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_act_emp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar datos de empleado";
@@ -573,7 +573,6 @@
         }
 
         #endregion
-        internal System.Windows.Forms.Label Lbl_cargo;
         internal System.Windows.Forms.Label Lbl_apellido;
         internal System.Windows.Forms.TextBox txt_apellido;
         internal System.Windows.Forms.TextBox txt_usuario;
@@ -589,7 +588,6 @@
         internal System.Windows.Forms.Label Label2;
         private System.Windows.Forms.GroupBox grb_datos_emp;
         private System.Windows.Forms.GroupBox grb_datosp_emp;
-        private System.Windows.Forms.ComboBox cbo_carg_emp;
         internal System.Windows.Forms.Label Lbl_sexo;
         private System.Windows.Forms.GroupBox grb_vista_emp;
         private System.Windows.Forms.DataGridView dgv_empleads;
@@ -619,5 +617,7 @@
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip6;
         private System.Windows.Forms.DateTimePicker dtp_fec_nac_emp;
+        private System.Windows.Forms.Button btn_renov_emp;
+        private System.Windows.Forms.ToolTip Tlt_actualizar;
     }
 }

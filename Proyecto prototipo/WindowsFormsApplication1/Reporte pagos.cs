@@ -12,12 +12,15 @@ namespace WindowsFormsApplication1
 {
     public partial class Reporte_pagos : Form
     {
+        public int MiIdUsuario { get; set; }
+        public String Usuario { get; set; }
+
+
         public Reporte_pagos()
         {
             InitializeComponent();
         }
-        public int MiIdUsuario { get; set; }
-        public String Usuario { get; set; }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 

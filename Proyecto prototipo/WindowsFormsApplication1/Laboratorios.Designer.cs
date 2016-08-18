@@ -404,6 +404,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Lbl_inventario_suministro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_act_lab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Laboratorio";

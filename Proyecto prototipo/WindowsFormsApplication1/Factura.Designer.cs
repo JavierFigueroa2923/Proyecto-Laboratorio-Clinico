@@ -85,7 +85,6 @@
             this.btn_elim_inv_sumin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip4.SetToolTip(this.btn_elim_inv_sumin, "Eliminar");
             this.btn_elim_inv_sumin.UseVisualStyleBackColor = true;
-            this.btn_elim_inv_sumin.Click += new System.EventHandler(this.btn_elim_inv_sumin_Click);
             // 
             // lbl_busc_tip_exam
             // 
@@ -137,7 +136,6 @@
             this.btn_guardar_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip2.SetToolTip(this.btn_guardar_aseg, "Guardar");
             this.btn_guardar_aseg.UseVisualStyleBackColor = true;
-            this.btn_guardar_aseg.Click += new System.EventHandler(this.btn_guardar_aseg_Click);
             // 
             // gpb_vista_fct
             // 

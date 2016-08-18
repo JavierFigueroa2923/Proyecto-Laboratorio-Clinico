@@ -23,8 +23,10 @@ namespace WindowsFormsApplication1
         BDconexion manipular = new BDconexion();
         String Codigo;
         Boolean Editar;
+
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
+
         public void LimpiarCajasTexto()
         {
             txt_buscar.Text = "";

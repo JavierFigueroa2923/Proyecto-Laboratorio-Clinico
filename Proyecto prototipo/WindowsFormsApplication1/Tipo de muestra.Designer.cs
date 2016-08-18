@@ -42,7 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpb_vista_tipos_mist = new System.Windows.Forms.GroupBox();
             this.dgv_muestras = new System.Windows.Forms.DataGridView();
-            this.cbo_buscar = new System.Windows.Forms.ComboBox();
             this.lbl_busq_clt = new System.Windows.Forms.Label();
             this.btn_busc_memb = new System.Windows.Forms.Button();
             this.btn_act_datos = new System.Windows.Forms.Button();
@@ -57,6 +56,7 @@
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
+            this.txt_busc_tip_mst = new System.Windows.Forms.TextBox();
             this.gpb_ingr_datos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpb_vista_tipos_mist.SuspendLayout();
@@ -203,14 +203,6 @@
             this.dgv_muestras.Size = new System.Drawing.Size(340, 262);
             this.dgv_muestras.TabIndex = 0;
             // 
-            // cbo_buscar
-            // 
-            this.cbo_buscar.FormattingEnabled = true;
-            this.cbo_buscar.Location = new System.Drawing.Point(439, 142);
-            this.cbo_buscar.Name = "cbo_buscar";
-            this.cbo_buscar.Size = new System.Drawing.Size(147, 21);
-            this.cbo_buscar.TabIndex = 168;
-            // 
             // lbl_busq_clt
             // 
             this.lbl_busq_clt.AutoSize = true;
@@ -304,18 +296,26 @@
             this.btn_cancl.UseVisualStyleBackColor = true;
             this.btn_cancl.Click += new System.EventHandler(this.btn_cancl_Click);
             // 
+            // txt_busc_tip_mst
+            // 
+            this.txt_busc_tip_mst.Location = new System.Drawing.Point(439, 142);
+            this.txt_busc_tip_mst.Name = "txt_busc_tip_mst";
+            this.txt_busc_tip_mst.Size = new System.Drawing.Size(288, 20);
+            this.txt_busc_tip_mst.TabIndex = 175;
+            this.txt_busc_tip_mst.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busc_tip_mst_KeyUp);
+            // 
             // Tipo_de_muestra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 492);
+            this.Controls.Add(this.txt_busc_tip_mst);
             this.Controls.Add(this.btn_acept);
             this.Controls.Add(this.btn_cancl);
             this.Controls.Add(this.btn_nuevo_pcnt);
             this.Controls.Add(this.btn_act_datos);
             this.Controls.Add(this.btn_busc_memb);
             this.Controls.Add(this.lbl_busq_clt);
-            this.Controls.Add(this.cbo_buscar);
             this.Controls.Add(this.gpb_vista_tipos_mist);
             this.Controls.Add(this.gpb_ingr_datos);
             this.Controls.Add(this.btn_elim_tp_muestra);
@@ -352,7 +352,6 @@
         private System.Windows.Forms.Label lbl_nom_mst;
         private System.Windows.Forms.GroupBox gpb_vista_tipos_mist;
         private System.Windows.Forms.DataGridView dgv_muestras;
-        private System.Windows.Forms.ComboBox cbo_buscar;
         private System.Windows.Forms.Label lbl_busq_clt;
         private System.Windows.Forms.Button btn_busc_memb;
         private System.Windows.Forms.Button btn_act_datos;
@@ -367,5 +366,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.TextBox txt_busc_tip_mst;
     }
 }

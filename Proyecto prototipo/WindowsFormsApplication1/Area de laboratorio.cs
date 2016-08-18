@@ -22,7 +22,6 @@ namespace WindowsFormsApplication1
         BDconexion ManipularDato = new BDconexion();
         String Codigo;
         Boolean Editar;
-
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
 
@@ -40,6 +39,10 @@ namespace WindowsFormsApplication1
         }
 
 
+        private void txt_id_lab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.validacion_solonumeros(e);
+        }
 
         public string obtenerIP()
         {
@@ -56,11 +59,6 @@ namespace WindowsFormsApplication1
             return localIP;
         }
 
-
-        private void txt_id_lab_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.validacion_solonumeros(e);
-        }
         public void LimpiarCajasTexto()
         {
 
@@ -114,11 +112,11 @@ namespace WindowsFormsApplication1
                         string selectedItem = cbo_id_lab.SelectedValue.ToString();
                         String query2 = "UPDATE area_laboratorio SET descripcion_ar_lab='" + txt_descrip_area.Text + "', pk_id_lab = '" + selectedItem + "' WHERE pk_id_area_lab='" + Codigo + "';";
                         cl_gridysql.EjecutarMySql(query2);
-                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
-                        cl_gridysql.EjecutarMySql(bitacora);
                         Conexionmysql.Desconectar();
                         //6.limpiar cajas de texto
                         this.LimpiarCajasTexto();
+                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'area_laboratorio'," + MiIdUsuario + ") ";
+                        cl_gridysql.EjecutarMySql(bitacora);
                         ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio");
                         Editar = false;
                     }
@@ -245,7 +243,5 @@ namespace WindowsFormsApplication1
         {
             ActualizarGrid(this.dgv_area_labs, "select pk_id_area_lab as ID_Area, descripcion_ar_lab as Descripcion, pk_id_lab as ID_Laboratorio from area_laboratorio;");
         }
-
-
     }
 }

@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,29 +19,15 @@ namespace WindowsFormsApplication1
         }
         string codigo = "";
         Boolean Editar;
+        String tipos_de_examenes = "select pk_id_tp_exm as ID, nombre_tp_exm as Nombre, descripcion_tp_exm as Descripcion from tipo_examen";
+
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
-        String tipos_de_examenes = "select pk_id_tp_exm as ID, nombre_tp_exm as Nombre, descripcion_tp_exm as Descripcion from tipo_examen";
+
         private void Lbl_titulo_Click(object sender, EventArgs e)
         {
 
         }
-
-        public string obtenerIP()
-        {
-            IPHostEntry host;
-            string localIP = "";
-            host = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily.ToString() == "InterNetwork")
-                {
-                    localIP = ip.ToString();
-                }
-            }
-            return localIP;
-        }
-
 
         public void LimpiarCajasTexto()
         {
@@ -93,8 +78,6 @@ namespace WindowsFormsApplication1
                     int NumVal = Int32.Parse(codigo);
                     String Query = "update tipo_examen set nombre_tp_exm = " + txt_nombre.Text + ", descripcion_tp_exm = " + txt_descripcion.Text + " where pk_id_tp_exm = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
-                    String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Modificar','" + Usuario + "','" + obtenerIP() + "', 'tipo_examen'," + MiIdUsuario + ") ";
-                    cl_gridysql.EjecutarMySql(bitacora);
                     grid();
                     Conexionmysql.Desconectar();
                     Editar = false;
@@ -107,10 +90,8 @@ namespace WindowsFormsApplication1
                         Conexionmysql.ObtenerConexion();
                         String Query1 = "INSERT INTO tipo_examen(nombre_tp_exm, descripcion_tp_exm) values('"+ txt_nombre.Text + "','" + txt_descripcion.Text + "');";
                         cl_gridysql.EjecutarMySql(Query1);
-                        String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Insertar','" + Usuario + "','" + obtenerIP() + "', 'tipo_examen'," + MiIdUsuario + ") ";
-                        cl_gridysql.EjecutarMySql(bitacora);
 
-                        ActualizarGrid(this.dgv_vist_tips_exam, tipos_de_examenes);
+                            ActualizarGrid(this.dgv_vist_tips_exam, tipos_de_examenes);
                             this.LimpiarCajasTexto();
                             Conexionmysql.Desconectar();
                             MessageBox.Show("Operación Realizada Exitosamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -183,12 +164,6 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
-        }
-
-        private void btn_elim_pcnt_Click(object sender, EventArgs e)
-        {
-            //String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'tipo_examen'," + MiIdUsuario + ") ";
-            //cl_gridysql.EjecutarMySql(bitacora);
         }
     }
 }

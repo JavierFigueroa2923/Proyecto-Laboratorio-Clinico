@@ -321,6 +321,8 @@
             this.Controls.Add(this.btn_guardar_area);
             this.Controls.Add(this.lbl_area_laboratorio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Area_de_laboratorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Area de laboratorio";

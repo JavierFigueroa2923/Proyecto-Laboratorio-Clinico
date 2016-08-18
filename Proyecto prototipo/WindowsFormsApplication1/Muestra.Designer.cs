@@ -31,20 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_muestra));
             this.txt_busc_id_mst = new System.Windows.Forms.TextBox();
-            this.lbl_busca_mst = new System.Windows.Forms.Label();
-            this.grb_vista_mst = new System.Windows.Forms.GroupBox();
             this.dgv_busc_mst = new System.Windows.Forms.DataGridView();
             this.grb_datos2_mst = new System.Windows.Forms.GroupBox();
-            this.dgv_id_clt_mst = new System.Windows.Forms.DataGridView();
-            this.btn_busc_id_clt_mst = new System.Windows.Forms.Button();
-            this.Lbl_id_usur_per = new System.Windows.Forms.Label();
-            this.txt_busc_id_clt_mst = new System.Windows.Forms.TextBox();
+            this.lbl_mst = new System.Windows.Forms.Label();
             this.grb_datos1_mst = new System.Windows.Forms.GroupBox();
             this.cbo_id_cliente = new System.Windows.Forms.ComboBox();
-            this.cbo_id_muestra = new System.Windows.Forms.ComboBox();
             this.cbo_tipo_mst = new System.Windows.Forms.ComboBox();
             this.Lbl_tip_mst = new System.Windows.Forms.Label();
-            this.Lbl_id_mst = new System.Windows.Forms.Label();
             this.Lbl_id_clt_mst = new System.Windows.Forms.Label();
             this.Lbl_descr_mst = new System.Windows.Forms.Label();
             this.txt_descr_mst = new System.Windows.Forms.TextBox();
@@ -68,112 +61,57 @@
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
-            this.grb_vista_mst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_mst)).BeginInit();
             this.grb_datos2_mst.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_id_clt_mst)).BeginInit();
             this.grb_datos1_mst.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_busc_id_mst
             // 
-            this.txt_busc_id_mst.Location = new System.Drawing.Point(152, 324);
+            this.txt_busc_id_mst.Location = new System.Drawing.Point(106, 23);
             this.txt_busc_id_mst.Name = "txt_busc_id_mst";
-            this.txt_busc_id_mst.Size = new System.Drawing.Size(473, 20);
+            this.txt_busc_id_mst.Size = new System.Drawing.Size(312, 23);
             this.txt_busc_id_mst.TabIndex = 167;
-            // 
-            // lbl_busca_mst
-            // 
-            this.lbl_busca_mst.AutoSize = true;
-            this.lbl_busca_mst.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_busca_mst.Location = new System.Drawing.Point(17, 321);
-            this.lbl_busca_mst.Name = "lbl_busca_mst";
-            this.lbl_busca_mst.Size = new System.Drawing.Size(132, 20);
-            this.lbl_busca_mst.TabIndex = 166;
-            this.lbl_busca_mst.Text = "Buscar Muestras:";
-            // 
-            // grb_vista_mst
-            // 
-            this.grb_vista_mst.Controls.Add(this.dgv_busc_mst);
-            this.grb_vista_mst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_vista_mst.Location = new System.Drawing.Point(12, 344);
-            this.grb_vista_mst.Name = "grb_vista_mst";
-            this.grb_vista_mst.Size = new System.Drawing.Size(754, 163);
-            this.grb_vista_mst.TabIndex = 168;
-            this.grb_vista_mst.TabStop = false;
-            this.grb_vista_mst.Text = "Muestras";
+            this.txt_busc_id_mst.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_busc_id_mst_KeyUp);
             // 
             // dgv_busc_mst
             // 
             this.dgv_busc_mst.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_busc_mst.Location = new System.Drawing.Point(9, 22);
+            this.dgv_busc_mst.Location = new System.Drawing.Point(6, 56);
             this.dgv_busc_mst.Name = "dgv_busc_mst";
-            this.dgv_busc_mst.Size = new System.Drawing.Size(739, 135);
+            this.dgv_busc_mst.Size = new System.Drawing.Size(412, 163);
             this.dgv_busc_mst.TabIndex = 0;
             this.dgv_busc_mst.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_busc_mst_CellContentClick);
             // 
             // grb_datos2_mst
             // 
-            this.grb_datos2_mst.Controls.Add(this.dgv_id_clt_mst);
-            this.grb_datos2_mst.Controls.Add(this.btn_busc_id_clt_mst);
-            this.grb_datos2_mst.Controls.Add(this.Lbl_id_usur_per);
-            this.grb_datos2_mst.Controls.Add(this.txt_busc_id_clt_mst);
+            this.grb_datos2_mst.Controls.Add(this.lbl_mst);
+            this.grb_datos2_mst.Controls.Add(this.dgv_busc_mst);
+            this.grb_datos2_mst.Controls.Add(this.txt_busc_id_mst);
             this.grb_datos2_mst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_datos2_mst.Location = new System.Drawing.Point(454, 129);
+            this.grb_datos2_mst.Location = new System.Drawing.Point(368, 129);
             this.grb_datos2_mst.Name = "grb_datos2_mst";
-            this.grb_datos2_mst.Size = new System.Drawing.Size(338, 189);
+            this.grb_datos2_mst.Size = new System.Drawing.Size(424, 225);
             this.grb_datos2_mst.TabIndex = 165;
             this.grb_datos2_mst.TabStop = false;
-            this.grb_datos2_mst.Text = "Datos de cliente";
+            this.grb_datos2_mst.Text = "Muestras";
             // 
-            // dgv_id_clt_mst
+            // lbl_mst
             // 
-            this.dgv_id_clt_mst.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_id_clt_mst.Location = new System.Drawing.Point(10, 63);
-            this.dgv_id_clt_mst.Name = "dgv_id_clt_mst";
-            this.dgv_id_clt_mst.Size = new System.Drawing.Size(322, 112);
-            this.dgv_id_clt_mst.TabIndex = 133;
-            this.dgv_id_clt_mst.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_id_clt_mst_CellContentClick);
-            // 
-            // btn_busc_id_clt_mst
-            // 
-            this.btn_busc_id_clt_mst.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_busc_id_clt_mst.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_busc_id_clt_mst.Image = global::WindowsFormsApplication1.Properties.Resources.Buscar;
-            this.btn_busc_id_clt_mst.Location = new System.Drawing.Point(290, 16);
-            this.btn_busc_id_clt_mst.Name = "btn_busc_id_clt_mst";
-            this.btn_busc_id_clt_mst.Size = new System.Drawing.Size(44, 41);
-            this.btn_busc_id_clt_mst.TabIndex = 132;
-            this.btn_busc_id_clt_mst.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_busc_id_clt_mst.UseVisualStyleBackColor = true;
-            this.btn_busc_id_clt_mst.Click += new System.EventHandler(this.btn_busc_id_clt_mst_Click);
-            // 
-            // Lbl_id_usur_per
-            // 
-            this.Lbl_id_usur_per.AutoSize = true;
-            this.Lbl_id_usur_per.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_usur_per.Location = new System.Drawing.Point(6, 32);
-            this.Lbl_id_usur_per.Name = "Lbl_id_usur_per";
-            this.Lbl_id_usur_per.Size = new System.Drawing.Size(84, 20);
-            this.Lbl_id_usur_per.TabIndex = 85;
-            this.Lbl_id_usur_per.Text = "Id Cliente:";
-            // 
-            // txt_busc_id_clt_mst
-            // 
-            this.txt_busc_id_clt_mst.Location = new System.Drawing.Point(98, 32);
-            this.txt_busc_id_clt_mst.Multiline = true;
-            this.txt_busc_id_clt_mst.Name = "txt_busc_id_clt_mst";
-            this.txt_busc_id_clt_mst.Size = new System.Drawing.Size(190, 23);
-            this.txt_busc_id_clt_mst.TabIndex = 82;
+            this.lbl_mst.AutoSize = true;
+            this.lbl_mst.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mst.Location = new System.Drawing.Point(12, 23);
+            this.lbl_mst.Name = "lbl_mst";
+            this.lbl_mst.Size = new System.Drawing.Size(73, 20);
+            this.lbl_mst.TabIndex = 168;
+            this.lbl_mst.Text = "Muestra:";
             // 
             // grb_datos1_mst
             // 
             this.grb_datos1_mst.Controls.Add(this.cbo_id_cliente);
-            this.grb_datos1_mst.Controls.Add(this.cbo_id_muestra);
             this.grb_datos1_mst.Controls.Add(this.cbo_tipo_mst);
             this.grb_datos1_mst.Controls.Add(this.Lbl_tip_mst);
-            this.grb_datos1_mst.Controls.Add(this.Lbl_id_mst);
             this.grb_datos1_mst.Controls.Add(this.Lbl_id_clt_mst);
             this.grb_datos1_mst.Controls.Add(this.Lbl_descr_mst);
             this.grb_datos1_mst.Controls.Add(this.txt_descr_mst);
@@ -182,7 +120,7 @@
             this.grb_datos1_mst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grb_datos1_mst.Location = new System.Drawing.Point(12, 129);
             this.grb_datos1_mst.Name = "grb_datos1_mst";
-            this.grb_datos1_mst.Size = new System.Drawing.Size(436, 189);
+            this.grb_datos1_mst.Size = new System.Drawing.Size(350, 225);
             this.grb_datos1_mst.TabIndex = 164;
             this.grb_datos1_mst.TabStop = false;
             this.grb_datos1_mst.Text = "Datos de muestra";
@@ -190,49 +128,30 @@
             // cbo_id_cliente
             // 
             this.cbo_id_cliente.FormattingEnabled = true;
-            this.cbo_id_cliente.Location = new System.Drawing.Point(108, 49);
+            this.cbo_id_cliente.Location = new System.Drawing.Point(108, 53);
             this.cbo_id_cliente.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_id_cliente.Name = "cbo_id_cliente";
-            this.cbo_id_cliente.Size = new System.Drawing.Size(310, 24);
+            this.cbo_id_cliente.Size = new System.Drawing.Size(230, 24);
             this.cbo_id_cliente.TabIndex = 95;
-            // 
-            // cbo_id_muestra
-            // 
-            this.cbo_id_muestra.FormattingEnabled = true;
-            this.cbo_id_muestra.Location = new System.Drawing.Point(108, 21);
-            this.cbo_id_muestra.Margin = new System.Windows.Forms.Padding(2);
-            this.cbo_id_muestra.Name = "cbo_id_muestra";
-            this.cbo_id_muestra.Size = new System.Drawing.Size(310, 24);
-            this.cbo_id_muestra.TabIndex = 94;
-            this.cbo_id_muestra.SelectedIndexChanged += new System.EventHandler(this.cbo_id_muestra_SelectedIndexChanged);
+            this.cbo_id_cliente.SelectedIndexChanged += new System.EventHandler(this.cbo_id_cliente_SelectedIndexChanged);
             // 
             // cbo_tipo_mst
             // 
             this.cbo_tipo_mst.FormattingEnabled = true;
-            this.cbo_tipo_mst.Location = new System.Drawing.Point(108, 140);
+            this.cbo_tipo_mst.Location = new System.Drawing.Point(108, 187);
             this.cbo_tipo_mst.Name = "cbo_tipo_mst";
-            this.cbo_tipo_mst.Size = new System.Drawing.Size(310, 24);
+            this.cbo_tipo_mst.Size = new System.Drawing.Size(230, 24);
             this.cbo_tipo_mst.TabIndex = 93;
             // 
             // Lbl_tip_mst
             // 
             this.Lbl_tip_mst.AutoSize = true;
             this.Lbl_tip_mst.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_tip_mst.Location = new System.Drawing.Point(64, 142);
+            this.Lbl_tip_mst.Location = new System.Drawing.Point(1, 187);
             this.Lbl_tip_mst.Name = "Lbl_tip_mst";
-            this.Lbl_tip_mst.Size = new System.Drawing.Size(41, 20);
+            this.Lbl_tip_mst.Size = new System.Drawing.Size(105, 20);
             this.Lbl_tip_mst.TabIndex = 92;
-            this.Lbl_tip_mst.Text = "Tipo:";
-            // 
-            // Lbl_id_mst
-            // 
-            this.Lbl_id_mst.AutoSize = true;
-            this.Lbl_id_mst.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_id_mst.Location = new System.Drawing.Point(9, 26);
-            this.Lbl_id_mst.Name = "Lbl_id_mst";
-            this.Lbl_id_mst.Size = new System.Drawing.Size(92, 20);
-            this.Lbl_id_mst.TabIndex = 90;
-            this.Lbl_id_mst.Text = "Id Muestra:";
+            this.Lbl_tip_mst.Text = "Tipo Muestra:";
             // 
             // Lbl_id_clt_mst
             // 
@@ -259,7 +178,7 @@
             this.txt_descr_mst.Location = new System.Drawing.Point(108, 114);
             this.txt_descr_mst.Multiline = true;
             this.txt_descr_mst.Name = "txt_descr_mst";
-            this.txt_descr_mst.Size = new System.Drawing.Size(310, 20);
+            this.txt_descr_mst.Size = new System.Drawing.Size(230, 67);
             this.txt_descr_mst.TabIndex = 82;
             this.txt_descr_mst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_descr_mst_KeyDown);
             // 
@@ -277,7 +196,7 @@
             // 
             this.txt_cant_mst.Location = new System.Drawing.Point(108, 86);
             this.txt_cant_mst.Name = "txt_cant_mst";
-            this.txt_cant_mst.Size = new System.Drawing.Size(310, 23);
+            this.txt_cant_mst.Size = new System.Drawing.Size(230, 23);
             this.txt_cant_mst.TabIndex = 80;
             this.txt_cant_mst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_cant_mst_KeyDown);
             this.txt_cant_mst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cant_mst_KeyPress);
@@ -302,7 +221,7 @@
             this.btn_busc_id_mst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_busc_id_mst.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_busc_id_mst.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_busc_id_mst.Location = new System.Drawing.Point(297, 58);
+            this.btn_busc_id_mst.Location = new System.Drawing.Point(297, 52);
             this.btn_busc_id_mst.Name = "btn_busc_id_mst";
             this.btn_busc_id_mst.Size = new System.Drawing.Size(65, 65);
             this.btn_busc_id_mst.TabIndex = 169;
@@ -374,7 +293,7 @@
             this.pic_logo.Image = global::WindowsFormsApplication1.Properties.Resources.Clinica;
             this.pic_logo.Location = new System.Drawing.Point(693, 17);
             this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(106, 100);
+            this.pic_logo.Size = new System.Drawing.Size(106, 0);
             this.pic_logo.TabIndex = 159;
             this.pic_logo.TabStop = false;
             // 
@@ -435,7 +354,7 @@
             this.btn_renov_pcnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_renov_pcnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_renov_pcnt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_renov_pcnt.Location = new System.Drawing.Point(510, 52);
+            this.btn_renov_pcnt.Location = new System.Drawing.Point(510, 54);
             this.btn_renov_pcnt.Name = "btn_renov_pcnt";
             this.btn_renov_pcnt.Size = new System.Drawing.Size(65, 65);
             this.btn_renov_pcnt.TabIndex = 171;
@@ -448,15 +367,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 525);
+            this.ClientSize = new System.Drawing.Size(808, 406);
             this.Controls.Add(this.btn_acept);
             this.Controls.Add(this.btn_cancl);
             this.Controls.Add(this.btn_renov_pcnt);
             this.Controls.Add(this.btn_nuevo_pcnt);
             this.Controls.Add(this.btn_busc_id_mst);
-            this.Controls.Add(this.txt_busc_id_mst);
-            this.Controls.Add(this.lbl_busca_mst);
-            this.Controls.Add(this.grb_vista_mst);
             this.Controls.Add(this.grb_datos2_mst);
             this.Controls.Add(this.grb_datos1_mst);
             this.Controls.Add(this.btn_elim_mst);
@@ -469,11 +385,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Muestra";
             this.Load += new System.EventHandler(this.frm_muestra_Load);
-            this.grb_vista_mst.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_busc_mst)).EndInit();
             this.grb_datos2_mst.ResumeLayout(false);
             this.grb_datos2_mst.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_id_clt_mst)).EndInit();
             this.grb_datos1_mst.ResumeLayout(false);
             this.grb_datos1_mst.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
@@ -486,16 +400,9 @@
 
         private System.Windows.Forms.Button btn_busc_id_mst;
         internal System.Windows.Forms.TextBox txt_busc_id_mst;
-        internal System.Windows.Forms.Label lbl_busca_mst;
-        private System.Windows.Forms.GroupBox grb_vista_mst;
         private System.Windows.Forms.DataGridView dgv_busc_mst;
         private System.Windows.Forms.GroupBox grb_datos2_mst;
-        private System.Windows.Forms.DataGridView dgv_id_clt_mst;
-        private System.Windows.Forms.Button btn_busc_id_clt_mst;
-        internal System.Windows.Forms.Label Lbl_id_usur_per;
-        internal System.Windows.Forms.TextBox txt_busc_id_clt_mst;
         private System.Windows.Forms.GroupBox grb_datos1_mst;
-        internal System.Windows.Forms.Label Lbl_id_mst;
         internal System.Windows.Forms.Label Lbl_id_clt_mst;
         internal System.Windows.Forms.Label Lbl_descr_mst;
         internal System.Windows.Forms.TextBox txt_descr_mst;
@@ -509,7 +416,6 @@
         private System.Windows.Forms.ComboBox cbo_tipo_mst;
         internal System.Windows.Forms.Label Lbl_tip_mst;
         private System.Windows.Forms.ComboBox cbo_id_cliente;
-        private System.Windows.Forms.ComboBox cbo_id_muestra;
         private System.Windows.Forms.Button btn_nuevo_pcnt;
         private System.Windows.Forms.Button btn_acept;
         private System.Windows.Forms.Button btn_cancl;
@@ -522,5 +428,6 @@
         private System.Windows.Forms.ToolTip toolTip7;
         private System.Windows.Forms.ToolTip toolTip6;
         private System.Windows.Forms.ToolTip toolTip8;
+        internal System.Windows.Forms.Label lbl_mst;
     }
 }

@@ -112,6 +112,7 @@
             this.Name = "Reporte_de_suministros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte_de_suministros";
+            this.Load += new System.EventHandler(this.Reporte_de_suministros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporte_)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

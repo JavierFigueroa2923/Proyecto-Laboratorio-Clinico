@@ -74,6 +74,7 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.lbl_usuario = new System.Windows.Forms.Label();
+            this.bitacoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -274,7 +275,8 @@
             this.pagosToolStripMenuItem,
             this.reporteDeSuministrosToolStripMenuItem,
             this.facturasToolStripMenuItem,
-            this.resultadoExamenesToolStripMenuItem});
+            this.resultadoExamenesToolStripMenuItem,
+            this.bitacoraToolStripMenuItem});
             this.reportesToolStripMenuItem.Image = global::WindowsFormsApplication1.Properties.Resources.Document_Attach_icon1;
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
@@ -434,6 +436,13 @@
             this.lbl_usuario.Size = new System.Drawing.Size(0, 15);
             this.lbl_usuario.TabIndex = 4;
             // 
+            // bitacoraToolStripMenuItem
+            // 
+            this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.bitacoraToolStripMenuItem.Text = "Bitacora";
+            this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
+            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,6 +516,7 @@
         private System.Windows.Forms.Label lbl_usuario;
         private System.Windows.Forms.ToolStripMenuItem inventarioDeSuministrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeExamenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitacoraToolStripMenuItem;
     }
 }
 

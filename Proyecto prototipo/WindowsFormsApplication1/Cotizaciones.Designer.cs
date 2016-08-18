@@ -38,9 +38,9 @@
             this.gpb_vista_ctzn = new System.Windows.Forms.GroupBox();
             this.dgv_vista_ctzn = new System.Windows.Forms.DataGridView();
             this.gpb_datos_ctzn = new System.Windows.Forms.GroupBox();
+            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
             this.dtp_fec_cotz = new System.Windows.Forms.DateTimePicker();
             this.cbo_id_clnt = new System.Windows.Forms.ComboBox();
-            this.cbo_id_lab = new System.Windows.Forms.ComboBox();
             this.txt_descuento = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
@@ -168,9 +168,9 @@
             // 
             // gpb_datos_ctzn
             // 
+            this.gpb_datos_ctzn.Controls.Add(this.cbo_id_lab);
             this.gpb_datos_ctzn.Controls.Add(this.dtp_fec_cotz);
             this.gpb_datos_ctzn.Controls.Add(this.cbo_id_clnt);
-            this.gpb_datos_ctzn.Controls.Add(this.cbo_id_lab);
             this.gpb_datos_ctzn.Controls.Add(this.txt_descuento);
             this.gpb_datos_ctzn.Controls.Add(this.label4);
             this.gpb_datos_ctzn.Controls.Add(this.txt_total);
@@ -185,6 +185,14 @@
             this.gpb_datos_ctzn.TabIndex = 143;
             this.gpb_datos_ctzn.TabStop = false;
             this.gpb_datos_ctzn.Text = "Descripcion";
+            // 
+            // cbo_id_lab
+            // 
+            this.cbo_id_lab.FormattingEnabled = true;
+            this.cbo_id_lab.Location = new System.Drawing.Point(125, 32);
+            this.cbo_id_lab.Name = "cbo_id_lab";
+            this.cbo_id_lab.Size = new System.Drawing.Size(296, 24);
+            this.cbo_id_lab.TabIndex = 78;
             // 
             // dtp_fec_cotz
             // 
@@ -201,15 +209,6 @@
             this.cbo_id_clnt.Size = new System.Drawing.Size(297, 24);
             this.cbo_id_clnt.TabIndex = 76;
             this.cbo_id_clnt.SelectedIndexChanged += new System.EventHandler(this.cbo_id_clnt_SelectedIndexChanged);
-            // 
-            // cbo_id_lab
-            // 
-            this.cbo_id_lab.FormattingEnabled = true;
-            this.cbo_id_lab.Location = new System.Drawing.Point(118, 33);
-            this.cbo_id_lab.Name = "cbo_id_lab";
-            this.cbo_id_lab.Size = new System.Drawing.Size(299, 24);
-            this.cbo_id_lab.TabIndex = 75;
-            this.cbo_id_lab.SelectedIndexChanged += new System.EventHandler(this.cbo_id_lab_SelectedIndexChanged);
             // 
             // txt_descuento
             // 
@@ -388,6 +387,8 @@
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Cotizacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cotizaciones";
@@ -423,7 +424,6 @@
         internal System.Windows.Forms.Label Lbl_titulo;
         internal System.Windows.Forms.TextBox txt_busc_cotz;
         private System.Windows.Forms.ComboBox cbo_id_clnt;
-        private System.Windows.Forms.ComboBox cbo_id_lab;
         private System.Windows.Forms.Button btn_nueva_cotz;
         private System.Windows.Forms.Button btn_acept_cotz;
         private System.Windows.Forms.Button btn_cancl_cotz;
@@ -436,5 +436,6 @@
         private System.Windows.Forms.ToolTip toolTip6;
         private System.Windows.Forms.Button btn_imp_cotz;
         private System.Windows.Forms.DateTimePicker dtp_fec_cotz;
+        private System.Windows.Forms.ComboBox cbo_id_lab;
     }
 }

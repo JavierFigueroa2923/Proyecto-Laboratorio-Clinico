@@ -389,6 +389,8 @@
             this.Controls.Add(this.btn_guardar_cargo_emp);
             this.Controls.Add(this.lbl_cargo_emp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Cargo_Empleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cargo Empleado";

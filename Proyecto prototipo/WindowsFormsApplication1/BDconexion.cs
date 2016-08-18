@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.Net;
 
 namespace WindowsFormsApplication1
 {
@@ -36,8 +35,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("No se pudo realizar la modificación de la base de datos", "Error del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-
-
-
+        
     }
 }

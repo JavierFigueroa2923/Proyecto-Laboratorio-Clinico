@@ -18,22 +18,13 @@ namespace WindowsFormsApplication1
         BDconexion manipular = new BDconexion();
         String Codigo;
         Boolean Editar;
+
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
 
         public Membresia()
         {
             InitializeComponent();
-        }
-        public void LimpiarCajasTexto()
-        {
-            txt_busc_mem.Text = "";
-            cbo_id_clt_mem.Text = "";
-           // txt_membresia.Text = "";
-            txt_beneficio_mem.Text = "";
-            dtp_fec_crea_mem.Text = "";
-            dtp_fec_expir_mem.Text = "";
-    
         }
 
         public string obtenerIP()
@@ -49,6 +40,17 @@ namespace WindowsFormsApplication1
                 }
             }
             return localIP;
+        }
+
+        public void LimpiarCajasTexto()
+        {
+            txt_busc_mem.Text = "";
+            cbo_id_clt_mem.Text = "";
+           // txt_membresia.Text = "";
+            txt_beneficio_mem.Text = "";
+            dtp_fec_crea_mem.Text = "";
+            dtp_fec_expir_mem.Text = "";
+    
         }
 
         public void InhabilitarTexto()
@@ -170,7 +172,6 @@ namespace WindowsFormsApplication1
 
                     //4.Actualizar grid..
                     ActualizarGrid(this.dgv_busc_membresia, "SELECT pk_id_mem as Identificador, beneficios as Beneficios, fecha_expendicion_mem as Fecha_Creacion, fecha_expiracion_mem as Fecha_Expiracion, pk_id_clt as ID_Cliente FROM membresia");
-
                     String bitacora = "INSERT INTO bitacora_de_control (fecha_accion_bitc, accion_bitc, usuario_conn_bitc, ip_usuario_bitc, tabla_modif_bitc,id_usuario_activo) VALUE (NOW(), 'Eliminar','" + Usuario + "','" + obtenerIP() + "', 'membresia'," + MiIdUsuario + ") ";
                     cl_gridysql.EjecutarMySql(bitacora);
 

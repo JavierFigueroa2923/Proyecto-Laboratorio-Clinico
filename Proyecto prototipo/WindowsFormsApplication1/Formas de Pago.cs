@@ -15,9 +15,9 @@ namespace WindowsFormsApplication1
     public partial class frm_act_pago : Form
     {
         String Codigo;
+        Boolean Editar;
         public int MiIdUsuario { get; set; }
         public String Usuario { get; set; }
-        Boolean Editar;
         public frm_act_pago()
         {
             InitializeComponent();
@@ -195,6 +195,7 @@ namespace WindowsFormsApplication1
             LimpiarCajasTexto();
             InhabilitarTexto();
             btn_cancl.Enabled = false;
+            Editar = false;
         }
 
         private void txt_busc_KeyUp(object sender, KeyEventArgs e)

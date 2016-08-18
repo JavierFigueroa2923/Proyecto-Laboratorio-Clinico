@@ -36,7 +36,6 @@
             this.dgv_busc_eti = new System.Windows.Forms.DataGridView();
             this.grb_datos1_eti = new System.Windows.Forms.GroupBox();
             this.cbo_id_mst_busc_eti = new System.Windows.Forms.ComboBox();
-            this.btn_id_mst_busc_eti = new System.Windows.Forms.Button();
             this.Lbl_id_mst_eti = new System.Windows.Forms.Label();
             this.Lbl_descripcion_eti = new System.Windows.Forms.Label();
             this.txt_descr_eti = new System.Windows.Forms.TextBox();
@@ -104,7 +103,6 @@
             // grb_datos1_eti
             // 
             this.grb_datos1_eti.Controls.Add(this.cbo_id_mst_busc_eti);
-            this.grb_datos1_eti.Controls.Add(this.btn_id_mst_busc_eti);
             this.grb_datos1_eti.Controls.Add(this.Lbl_id_mst_eti);
             this.grb_datos1_eti.Controls.Add(this.Lbl_descripcion_eti);
             this.grb_datos1_eti.Controls.Add(this.txt_descr_eti);
@@ -125,24 +123,6 @@
             this.cbo_id_mst_busc_eti.Size = new System.Drawing.Size(115, 24);
             this.cbo_id_mst_busc_eti.TabIndex = 1;
             this.cbo_id_mst_busc_eti.SelectedIndexChanged += new System.EventHandler(this.cbo_id_mst_busc_eti_SelectedIndexChanged);
-            // 
-            // btn_id_mst_busc_eti
-            // 
-            this.btn_id_mst_busc_eti.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_id_mst_busc_eti.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Zoom_icon;
-            this.btn_id_mst_busc_eti.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_id_mst_busc_eti.FlatAppearance.BorderSize = 0;
-            this.btn_id_mst_busc_eti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_id_mst_busc_eti.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_id_mst_busc_eti.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_id_mst_busc_eti.Location = new System.Drawing.Point(223, 34);
-            this.btn_id_mst_busc_eti.Name = "btn_id_mst_busc_eti";
-            this.btn_id_mst_busc_eti.Size = new System.Drawing.Size(40, 40);
-            this.btn_id_mst_busc_eti.TabIndex = 2;
-            this.btn_id_mst_busc_eti.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip8.SetToolTip(this.btn_id_mst_busc_eti, "Buscar por Muesta");
-            this.btn_id_mst_busc_eti.UseVisualStyleBackColor = true;
-            this.btn_id_mst_busc_eti.Click += new System.EventHandler(this.btn_id_mst_busc_eti_Click);
             // 
             // Lbl_id_mst_eti
             // 
@@ -360,7 +340,6 @@
         private System.Windows.Forms.Button btn_actlz_eti;
         private System.Windows.Forms.Button btn_guardar_eti;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_id_mst_busc_eti;
         public System.Windows.Forms.ComboBox cbo_id_mst_busc_eti;
         private System.Windows.Forms.Button btn_nuevo_pcnt;
         private System.Windows.Forms.Button btn_acept;
