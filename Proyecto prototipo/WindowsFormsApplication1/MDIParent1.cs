@@ -46,6 +46,7 @@ namespace WindowsFormsApplication1
         frm_act_inventario frm_act_inventarios;
         frm_act_examenes frm_act_exameness;
         Bitacora frm_bitacora;
+        frm_examen frm_examen;
 
         private int childFormNumber = 0;
 
@@ -419,19 +420,19 @@ namespace WindowsFormsApplication1
 
         private void actualizarExamenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (act_exam == null)
+            if (frm_examen == null)
             {
-                act_exam = new frm_act_examenes();
-                act_exam.Usuario = Usuario;
-                act_exam.MiIdUsuario = MiIdUsuario;
-                act_exam.MdiParent = this;
-                act_exam.FormClosed += new FormClosedEventHandler(act_exam_FormClosed);
-                act_exam.Show();
+                frm_examen = new frm_examen();
+                frm_examen.Usuario = Usuario;
+                frm_examen.MiIdUsuario = MiIdUsuario;
+                frm_examen.MdiParent = this;
+                frm_examen.FormClosed += new FormClosedEventHandler(act_exam_FormClosed);
+                frm_examen.Show();
             }
         }
         void act_exam_FormClosed(object sender, EventArgs e)
         {
-            act_exam = null;
+            frm_examen = null;
         }
 
 

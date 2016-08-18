@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class frm_act_examenes
+    partial class frm_examen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_act_examenes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_examen));
             this.Lbl_descripcion = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.Lbl_nombre = new System.Windows.Forms.Label();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpb_tip_exam = new System.Windows.Forms.GroupBox();
@@ -57,8 +56,11 @@
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
-            this.txt_precio = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
+            this.cbo_tp_exm = new System.Windows.Forms.ComboBox();
+            this.cbo_cliente = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.gpb_tip_exam.SuspendLayout();
             this.gpb_vista_tips_exam.SuspendLayout();
@@ -69,15 +71,15 @@
             // 
             this.Lbl_descripcion.AutoSize = true;
             this.Lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_descripcion.Location = new System.Drawing.Point(12, 77);
+            this.Lbl_descripcion.Location = new System.Drawing.Point(3, 139);
             this.Lbl_descripcion.Name = "Lbl_descripcion";
-            this.Lbl_descripcion.Size = new System.Drawing.Size(100, 20);
+            this.Lbl_descripcion.Size = new System.Drawing.Size(109, 20);
             this.Lbl_descripcion.TabIndex = 46;
-            this.Lbl_descripcion.Text = "Descripcion:";
+            this.Lbl_descripcion.Text = "Observacion:";
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(118, 77);
+            this.txt_descripcion.Location = new System.Drawing.Point(118, 139);
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(278, 91);
@@ -87,29 +89,22 @@
             // 
             this.Lbl_nombre.AutoSize = true;
             this.Lbl_nombre.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombre.Location = new System.Drawing.Point(40, 31);
+            this.Lbl_nombre.Location = new System.Drawing.Point(3, 70);
             this.Lbl_nombre.Name = "Lbl_nombre";
-            this.Lbl_nombre.Size = new System.Drawing.Size(72, 20);
+            this.Lbl_nombre.Size = new System.Drawing.Size(138, 20);
             this.Lbl_nombre.TabIndex = 44;
-            this.Lbl_nombre.Text = "Nombre:";
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Location = new System.Drawing.Point(118, 31);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(278, 23);
-            this.txt_nombre.TabIndex = 43;
+            this.Lbl_nombre.Text = "Tiepo de examen:";
             // 
             // Lbl_titulo
             // 
             this.Lbl_titulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Lbl_titulo.AutoSize = true;
             this.Lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_titulo.Location = new System.Drawing.Point(384, 9);
+            this.Lbl_titulo.Location = new System.Drawing.Point(426, 9);
             this.Lbl_titulo.Name = "Lbl_titulo";
-            this.Lbl_titulo.Size = new System.Drawing.Size(232, 34);
+            this.Lbl_titulo.Size = new System.Drawing.Size(125, 34);
             this.Lbl_titulo.TabIndex = 41;
-            this.Lbl_titulo.Text = "Tipo de Examen";
+            this.Lbl_titulo.Text = "Examen";
             this.Lbl_titulo.Click += new System.EventHandler(this.Lbl_titulo_Click);
             // 
             // PictureBox1
@@ -123,16 +118,18 @@
             // 
             // gpb_tip_exam
             // 
-            this.gpb_tip_exam.Controls.Add(this.txt_precio);
-            this.gpb_tip_exam.Controls.Add(this.label1);
-            this.gpb_tip_exam.Controls.Add(this.txt_nombre);
+            this.gpb_tip_exam.Controls.Add(this.cbo_cliente);
+            this.gpb_tip_exam.Controls.Add(this.label3);
+            this.gpb_tip_exam.Controls.Add(this.cbo_tp_exm);
+            this.gpb_tip_exam.Controls.Add(this.dtp);
+            this.gpb_tip_exam.Controls.Add(this.label2);
             this.gpb_tip_exam.Controls.Add(this.Lbl_nombre);
             this.gpb_tip_exam.Controls.Add(this.Lbl_descripcion);
             this.gpb_tip_exam.Controls.Add(this.txt_descripcion);
             this.gpb_tip_exam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpb_tip_exam.Location = new System.Drawing.Point(12, 160);
+            this.gpb_tip_exam.Location = new System.Drawing.Point(12, 135);
             this.gpb_tip_exam.Name = "gpb_tip_exam";
-            this.gpb_tip_exam.Size = new System.Drawing.Size(402, 251);
+            this.gpb_tip_exam.Size = new System.Drawing.Size(402, 276);
             this.gpb_tip_exam.TabIndex = 50;
             this.gpb_tip_exam.TabStop = false;
             this.gpb_tip_exam.Text = "Informacion del Examen";
@@ -308,25 +305,52 @@
             this.btn_elim_pcnt.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip4.SetToolTip(this.btn_elim_pcnt, "Eliminar");
             this.btn_elim_pcnt.UseVisualStyleBackColor = true;
+            this.btn_elim_pcnt.Click += new System.EventHandler(this.btn_elim_pcnt_Click);
             // 
-            // txt_precio
+            // label2
             // 
-            this.txt_precio.Location = new System.Drawing.Point(118, 178);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(278, 23);
-            this.txt_precio.TabIndex = 47;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Fecha:";
             // 
-            // label1
+            // dtp
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 178);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Precio:";
+            this.dtp.Location = new System.Drawing.Point(118, 26);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(278, 23);
+            this.dtp.TabIndex = 50;
             // 
-            // frm_act_examenes
+            // cbo_tp_exm
+            // 
+            this.cbo_tp_exm.FormattingEnabled = true;
+            this.cbo_tp_exm.Location = new System.Drawing.Point(147, 70);
+            this.cbo_tp_exm.Name = "cbo_tp_exm";
+            this.cbo_tp_exm.Size = new System.Drawing.Size(181, 24);
+            this.cbo_tp_exm.TabIndex = 51;
+            // 
+            // cbo_cliente
+            // 
+            this.cbo_cliente.FormattingEnabled = true;
+            this.cbo_cliente.Location = new System.Drawing.Point(147, 106);
+            this.cbo_cliente.Name = "cbo_cliente";
+            this.cbo_cliente.Size = new System.Drawing.Size(181, 24);
+            this.cbo_cliente.TabIndex = 53;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Cliente:";
+            // 
+            // frm_examen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -346,7 +370,7 @@
             this.Controls.Add(this.PictureBox1);
             this.Controls.Add(this.Lbl_titulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frm_act_examenes";
+            this.Name = "frm_examen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipos de Examenes";
             this.Load += new System.EventHandler(this.frm_act_examenes_Load);
@@ -364,7 +388,6 @@
         internal System.Windows.Forms.Label Lbl_descripcion;
         internal System.Windows.Forms.TextBox txt_descripcion;
         internal System.Windows.Forms.Label Lbl_nombre;
-        internal System.Windows.Forms.TextBox txt_nombre;
         internal System.Windows.Forms.PictureBox PictureBox1;
         internal System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.GroupBox gpb_tip_exam;
@@ -388,7 +411,10 @@
         private System.Windows.Forms.ToolTip toolTip6;
         private System.Windows.Forms.ToolTip toolTip8;
         private System.Windows.Forms.ToolTip toolTip4;
-        internal System.Windows.Forms.TextBox txt_precio;
-        internal System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbo_cliente;
+        internal System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbo_tp_exm;
+        private System.Windows.Forms.DateTimePicker dtp;
+        internal System.Windows.Forms.Label label2;
     }
 }

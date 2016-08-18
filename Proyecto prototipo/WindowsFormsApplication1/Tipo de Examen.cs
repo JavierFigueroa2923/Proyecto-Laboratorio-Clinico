@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
         {
             txt_nombre.Text = "";
             txt_descripcion.Text = "";
+            txt_precio.Text = "";
         }
 
 
@@ -40,13 +41,17 @@ namespace WindowsFormsApplication1
         {
             txt_nombre.Enabled = false;
             txt_descripcion.Enabled = false;
+            txt_precio.Enabled = false;
         }
 
         public void HabilitarTexto()
         {
             txt_nombre.Enabled = true;
             txt_descripcion.Enabled = true;
+            txt_precio.Enabled = true;
         }
+
+
 
         public void ActualizarGrid(DataGridView dg, String Query)
         {
@@ -76,7 +81,7 @@ namespace WindowsFormsApplication1
                 {
                     Conexionmysql.ObtenerConexion();
                     int NumVal = Int32.Parse(codigo);
-                    String Query = "update tipo_examen set nombre_tp_exm = " + txt_nombre.Text + ", descripcion_tp_exm = " + txt_descripcion.Text + " where pk_id_tp_exm = " + NumVal + ";";
+                    String Query = "update tipo_examen set nombre_tp_exm = " + txt_nombre.Text + ", descripcion_tp_exm = " + txt_descripcion.Text + ", precio_tp_exm = "+txt_precio.Text+" where pk_id_tp_exm = " + NumVal + ";";
                     cl_gridysql.EjecutarMySql(Query);
                     grid();
                     Conexionmysql.Desconectar();
@@ -88,7 +93,7 @@ namespace WindowsFormsApplication1
                     try
                     {
                         Conexionmysql.ObtenerConexion();
-                        String Query1 = "INSERT INTO tipo_examen(nombre_tp_exm, descripcion_tp_exm) values('"+ txt_nombre.Text + "','" + txt_descripcion.Text + "');";
+                        String Query1 = "INSERT INTO tipo_examen(nombre_tp_exm, descripcion_tp_exm, precio_tp_exm) values('" + txt_nombre.Text + "','" + txt_descripcion.Text + "', "+txt_precio.Text+");";
                         cl_gridysql.EjecutarMySql(Query1);
 
                             ActualizarGrid(this.dgv_vist_tips_exam, tipos_de_examenes);
@@ -115,7 +120,7 @@ namespace WindowsFormsApplication1
         }
         private void grid()
         {
-            string query = String.Format("SELECT * FROM {0}", "tipo_examen");
+            string query = String.Format("SELECT pk_id_tp_exm as ID, nombre_tp_exm as Nombre_Examen, descripcion_tp_exm as Descripcion, precio_tp_exm as Precio  FROM {0}", "tipo_examen");
             Conexionmysql.ObtenerConexion();
             MySqlCommand command = new MySqlCommand(query, Conexionmysql.ObtenerConexion());
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
@@ -138,6 +143,7 @@ namespace WindowsFormsApplication1
             codigo = this.dgv_vist_tips_exam.CurrentRow.Cells[0].Value.ToString();
             txt_nombre.Text = this.dgv_vist_tips_exam.CurrentRow.Cells[0].Value.ToString();
             txt_descripcion.Text = this.dgv_vist_tips_exam.CurrentRow.Cells[2].Value.ToString();
+            txt_precio.Text = this.dgv_vist_tips_exam.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void btn_busc_tip_exam_Click(object sender, EventArgs e)
