@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Reporte_de_suministros : Form
+    public partial class Reporte_Facturas : Form
     {
-
-        public int MiIdUsuario { get; set; }
-        public String Usuario { get; set; }
-
-        public Reporte_de_suministros()
+        public Reporte_Facturas()
         {
             InitializeComponent();
-        }
-
-        private void Reporte_de_suministros_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

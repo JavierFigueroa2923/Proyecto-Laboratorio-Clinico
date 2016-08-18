@@ -159,7 +159,7 @@ namespace WindowsFormsApplication1
 
             foreach (DataRow dr in dt.Rows)
             {
-                dr["nombre_clt"] = dr["pk_id_clt"].ToString() + " " + dr["nombre_clt"].ToString() + " " + dr["apellido_clt"].ToString() + " " + dr["nit"].ToString();
+                dr["nombre_clt"] = dr["nombre_clt"].ToString();
 
             }
             cbo_cliente.DataSource = dt;

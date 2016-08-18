@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frm_bitacora : Form
+    public partial class Reporte_Ganancias_Semanales : Form
     {
-        public frm_bitacora()
+        public Reporte_Ganancias_Semanales()
         {
             InitializeComponent();
         }

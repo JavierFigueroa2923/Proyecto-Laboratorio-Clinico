@@ -14,11 +14,12 @@ namespace WindowsFormsApplication1
 
     public partial class MDIParent1 : Form
     {
-        Reporte_Examen_Paciente rep_examenp;
-        Reporte_examenes rep_examen;
-        Reporte_Ganancias rep_gan;
-        Reporte_pagos rep_pag;
-        Reporte_de_suministros rep_sum;
+        Reporte_Ganancias_Mensuales rep_gan_men;
+        Reporte_Examenes_Cliente reg_ex_clt;
+        Reporte_Clientes rep_clt;
+        Reporte_Ganancias_Semanales rep_gan;
+        Reporte_Resultado_Examen reg_resut_ex;
+        Reporte_Facturas rep_fact;
         Cotizacion cot;
         frm_act_cliente act_cliente;
         frm_act_emp act_emp;
@@ -45,7 +46,7 @@ namespace WindowsFormsApplication1
         Cotizacion frm_cotiz;
         frm_act_inventario frm_act_inventarios;
         frm_act_examenes frm_act_exameness;
-        Bitacora frm_bitacora;
+        frm_bitacora frm_bitacora;
         frm_examen frm_examen;
 
         private int childFormNumber = 0;
@@ -175,8 +176,7 @@ namespace WindowsFormsApplication1
             inventarioDeSuministrosToolStripMenuItem.Visible = false;
             tipoDeExamenToolStripMenuItem.Visible = false;
 
-            pagosToolStripMenuItem.Visible = false;
-            reporteDeSuministrosToolStripMenuItem.Visible = false;
+            
             facturasToolStripMenuItem.Visible = false;
             resultadoExamenesToolStripMenuItem.Visible = false;
 
@@ -253,12 +253,7 @@ namespace WindowsFormsApplication1
                         tipoDeExamenToolStripMenuItem.Visible = true;
                         break;
 
-                    case "Reporte de pagos":
-                        pagosToolStripMenuItem.Visible = true;
-                        break;
-                    case "Reporte de suministros":
-                        reporteDeSuministrosToolStripMenuItem.Visible = true;
-                        break;
+                   
                     case "Reporte de facturas":
                         facturasToolStripMenuItem.Visible = true;
                         break;
@@ -295,8 +290,7 @@ namespace WindowsFormsApplication1
                         inventarioDeSuministrosToolStripMenuItem.Visible = true;
                         tipoDeExamenToolStripMenuItem.Visible = true;
 
-                        pagosToolStripMenuItem.Visible = true;
-                        reporteDeSuministrosToolStripMenuItem.Visible = true;
+                        
                         facturasToolStripMenuItem.Visible = true;
                         resultadoExamenesToolStripMenuItem.Visible = true;
 
@@ -323,53 +317,12 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void examenesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (rep_examen == null)
-            {
-                rep_examen = new Reporte_examenes();
-                rep_examen.MdiParent = this;
-                rep_examen.FormClosed += new FormClosedEventHandler(rep_examen_FormClosed);
-                rep_examen.Show();
-            }
+        
 
-        }
+        
 
-        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (rep_pag == null)
-            {
-                rep_pag = new Reporte_pagos();
-                rep_pag.Usuario = Usuario;
-                rep_pag.MiIdUsuario = MiIdUsuario;
-                rep_pag.MdiParent = this;
-                rep_pag.FormClosed += new FormClosedEventHandler(rep_pago_FormClosed);
-                rep_pag.Show();
-            }
-        }
-
-        private void examenDePacienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (rep_examenp == null)
-            {
-                rep_examenp = new Reporte_Examen_Paciente();
-                rep_examenp.MdiParent = this;
-                rep_examenp.FormClosed += new FormClosedEventHandler(rep_examenp_FormClosed);
-                rep_examenp.Show();
-            }
-        }
-        void rep_examenp_FormClosed(object sender, EventArgs e)
-        {
-            rep_examenp = null;
-        }
-        void rep_examen_FormClosed(object sender, EventArgs e)
-        {
-            rep_examen = null;
-        }
-        void rep_pago_FormClosed(object sender, EventArgs e)
-        {
-            rep_pag = null;
-        }
+      
+        
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -531,22 +484,7 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void reporteDeSuministrosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (rep_sum == null)
-            {
-                rep_sum = new Reporte_de_suministros();
-                rep_sum.Usuario = Usuario;
-                rep_sum.MiIdUsuario = MiIdUsuario;
-                rep_sum.MdiParent = this;
-                rep_sum.FormClosed += new FormClosedEventHandler(rep_sum_FormClosed);
-                rep_sum.Show();
-            }
-        }
-        void rep_sum_FormClosed(object sender, EventArgs e)
-        {
-            rep_sum = null;
-        }
+       
 
         private void actualizarInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -773,19 +711,17 @@ namespace WindowsFormsApplication1
 
         private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frm_fact == null)
+            if (rep_fact == null)
             {
-                frm_fact = new Factura();
-                frm_fact.Usuario = Usuario;
-                frm_fact.MiIdUsuario = MiIdUsuario;
-                frm_fact.MdiParent = this;
-                frm_fact.FormClosed += new FormClosedEventHandler(frm_factFormClosed);
-                frm_fact.Show();
+                rep_fact = new Reporte_Facturas();
+                rep_fact.MdiParent = this;
+                rep_fact.FormClosed += new FormClosedEventHandler(reg_factClosed);
+                rep_fact.Show();
             }
         }
-        void frm_factFormClosed(object sender, EventArgs e)
+        void reg_factClosed(object sender, EventArgs e)
         {
-            frm_fact = null;
+            rep_fact = null;
         }
 
         private void resultadoExamenesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -895,7 +831,7 @@ namespace WindowsFormsApplication1
         {
             if (frm_bitacora == null)
             {
-                frm_bitacora = new Bitacora();
+                frm_bitacora = new frm_bitacora();
                 frm_bitacora.MdiParent = this;
                 frm_bitacora.FormClosed += new FormClosedEventHandler(frm_bitacoraClosed);
                 frm_bitacora.Show();
@@ -905,6 +841,81 @@ namespace WindowsFormsApplication1
         void frm_bitacoraClosed(object sender, EventArgs e)
         {
             frm_bitacora = null;
+        }
+
+        private void reporteGananciaMensualesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rep_gan_men == null)
+            {
+                rep_gan_men = new Reporte_Ganancias_Mensuales();
+                rep_gan_men.MdiParent = this;
+                rep_gan_men.FormClosed += new FormClosedEventHandler(rep_gan_menClosed);
+                rep_gan_men.Show();
+            }
+        }
+        void rep_gan_menClosed(object sender, EventArgs e)
+        {
+            rep_gan_men = null;
+        }
+
+        private void reporteGananciaSemanalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rep_gan == null)
+            {
+                rep_gan = new Reporte_Ganancias_Semanales();
+                rep_gan.MdiParent = this;
+                rep_gan.FormClosed += new FormClosedEventHandler(rep_ganClosed);
+                rep_gan.Show();
+            }
+        }
+        void rep_ganClosed(object sender, EventArgs e)
+        {
+            rep_gan = null;
+        }
+
+        private void reporteExamenesClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (reg_ex_clt == null)
+            {
+                reg_ex_clt = new Reporte_Examenes_Cliente();
+                reg_ex_clt.MdiParent = this;
+                reg_ex_clt.FormClosed += new FormClosedEventHandler(rep_ex_cltClosed);
+                reg_ex_clt.Show();
+            }
+        }
+        void rep_ex_cltClosed(object sender, EventArgs e)
+        {
+            reg_ex_clt = null;
+        }
+
+        private void reporteResultadoExamenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (reg_resut_ex == null)
+            {
+                reg_resut_ex = new Reporte_Resultado_Examen();
+                reg_resut_ex.MdiParent = this;
+                reg_resut_ex.FormClosed += new FormClosedEventHandler(rep_resultClosed);
+                reg_resut_ex.Show();
+            }
+        }
+        void rep_resultClosed(object sender, EventArgs e)
+        {
+            reg_resut_ex = null;
+        }
+
+        private void reporteClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rep_clt == null)
+            {
+                rep_clt = new Reporte_Clientes();
+                rep_clt.MdiParent = this;
+                rep_clt.FormClosed += new FormClosedEventHandler(rep_cltClosed);
+                rep_clt.Show();
+            }
+        }
+        void rep_cltClosed(object sender, EventArgs e)
+        {
+            rep_clt = null;
         }
     }
 }

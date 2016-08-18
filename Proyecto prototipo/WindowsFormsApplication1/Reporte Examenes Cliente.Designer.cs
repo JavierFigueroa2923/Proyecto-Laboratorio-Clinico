@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class frm_bitacora
+    partial class Reporte_Examenes_Cliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.rept_bita1 = new WindowsFormsApplication1.rept_bita();
+            this.rept_exam_clt1 = new WindowsFormsApplication1.rept_exam_clt();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,18 +40,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.rept_bita1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(697, 497);
+            this.crystalReportViewer1.ReportSource = this.rept_exam_clt1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(761, 538);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // frm_bitacora
+            // Reporte_Examenes_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 497);
+            this.ClientSize = new System.Drawing.Size(761, 538);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "frm_bitacora";
-            this.Text = "Bitacora";
+            this.Name = "Reporte_Examenes_Cliente";
+            this.Text = "Reporte_Examenes_Cliente";
             this.ResumeLayout(false);
 
         }
@@ -59,6 +59,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private rept_bita rept_bita1;
+        private rept_exam_clt rept_exam_clt1;
     }
 }
