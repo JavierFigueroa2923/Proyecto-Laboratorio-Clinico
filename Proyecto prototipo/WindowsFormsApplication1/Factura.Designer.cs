@@ -32,24 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.btn_elim_inv_sumin = new System.Windows.Forms.Button();
             this.lbl_busc_tip_exam = new System.Windows.Forms.Label();
-            this.txt_busc_fact = new System.Windows.Forms.TextBox();
             this.btn_actlz_aseg = new System.Windows.Forms.Button();
             this.btn_guardar_aseg = new System.Windows.Forms.Button();
             this.gpb_vista_fct = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txt_cantidad = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbo_id_examen = new System.Windows.Forms.ComboBox();
             this.dgv_vista_fct = new System.Windows.Forms.DataGridView();
             this.gpb_datos_fct = new System.Windows.Forms.GroupBox();
-            this.txt_id_fm_pg = new System.Windows.Forms.TextBox();
+            this.dtp_factura = new System.Windows.Forms.DateTimePicker();
+            this.cbo_id_fp = new System.Windows.Forms.ComboBox();
+            this.cbo_id_cliente = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_direccion = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_fecha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_nit = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_id_clt = new System.Windows.Forms.TextBox();
             this.lbl_nom_sumin = new System.Windows.Forms.Label();
-            this.txt_cliente = new System.Windows.Forms.TextBox();
-            this.Lbl_descripcion = new System.Windows.Forms.Label();
             this.Lbl_titulo = new System.Windows.Forms.Label();
             this.btn_nuevo_pcnt = new System.Windows.Forms.Button();
             this.btn_acept = new System.Windows.Forms.Button();
@@ -64,6 +61,10 @@
             this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Examen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Examen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_vista_fct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vista_fct)).BeginInit();
             this.gpb_datos_fct.SuspendLayout();
@@ -90,18 +91,11 @@
             // 
             this.lbl_busc_tip_exam.AutoSize = true;
             this.lbl_busc_tip_exam.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_busc_tip_exam.Location = new System.Drawing.Point(603, 112);
+            this.lbl_busc_tip_exam.Location = new System.Drawing.Point(169, 22);
             this.lbl_busc_tip_exam.Name = "lbl_busc_tip_exam";
-            this.lbl_busc_tip_exam.Size = new System.Drawing.Size(62, 20);
+            this.lbl_busc_tip_exam.Size = new System.Drawing.Size(70, 20);
             this.lbl_busc_tip_exam.TabIndex = 144;
-            this.lbl_busc_tip_exam.Text = "Buscar:";
-            // 
-            // txt_busc_fact
-            // 
-            this.txt_busc_fact.Location = new System.Drawing.Point(671, 114);
-            this.txt_busc_fact.Name = "txt_busc_fact";
-            this.txt_busc_fact.Size = new System.Drawing.Size(263, 20);
-            this.txt_busc_fact.TabIndex = 145;
+            this.lbl_busc_tip_exam.Text = "Examen:";
             // 
             // btn_actlz_aseg
             // 
@@ -119,6 +113,7 @@
             this.btn_actlz_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip3.SetToolTip(this.btn_actlz_aseg, "Modificar");
             this.btn_actlz_aseg.UseVisualStyleBackColor = true;
+            this.btn_actlz_aseg.Click += new System.EventHandler(this.btn_actlz_aseg_Click);
             // 
             // btn_guardar_aseg
             // 
@@ -136,10 +131,16 @@
             this.btn_guardar_aseg.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.toolTip2.SetToolTip(this.btn_guardar_aseg, "Guardar");
             this.btn_guardar_aseg.UseVisualStyleBackColor = true;
+            this.btn_guardar_aseg.Click += new System.EventHandler(this.btn_guardar_aseg_Click);
             // 
             // gpb_vista_fct
             // 
+            this.gpb_vista_fct.Controls.Add(this.button1);
+            this.gpb_vista_fct.Controls.Add(this.txt_cantidad);
+            this.gpb_vista_fct.Controls.Add(this.label5);
+            this.gpb_vista_fct.Controls.Add(this.cbo_id_examen);
             this.gpb_vista_fct.Controls.Add(this.dgv_vista_fct);
+            this.gpb_vista_fct.Controls.Add(this.lbl_busc_tip_exam);
             this.gpb_vista_fct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_vista_fct.Location = new System.Drawing.Point(451, 131);
             this.gpb_vista_fct.Name = "gpb_vista_fct";
@@ -147,29 +148,73 @@
             this.gpb_vista_fct.TabIndex = 143;
             this.gpb_vista_fct.TabStop = false;
             this.gpb_vista_fct.Text = "Detalle";
+            this.gpb_vista_fct.Enter += new System.EventHandler(this.gpb_vista_fct_Enter);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.Add;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(413, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 33);
+            this.button1.TabIndex = 157;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip8.SetToolTip(this.button1, "Actualizar");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txt_cantidad
+            // 
+            this.txt_cantidad.Location = new System.Drawing.Point(98, 22);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(66, 23);
+            this.txt_cantidad.TabIndex = 155;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.TabIndex = 156;
+            this.label5.Text = "Cantidad:";
+            // 
+            // cbo_id_examen
+            // 
+            this.cbo_id_examen.FormattingEnabled = true;
+            this.cbo_id_examen.Location = new System.Drawing.Point(245, 22);
+            this.cbo_id_examen.Name = "cbo_id_examen";
+            this.cbo_id_examen.Size = new System.Drawing.Size(152, 24);
+            this.cbo_id_examen.TabIndex = 154;
             // 
             // dgv_vista_fct
             // 
             this.dgv_vista_fct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_vista_fct.Location = new System.Drawing.Point(6, 22);
+            this.dgv_vista_fct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cantidad,
+            this.Examen,
+            this.Precio,
+            this.Id_Examen});
+            this.dgv_vista_fct.Location = new System.Drawing.Point(6, 61);
             this.dgv_vista_fct.Name = "dgv_vista_fct";
-            this.dgv_vista_fct.Size = new System.Drawing.Size(477, 306);
+            this.dgv_vista_fct.Size = new System.Drawing.Size(477, 267);
             this.dgv_vista_fct.TabIndex = 0;
             // 
             // gpb_datos_fct
             // 
-            this.gpb_datos_fct.Controls.Add(this.txt_id_fm_pg);
+            this.gpb_datos_fct.Controls.Add(this.dtp_factura);
+            this.gpb_datos_fct.Controls.Add(this.cbo_id_fp);
+            this.gpb_datos_fct.Controls.Add(this.cbo_id_cliente);
             this.gpb_datos_fct.Controls.Add(this.label4);
-            this.gpb_datos_fct.Controls.Add(this.txt_direccion);
-            this.gpb_datos_fct.Controls.Add(this.label3);
-            this.gpb_datos_fct.Controls.Add(this.txt_fecha);
             this.gpb_datos_fct.Controls.Add(this.label2);
-            this.gpb_datos_fct.Controls.Add(this.txt_nit);
-            this.gpb_datos_fct.Controls.Add(this.label1);
-            this.gpb_datos_fct.Controls.Add(this.txt_id_clt);
             this.gpb_datos_fct.Controls.Add(this.lbl_nom_sumin);
-            this.gpb_datos_fct.Controls.Add(this.txt_cliente);
-            this.gpb_datos_fct.Controls.Add(this.Lbl_descripcion);
             this.gpb_datos_fct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpb_datos_fct.Location = new System.Drawing.Point(22, 131);
             this.gpb_datos_fct.Name = "gpb_datos_fct";
@@ -178,110 +223,60 @@
             this.gpb_datos_fct.TabStop = false;
             this.gpb_datos_fct.Text = "Encabezado";
             // 
-            // txt_id_fm_pg
+            // dtp_factura
             // 
-            this.txt_id_fm_pg.Location = new System.Drawing.Point(138, 233);
-            this.txt_id_fm_pg.Name = "txt_id_fm_pg";
-            this.txt_id_fm_pg.Size = new System.Drawing.Size(277, 23);
-            this.txt_id_fm_pg.TabIndex = 73;
+            this.dtp_factura.Location = new System.Drawing.Point(118, 84);
+            this.dtp_factura.Name = "dtp_factura";
+            this.dtp_factura.Size = new System.Drawing.Size(297, 23);
+            this.dtp_factura.TabIndex = 77;
+            // 
+            // cbo_id_fp
+            // 
+            this.cbo_id_fp.FormattingEnabled = true;
+            this.cbo_id_fp.Location = new System.Drawing.Point(142, 113);
+            this.cbo_id_fp.Name = "cbo_id_fp";
+            this.cbo_id_fp.Size = new System.Drawing.Size(152, 24);
+            this.cbo_id_fp.TabIndex = 76;
+            // 
+            // cbo_id_cliente
+            // 
+            this.cbo_id_cliente.FormattingEnabled = true;
+            this.cbo_id_cliente.Location = new System.Drawing.Point(118, 45);
+            this.cbo_id_cliente.Name = "cbo_id_cliente";
+            this.cbo_id_cliente.Size = new System.Drawing.Size(297, 24);
+            this.cbo_id_cliente.TabIndex = 75;
+            this.cbo_id_cliente.SelectedIndexChanged += new System.EventHandler(this.cbo_id_cliente_SelectedIndexChanged);
+            this.cbo_id_cliente.SelectedValueChanged += new System.EventHandler(this.cbo_id_cliente_SelectedValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 233);
+            this.label4.Location = new System.Drawing.Point(6, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 20);
             this.label4.TabIndex = 74;
             this.label4.Text = "Forma de pago:";
             // 
-            // txt_direccion
-            // 
-            this.txt_direccion.Location = new System.Drawing.Point(118, 168);
-            this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.Size = new System.Drawing.Size(297, 23);
-            this.txt_direccion.TabIndex = 71;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
-            this.label3.TabIndex = 72;
-            this.label3.Text = "Direccion:";
-            // 
-            // txt_fecha
-            // 
-            this.txt_fecha.Location = new System.Drawing.Point(118, 200);
-            this.txt_fecha.Name = "txt_fecha";
-            this.txt_fecha.Size = new System.Drawing.Size(297, 23);
-            this.txt_fecha.TabIndex = 69;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 200);
+            this.label2.Location = new System.Drawing.Point(6, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 70;
             this.label2.Text = "Fecha:";
             // 
-            // txt_nit
-            // 
-            this.txt_nit.Location = new System.Drawing.Point(118, 137);
-            this.txt_nit.Name = "txt_nit";
-            this.txt_nit.Size = new System.Drawing.Size(297, 23);
-            this.txt_nit.TabIndex = 67;
-            this.txt_nit.TextChanged += new System.EventHandler(this.txt_nit_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
-            this.label1.TabIndex = 68;
-            this.label1.Text = "NIT:";
-            // 
-            // txt_id_clt
-            // 
-            this.txt_id_clt.Location = new System.Drawing.Point(118, 78);
-            this.txt_id_clt.Name = "txt_id_clt";
-            this.txt_id_clt.Size = new System.Drawing.Size(242, 23);
-            this.txt_id_clt.TabIndex = 59;
-            this.txt_id_clt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_clt_KeyDown);
-            this.txt_id_clt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_clt_KeyPress);
-            // 
             // lbl_nom_sumin
             // 
             this.lbl_nom_sumin.AutoSize = true;
             this.lbl_nom_sumin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nom_sumin.Location = new System.Drawing.Point(6, 78);
+            this.lbl_nom_sumin.Location = new System.Drawing.Point(6, 45);
             this.lbl_nom_sumin.Name = "lbl_nom_sumin";
             this.lbl_nom_sumin.Size = new System.Drawing.Size(84, 20);
             this.lbl_nom_sumin.TabIndex = 60;
             this.lbl_nom_sumin.Text = "Id Cliente:";
-            // 
-            // txt_cliente
-            // 
-            this.txt_cliente.Location = new System.Drawing.Point(118, 107);
-            this.txt_cliente.Name = "txt_cliente";
-            this.txt_cliente.Size = new System.Drawing.Size(297, 23);
-            this.txt_cliente.TabIndex = 55;
-            // 
-            // Lbl_descripcion
-            // 
-            this.Lbl_descripcion.AutoSize = true;
-            this.Lbl_descripcion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_descripcion.Location = new System.Drawing.Point(6, 107);
-            this.Lbl_descripcion.Name = "Lbl_descripcion";
-            this.Lbl_descripcion.Size = new System.Drawing.Size(65, 20);
-            this.Lbl_descripcion.TabIndex = 56;
-            this.Lbl_descripcion.Text = "Cliente:";
             // 
             // Lbl_titulo
             // 
@@ -375,6 +370,26 @@
             this.toolTip5.SetToolTip(this.btn_busc, "Buscar");
             this.btn_busc.UseVisualStyleBackColor = true;
             // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Examen
+            // 
+            this.Examen.HeaderText = "Examen";
+            this.Examen.Name = "Examen";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Id_Examen
+            // 
+            this.Id_Examen.HeaderText = "Id_Examen";
+            this.Id_Examen.Name = "Id_Examen";
+            // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,8 +401,6 @@
             this.Controls.Add(this.btn_busc);
             this.Controls.Add(this.btn_nuevo_pcnt);
             this.Controls.Add(this.btn_elim_inv_sumin);
-            this.Controls.Add(this.lbl_busc_tip_exam);
-            this.Controls.Add(this.txt_busc_fact);
             this.Controls.Add(this.btn_actlz_aseg);
             this.Controls.Add(this.btn_guardar_aseg);
             this.Controls.Add(this.gpb_vista_fct);
@@ -399,6 +412,7 @@
             this.Text = "Factura";
             this.Load += new System.EventHandler(this.Factura_Load);
             this.gpb_vista_fct.ResumeLayout(false);
+            this.gpb_vista_fct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vista_fct)).EndInit();
             this.gpb_datos_fct.ResumeLayout(false);
             this.gpb_datos_fct.PerformLayout();
@@ -411,24 +425,14 @@
 
         private System.Windows.Forms.Button btn_elim_inv_sumin;
         internal System.Windows.Forms.Label lbl_busc_tip_exam;
-        internal System.Windows.Forms.TextBox txt_busc_fact;
         private System.Windows.Forms.Button btn_actlz_aseg;
         private System.Windows.Forms.Button btn_guardar_aseg;
         private System.Windows.Forms.GroupBox gpb_vista_fct;
         private System.Windows.Forms.DataGridView dgv_vista_fct;
         private System.Windows.Forms.GroupBox gpb_datos_fct;
-        internal System.Windows.Forms.TextBox txt_id_fm_pg;
         internal System.Windows.Forms.Label label4;
-        internal System.Windows.Forms.TextBox txt_direccion;
-        internal System.Windows.Forms.Label label3;
-        internal System.Windows.Forms.TextBox txt_fecha;
         internal System.Windows.Forms.Label label2;
-        internal System.Windows.Forms.TextBox txt_nit;
-        internal System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.TextBox txt_id_clt;
         internal System.Windows.Forms.Label lbl_nom_sumin;
-        internal System.Windows.Forms.TextBox txt_cliente;
-        internal System.Windows.Forms.Label Lbl_descripcion;
         internal System.Windows.Forms.Label Lbl_titulo;
         private System.Windows.Forms.Button btn_nuevo_pcnt;
         private System.Windows.Forms.Button btn_acept;
@@ -443,5 +447,16 @@
         private System.Windows.Forms.ToolTip toolTip6;
         private System.Windows.Forms.ToolTip toolTip8;
         private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ComboBox cbo_id_fp;
+        private System.Windows.Forms.ComboBox cbo_id_cliente;
+        private System.Windows.Forms.ComboBox cbo_id_examen;
+        private System.Windows.Forms.DateTimePicker dtp_factura;
+        internal System.Windows.Forms.TextBox txt_cantidad;
+        internal System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Examen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Examen;
     }
 }
